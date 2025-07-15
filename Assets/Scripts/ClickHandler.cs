@@ -2,7 +2,7 @@
 // > Script   : ClickHandler.cs
 // > Author   : Murillo Gomes Yonamine
 // > Date     : 15/07/2025 | 03:36
-// > Purpose  : Describe this script
+// > Purpose  : Lida com o click do mouse.
 // ════════════════════════════════════════════════════
 
 using System;
