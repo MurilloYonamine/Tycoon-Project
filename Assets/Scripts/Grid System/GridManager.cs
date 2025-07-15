@@ -8,6 +8,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
+using TMPro;
 
 namespace GRID
 {
@@ -17,6 +18,8 @@ namespace GRID
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private GameObject _tilePrefab;
         [SerializeField] private ClickHandler _clickHandler;
+
+        [SerializeField] private TMP_FontAsset _font;
 
         private GameObject[] _columnsArray;
         private GameObject[,] _tileObjects;
@@ -28,12 +31,13 @@ namespace GRID
             _bounds = _tilemap.cellBounds;
             _tileObjects = new GameObject[_bounds.size.x, _bounds.size.y];
 
-            GenerateColumns();
-        }
+            TilePool.Instance.amountToPool = _bounds.size.x * _bounds.size.y;
+            TilePool.Instance.pooledObjectsContainer = _tilemap.gameObject;
 
+            GenerateColumnsAndCoordinates();
+        }
         private void OnEnable() => _clickHandler.OnClickPerformed += HandleClick;
         private void OnDisable() => _clickHandler.OnClickPerformed -= HandleClick;
-
 
         private void HandleClick(InputAction.CallbackContext context)
         {
@@ -55,7 +59,10 @@ namespace GRID
             }
 
             Vector3 cellCenter = _grid.GetCellCenterWorld(cell);
-            GameObject tileObject = Instantiate(_tilePrefab, cellCenter, Quaternion.identity);
+            //GameObject tileObject = Instantiate(_tilePrefab, cellCenter, Quaternion.identity);
+            
+            GameObject tileObject = TilePool.Instance.GetPooledObject();
+            tileObject.transform.position = cellCenter;
             tileObject.name = $"Tile: ({coordinate.x}, {coordinate.y})";
 
             GameObject columnObject = GetColumnObject(coordinate.x);
@@ -63,7 +70,7 @@ namespace GRID
 
             _tileObjects[coordinate.x, coordinate.y] = tileObject;
 
-            Debug.Log($"Instanciado na coordenada lógica: ({coordinate.x}, {coordinate.y})");
+            Debug.Log($"Coordenada: ({coordinate.x}, {coordinate.y})");
         }
 
 
@@ -94,8 +101,8 @@ namespace GRID
             return null;
         }
 
-        /// <summary> Cria os objetos de coluna na hierarquia. </summary>
-        private void GenerateColumns()
+        /// <summary> Cria os objetos de coluna e os textos de coordenada dentro de cada coluna. </summary>
+        private void GenerateColumnsAndCoordinates()
         {
             _columnsArray = new GameObject[_bounds.size.x];
 
@@ -108,17 +115,45 @@ namespace GRID
             GameObject rightColumns = new GameObject("Right Columns");
             rightColumns.transform.SetParent(columnsRoot.transform);
 
-            for (int i = 0; i < _columnsArray.Length; i++)
-            {
-                GameObject columnObject = new GameObject($"Column: {i}");
-                _columnsArray[i] = columnObject;
+            int mid = _bounds.size.x / 2;
 
-                if (i >= _columnsArray.Length / 2)
-                {
+            for (int x = 0; x < _bounds.size.x; x++)
+            {
+                GameObject columnObject = new GameObject($"Column: {x}");
+                _columnsArray[x] = columnObject;
+
+                if (x >= mid)
                     columnObject.transform.SetParent(rightColumns.transform);
-                    continue;
-                }
-                columnObject.transform.SetParent(leftColumns.transform);
+                else
+                    columnObject.transform.SetParent(leftColumns.transform);
+
+                CreateCoordinateTexts(columnObject, x);
+            }
+        }
+
+        /// <summary> Cria textos de coordenada dentro da coluna especificada. </summary>
+        private void CreateCoordinateTexts(GameObject columnObject, int x)
+        {
+            GameObject textsParent = new GameObject("Coordinate Texts");
+            textsParent.transform.SetParent(columnObject.transform);
+
+            for (int y = 0; y < _bounds.size.y; y++)
+            {
+                Vector3Int cell = new Vector3Int(x + _bounds.xMin, _bounds.yMax - 1 - y, 0);
+                if (!_tilemap.HasTile(cell)) continue;
+
+                Vector3 cellCenter = _grid.GetCellCenterWorld(cell);
+
+                GameObject textObj = new GameObject($"Coordinate Text: ({x},{y})");
+                textObj.transform.position = cellCenter;
+                textObj.transform.SetParent(textsParent.transform);
+
+                var textMeshPro = textObj.AddComponent<TextMeshPro>();
+                textMeshPro.text = $"({x},{y})";
+                textMeshPro.fontSize = 3;
+                textMeshPro.alignment = TextAlignmentOptions.Center;
+                textMeshPro.color = Color.white;
+                textMeshPro.font = _font;
             }
         }
     }

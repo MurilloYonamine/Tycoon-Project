@@ -2162,6 +2162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757615312}
   - component: {fileID: 757615311}
+  - component: {fileID: 757615313}
   m_Layer: 0
   m_Name: Grid Manager
   m_TagString: Untagged
@@ -2185,6 +2186,7 @@ MonoBehaviour:
   _tilemap: {fileID: 199324803}
   _tilePrefab: {fileID: 5934903474817412253, guid: 46391290315dae04a886c3317873dfb8, type: 3}
   _clickHandler: {fileID: 2066608641}
+  _font: {fileID: 11400000, guid: f3777732ee0ab0c4c8ae3e8aef17dfc0, type: 2}
 --- !u!4 &757615312
 Transform:
   m_ObjectHideFlags: 0
@@ -2200,6 +2202,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 357871372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757615313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757615310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7301fc8cb92fa4b8519fcbbfc610a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjectsContainer: {fileID: 199324800}
+  objectToPool: {fileID: 5934903474817412253, guid: 46391290315dae04a886c3317873dfb8, type: 3}
+  pooledObjects: []
+  amountToPool: 0
 --- !u!1 &885265853
 GameObject:
   m_ObjectHideFlags: 0
