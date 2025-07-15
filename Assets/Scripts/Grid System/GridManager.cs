@@ -2,97 +2,123 @@
 // > Script   : GridManager.cs
 // > Author   : Murillo Gomes Yonamine
 // > Date     : 07/02/2025 | 20:59
-// > Purpose  : Describe this script
+// > Purpose  : Gerencia o sistema de grid com suporte a colunas e ocupação de tiles
 // ════════════════════════════════════════════════════
 
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 namespace GRID
 {
     public class GridManager : MonoBehaviour
     {
         [SerializeField] private Grid _grid;
-
         [SerializeField] private Tilemap _tilemap;
         [SerializeField] private GameObject _tilePrefab;
+        [SerializeField] private ClickHandler _clickHandler;
 
-        private GameObject[] _collumnsArray;
+        private GameObject[] _columnsArray;
+        private GameObject[,] _tileObjects;
 
-        private PlayerInputActions _playerInputActions;
-        private InputAction _click;
+        private BoundsInt _bounds;
 
         private void Awake()
         {
-            _playerInputActions = new PlayerInputActions();
+            _bounds = _tilemap.cellBounds;
+            _tileObjects = new GameObject[_bounds.size.x, _bounds.size.y];
+
             GenerateColumns();
         }
-        private void OnEnable()
-        {
-            _click = _playerInputActions.Player.Click;
-            _click.Enable();
-            _click.performed += Click;
-        }
-        private void OnDisable()
-        {
-            _click.Disable();
-            _click.performed -= Click;
-        }
-        private Vector3 GetMouseWorldCellPosition()
-        {
-            Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
-            Vector3Int cell = Vector3Int.FloorToInt(mouseWorldPosition);
-            return _tilemap.GetCellCenterLocal(cell);
-        }
 
-        private void Click(InputAction.CallbackContext context)
-        {
-            Vector3 cellPosition = GetMouseWorldCellPosition();
+        private void OnEnable() => _clickHandler.OnClickPerformed += HandleClick;
+        private void OnDisable() => _clickHandler.OnClickPerformed -= HandleClick;
 
-            if (!_tilemap.HasTile(Vector3Int.FloorToInt(cellPosition)))
+
+        private void HandleClick(InputAction.CallbackContext context)
+        {
+            Vector3 worldPosition = GetMouseWorldPosition();
+            Vector3Int cell = _grid.WorldToCell(worldPosition);
+
+            if (!_tilemap.HasTile(cell))
             {
                 Debug.Log("Célula não demarcada no tilemap. Ignorando clique.");
                 return;
             }
 
-            GameObject tileObject = Instantiate(_tilePrefab, cellPosition, Quaternion.identity);
+            Vector3Int coordinate = GetTileCoordinate(cell);
 
-            BoundsInt bounds = _tilemap.cellBounds;
-
-            int col = Vector3Int.FloorToInt(cellPosition).x - bounds.xMin; // Desloca para começar do 0
-            int row = bounds.yMax - 1 - Vector3Int.FloorToInt(cellPosition).y; // Inverte o Y
-
-            Debug.Log($"Coordenada lógica: ({col}, {row})");
-
-            tileObject.name = $"Tile: ({row}, {col})";
-
-
-            for (int i = 0; i < _collumnsArray.Length; i++)
+            if (_tileObjects[coordinate.x, coordinate.y] != null)
             {
-                if (_collumnsArray[i].name == $"Column: {col}")
-                {
-                    GameObject collumn = _collumnsArray[i];
-                    tileObject.transform.SetParent(collumn.transform);
-                    break;
-                }
+                Debug.Log($"Célula ({coordinate.x}, {coordinate.y}) já ocupada.");
+                return;
             }
+
+            Vector3 cellCenter = _grid.GetCellCenterWorld(cell);
+            GameObject tileObject = Instantiate(_tilePrefab, cellCenter, Quaternion.identity);
+            tileObject.name = $"Tile: ({coordinate.x}, {coordinate.y})";
+
+            GameObject columnObject = GetColumnObject(coordinate.x);
+            tileObject.transform.SetParent(columnObject.transform);
+
+            _tileObjects[coordinate.x, coordinate.y] = tileObject;
+
+            Debug.Log($"Instanciado na coordenada lógica: ({coordinate.x}, {coordinate.y})");
         }
+
+
+        /// <summary> Converte uma posição de célula em coordenadas lógicas (coluna, linha), com origem no canto superior esquerdo. </summary>
+        private Vector3Int GetTileCoordinate(Vector3Int cell)
+        {
+            int col = cell.x - _bounds.xMin;
+            int row = _bounds.yMax - 1 - cell.y;
+
+            return new Vector3Int(col, row, 0);
+        }
+
+        /// <summary> Obtém a posição do mouse convertida para o mundo. </summary>
+        private Vector3 GetMouseWorldPosition()
+        {
+            Vector2 mouseScreen = Mouse.current.position.ReadValue();
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
+                new Vector3(mouseScreen.x, mouseScreen.y, -Camera.main.transform.position.z)
+            );
+            return mouseWorld;
+        }
+
+        /// <summary> Retorna a coluna correspondente baseada no índice. </summary>
+        private GameObject GetColumnObject(int col)
+        {
+            if (col >= 0 && col < _columnsArray.Length)
+                return _columnsArray[col];
+            return null;
+        }
+
+        /// <summary> Cria os objetos de coluna na hierarquia. </summary>
         private void GenerateColumns()
         {
-            _collumnsArray = new GameObject[_tilemap.size.x];
+            _columnsArray = new GameObject[_bounds.size.x];
 
-            GameObject columnsObject = new GameObject("Columns");
-            columnsObject.transform.SetParent(_tilemap.transform);
+            GameObject columnsRoot = new GameObject("Columns");
+            columnsRoot.transform.SetParent(_tilemap.transform);
 
-            for (int i = 0; i < _tilemap.size.x; i++)
+            GameObject leftColumns = new GameObject("Left Columns");
+            leftColumns.transform.SetParent(columnsRoot.transform);
+
+            GameObject rightColumns = new GameObject("Right Columns");
+            rightColumns.transform.SetParent(columnsRoot.transform);
+
+            for (int i = 0; i < _columnsArray.Length; i++)
             {
                 GameObject columnObject = new GameObject($"Column: {i}");
-                columnObject.transform.SetParent(columnsObject.transform);
+                _columnsArray[i] = columnObject;
 
-                _collumnsArray[i] = columnObject;
+                if (i >= _columnsArray.Length / 2)
+                {
+                    columnObject.transform.SetParent(rightColumns.transform);
+                    continue;
+                }
+                columnObject.transform.SetParent(leftColumns.transform);
             }
         }
     }
