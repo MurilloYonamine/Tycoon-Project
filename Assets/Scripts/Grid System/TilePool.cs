@@ -1,8 +1,9 @@
 // ════════════════ [ SCRIPT HEADER ] ════════════════
 // > Script   : TilePool.cs
 // > Author   : Murillo Gomes Yonamine
-// > Date     : 00/00/0000 | 00:00
-// > Purpose  : Describe this script
+// > Date     : 15/07/2025 | 04:55
+// > Purpose  : Gerenciar uma pool de tiles para otimizar a criação e reutilização de GameObjects no Unity,
+// evitando instanciamentos/destruições frequentes e melhorando a performance do jogo.
 // ════════════════════════════════════════════════════
 
 using System.Collections.Generic;
