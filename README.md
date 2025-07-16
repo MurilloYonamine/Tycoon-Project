@@ -1,49 +1,49 @@
 # Unity Grid & Shop System
 
-Este projeto em Unity implementa um sistema modular de **loja** e **grade (grid)**, permitindo ao jogador selecionar tiles em uma interface animada e posicioná-los em um tilemap via drag-and-drop com pré-visualização (ghost).
+This Unity project implements a modular **shop** and **grid** system, allowing the player to select tiles from an animated interface and place them onto a Tilemap via drag-and-drop with a ghost preview.
 
 ---
 
-## 📋 Sumário
+## 📋 Table of Contents
 
-* [Descrição](#descrição)
-* [Funcionalidades](#funcionalidades)
-* [Arquitetura](#arquitetura)
-* [Pré-requisitos](#pré-requisitos)
-* [Instalação](#instalação)
-* [Uso](#uso)
-* [Scripts Principais](#scripts-principais)
-* [Como Funciona o Fluxo](#como-funciona-o-fluxo)
-* [Futuras Melhorias](#futuras-melhorias)
-* [Licença](#licença)
-
----
-
-## Descrição
-
-Este sistema possibilita ao jogador:
-
-1. Abrir/fechar uma **loja** via tecla `Tab` (animações controladas por `Animator`).
-2. Selecionar um **tile** na loja, que ganha um efeito de pré-visualização transparente (ghost) seguindo o cursor.
-3. Posicionar o tile em uma **grade** (`Tilemap` + `Grid`), respeitando células demarcadas e ocupação.
-4. Reutilizar objetos usando um **Object Pooling** (`TilePool`), garantindo performance.
-
-O design modular e documentado facilita futuras expansões, como estados adicionais (upgrades, remoção) e interação multiplayer.
+* [Description](#description)
+* [Features](#features)
+* [Architecture](#architecture)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Core Scripts](#core-scripts)
+* [Workflow](#workflow)
+* [Future Improvements](#future-improvements)
+* [License](#license)
 
 ---
 
-## Funcionalidades
+## Description
 
-* **Loja Animada** (`ShopManager`)
-* **Preview Ghost** para posicionamento (`Tile.GhostEffect`)
-* **Verificação de Células** demarcadas e ocupadas (`GridManager`)
-* **Clique Ignora UI** para evitar interação indevida (`EventSystem`)
-* **Pooling de Tiles** para performance otimizada
-* **ScriptableObject** (`TileItemData`) para dados de tiles
+This system enables the player to:
+
+1. Open/close a **shop** using the `Tab` key (animated via `Animator`).
+2. Select a **tile** in the shop, which then follows the cursor with a semi-transparent ghost effect.
+3. Place the tile onto a **grid** (`Tilemap` + `Grid`), respecting marked and occupied cells.
+4. Reuse tile objects via **Object Pooling** (`TilePool`) for optimized performance.
+
+The modular and well-documented design simplifies future expansions such as additional states (upgrades, removal) and multiplayer support.
 
 ---
 
-## Arquitetura
+## Features
+
+* **Animated Shop** (`ShopManager`)
+* **Ghost Preview** for placement (`Tile.GhostEffect`)
+* **Grid Cell Validation** and occupancy checks (`GridManager`)
+* **UI Click Blocking** to prevent unintended interactions (`EventSystem`)
+* **Tile Pooling** for performance optimization
+* **ScriptableObject** (`TileItemData`) for tile data
+
+---
+
+## Architecture
 
 ```
  ┌─────────────┐      ┌─────────────┐      ┌────────────┐
@@ -62,55 +62,63 @@ O design modular e documentado facilita futuras expansões, como estados adicion
                                             ClickHandler
 ```
 
-* **ShopManager**: controla UI e animações da loja.
-* **TilePool**: gerencia o pool de objetos Tile.
-* **Tile**: lógica de preview, posicionamento e estados.
-* **GridManager**: trata coordenação com `Tilemap` e ocupação.
-* **ClickHandler**: dispara eventos de clique amigáveis ao novo Input System.
+* **ShopManager**: Manages shop UI and animations.
+* **TilePool**: Handles pooling of Tile objects.
+* **Tile**: Contains preview, placement logic, and state management.
+* **GridManager**: Coordinates with the `Tilemap` and tracks occupancy.
+* **ClickHandler**: Dispatches click events using the new Input System.
 
 ---
 
-## Pré-requisitos
+## Prerequisites
 
-* Unity 6 ou superior (LTS recomendado)
-* Pacote **TextMeshPro**
-* Pacote **Input System**
+* Unity 6 or later
+* **TextMeshPro** package
+* **Input System** package
 
----
+## Usage
 
-## Scripts Principais
-
-| Script            | Descrição                                            |
-| ----------------- | ---------------------------------------------------- |
-| `ShopManager.cs`  | Gerencia UI, animações e seleção de tiles na loja.   |
-| `Tile.cs`         | Lógica de preview, posicionamento e estados do tile. |
-| `GridManager.cs`  | Singleton que controla grid, tilemap e ocupação.     |
-| `ClickHandler.cs` | Trata clique do mouse com o novo Input System.       |
-| `TileItemData.cs` | `ScriptableObject` contendo dados de cada tile.      |
+1. Press **Play** in the Unity Editor.
+2. Press **Tab** to open/close the shop.
+3. Click a tile in the shop to enter ghost placement mode.
+4. Move the cursor over the grid and click to place the tile.
+5. To cancel placement, click outside the grid area or on UI.
 
 ---
 
-## Como Funciona o Fluxo
+## Core Scripts
 
-1. **Loja Abre** (`ShopManager.OpenShop`)
-2. Usuário **clica em botão** → detona `HandleButton`, coleta `TileItemData`.
-3. **Loja Fecha** → coroutine espera animação.
-4. **Pool** fornece um `Tile`; chama `SetTileItemData` + `HandleSelection(true)`.
-5. **Tile** entra em modo ghost (segue o mouse).
-6. **Tile.HandleClick** dispara ao clicar fora de UI e em célula válida → chama `PlaceTile`.
-7. Tile finaliza em posição e estado `Placed`.
-
----
-
-## Futuras Melhorias
-
-* Migrar `TileStateType` para **FSM** com múltiplos estados (Selected, Upgrading).
-* Remoção de tiles e **undo** de ação.
-* Integração de **custos** e **inventário**.
-* Dados via **Addressables** para facilitar conteúdos dinâmicos.
+| Script            | Description                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| `ShopManager.cs`  | Manages shop UI, animations, and tile selection.                     |
+| `Tile.cs`         | Handles tile preview, placement logic, and visual state.             |
+| `GridManager.cs`  | Singleton that manages grid dimensions, tilemap, and cell occupancy. |
+| `ClickHandler.cs` | Processes mouse clicks via the Unity Input System.                   |
+| `TileItemData.cs` | A `ScriptableObject` storing tile properties (name, color, sprite).  |
 
 ---
 
-## Licença
+## Workflow
+
+1. **Shop Opens** via `ShopManager.OpenShop()`
+2. Player **clicks a button** → `HandleButton` collects `TileItemData`.
+3. **Shop Closes** → coroutine waits for the close animation.
+4. **TilePool** provides an inactive `Tile`; calls `SetTileItemData` and `HandleSelection(true)`.
+5. **Tile** enters ghost mode and follows the cursor.
+6. Clicking on a valid, unoccupied cell (outside UI) triggers `PlaceTile`.
+7. The tile finalizes at the chosen position and state becomes `Placed`.
+
+---
+
+## Future Improvements
+
+* Migrate `TileStateType` to a full **FSM** with states like `Selected`, `Upgrading`, etc.
+* Add tile removal and **undo** functionality.
+* Integrate **costs** and **inventory** systems.
+* Load tile data via **Addressables** for dynamic content updates.
+
+---
+
+## License
 
 MIT © Murillo Gomes Yonamine
