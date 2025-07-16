@@ -49,17 +49,17 @@ O design modular e documentado facilita futuras expansões, como estados adicion
  ┌─────────────┐      ┌─────────────┐      ┌────────────┐
  │ ShopManager ├─────▶│ TilePool    ├─────▶│ Tile       │
  └─────────────┘      └─────────────┘      └────────────┘
-        │                                  ▲
-        │                                  │
-        ▼                                  │
-  UI (Buttons)                              │
-                                             │
-                                      ┌─────────────┐
-                                      │ GridManager │
-                                      └─────────────┘
-                                             ▲
-                                             │
-                                       ClickHandler
+        │                                        ▲
+        │                                        │
+        ▼                                        │
+  UI (Buttons)                                   │
+                                                 │
+                                          ┌─────────────┐
+                                          │ GridManager │
+                                          └─────────────┘
+                                                 ▲
+                                                 │
+                                            ClickHandler
 ```
 
 * **ShopManager**: controla UI e animações da loja.
@@ -72,35 +72,9 @@ O design modular e documentado facilita futuras expansões, como estados adicion
 
 ## Pré-requisitos
 
-* Unity 2021.3 ou superior (LTS recomendado)
+* Unity 6 ou superior (LTS recomendado)
 * Pacote **TextMeshPro**
 * Pacote **Input System**
-
----
-
-## Instalação
-
-1. Clone o repositório:
-
-   ```bash
-   git clone <URL_DO_REPOSITORIO>
-   ```
-2. Abra o projeto no Unity Hub.
-3. Instale via Package Manager:
-
-   * TextMeshPro
-   * Input System
-4. Arraste a cena principal para Build Settings.
-
----
-
-## Uso
-
-1. Pressione `Play` no Editor.
-2. Aperte `Tab` para abrir/fechar a loja.
-3. Clique em um tile na loja para ativar o modo fantasma.
-4. Posicione o cursor sobre a grade e clique para colocar.
-5. Para cancelar, clique fora da área ou sobre UI.
 
 ---
 
