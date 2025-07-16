@@ -9,73 +9,70 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.InputSystem;
 using TMPro;
+using GRID.TILE;
 
 namespace GRID
 {
     public class GridManager : MonoBehaviour
     {
-        [SerializeField] private Grid _grid;
-        [SerializeField] private Tilemap _tilemap;
-        [SerializeField] private GameObject _tilePrefab;
-        [SerializeField] private ClickHandler _clickHandler;
+        public static GridManager Instance { get; private set; }
+        [field: SerializeField] public Grid Grid { get; private set; }
+        [field: SerializeField] public Tilemap Tilemap { get; private set; }
+        [field: SerializeField] public ClickHandler ClickHandler { get; private set; }
 
-        [SerializeField] private TMP_FontAsset _font;
+        [SerializeField] private TMP_FontAsset Font;
 
         private GameObject[] _columnsArray;
-        private GameObject[,] _tileObjects;
+        [field: SerializeField] public GameObject[,] TileObjects { get; private set; }
 
         private BoundsInt _bounds;
 
         private void Awake()
         {
-            _bounds = _tilemap.cellBounds;
-            _tileObjects = new GameObject[_bounds.size.x, _bounds.size.y];
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+                return;
+            }
+            Instance = this;
+        }
+        private void Start()
+        {
+            _bounds = Tilemap.cellBounds;
+            TileObjects = new GameObject[_bounds.size.x, _bounds.size.y];
 
             TilePool.Instance.amountToPool = _bounds.size.x * _bounds.size.y;
-            TilePool.Instance.pooledObjectsContainer = _tilemap.gameObject;
+            TilePool.Instance.pooledObjectsContainer = Tilemap.gameObject;
 
             GenerateColumnsAndCoordinates();
         }
-        private void OnEnable() => _clickHandler.OnClickPerformed += HandleClick;
-        private void OnDisable() => _clickHandler.OnClickPerformed -= HandleClick;
-
-        private void HandleClick(InputAction.CallbackContext context)
+        /// <summary> Verifica se existe um tile na célula especificada no Tilemap. </summary>
+        /// <param name="cell">A posição da célula a ser verificada.</param>
+        /// <returns> Retorna true se houver um tile na célula; caso contrário, false. </returns>
+        public bool HasTileAtCell(Vector3Int cell)
         {
-            Vector3 worldPosition = GetMouseWorldPosition();
-            Vector3Int cell = _grid.WorldToCell(worldPosition);
-
-            if (!_tilemap.HasTile(cell))
+            if (!Tilemap.HasTile(cell))
             {
                 Debug.Log("Célula não demarcada no tilemap. Ignorando clique.");
-                return;
+                return false;
             }
-
-            Vector3Int coordinate = GetTileCoordinate(cell);
-
-            if (_tileObjects[coordinate.x, coordinate.y] != null)
+            return true;
+        }
+        /// <summary> Verifica se a célula lógica (coluna, linha) já está ocupada por um objeto. </summary>
+        /// <param name="coordinate"> Coordenada lógica da célula (coluna, linha). </param>
+        /// <returns> Retorna true se a célula está ocupada; caso contrário, false. </returns>
+        public bool IsCellOccupied(Vector3Int coordinate)
+        {
+            if (TileObjects[coordinate.x, coordinate.y] != null)
             {
                 Debug.Log($"Célula ({coordinate.x}, {coordinate.y}) já ocupada.");
-                return;
+                return true;
             }
-
-            Vector3 cellCenter = _grid.GetCellCenterWorld(cell);
-            //GameObject tileObject = Instantiate(_tilePrefab, cellCenter, Quaternion.identity);
-            
-            GameObject tileObject = TilePool.Instance.GetPooledObject();
-            tileObject.transform.position = cellCenter;
-            tileObject.name = $"Tile: ({coordinate.x}, {coordinate.y})";
-
-            GameObject columnObject = GetColumnObject(coordinate.x);
-            tileObject.transform.SetParent(columnObject.transform);
-
-            _tileObjects[coordinate.x, coordinate.y] = tileObject;
-
-            Debug.Log($"Coordenada: ({coordinate.x}, {coordinate.y})");
+            return false;
         }
 
-
         /// <summary> Converte uma posição de célula em coordenadas lógicas (coluna, linha), com origem no canto superior esquerdo. </summary>
-        private Vector3Int GetTileCoordinate(Vector3Int cell)
+        public Vector3Int GetTileCoordinate(Vector3Int cell)
         {
             int col = cell.x - _bounds.xMin;
             int row = _bounds.yMax - 1 - cell.y;
@@ -84,7 +81,7 @@ namespace GRID
         }
 
         /// <summary> Obtém a posição do mouse convertida para o mundo. </summary>
-        private Vector3 GetMouseWorldPosition()
+        public Vector3 GetMouseWorldPosition()
         {
             Vector2 mouseScreen = Mouse.current.position.ReadValue();
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
@@ -94,7 +91,7 @@ namespace GRID
         }
 
         /// <summary> Retorna a coluna correspondente baseada no índice. </summary>
-        private GameObject GetColumnObject(int col)
+        public GameObject GetColumnObject(int col)
         {
             if (col >= 0 && col < _columnsArray.Length)
                 return _columnsArray[col];
@@ -107,7 +104,7 @@ namespace GRID
             _columnsArray = new GameObject[_bounds.size.x];
 
             GameObject columnsRoot = new GameObject("Columns");
-            columnsRoot.transform.SetParent(_tilemap.transform);
+            columnsRoot.transform.SetParent(Tilemap.transform);
 
             GameObject leftColumns = new GameObject("Left Columns");
             leftColumns.transform.SetParent(columnsRoot.transform);
@@ -140,9 +137,9 @@ namespace GRID
             for (int y = 0; y < _bounds.size.y; y++)
             {
                 Vector3Int cell = new Vector3Int(x + _bounds.xMin, _bounds.yMax - 1 - y, 0);
-                if (!_tilemap.HasTile(cell)) continue;
+                if (!Tilemap.HasTile(cell)) continue;
 
-                Vector3 cellCenter = _grid.GetCellCenterWorld(cell);
+                Vector3 cellCenter = Grid.GetCellCenterWorld(cell);
 
                 GameObject textObj = new GameObject($"Coordinate Text: ({x},{y})");
                 textObj.transform.position = cellCenter;
@@ -153,7 +150,7 @@ namespace GRID
                 textMeshPro.fontSize = 3;
                 textMeshPro.alignment = TextAlignmentOptions.Center;
                 textMeshPro.color = Color.white;
-                textMeshPro.font = _font;
+                textMeshPro.font = Font;
             }
         }
     }
