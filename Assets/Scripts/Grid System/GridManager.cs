@@ -151,6 +151,9 @@ namespace GRID
                 textMeshPro.alignment = TextAlignmentOptions.Center;
                 textMeshPro.color = Color.white;
                 textMeshPro.font = Font;
+
+                if (TryGetComponent<RectTransform>(out RectTransform rectTransform))
+                    rectTransform.sizeDelta = new Vector2(1f, 1f);
             }
         }
     }
