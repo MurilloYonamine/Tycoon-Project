@@ -40,11 +40,7 @@ namespace GRID.MODULES
         }
 
         /// <summary> Atualiza os bounds para recálculos de coordenadas. </summary>
-        public void UpdateBounds(BoundsInt newBounds)
-        {
-            // Se necessário, podemos tornar os bounds mutáveis
-            // Por enquanto mantemos imutável no construtor
-        }
+        public void UpdateBounds(BoundsInt newBounds) { }
         #endregion
     }
 }
