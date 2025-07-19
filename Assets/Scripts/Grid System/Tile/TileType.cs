@@ -1,19 +1,18 @@
 // ════════════════ [ SCRIPT HEADER ] ════════════════
-// > Script   : ITileState.cs
+// > Script   : TileType.cs
 // > Author   : Murillo Gomes Yonamine
-// > Date     : 15/07/2025 | 22:08
-// > Purpose  : Interface para a troca de estados de um tile.
+// > Date     : 18/07/2025 | 17:50
+// > Purpose  : Describe this script
 // ════════════════════════════════════════════════════
 
 using UnityEngine;
 
 namespace GRID.TILE
 {
-    public interface ITileState
+    public enum TileType
     {
-        void Enter(Tile tile);
-        void Exit(Tile tile);
-        void Update(Tile tile);
-        bool CanPlace();
+        Default,
+        Building,
+        Path,
     }
 }

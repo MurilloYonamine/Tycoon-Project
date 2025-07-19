@@ -24,14 +24,12 @@ namespace SHOP
         [SerializeField] private GameObject _tileContainer;
         [SerializeField] private List<GameObject> _tiles;
 
-        private TileItemData tileItemData;
-
         private bool _shopIsOpen = false;
 
         private void Start()
         {
             _shopIsOpen = false;
-            SetTiles();
+            SetTestTiles();
         }
 
         private void Update()
@@ -46,58 +44,73 @@ namespace SHOP
         }
 
         /// <summary> Inicia a coroutine para lidar com as ações do tile após o fechamento da loja. </summary>
-        private void HandleButton() => StartCoroutine(HandleTileAfterClose());
+        private void HandleButton(TileItemData itemData) => StartCoroutine(HandleTileAfterClose(itemData));
 
         /// <summary> Fecha a loja e, após a animação, instancia e configura o tile selecionado. </summary>
-        private IEnumerator HandleTileAfterClose()
+        private IEnumerator HandleTileAfterClose(TileItemData itemData)
         {
             CloseShop();
 
-            // Aguarda até que a loja esteja fechada
             while (_shopIsOpen) yield return null;
 
-            // Obtém um objeto tile da pool e ativa
             GameObject tilePool = TilePool.Instance.GetPooledObject();
             tilePool.transform.SetParent(null);
             tilePool.SetActive(true);
 
-            // Configura o tile com os dados selecionados
             Tile tile = tilePool.GetComponent<Tile>();
-            tile.SetTileItemData(tileItemData);
+
+            // Fazemos uma cópia para evitar compartilhamento de instância
+            TileItemData copiedData = ScriptableObject.CreateInstance<TileItemData>();
+            copiedData.SetName(itemData.Name);
+            copiedData.SetColor(itemData.Color);
+            copiedData.SetTileType(itemData.TileType);
+
+            tile.SetTileItemData(copiedData);
             tile.HandleSelection(true);
         }
 
         /// <summary> Configura os tiles da loja, atribuindo cores, nomes e eventos de clique. </summary>
-        private void SetTiles()
+        private void SetTestTiles()
         {
-            Color[] colors = { Color.red, Color.green, Color.blue, Color.yellow, Color.magenta, Color.gray };
-            string[] colorNames = { "Vermelho", "Verde", "Azul", "Amarelo", "Magenta", "Cinza" };
+            // Caminho
+            Color pathColor = Color.green;
+            string pathName = "Caminho";
+            ConfigureTile(_tiles[0], pathColor, pathName, TileType.Path);
 
-            for (int i = 0; i < _tiles.Count; i++)
+            // Contruções
+            Color[] colors = { Color.yellow, Color.red, Color.blue, Color.magenta, Color.gray };
+            string[] colorNames = { "Amarelo", "Vermelho", "Azul", "Magenta", "Cinza" };
+
+            for (int i = 1; i < _tiles.Count; i++)
             {
-                GameObject tile = _tiles[i];
-                Image squareImage = tile.GetComponentInChildren<Image>();
-                TextMeshProUGUI colorText = tile.GetComponentInChildren<TextMeshProUGUI>();
-
-                squareImage.color = colors[i % colors.Length];
-                colorText.text = colorNames[i % colorNames.Length];
-
-                Button button = tile.GetComponentInChildren<Button>();
-
-                TileItemData itemData = TileItemData.CreateInstance<TileItemData>();
-                itemData.SetName(colorText.text);
-                itemData.SetColor(squareImage.color);
-
-                button.onClick.RemoveAllListeners();
-
-                button.onClick.AddListener(() =>
-                {
-                    tileItemData = itemData;
-                    HandleButton();
-                });
+                Color color = colors[i % colors.Length];
+                string colorName = colorNames[i % colorNames.Length];
+                ConfigureTile(_tiles[i], color, colorName, TileType.Building);
             }
         }
+        /// <summary> Configura visualmente e funcionalmente um tile de teste, atribuindo cor, nome e evento de clique. </summary>
+        private void ConfigureTile(GameObject tileObject, Color color, string tileName, TileType tileType)
+        {
+            Image squareImage = tileObject.GetComponentInChildren<Image>();
+            TextMeshProUGUI tileTMP = tileObject.GetComponentInChildren<TextMeshProUGUI>();
+            Button button = tileObject.GetComponentInChildren<Button>();
+            Tile tile = tileObject.GetComponent<Tile>();
 
+            squareImage.color = color;
+            tileTMP.text = tileName;
+
+            TileItemData itemData = ScriptableObject.CreateInstance<TileItemData>();
+            itemData.SetName(tileName);
+            itemData.SetColor(color);
+            itemData.SetTileType(tileType);
+
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() =>
+            {
+                HandleButton(itemData);
+            });
+
+        }
         /// <summary> Abre a loja, acionando a animação correspondente. </summary>
         private void OpenShop()
         {

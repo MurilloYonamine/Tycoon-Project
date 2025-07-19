@@ -59,10 +59,7 @@ namespace GRID.TILE
         {
             for (int i = 0; i < amountToPool; i++)
             {
-                if (!pooledObjects[i].activeInHierarchy)
-                {
-                    return pooledObjects[i];
-                }
+                if (!pooledObjects[i].activeInHierarchy) return pooledObjects[i];
             }
             return null;
         }

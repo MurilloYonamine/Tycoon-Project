@@ -16,8 +16,8 @@ namespace GRID.TILE
 {
     public class Tile : MonoBehaviour
     {
-        [SerializeField] private TileState _currentState = TileState.Unplaced;
-        [SerializeField] private TileItemData _tileItemData = null;
+        [field: SerializeField] public TileState CurrentState { get; private set; } = TileState.Unplaced;
+        [field: SerializeField] public TileItemData TileItemData { get; private set; } = null;
 
         private SpriteRenderer _spriteRenderer;
 
@@ -48,37 +48,46 @@ namespace GRID.TILE
         {
             if (!CanPlaceTile()) return;
             if (IsPointerOverUI()) return;
+            if (TileItemData == null) return;
 
-            Vector3Int cell = GetValidCell();
-            if (cell == Vector3Int.zero) return;
+            Vector3Int? cellNullable = GetValidCell();
+            if (!cellNullable.HasValue) return;
+
+            Vector3Int cell = cellNullable.Value;
 
             Vector3Int coordinate = GridManager.Instance.GetTileCoordinate(cell);
             if (GridManager.Instance.IsCellOccupied(coordinate)) return;
 
             PlaceTile(cell, coordinate);
-        }
+
+            switch (TileItemData.TileType)
+            {
+                case TileType.Path: GridManager.Instance.AddTileToPathList(this); break;
+            }
+        }   
         /// <summary> Verifica se o tile pode ser colocado na grade, ou seja, se ainda não foi posicionado. </summary>
         /// <returns> Retorna true se o tile ainda não estiver colocado. </returns>
-        private bool CanPlaceTile() => _currentState != TileState.Placed;
+        private bool CanPlaceTile() => CurrentState != TileState.Placed;
 
         /// <summary> Verifica se o ponteiro do mouse está sobre um elemento da interface de usuário (UI). </summary>
         /// <returns> Retorna true se o ponteiro estiver sobre UI; caso contrário, false. </returns>
         private bool IsPointerOverUI() => EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
-
         /// <summary> Obtém a célula válida do grid sob o ponteiro do mouse, se houver uma tile marcada no tilemap. </summary>
-        /// <returns> A célula correspondente no grid, ou Vector3Int.zero se não for válida. </returns>
-        private Vector3Int GetValidCell()
+        /// <returns> A célula correspondente no grid, ou null se não for válida. </returns>
+        private Vector3Int? GetValidCell()
         {
             Vector3 worldPosition = GridManager.Instance.GetMouseWorldPosition();
             Vector3Int cell = _grid.WorldToCell(worldPosition);
             if (!GridManager.Instance.HasTileAtCell(cell))
-                return Vector3Int.zero;
+                return null;
             return cell;
         }
 
         /// <summary> Posiciona o tile na célula e coordenada lógica informada, atualizando o estado visual e estrutural do tile. </summary>
         private void PlaceTile(Vector3Int cell, Vector3Int coordinate)
         {
+            if (TileItemData == null) return;
+
             Vector3 cellCenter = _grid.GetCellCenterWorld(cell);
             transform.position = cellCenter;
             gameObject.name = $"Tile: ({coordinate.x}, {coordinate.y})";
@@ -88,11 +97,13 @@ namespace GRID.TILE
 
             GridManager.Instance.TileObjects[coordinate.x, coordinate.y] = gameObject;
 
-            Debug.Log($"Coordenada: ({coordinate.x}, {coordinate.y})");
+            //Debug.Log($"Coordenada: ({coordinate.x}, {coordinate.y})");
+
+            TileItemData.SetCoordinate(coordinate.x, coordinate.y);
 
             HandleSelection(false);
             ResetOpacity();
-            _currentState = TileState.Placed;
+            CurrentState = TileState.Placed;
         }
 
         /// <summary> Ativa ou desativa o modo fantasma (ghost mode) do tile, alterando sua opacidade. </summary>
@@ -105,10 +116,10 @@ namespace GRID.TILE
         }
 
         /// <summary> Define os dados do tile e atualiza sua cor visual. </summary>
-        public void SetTileItemData(TileItemData tileItemData)
+        public void SetTileItemData(TileItemData newItemData)
         {
-            this._tileItemData = tileItemData;
-            _spriteRenderer.color = tileItemData._color;
+            TileItemData = newItemData;
+            _spriteRenderer.color = newItemData.Color;
         }
 
         /// <summary> Faz o tile seguir a posição do mouse na tela. </summary>

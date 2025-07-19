@@ -10,15 +10,18 @@ using UnityEngine;
 
 namespace GRID.TILE
 {
-    [CreateAssetMenu(fileName = "TileItemData", menuName = "ScriptableObjects/TileItemData", order = 1)]
+    [CreateAssetMenu(fileName = "TileItemData", menuName = "Tiles/TileItemData", order = 1)]
     public class TileItemData : ScriptableObject
     {
-        [field: SerializeField] public string _name { get; private set; } = string.Empty;
-        [field: SerializeField] public Color _color { get; private set; } = Color.white;
-        [field: SerializeField] public Sprite _sprite { get; private set; } = null;
+        [field: SerializeField] public TileType TileType { get; private set; } = TileType.Default;
+        [field: SerializeField] public string Name { get; private set; } = string.Empty;
+        [field: SerializeField] public Color Color { get; private set; } = Color.white;
+        [field: SerializeField] public Sprite Sprite { get; private set; } = null;
+        [field: SerializeField] public Vector2 Coordinate { get; private set; } = Vector2.zero;
 
-        public void SetColor(Color color) => this._color = color;
-        public void SetName(string name) => this._name = name;
-
+        public void SetColor(Color color) => this.Color = color;
+        public void SetName(string name) => this.Name = name;
+        public void SetTileType(TileType tileType) => this.TileType = tileType;
+        public void SetCoordinate(int column, int row) => Coordinate = new Vector2(column, row);
     }
 }
