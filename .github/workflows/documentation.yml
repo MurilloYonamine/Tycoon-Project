@@ -1,55 +1,64 @@
-name: Example documentation
+name: 📚 Build and Deploy Documentation
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   # Build the documentation
   build:
     runs-on: windows-latest # Required by DocFX
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        # with:
-        #   submodules: true
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install DocFX
+      - name: 📦 Install DocFX
         run: choco install -y docfx
 
-      - name: Use README.md as index.md
-        run: cp README.md Documentation/index.md
+      - name: 📋 Use index.md as main page
+        run: |
+          if (Test-Path "README.md") {
+            Copy-Item README.md index.md -Force
+          }
+        shell: pwsh
 
-      - name: Build
-        run: docfx Documentation/docfx.json
+      - name: 🏗️ Build Documentation
+        run: docfx docfx.json
+        continue-on-error: false
 
-      # Upload the generated documentation
-      - name: Upload site artifact
-        uses: actions/upload-artifact@v1
+      - name: 📁 Setup Pages
+        uses: actions/configure-pages@v4
+
+      # Upload the generated documentation (usando v4 atualizada)
+      - name: 📤 Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: _site
-          path: _site # Must equals the 'build.dest' value on your docfx.json
+          path: '_site'
 
-  # Deploy the generated documentation to the gh-pages branch
+  # Deploy the generated documentation
   deploy:
-    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        # with:
-        #   submodules: true
-
-      # Download the generated documentation
-      - name: Download site artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: _site
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: _site
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
