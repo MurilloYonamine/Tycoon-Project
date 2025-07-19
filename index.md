@@ -51,8 +51,6 @@ O **Tycoon Project** é um sistema completo de grid desenvolvido em Unity para c
 
 </div>
 
-</div>
-
 ---
 
 ## 🏗️ **Arquitetura do Sistema**
