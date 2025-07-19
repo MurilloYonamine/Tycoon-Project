@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HoverManager | Tycoon Project API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HoverManager | Tycoon Project API ">
+      
+      <meta name="description" content="M&#243;dulo especializado respons&#225;vel pelo sistema de hover visual sobre tiles vazios no grid. Fornece feedback visual em tempo real quando o cursor est&#225; sobre c&#233;lulas dispon&#237;veis para posicionamento.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/new/main/apiSpec/new?filename=GRID_MODULES_HoverManager.md&amp;value=---%0Auid%3A%20GRID.MODULES.HoverManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="GRID.MODULES.HoverManager">
+
+
+
+  <h1 id="GRID_MODULES_HoverManager" data-uid="GRID.MODULES.HoverManager" class="text-break">
+Class HoverManager  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="GRID.html">GRID</a>.<a class="xref" href="GRID.MODULES.html">MODULES</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Módulo especializado responsável pelo sistema de hover visual sobre tiles vazios no grid.
+Fornece feedback visual em tempo real quando o cursor está sobre células disponíveis para posicionamento.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HoverManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">HoverManager</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+  <h2 id="GRID_MODULES_HoverManager_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Este módulo implementa um sistema eficiente de hover que:</p>
+<ul>
+<li>Detecta movimento do mouse sobre o grid</li>
+<li>Valida se células são elegíveis para hover (vazias mas com tiles base)</li>
+<li>Aplica efeitos visuais temporários mantendo estado original</li>
+<li>Gerencia transições suaves entre células</li>
+<li>Otimiza performance evitando atualizações desnecessárias</li>
+</ul>
+<p>O sistema de hover melhora significativamente a experiência do usuário ao
+providenciar feedback visual claro sobre onde tiles podem ser posicionados.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="GRID_MODULES_HoverManager__ctor_" data-uid="GRID.MODULES.HoverManager.#ctor*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager__ctor_GRID_GridManager_System_Boolean_UnityEngine_Color_" data-uid="GRID.MODULES.HoverManager.#ctor(GRID.GridManager,System.Boolean,UnityEngine.Color)">
+  HoverManager(GridManager, bool, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inicializa o HoverManager com configurações personalizáveis.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HoverManager(GridManager gridManager, bool enableHover = true, Color hoverColor = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>gridManager</code> <a class="xref" href="GRID.GridManager.html">GridManager</a></dt>
+    <dd><p>Referência ao GridManager principal.</p>
+</dd>
+    <dt><code>enableHover</code> <span class="xref">bool</span></dt>
+    <dd><p>Se os efeitos de hover devem estar habilitados inicialmente.</p>
+</dd>
+    <dt><code>hoverColor</code> <span class="xref">Color</span></dt>
+    <dd><p>Cor para efeitos de hover (padrão é amarelo se não especificado).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager__ctor_GRID_GridManager_System_Boolean_UnityEngine_Color__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>O construtor configura todas as dependências necessárias e define configurações padrão
+sensatas para o sistema de hover. A cor padrão amarela fornece bom contraste visual
+na maioria dos cenários.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="GRID_MODULES_HoverManager_CurrentHoveredCell_" data-uid="GRID.MODULES.HoverManager.CurrentHoveredCell*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_CurrentHoveredCell" data-uid="GRID.MODULES.HoverManager.CurrentHoveredCell">
+  CurrentHoveredCell
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtém a célula atualmente sob hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3Int CurrentHoveredCell { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3Int</span></dt>
+    <dd><p>Coordenada da célula sendo destacada, ou Vector3Int.zero se nenhuma.</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager_CurrentHoveredCell_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Útil para outros sistemas que precisam coordenar com o sistema de hover,
+como sistemas de preview de posicionamento ou tooltips contextuais.</p>
+</div>
+
+
+
+
+  <a id="GRID_MODULES_HoverManager_HoverColor_" data-uid="GRID.MODULES.HoverManager.HoverColor*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_HoverColor" data-uid="GRID.MODULES.HoverManager.HoverColor">
+  HoverColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtém a cor atual do hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color HoverColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Color</span></dt>
+    <dd><p>Cor sendo usada para efeitos de hover.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_MODULES_HoverManager_IsHoverEnabled_" data-uid="GRID.MODULES.HoverManager.IsHoverEnabled*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_IsHoverEnabled" data-uid="GRID.MODULES.HoverManager.IsHoverEnabled">
+  IsHoverEnabled
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verifica se o hover está habilitado.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHoverEnabled { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>True se o sistema de hover está ativo.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_MODULES_HoverManager_IsHovering_" data-uid="GRID.MODULES.HoverManager.IsHovering*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_IsHovering" data-uid="GRID.MODULES.HoverManager.IsHovering">
+  IsHovering
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verifica se está fazendo hover sobre um tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHovering { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>True se algum tile está atualmente destacado por hover.</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager_IsHovering_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Propriedade somente leitura que permite outros sistemas verificarem
+o estado do hover para coordenação de funcionalidades.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="GRID_MODULES_HoverManager_ClearHoverEffects_" data-uid="GRID.MODULES.HoverManager.ClearHoverEffects*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_ClearHoverEffects" data-uid="GRID.MODULES.HoverManager.ClearHoverEffects">
+  ClearHoverEffects()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove todos os efeitos de hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearHoverEffects()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager_ClearHoverEffects_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Método útil para limpeza quando o sistema precisa ser reiniciado ou
+quando o contexto muda (ex: abertura de menus). Garante que nenhum
+efeito visual permanente seja deixado no grid.</p>
+</div>
+
+
+
+
+  <a id="GRID_MODULES_HoverManager_SetHoverColor_" data-uid="GRID.MODULES.HoverManager.SetHoverColor*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_SetHoverColor_UnityEngine_Color_" data-uid="GRID.MODULES.HoverManager.SetHoverColor(UnityEngine.Color)">
+  SetHoverColor(Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define a cor do efeito de hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetHoverColor(Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>Nova cor para efeitos de hover.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager_SetHoverColor_UnityEngine_Color__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Permite personalização dinâmica da cor de hover, útil para diferentes
+contextos de jogo ou preferências do usuário.</p>
+</div>
+
+
+
+
+  <a id="GRID_MODULES_HoverManager_SetHoverEnabled_" data-uid="GRID.MODULES.HoverManager.SetHoverEnabled*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_SetHoverEnabled_System_Boolean_" data-uid="GRID.MODULES.HoverManager.SetHoverEnabled(System.Boolean)">
+  SetHoverEnabled(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ativa ou desativa o efeito de hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetHoverEnabled(bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enabled</code> <span class="xref">bool</span></dt>
+    <dd><p>True para ativar, false para desativar.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager_SetHoverEnabled_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Quando desabilitado, automaticamente limpa qualquer efeito de hover ativo
+para evitar artifacts visuais. Útil para diferentes modos de jogo onde
+hover pode não ser apropriado.</p>
+</div>
+
+
+
+
+  <a id="GRID_MODULES_HoverManager_UpdateHover_" data-uid="GRID.MODULES.HoverManager.UpdateHover*"></a>
+
+  <h3 id="GRID_MODULES_HoverManager_UpdateHover" data-uid="GRID.MODULES.HoverManager.UpdateHover">
+  UpdateHover()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Modules/HoverManager.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Atualiza o sistema de hover. Deve ser chamado no Update do GridManager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateHover()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_MODULES_HoverManager_UpdateHover_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Este método deve ser chamado a cada frame para manter a responsividade do sistema de hover.
+É otimizado para executar apenas quando necessário, verificando mudanças de estado
+antes de processar efeitos visuais.</p>
+</div>
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

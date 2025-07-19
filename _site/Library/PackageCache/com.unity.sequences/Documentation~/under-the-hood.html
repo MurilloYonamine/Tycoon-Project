@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Under the hood | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Under the hood | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/under-the-hood.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="under-the-hood">Under the hood</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>The Sequences features automatically create, configure and update for you all the asset files and folders as well as the GameObjects and hierarchy to help you keep your focus on your cinematic creation.</p>
+<h2 id="sequences-package-underlying-processes">Sequences package underlying processes</h2>
+<p>This section describes the underlying processes Unity automatically goes through when you use the Sequences features.</p>
+<h3 id="master-sequence-creation">Master Sequence creation</h3>
+<p>When you create a Master Sequence from the Sequences window:</p>
+<ul>
+<li><p>In the Project, this creates a script asset <em>and</em> a Timeline asset:</p>
+<ul>
+<li>Named both after the Master Sequence</li>
+<li>Within a folder named after the Master Sequence (under the <code>Assets/Sequences</code> folder)</li>
+</ul>
+</li>
+<li><p>In the Hierarchy, this creates a GameObject:</p>
+<ul>
+<li>Named after the Master Sequence</li>
+<li>With a Playable Director component bound to the Timeline asset of the Master Sequence</li>
+<li>With a Sequence Filter component bound to the script asset of the Master Sequence</li>
+</ul>
+</li>
+</ul>
+<h3 id="sequence-creation-in-another-sequence">Sequence creation in another Sequence</h3>
+<p>When you create a Sequence in another Sequence (here called &quot;parent Sequence&quot;, which can be a Master Sequence) from the Sequences window:</p>
+<ul>
+<li><p>In the Project, this creates a Timeline asset:</p>
+<ul>
+<li>Named after the new Sequence</li>
+<li>Within the folder that stores the parent Sequence</li>
+</ul>
+</li>
+<li><p>In the Hierarchy, this creates a GameObject:</p>
+<ul>
+<li>Named after the new Sequence</li>
+<li>As a child of the GameObject corresponding to the parent Sequence</li>
+<li>With a Playable Director component linking to the Timeline asset of the new Sequence</li>
+<li>With a Sequence Filter component linking to the script asset of the Master Sequence</li>
+</ul>
+</li>
+<li><p>In the Timeline of the parent Sequence, this creates a clip:</p>
+<ul>
+<li>Within a &quot;Sequences&quot; track</li>
+<li>Bound to the created Timeline asset of the new Sequence, as a nested Timeline</li>
+</ul>
+</li>
+</ul>
+<h3 id="sequence-asset-creation">Sequence Asset creation</h3>
+<p>When you create a Sequence Asset under a specific Asset Collection type in the Sequence Assets window:</p>
+<ul>
+<li>In the Project, this creates a Prefab <em>and</em> a Timeline asset:
+<ul>
+<li>Both named after the Sequence Asset</li>
+<li>Within a folder named after the Sequence Asset (under the <code>Assets/Sequence Assets</code> folder)</li>
+</ul>
+</li>
+</ul>
+<h3 id="variant-creationduplication">Variant creation/duplication</h3>
+<p>When you <em>add</em> a Variant from a Sequence Asset:</p>
+<ul>
+<li>In the Project, this creates a Prefab Variant from the base Prefab <em>and</em> a Timeline asset:
+<ul>
+<li>Both named after the Sequence Asset Variant</li>
+<li>Within the folder that stores the Sequence Asset</li>
+</ul>
+</li>
+</ul>
+<p>When you <em>duplicate</em> a Variant, all happens the same, except that the content of the new Prefab Variant is an exact copy of the Prefab Variant you duplicated.</p>
+<h3 id="sequence-population">Sequence population</h3>
+<p>When you populate a Sequence with a Sequence Asset from the Sequence Assembly window, this instantiates the Sequence Asset Prefab under the Sequence GameObject in the Hierarchy.</p>
+<h3 id="sequence-asset-variant-swapping">Sequence Asset Variant swapping</h3>
+<p>When you swap Sequence Asset Variants in a Sequence from the Sequence Assembly window, this swaps the corresponding instances of Sequence Asset Prefab Variants under the Sequence GameObject in the Hierarchy.</p>
+<h2 id="sequence-assets-and-variants">Sequence Assets and Variants</h2>
+<p>Sequence Assets are <a href="https://docs.unity3d.com/Manual/Prefabs.html">Prefabs</a>. This helps you keep all your creative assets self-contained and prevents you from experiencing any binding issues across your assets.</p>
+<p>Sequence Asset Variants are <a href="https://docs.unity3d.com/Manual/PrefabVariants.html">Prefab Variants</a>. This helps you manage multiple variations of your creative assets through a core functionality of Unity.</p>
+<p>Sequence Asset Prefabs and Prefab Variants include the following components:</p>
+<ul>
+<li>A <strong><a href="ref-components.html#sequence-asset">Sequence Asset</a></strong>, which mostly makes Unity recognize the Prefab as a Sequence Asset and categorizes it into a specific Asset Collection type.</li>
+<li>A <strong>Playable Director</strong> that binds the Prefab with its Timeline asset.</li>
+</ul>
+<p><img src="images/sequence-asset-prefab-in-project.png" alt=""></p>
+<p>Unity stores Sequence Assets and Variants in specific <a href="#the-sequence-assets-folder">Project folders</a> along with other functional assets, and instantiates them as any Prefab <a href="#sequence-assets-in-hierarchy">in the Hierarchy</a>.</p>
+<h2 id="hierarchy">Hierarchy</h2>
+<p>When you start to create your Sequences, Unity uses the Scene that is currently open in your Project. As you build and populate your Editorial structure, Unity automatically creates and adjusts the Hierarchy of the Scene.</p>
+<h3 id="sequence-gameobjects">Sequence GameObjects</h3>
+<p>Each Sequence has a corresponding GameObject in the Hierarchy window, and the overall structure follows the hierarchy that you create through the Sequences window.</p>
+<p><img src="images/hierarchy-editorial-structure.png" alt=""></p>
+<p>A Sequence GameObject includes the following components:</p>
+<ul>
+<li>A <strong>Playable Director</strong> that binds the GameObject with its Timeline asset.</li>
+<li>A <strong><a href="ref-components.html#sequence-filter">Sequence Filter</a></strong>, which mostly makes Unity recognize the GameObject as a Sequence.</li>
+<li>An optional <strong><a href="ref-components.html#scene-loading-policy">Scene Loading Policy</a></strong> component, more likely on a Master Sequence, which helps you manage the automatic loading of Scenes in runtime if you are using <a href="timeline-window.html#scene-activation-track">Scene Activation Tracks</a> in your Editorial.</li>
+</ul>
+<p><img src="images/inspector-sequence-gameobject.png" alt=""></p>
+<blockquote>
+<p><strong>Note:</strong> You can convert any Sequence GameObject into a Prefab. However, this choice comes with a few side effects you should be aware of. See <a href="sequences-as-prefabs.html">how to manage Sequences as Prefabs</a>.</p>
+</blockquote>
+<h3 id="sequence-assets-in-hierarchy">Sequence Assets in Hierarchy</h3>
+<p>Each Sequence Asset or Variant that you added in a Sequence has its corresponding Prefab or Prefab Variant instance under the GameObject that represents this Sequence.</p>
+<p><img src="images/hierarchy-sequence-assets.png" alt=""></p>
+<h2 id="project-folder-structure">Project folder structure</h2>
+<p>The assets created when you use the Sequences features are stored in two main folders within the Assets folder:</p>
+<ul>
+<li>Sequences</li>
+<li>Sequence Assets</li>
+</ul>
+<h3 id="the-sequences-folder">The Sequences folder</h3>
+<p>The Sequences folder contains all script and Timeline assets related to your Sequences, and its overall structure follows the hierarchy that you create through the Sequences window.</p>
+<p><img src="images/project-folder-sequences.png" alt=""></p>
+<ul>
+<li><p>Each Sequence, including the Master Sequence, has its own Timeline asset. The Timeline window displays these timeline assets as you browse through your Sequences.</p>
+</li>
+<li><p>There is one script asset per each structure composed of a Master Sequence and all Sequences under it.</p>
+</li>
+</ul>
+<h3 id="the-sequence-assets-folder">The Sequence Assets folder</h3>
+<p>The Sequence Assets folder contains all Sequence Assets and their Variants.</p>
+<p><img src="images/project-folder-sequence-assets.png" alt=""></p>
+<p>Each folder corresponds to a single Sequence Asset and contains:</p>
+<ul>
+<li>The Prefab that corresponds to the base Cinematic Asset.</li>
+<li>All Prefab Variants that correspond to the Sequence Asset Variants you might have created.</li>
+<li>One Timeline asset per each Prefab and Prefab Variant.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/under-the-hood.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

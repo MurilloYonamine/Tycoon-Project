@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>About Autodesk&#174; FBX&#174; SDK for Unity | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="About Autodesk&#174; FBX&#174; SDK for Unity | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.autodesk.fbx/Documentation~/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="about-autodesk-fbx-sdk-for-unity">About Autodesk® FBX® SDK for Unity</h1>
+
+<p>The C# Autodesk® FBX® SDK package provides access to a subset of the Autodesk® FBX® SDK from Unity C# scripts.</p>
+<p>The Autodesk® FBX® SDK is a C++ software development platform and API toolkit that is free and easy-to-use. It allows application and content vendors to transfer existing content into the FBX format with minimal effort.</p>
+<blockquote>
+<p><strong>Note:</strong> The C# Autodesk® FBX® SDK exposes only <a href="../api/index.html">a subset of the full API</a>. That subset enables exporter tools, such as the <a href="https://docs.unity3d.com/Packages/com.unity.formats.fbx@latest">FBX Exporter</a> package. Unity does not recommend to use the C# Autodesk® FBX® SDK package for FBX importing. See <a href="#known-issues-and-limitations">Known issues and limitations</a> for more information.</p>
+</blockquote>
+<h2 id="contents">Contents</h2>
+<p>The Autodesk® FBX® SDK for Unity package contains:</p>
+<ul>
+<li>C# bindings</li>
+<li>Compiled binaries for MacOS, Windows, and Ubuntu that include the FBX SDK</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<p>The Autodesk® FBX® SDK for Unity package is compatible with the following versions of the Unity Editor:</p>
+<ul>
+<li>2020.3 and later</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Unity automatically installs the Autodesk® FBX® SDK as a dependency of the <a href="https://docs.unity3d.com/Packages/com.unity.formats.fbx@latest">FBX Exporter</a> package.</p>
+<blockquote>
+<p><strong>Note:</strong> The Package Manager UI does not allow you to discover it, but you can install it without installing the FBX Exporter. In that case, you need to <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest">add it to your package manifest</a>.</p>
+</blockquote>
+<h2 id="including-the-package-in-a-build">Including the package in a build</h2>
+<p>By default, Unity does not include this package in builds, you can only use it in the Editor. However, it is possible to use this package at runtime on some specific platforms.</p>
+<blockquote>
+<p><strong>Note:</strong> You can currently use the package in Windows/OSX/Linux standalone builds only.</p>
+</blockquote>
+<p>To include the Autodesk® FBX® SDK for Unity package in your build:</p>
+<ol>
+<li>In the Unity Editor main menu, select <strong>Edit &gt; Project Settings</strong>.</li>
+<li>In <strong>Player</strong> properties, expand the <strong>Other Settings</strong> section.</li>
+<li>Under <strong>Configuration</strong>, in the <strong>Scripting Define Symbols</strong> field, add <code>FBXSDK_RUNTIME</code>.</li>
+</ol>
+<h2 id="known-issues-and-limitations">Known issues and limitations</h2>
+<h4 id="limited-import-capabilities">Limited import capabilities</h4>
+<p>In this version of the package, you cannot downcast SDK C# objects, which limits the use of the bindings for an importer.</p>
+<p>For example, if the FBX SDK declares in C++ that it returns an <code>FbxDeformer</code>, you can safely cast the deformer to a skin deformer on the C++ side if you happen to know it is an <code>FbxSkinDeformer</code>. However, on the C# side, this is not permitted.</p>
+<h4 id="unexpected-crashes-following-invalid-operations">Unexpected crashes following invalid operations</h4>
+<p>While there are guards against some common errors, you might make Unity crash if you write C# code that directs the FBX SDK to perform invalid operations.</p>
+<p>For example, if you have an <code>FbxProperty</code> in C# and you delete the <code>FbxNode</code> that contains the property, the use of <code>FbxProperty</code> may produce an undefined behavior. This might even make the Unity Editor crash. Make sure to read the Editor log if you encounter unexpected crashes when you write FBX SDK C# code.</p>
+<h4 id="linux-not-supported">Linux not supported</h4>
+<p>Linux support is currently experimental on this package. Unity does not provide support for it.</p>
+<h4 id="linux-requires-libstdc-6028">Linux requires libstdc++ 6.0.28+</h4>
+<p>On Linux, libstdc++ 6.0.28 is required to be installed in order to use the package.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.autodesk.fbx/Documentation~/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

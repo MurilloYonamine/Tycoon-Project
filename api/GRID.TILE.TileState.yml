@@ -1,0 +1,134 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.TILE.TileState
+  commentId: T:GRID.TILE.TileState
+  id: TileState
+  parent: GRID.TILE
+  children:
+  - GRID.TILE.TileState.Placed
+  - GRID.TILE.TileState.Unplaced
+  langs:
+  - csharp
+  - vb
+  name: TileState
+  nameWithType: TileState
+  fullName: GRID.TILE.TileState
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileState.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TileState
+    path: Assets/Scripts/Grid System/Tile/TileState.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define os estados possíveis de um tile durante seu ciclo de vida.
+  remarks: >-
+    O sistema de estados controla:
+
+    - Comportamento visual (ghost mode, opacidade)
+
+    - Interações permitidas (movimento, posicionamento)
+
+    - Validações de posicionamento
+
+    - Transições entre estados
+  example: []
+  syntax:
+    content: public enum TileState
+    content.vb: Public Enum TileState
+- uid: GRID.TILE.TileState.Unplaced
+  commentId: F:GRID.TILE.TileState.Unplaced
+  id: Unplaced
+  parent: GRID.TILE.TileState
+  langs:
+  - csharp
+  - vb
+  name: Unplaced
+  nameWithType: TileState.Unplaced
+  fullName: GRID.TILE.TileState.Unplaced
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileState.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Unplaced
+    path: Assets/Scripts/Grid System/Tile/TileState.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: >-
+    Estado inicial quando o tile não foi posicionado no grid.
+
+    Neste estado o tile segue o cursor em modo fantasma.
+  example: []
+  syntax:
+    content: Unplaced = 0
+    return:
+      type: GRID.TILE.TileState
+- uid: GRID.TILE.TileState.Placed
+  commentId: F:GRID.TILE.TileState.Placed
+  id: Placed
+  parent: GRID.TILE.TileState
+  langs:
+  - csharp
+  - vb
+  name: Placed
+  nameWithType: TileState.Placed
+  fullName: GRID.TILE.TileState.Placed
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileState.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Placed
+    path: Assets/Scripts/Grid System/Tile/TileState.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: >-
+    Estado final quando o tile foi posicionado com sucesso no grid.
+
+    Neste estado o tile não pode mais ser movido e tem opacidade total.
+  example: []
+  syntax:
+    content: Placed = 1
+    return:
+      type: GRID.TILE.TileState
+references:
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: GRID.TILE.TileState
+  commentId: T:GRID.TILE.TileState
+  parent: GRID.TILE
+  href: GRID.TILE.TileState.html
+  name: TileState
+  nameWithType: TileState
+  fullName: GRID.TILE.TileState

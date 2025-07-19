@@ -1,0 +1,358 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.TILE.Tile
+  commentId: T:GRID.TILE.Tile
+  id: Tile
+  parent: GRID.TILE
+  children:
+  - GRID.TILE.Tile.CurrentState
+  - GRID.TILE.Tile.HandleSelection(System.Boolean)
+  - GRID.TILE.Tile.ResetOpacity
+  - GRID.TILE.Tile.SetTileItemData(GRID.TILE.TileItemData)
+  - GRID.TILE.Tile.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: Tile
+  nameWithType: Tile
+  fullName: GRID.TILE.Tile
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/Tile.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Tile
+    path: Assets/Scripts/Grid System/Tile/Tile.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: >-
+    Componente responsável pelo comportamento individual de cada tile no sistema de grid.
+
+    Gerencia posicionamento, estado visual, interação com mouse e integração com o sistema de grade.
+  remarks: >-
+    Esta classe representa um tile individual que pode ser posicionado na grade do jogo.
+
+    Implementa funcionalidades como modo fantasma (ghost mode), validação de posicionamento,
+
+    seguimento do mouse e transições de estado. Integra-se com o GridManager para coordenação
+
+    global e com o sistema de input para responder a cliques do usuário.
+  example: []
+  syntax:
+    content: 'public class Tile : MonoBehaviour'
+    content.vb: Public Class Tile Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+- uid: GRID.TILE.Tile.CurrentState
+  commentId: P:GRID.TILE.Tile.CurrentState
+  id: CurrentState
+  parent: GRID.TILE.Tile
+  langs:
+  - csharp
+  - vb
+  name: CurrentState
+  nameWithType: Tile.CurrentState
+  fullName: GRID.TILE.Tile.CurrentState
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/Tile.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: CurrentState
+    path: Assets/Scripts/Grid System/Tile/Tile.cs
+    startLine: 33
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Estado atual do tile no ciclo de vida do posicionamento.
+  example: []
+  syntax:
+    content: public TileState CurrentState { get; }
+    parameters: []
+    return:
+      type: GRID.TILE.TileState
+      description: Valor padrão é <xref href="GRID.TILE.TileState.Unplaced" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Property CurrentState As TileState
+  overload: GRID.TILE.Tile.CurrentState*
+- uid: GRID.TILE.Tile.TileItemData
+  commentId: P:GRID.TILE.Tile.TileItemData
+  id: TileItemData
+  parent: GRID.TILE.Tile
+  langs:
+  - csharp
+  - vb
+  name: TileItemData
+  nameWithType: Tile.TileItemData
+  fullName: GRID.TILE.Tile.TileItemData
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/Tile.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TileItemData
+    path: Assets/Scripts/Grid System/Tile/Tile.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Dados configuráveis do tile contendo informações visuais e funcionais.
+  example: []
+  syntax:
+    content: public TileItemData TileItemData { get; }
+    parameters: []
+    return:
+      type: GRID.TILE.TileItemData
+      description: Null por padrão, deve ser configurado durante a instanciação.
+    content.vb: Public Property TileItemData As TileItemData
+  overload: GRID.TILE.Tile.TileItemData*
+- uid: GRID.TILE.Tile.HandleSelection(System.Boolean)
+  commentId: M:GRID.TILE.Tile.HandleSelection(System.Boolean)
+  id: HandleSelection(System.Boolean)
+  parent: GRID.TILE.Tile
+  langs:
+  - csharp
+  - vb
+  name: HandleSelection(bool)
+  nameWithType: Tile.HandleSelection(bool)
+  fullName: GRID.TILE.Tile.HandleSelection(bool)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/Tile.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: HandleSelection
+    path: Assets/Scripts/Grid System/Tile/Tile.cs
+    startLine: 211
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Ativa ou desativa o modo fantasma (ghost mode) do tile, alterando sua opacidade.
+  remarks: >-
+    O modo fantasma faz o tile seguir o cursor do mouse com opacidade reduzida,
+
+    indicando visualmente que está sendo posicionado. Quando desativado,
+
+    a opacidade é restaurada automaticamente.
+  example: []
+  syntax:
+    content: public void HandleSelection(bool isGhostModeActive)
+    parameters:
+    - id: isGhostModeActive
+      type: System.Boolean
+      description: True para ativar o modo fantasma, false para desativar.
+    content.vb: Public Sub HandleSelection(isGhostModeActive As Boolean)
+  overload: GRID.TILE.Tile.HandleSelection*
+  nameWithType.vb: Tile.HandleSelection(Boolean)
+  fullName.vb: GRID.TILE.Tile.HandleSelection(Boolean)
+  name.vb: HandleSelection(Boolean)
+- uid: GRID.TILE.Tile.ResetOpacity
+  commentId: M:GRID.TILE.Tile.ResetOpacity
+  id: ResetOpacity
+  parent: GRID.TILE.Tile
+  langs:
+  - csharp
+  - vb
+  name: ResetOpacity()
+  nameWithType: Tile.ResetOpacity()
+  fullName: GRID.TILE.Tile.ResetOpacity()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/Tile.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ResetOpacity
+    path: Assets/Scripts/Grid System/Tile/Tile.cs
+    startLine: 249
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Restaura a opacidade total do tile.
+  remarks: >-
+    Chamado quando o tile sai do modo fantasma ou é definitivamente posicionado,
+
+    restaurando a visibilidade completa do tile.
+  example: []
+  syntax:
+    content: public void ResetOpacity()
+    content.vb: Public Sub ResetOpacity()
+  overload: GRID.TILE.Tile.ResetOpacity*
+- uid: GRID.TILE.Tile.SetTileItemData(GRID.TILE.TileItemData)
+  commentId: M:GRID.TILE.Tile.SetTileItemData(GRID.TILE.TileItemData)
+  id: SetTileItemData(GRID.TILE.TileItemData)
+  parent: GRID.TILE.Tile
+  langs:
+  - csharp
+  - vb
+  name: SetTileItemData(TileItemData)
+  nameWithType: Tile.SetTileItemData(TileItemData)
+  fullName: GRID.TILE.Tile.SetTileItemData(GRID.TILE.TileItemData)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/Tile.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetTileItemData
+    path: Assets/Scripts/Grid System/Tile/Tile.cs
+    startLine: 266
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define os dados do tile e atualiza sua cor visual.
+  remarks: >-
+    Este método deve ser chamado durante a inicialização do tile para configurar
+
+    suas propriedades visuais e comportamentais baseadas no TileItemData.
+  example: []
+  syntax:
+    content: public void SetTileItemData(TileItemData newItemData)
+    parameters:
+    - id: newItemData
+      type: GRID.TILE.TileItemData
+      description: Novos dados do tile contendo informações visuais e funcionais.
+    content.vb: Public Sub SetTileItemData(newItemData As TileItemData)
+  overload: GRID.TILE.Tile.SetTileItemData*
+references:
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.TILE.TileState.Unplaced
+  commentId: F:GRID.TILE.TileState.Unplaced
+  href: GRID.TILE.TileState.html#GRID_TILE_TileState_Unplaced
+  name: Unplaced
+  nameWithType: TileState.Unplaced
+  fullName: GRID.TILE.TileState.Unplaced
+- uid: GRID.TILE.Tile.CurrentState*
+  commentId: Overload:GRID.TILE.Tile.CurrentState
+  href: GRID.TILE.Tile.html#GRID_TILE_Tile_CurrentState
+  name: CurrentState
+  nameWithType: Tile.CurrentState
+  fullName: GRID.TILE.Tile.CurrentState
+- uid: GRID.TILE.TileState
+  commentId: T:GRID.TILE.TileState
+  parent: GRID.TILE
+  href: GRID.TILE.TileState.html
+  name: TileState
+  nameWithType: TileState
+  fullName: GRID.TILE.TileState
+- uid: GRID.TILE.Tile.TileItemData*
+  commentId: Overload:GRID.TILE.Tile.TileItemData
+  href: GRID.TILE.Tile.html#GRID_TILE_Tile_TileItemData
+  name: TileItemData
+  nameWithType: Tile.TileItemData
+  fullName: GRID.TILE.Tile.TileItemData
+- uid: GRID.TILE.TileItemData
+  commentId: T:GRID.TILE.TileItemData
+  parent: GRID.TILE
+  href: GRID.TILE.TileItemData.html
+  name: TileItemData
+  nameWithType: TileItemData
+  fullName: GRID.TILE.TileItemData
+- uid: GRID.TILE.Tile.HandleSelection*
+  commentId: Overload:GRID.TILE.Tile.HandleSelection
+  href: GRID.TILE.Tile.html#GRID_TILE_Tile_HandleSelection_System_Boolean_
+  name: HandleSelection
+  nameWithType: Tile.HandleSelection
+  fullName: GRID.TILE.Tile.HandleSelection
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: GRID.TILE.Tile.ResetOpacity*
+  commentId: Overload:GRID.TILE.Tile.ResetOpacity
+  href: GRID.TILE.Tile.html#GRID_TILE_Tile_ResetOpacity
+  name: ResetOpacity
+  nameWithType: Tile.ResetOpacity
+  fullName: GRID.TILE.Tile.ResetOpacity
+- uid: GRID.TILE.Tile.SetTileItemData*
+  commentId: Overload:GRID.TILE.Tile.SetTileItemData
+  href: GRID.TILE.Tile.html#GRID_TILE_Tile_SetTileItemData_GRID_TILE_TileItemData_
+  name: SetTileItemData
+  nameWithType: Tile.SetTileItemData
+  fullName: GRID.TILE.Tile.SetTileItemData

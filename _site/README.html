@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Unity Grid &amp; Shop System | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Unity Grid &amp; Shop System | mysite ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="unity-grid--shop-system">Unity Grid &amp; Shop System</h1>
+
+<p>This Unity project implements a modular <strong>shop</strong> and <strong>grid</strong> system, allowing the player to select tiles from an animated interface and place them onto a Tilemap via drag-and-drop with a ghost preview.</p>
+<hr>
+<h2 id="-table-of-contents">📋 Table of Contents</h2>
+<ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#core-scripts">Core Scripts</a></li>
+<li><a href="#workflow">Workflow</a></li>
+<li><a href="#future-improvements">Future Improvements</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<hr>
+<h2 id="description">Description</h2>
+<p>This system enables the player to:</p>
+<ol>
+<li>Open/close a <strong>shop</strong> using the <code>Tab</code> key (animated via <code>Animator</code>).</li>
+<li>Select a <strong>tile</strong> in the shop, which then follows the cursor with a semi-transparent ghost effect.</li>
+<li>Place the tile onto a <strong>grid</strong> (<code>Tilemap</code> + <code>Grid</code>), respecting marked and occupied cells.</li>
+<li>Reuse tile objects via <strong>Object Pooling</strong> (<code>TilePool</code>) for optimized performance.</li>
+</ol>
+<p>The modular and well-documented design simplifies future expansions such as additional states (upgrades, removal) and multiplayer support.</p>
+<hr>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Animated Shop</strong> (<code>ShopManager</code>)</li>
+<li><strong>Ghost Preview</strong> for placement (<code>Tile.GhostEffect</code>)</li>
+<li><strong>Grid Cell Validation</strong> and occupancy checks (<code>GridManager</code>)</li>
+<li><strong>UI Click Blocking</strong> to prevent unintended interactions (<code>EventSystem</code>)</li>
+<li><strong>Tile Pooling</strong> for performance optimization</li>
+<li><strong>ScriptableObject</strong> (<code>TileItemData</code>) for tile data</li>
+</ul>
+<hr>
+<h2 id="architecture">Architecture</h2>
+<pre><code> ┌─────────────┐      ┌─────────────┐      ┌────────────┐
+ │ ShopManager ├─────▶│ TilePool    ├─────▶│ Tile       │
+ └─────────────┘      └─────────────┘      └────────────┘
+        │                                        ▲
+        │                                        │
+        ▼                                        │
+  UI (Buttons)                                   │
+                                                 │
+                                          ┌─────────────┐
+                                          │ GridManager │
+                                          └─────────────┘
+                                                 ▲
+                                                 │
+                                            ClickHandler
+</code></pre>
+<ul>
+<li><strong>ShopManager</strong>: Manages shop UI and animations.</li>
+<li><strong>TilePool</strong>: Handles pooling of Tile objects.</li>
+<li><strong>Tile</strong>: Contains preview, placement logic, and state management.</li>
+<li><strong>GridManager</strong>: Coordinates with the <code>Tilemap</code> and tracks occupancy.</li>
+<li><strong>ClickHandler</strong>: Dispatches click events using the new Input System.</li>
+</ul>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Unity 6 or later</li>
+<li><strong>TextMeshPro</strong> package</li>
+<li><strong>Input System</strong> package</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>Press <strong>Play</strong> in the Unity Editor.</li>
+<li>Press <strong>Tab</strong> to open/close the shop.</li>
+<li>Click a tile in the shop to enter ghost placement mode.</li>
+<li>Move the cursor over the grid and click to place the tile.</li>
+<li>To cancel placement, click outside the grid area or on UI.</li>
+</ol>
+<hr>
+<h2 id="core-scripts">Core Scripts</h2>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ShopManager.cs</code></td>
+<td>Manages shop UI, animations, and tile selection.</td>
+</tr>
+<tr>
+<td><code>Tile.cs</code></td>
+<td>Handles tile preview, placement logic, and visual state.</td>
+</tr>
+<tr>
+<td><code>GridManager.cs</code></td>
+<td>Singleton that manages grid dimensions, tilemap, and cell occupancy.</td>
+</tr>
+<tr>
+<td><code>ClickHandler.cs</code></td>
+<td>Processes mouse clicks via the Unity Input System.</td>
+</tr>
+<tr>
+<td><code>TileItemData.cs</code></td>
+<td>A <code>ScriptableObject</code> storing tile properties (name, color, sprite).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li><strong>Shop Opens</strong> via <code>ShopManager.OpenShop()</code></li>
+<li>Player <strong>clicks a button</strong> → <code>HandleButton</code> collects <code>TileItemData</code>.</li>
+<li><strong>Shop Closes</strong> → coroutine waits for the close animation.</li>
+<li><strong>TilePool</strong> provides an inactive <code>Tile</code>; calls <code>SetTileItemData</code> and <code>HandleSelection(true)</code>.</li>
+<li><strong>Tile</strong> enters ghost mode and follows the cursor.</li>
+<li>Clicking on a valid, unoccupied cell (outside UI) triggers <code>PlaceTile</code>.</li>
+<li>The tile finalizes at the chosen position and state becomes <code>Placed</code>.</li>
+</ol>
+<hr>
+<h2 id="future-improvements">Future Improvements</h2>
+<ul>
+<li>Migrate <code>TileStateType</code> to a full <strong>FSM</strong> with states like <code>Selected</code>, <code>Upgrading</code>, etc.</li>
+<li>Add tile removal and <strong>undo</strong> functionality.</li>
+<li>Integrate <strong>costs</strong> and <strong>inventory</strong> systems.</li>
+<li>Load tile data via <strong>Addressables</strong> for dynamic content updates.</li>
+</ul>
+<hr>
+<h2 id="license">License</h2>
+<p>MIT © Murillo Gomes Yonamine</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

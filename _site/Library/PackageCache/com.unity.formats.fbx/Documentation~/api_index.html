@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Developer’s Guide | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Developer’s Guide | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/api_index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="developers-guide">Developer’s Guide</h1>
+
+<p>As a developer, you have access to the FBX Exporter from C# scripting. You can use the basic API by providing a single GameObject or a list of GameObjects.</p>
+<h2 id="managing-export-settings">Managing export settings</h2>
+<p>To use custom export settings, you can create and pass an instance of <code>ExportModelOptions</code> class with modified settings.</p>
+<p>If you don't pass any export settings, Unity uses default export settings to export the GameObjects to the FBX file.</p>
+<h2 id="calling-the-fbx-exporter">Calling the FBX Exporter</h2>
+<p>You can call the FBX Exporter from C# using methods found in the <a href="UnityEditor.Formats.Fbx.Exporter.html">UnityEditor.Formats.Fbx.Exporter</a> namespace, for example:</p>
+<pre><code>using System.IO;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.Formats.Fbx.Exporter;
+
+public static void ExportGameObjects(Object[] objects)
+{
+    string filePath = Path.Combine(Application.dataPath, &quot;MyGame.fbx&quot;);
+
+    ExportModelOptions exportSettings = new ExportModelOptions();
+    exportSettings.ExportFormat = ExportFormat.Binary;
+    exportSettings.KeepInstances = false;
+
+    // Note: If you don't pass any export settings, Unity uses the default settings.
+    ModelExporter.ExportObjects(filePath, objects, exportSettings);
+
+    // You can use ModelExporter.ExportObject instead of
+    // ModelExporter.ExportObjects to export a single GameObject.
+}
+</code></pre>
+<h2 id="creating-an-fbx-prefab-variant">Creating an FBX Prefab Variant</h2>
+<p>You can convert a GameObject hierarchy to an <a href="../manual/prefab-variants.html">FBX Prefab Variant</a> using the API.</p>
+<p>The principle is to export the GameObject hierarchy to an FBX and then convert the exported FBX Model Prefab into a Prefab Variant while maintaining the components from the original hierarchy.</p>
+<p>For example:</p>
+<pre><code>using System.IO;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.Formats.Fbx.Exporter;
+
+public static GameObject ConvertGameObject(GameObject go)
+{
+    string filePath = Path.Combine(Application.dataPath, &quot;MyObject.fbx&quot;);
+    string prefabPath = Path.Combine(Application.dataPath, &quot;MyObject.prefab&quot;);
+
+    // Settings to use when exporting the FBX to convert to a prefab.
+    // Note: If you don't pass any export settings, Unity uses the default settings.
+    ConvertToPrefabVariantOptions convertSettings = new ConvertToPrefabVariantOptions();
+    convertSettings.ExportFormat = ExportFormat.Binary;
+
+    // Returns the prefab variant linked to an FBX file.
+    return ConvertToNestedPrefab.ConvertToPrefabVariant(go, fbxFullPath: filePath, prefabFullPath: prefabPath, convertOptions: convertSettings);
+}
+</code></pre>
+<h2 id="runtime">Runtime</h2>
+<p>The FBX SDK bindings can be executed during gameplay allowing import and export at runtime. Currently a custom importer/exporter needs to be written in order to do so, as the FBX Exporter is Editor only.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The FBX SDK bindings are Editor only by default and will not be included in a build. In order for the package to be included in the build, add the FBXSDK_RUNTIME define to Edit &gt; Project Settings... &gt; Player &gt; Other Settings &gt; Scripting Define Symbols.</p>
+</div>
+<h3 id="basic-exporter">Basic Exporter:</h3>
+<pre><code>using Autodesk.Fbx;
+using UnityEngine;
+using UnityEditor;
+
+protected void ExportScene (string fileName)
+{
+    using(FbxManager fbxManager = FbxManager.Create ()){
+        // configure IO settings.
+        fbxManager.SetIOSettings (FbxIOSettings.Create (fbxManager, Globals.IOSROOT));
+
+        // Export the scene
+        using (FbxExporter exporter = FbxExporter.Create (fbxManager, &quot;myExporter&quot;)) {
+
+            // Initialize the exporter.
+            bool status = exporter.Initialize (fileName, -1, fbxManager.GetIOSettings ());
+
+            // Create a new scene to export
+            FbxScene scene = FbxScene.Create (fbxManager, &quot;myScene&quot;);
+
+            // Export the scene to the file.
+            exporter.Export (scene);
+        }
+    }
+}
+</code></pre>
+<h3 id="basic-importer">Basic Importer:</h3>
+<pre><code>using Autodesk.Fbx;
+using UnityEngine;
+using UnityEditor;
+
+protected void ImportScene (string fileName)
+{
+    using(FbxManager fbxManager = FbxManager.Create ()){
+        // configure IO settings.
+        fbxManager.SetIOSettings (FbxIOSettings.Create (fbxManager, Globals.IOSROOT));
+
+        // Import the scene to make sure file is valid
+        using (FbxImporter importer = FbxImporter.Create (fbxManager, &quot;myImporter&quot;)) {
+
+            // Initialize the importer.
+            bool status = importer.Initialize (fileName, -1, fbxManager.GetIOSettings ());
+
+            // Create a new scene so it can be populated by the imported file.
+            FbxScene scene = FbxScene.Create (fbxManager, &quot;myScene&quot;);
+
+            // Import the contents of the file into the scene.
+            importer.Import (scene);
+        }
+    }
+}
+</code></pre>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li>Only 64 bit Windows, MacOS and Ubuntu standalone player builds are supported</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/api_index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

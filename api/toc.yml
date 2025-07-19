@@ -1,0 +1,58 @@
+### YamlMime:TableOfContent
+items:
+- uid: GRID
+  name: GRID
+  type: Namespace
+  items:
+  - uid: GRID.GridManager
+    name: GridManager
+    type: Class
+- uid: GRID.MODULES
+  name: GRID.MODULES
+  type: Namespace
+  items:
+  - uid: GRID.MODULES.CellValidator
+    name: CellValidator
+    type: Class
+  - uid: GRID.MODULES.ColumnUIGenerator
+    name: ColumnUIGenerator
+    type: Class
+  - uid: GRID.MODULES.CoordinateConverter
+    name: CoordinateConverter
+    type: Class
+  - uid: GRID.MODULES.GridBoundsCalculator
+    name: GridBoundsCalculator
+    type: Class
+  - uid: GRID.MODULES.HoverManager
+    name: HoverManager
+    type: Class
+  - uid: GRID.MODULES.PathManager
+    name: PathManager
+    type: Class
+- uid: GRID.TILE
+  name: GRID.TILE
+  type: Namespace
+  items:
+  - uid: GRID.TILE.Tile
+    name: Tile
+    type: Class
+  - uid: GRID.TILE.TileItemData
+    name: TileItemData
+    type: Class
+  - uid: GRID.TILE.TilePool
+    name: TilePool
+    type: Class
+  - uid: GRID.TILE.TileState
+    name: TileState
+    type: Enum
+  - uid: GRID.TILE.TileType
+    name: TileType
+    type: Enum
+- uid: SHOP
+  name: SHOP
+  type: Namespace
+  items:
+  - uid: SHOP.ShopManager
+    name: ShopManager
+    type: Class
+memberLayout: SamePage

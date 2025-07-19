@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  id: GRID.MODULES
+  children:
+  - GRID.MODULES.CellValidator
+  - GRID.MODULES.ColumnUIGenerator
+  - GRID.MODULES.CoordinateConverter
+  - GRID.MODULES.GridBoundsCalculator
+  - GRID.MODULES.HoverManager
+  - GRID.MODULES.PathManager
+  langs:
+  - csharp
+  - vb
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: GRID.MODULES.PathManager
+  commentId: T:GRID.MODULES.PathManager
+  parent: GRID.MODULES
+  href: GRID.MODULES.PathManager.html
+  name: PathManager
+  nameWithType: PathManager
+  fullName: GRID.MODULES.PathManager
+- uid: GRID.MODULES.HoverManager
+  commentId: T:GRID.MODULES.HoverManager
+  parent: GRID.MODULES
+  href: GRID.MODULES.HoverManager.html
+  name: HoverManager
+  nameWithType: HoverManager
+  fullName: GRID.MODULES.HoverManager
+- uid: GRID.MODULES.CoordinateConverter
+  commentId: T:GRID.MODULES.CoordinateConverter
+  parent: GRID.MODULES
+  href: GRID.MODULES.CoordinateConverter.html
+  name: CoordinateConverter
+  nameWithType: CoordinateConverter
+  fullName: GRID.MODULES.CoordinateConverter
+- uid: GRID.MODULES.CellValidator
+  commentId: T:GRID.MODULES.CellValidator
+  parent: GRID.MODULES
+  href: GRID.MODULES.CellValidator.html
+  name: CellValidator
+  nameWithType: CellValidator
+  fullName: GRID.MODULES.CellValidator
+- uid: GRID.MODULES.ColumnUIGenerator
+  commentId: T:GRID.MODULES.ColumnUIGenerator
+  parent: GRID.MODULES
+  href: GRID.MODULES.ColumnUIGenerator.html
+  name: ColumnUIGenerator
+  nameWithType: ColumnUIGenerator
+  fullName: GRID.MODULES.ColumnUIGenerator
+- uid: GRID.MODULES.GridBoundsCalculator
+  commentId: T:GRID.MODULES.GridBoundsCalculator
+  parent: GRID.MODULES
+  href: GRID.MODULES.GridBoundsCalculator.html
+  name: GridBoundsCalculator
+  nameWithType: GridBoundsCalculator
+  fullName: GRID.MODULES.GridBoundsCalculator
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html

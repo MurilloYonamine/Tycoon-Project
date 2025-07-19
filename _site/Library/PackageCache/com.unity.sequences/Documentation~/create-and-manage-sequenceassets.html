@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Create and manage Sequence Assets | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Create and manage Sequence Assets | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/create-and-manage-sequenceassets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="create-and-manage-sequence-assets">Create and manage Sequence Assets</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+<h2 id="creating-a-sequence-asset">Creating a Sequence Asset</h2>
+<p>To create a new Sequence Asset:</p>
+<ol>
+<li><p>Right-click on an <a href="concepts.html#asset-collections">Asset Collection type</a> and select <strong>Create Sequence Asset</strong>.
+<br>- OR -
+<br>Select the <strong>+</strong> (plus) button at the top left of the Sequence Assets window, then select the Sequence Asset type you want to create.</p>
+</li>
+<li><p>Rename the new Sequence Asset as you wish and press the Enter key or click anywhere to complete the creation.</p>
+</li>
+</ol>
+<h2 id="creating-a-variant-from-a-sequence-asset">Creating a Variant from a Sequence Asset</h2>
+<p>To create a new Variant from an existing Sequence Asset:</p>
+<ol>
+<li><p>Right-click on the Sequence Asset and select <strong>Create Variant</strong>.</p>
+</li>
+<li><p>Rename the new Sequence Asset Variant as you wish and press the Enter key or click anywhere to complete the creation.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> By default, the Sequence Asset Variant inherits from the name of the Sequence Asset, suffixed with <code>_Variant</code>, and an incremental ID number if the name already exists.</p>
+</blockquote>
+<h2 id="duplicating-a-sequence-asset-variant">Duplicating a Sequence Asset Variant</h2>
+<p>To duplicate a Sequence Asset Variant:</p>
+<ul>
+<li>Right-click on the Sequence Asset Variant and select <strong>Duplicate</strong>.
+<br>- OR -</li>
+<li>Select the Sequence Asset Variant and press Ctrl+D / Cmd+D.</li>
+</ul>
+<p>This action automatically names the duplicate Variant after the name of the source Variant, suffixed with an incremental ID number.</p>
+<blockquote>
+<p><strong>Note:</strong> After the duplication, the two Variants have the exact same content but are independent Variants of the same Sequence Asset.</p>
+</blockquote>
+<h2 id="editing-a-sequence-asset-or-variant">Editing a Sequence Asset or Variant</h2>
+<p>To edit a Sequence Asset or Sequence Asset Variant, right-click on it and select <strong>Open</strong>.</p>
+<p>This opens the corresponding Prefab or Prefab Variant in isolation in the Scene view so that you can edit its content.</p>
+<blockquote>
+<p><strong>Note:</strong> You can also open your Sequence Assets and Variants directly from the Project window, or from the Hierarchy. In all cases, see the Unity Manual for more details on how to <a href="https://docs.unity3d.com/2020.1/Documentation/Manual/EditingInPrefabMode.html">edit Prefabs</a> and manage overrides in <a href="https://docs.unity3d.com/Manual/PrefabVariants.html">Prefab Variants</a>.</p>
+</blockquote>
+<h2 id="renaming-a-sequence-asset-or-variant">Renaming a Sequence Asset or Variant</h2>
+<p>To rename a Sequence Asset or Sequence Asset Variant:</p>
+<ol>
+<li>Right-click it and select <strong>Rename</strong>.</li>
+<li>Type the new name.</li>
+<li>Press the Enter key or click anywhere to confirm the renaming.</li>
+</ol>
+<p>When you rename a Sequence Asset, this also renames its Variants if they were still named after it.</p>
+<blockquote>
+<p><strong>Note:</strong> You can fully rename Variants independently from the original Sequence Asset without affecting their functional relationship.</p>
+</blockquote>
+<h2 id="deleting-a-sequence-asset-or-variant">Deleting a Sequence Asset or Variant</h2>
+<p>To delete a Sequence Asset or a Sequence Asset Variant, select it and press the Delete key or right-click on it and select <strong>Delete</strong>.</p>
+<blockquote>
+<p><strong>Attention:</strong></p>
+<ul>
+<li>When you delete a Sequence Asset, this also deletes all its Sequence Asset Variants if it has any.</li>
+<li>You cannot undo the deletion of Sequence Assets and Sequence Asset Variants.</li>
+</ul>
+</blockquote>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/create-and-manage-sequenceassets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

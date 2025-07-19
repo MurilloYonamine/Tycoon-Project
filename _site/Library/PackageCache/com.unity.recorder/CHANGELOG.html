@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<p>All notable changes to this package will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="511---2024-05-22">[5.1.1] - 2024-05-22</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Disallow <code>ActiveCamera</code> from being selected with SRP-based projects as a camera source.</li>
+<li>Display an error when a Recorder is set to capture from a Targeted Camera in a project using URP 2D Renderer.</li>
+<li>Prevent reset on HDCameras history when there is no change of resolution.</li>
+<li>Output resolution <code>Match Window Size</code> is now labeled <code>Use Game View resolution</code> to reflect the associated behavior. It also shows the current resolution of the Game View.</li>
+<li>Show a warning when the requested <code>Output Resolution</code> conflicts with the current Game View resolution as Recorder needs to force change the <code>Output Resolution</code> of the Game View for the recording.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Ensure that camera's rotation is retained when recording monoscopic 360 views.</li>
+<li>Ensure an alpha channel is added when the Editor targets a mobile platform.</li>
+<li>FFmpeg sample: prevent performance issue during a recording when the CPU main thread takes longer than usual to process a frame. This can happen when the Play Mode is paused or when a scene is being loaded.</li>
+</ul>
+<h2 id="510---2024-03-14">[5.1.0] - 2024-03-14</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added support for Windows Arm64.</li>
+</ul>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Show an error in the Recorder Window when the encoder selected in a Movie Recorder is not available on the current platform.</li>
+</ul>
+<h2 id="510-pre1---2023-10-31">[5.1.0-pre.1] - 2023-10-31</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Added error message in UI if full output file path exceeds 259 characters.</li>
+<li>The AOV Image Recorder now supports recording multiple AOVs at once and writes multi-part EXR files.
+<ul>
+<li>Added the option to export AOVs of each frame to a single multi-part EXR file or to multiple EXR files.</li>
+<li>On upgrade, AOV Recorder settings seamlessly translate the former single AOV drop-down selection into the corresponding new AOV checkbox.</li>
+<li>Added categories to AOV selection UI for improved conceptual grouping and multi-selection.</li>
+<li>Revised all AOV labels and added tooltips for each AOV and category.</li>
+</ul>
+</li>
+<li>The AOV Image Recorder supports additional compression options: Zips, B44, B44a, DWAA and DWAB.</li>
+<li>Added a tutorial in documentation to set up a Unity project with API scripting for starting recordings via a command line.</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Removed resolution automatic rounding to the nearest even number when Movie Recorder uses MP4 codec and &quot;Match Window Size&quot; output resolution.</li>
+<li>Removed JPEG export option from the AOV Recorder.</li>
+<li>The Ambient Occlusion AOV was outputting the contents of the occlusion material map. Now, the AOV outputs the result of the Screen Space Ambient Occlusion post-processing pass.</li>
+<li>Removed two unnecessary composited Lighting AOVs (Diffuse Lighting and Specular Lighting) from the exportable AOVs.</li>
+<li>Refactored the documentation around the two recording frameworks available and the different use cases provided as examples.</li>
+<li>Updated the documentation architecture overall to improve navigation and findability.</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Prevent video output from being corrupted when generated via a Recorder Clip run through a Scene loaded in Play mode.</li>
+<li>Ensure the project uses the right RenderPipeline settings at all time: quality RenderPipeline settings or default RenderPipeline settings.</li>
+<li>Ensure that the status messages at the bottom of the Recorder window are always readable even if the window is small.</li>
+<li>Fix the visibility of the Preset icon in Light mode.</li>
+</ul>
+<h2 id="500-pre1---2023-05-11">[5.0.0-pre.1] - 2023-05-11</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Updated minimum required Unity Editor version to 2023.1.</li>
+<li>Removed obsolete warnings about spot lights when recording accumulation in 2023.2.</li>
+<li>Removed AOV recorder.</li>
+</ul>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>An exception no longer occurs when deleting all but one recorder when the deleted recorders' outputs were incompatible with, or names conflicted with, the remaining recorder.</li>
+<li>An error message is now displayed and the Recorder is prevented from starting if MainCamera is selected while the main camera is missing from the project.</li>
+<li>Prevent the Recorder from capturing audio if there are more than two audio channels because only mono or stereo recording is supported.</li>
+<li>To fix a compression issue, the VP8 target bitrate is now converted to bits per second (bps) instead of kilobits per second (kbps).</li>
+<li>The Physical Camera property now stays enabled when recording with accumulation anti-aliasing.</li>
+</ul>
+<h2 id="400---2022-06-01">[4.0.0] - 2022-06-01</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Better handle error messages when using a Tagged Camera while the tag is missing from the project or not assigned to the camera.</li>
+<li>Make sure to stop the AudioRenderer when all recordings are over.</li>
+<li>Hide the Include Alpha checkbox for Movie Recorders in URP projects.</li>
+<li>Make sure the Recorder Window uses error icons for errors that prevent the recording from starting.</li>
+<li>When accumulation is activated, make sure all recorders check for errors.</li>
+</ul>
+<h2 id="400-pre5---2022-04-20">[4.0.0-pre.5] - 2022-04-20</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Movie Recorder Encoder sample showing how to integrate a custom command line encoder such as FFmpeg.</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Only accumulate subframes within the specified recording time/frame range, and not on skipped frames.</li>
+</ul>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Make sure the Game View UI displays the actual resolution when the Recorder needs to change it.</li>
+<li>Prevent the Recorder from capturing audio when the output format doesn't support it.</li>
+<li>Support ProRes 4444 export on Apple M1 Max CPUs.</li>
+<li>Make sure to get the proper recording duration when capturing accumulation and specifying a recording time range in seconds.</li>
+<li>Fix accumulation frame artifacts when specifying a recording time range in seconds that doesn't start from zero.</li>
+<li>Prevent the Unity Editor from crashing when multiple recorders use different output resolutions.</li>
+<li>Prevent Unity from logging an error in the console when exiting timeline clips with the GIF encoder.</li>
+</ul>
+<h2 id="400-pre4---2022-04-19">[4.0.0-pre.4] - 2022-04-19</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>GIF Encoder for the Movie Recorder.</li>
+<li>Accumulation based shadow map filtering for Spot Lights, improving the quality of rendered shadows.</li>
+<li>New option to apply Subpixel Jitter Antialiasing when recording with Accumulation (in HDRP).</li>
+<li>PIZ compression for EXR image sequences.</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Remove support for CentOS.</li>
+<li>Allow audio recording while using the Movie Recorder's accumulation feature.</li>
+<li>Improvements to the Accumulation UI parameters:
+<ul>
+<li>Specify the shutter interval as a normalized interval or an angle.</li>
+<li>Specify the number of accumulation samples without a maximum limit, directly through a value field.</li>
+<li>Get the actual count of accumulated frames resulting from the shutter profile convolution.</li>
+</ul>
+</li>
+<li>Prevent users from recording in odd resolutions with ProRes packed pixel format codecs (e.g. 422HQ).</li>
+<li>Movie Recorder no longer uses the Sync GPU readback code path.</li>
+<li>Use error icons in the Recorder Window for errors that prevent the recording from starting.</li>
+</ul>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Improved performance for ProRes encoding.</li>
+<li>Fix an issue that prevented the alpha component from being correctly recorded.</li>
+<li>Make sure to generate high bitrate audio tracks when using custom quality encoding in the Unity Media Encoder.</li>
+<li>Make sure the duration of recordings is accurate when capturing accumulation with time intervals in seconds.</li>
+<li>Make sure the CapFPS setting remains reliable when the recording session includes multiple active Recorders.</li>
+<li>Refresh the asset database after recording an image sequence to the Assets folder.</li>
+<li>Prevent users from recording if the Recorder Window combines active recorders with and without accumulation.</li>
+<li>Prevent the Recorder Window from throwing errors when selecting an invalid Encoder.</li>
+</ul>
+<h2 id="400-pre3---2021-11-01">[4.0.0-pre.3] - 2021-11-01</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added a new &quot;Encoder&quot; drop down with the Unity Media Encoder and ProRes Encoder.</li>
+<li>Added a new public Encoder API to allow users to create their own Encoders for seamless integration into the Movie Recorder.</li>
+<li>Added a new &quot;Custom&quot; quality for the Unity Media Encoder, with different options for H.264 MP4 and VP8 WebM.</li>
+<li>Support accumulation feature in Timeline Recorder Clips.</li>
+</ul>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Updated minimum required Unity Editor version to 2022.1.</li>
+<li>Renamed the &quot;Capture&quot; section to &quot;Input&quot; and the &quot;Format&quot; section to &quot;Output Format&quot;.</li>
+<li>Moved the &quot;Include Audio&quot; option to the &quot;Output Format&quot; section of the Recorder Window.</li>
+<li>Ignore &quot;Capture Alpha&quot; in Movie Recorder instead of logging an error when the encoder doesn't support an alpha channel.</li>
+<li>Changed the encoder API to improve the readability of scripted Recorders and allow users to use the ProRes encoder from script.</li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Prevent the user from starting a recording session from the Recorder window if the Unity Editor has compiler errors.</li>
+<li>Make sure to always restore the asynchronous shader compilation setting's original value when the recording session ends.</li>
+</ul>
+<h2 id="400-pre2---2021-09-14">[4.0.0-pre.2] - 2021-09-14</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Added variable frame rate support to the Movie Recorder.</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Make VP8 WebM the default output format for Movie Recorders on Linux, MP4 not being supported.</li>
+<li>Log errors when setting up a Recorder for H.264 MP4 or ProRes on Linux.</li>
+<li>Hide the Flip Vertical property in AOV Recorder Settings, as it is not supported.</li>
+<li>Disable asynchronous shader compilation before recording.</li>
+<li>The Exit Play Mode option, which used to be a per-user setting, is now a per-Recorder-List asset.</li>
+</ul>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Prevent recording when multiple Recorders use the same output file name.</li>
+<li>Ensure recording the expected frames with accumulation when the recording range doesn't start at 0.</li>
+<li>Add missing output location browse button in the Animation Clip Recorder.</li>
+<li>Ignore the unsupported &quot;Capture UI&quot; option in Scriptable Render Pipeline (SRP) projects to prevent recordings from being corrupted</li>
+<li>Prevent users from editing Recorder bindings through the UI.</li>
+<li>Add contextual feedback about Simulator view not supported when selecting &quot;Game View&quot; as the recorded source.</li>
+<li>Automatically switch to Game view if Simulator view is selected when starting to record the &quot;Game View&quot; source.</li>
+<li>Prevent the Recorder Timeline integration from outputting files when the timeline is paused.</li>
+<li>Ignore the Render Frame Step property when the Frame Rate Playback mode is set to Constant.</li>
+<li>Fix valid Recorders only recording the first frame when the first Recorder in the Recorder Window list is invalid.</li>
+<li>Prevent users from getting issues when renaming recorders in the Recorder List.</li>
+</ul>
+<h2 id="400-pre1---2021-08-25">[4.0.0-pre.1] - 2021-08-25</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Added a slider to change the JPEG quality when using Image Recorders or AOV Recorders.</li>
+<li>Added a new <aov> wildcard for AOV Image Sequence recorders, and include it in the default file name.</aov></li>
+</ul>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Modified the Recorder menu item to cycle the Recorder Window status between open, in focus, and closed.</li>
+<li>Added <recorder> wildcard to the default file name of all recorders.</recorder></li>
+<li>Moved the Recorder Options from Recorder menu items to Unity Editor user Preferences.</li>
+<li>Expose the AudioInput, AudioRecorderSettings, and WAVEncoder classes to the public API.</li>
+</ul>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fix the &quot;Open output location&quot; button functionality in Linux.</li>
+</ul>
+<h2 id="301---2021-07-22">[3.0.1] - 2021-07-22</h2>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Perform the appropriate color space conversion for Texture Sampling sources when required.</li>
+<li>Fix vertically flipped outputs on OpenGL hardware.</li>
+</ul>
+<h2 id="300---2021-06-17">[3.0.0] - 2021-06-17</h2>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Prevent invalid GPU callback data from being written to a frame: this change skips the problematic frame and logs an error message.</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Do not perform the color space conversion from linear to sRGB for RenderTextures that are already sRGB.</li>
+<li>Ensure that the color space conversion from sRGB to linear is performed when required for EXR files</li>
+<li>Fixed an exception that occurred when sending a RenderTexture to a Recorder before creating this RenderTexture.</li>
+<li>Fixed issues with the Recorder samples about synchronizing multiple recordings and resetting the Game view resolution.</li>
+</ul>
+<h2 id="300-pre2---2021-05-17">[3.0.0-pre.2] - 2021-05-17</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Added support for arm64 macOS.</li>
+</ul>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>(macOS) Fixed an image stride issue for ProRes formats 4444 and 4444XQ.</li>
+<li>Fixed audio recording issue when the frame interval is not starting at 0.</li>
+<li>Fixed image artifacts on the first recorded frame with HDRP and TAA enabled.</li>
+</ul>
+<h2 id="300-pre1---2021-04-07">[3.0.0-pre.1] - 2021-04-07</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>Added public API for AOVRecorderSettings.</li>
+</ul>
+<h3 id="changed-9">Changed</h3>
+<ul>
+<li>Enabled alpha channel capture in projects that use HDRP.</li>
+<li>Changed the package display name from &quot;Unity Recorder&quot; to &quot;Recorder&quot; in the package manager.</li>
+</ul>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Fixed clipped text in the file path drop down.</li>
+<li>Fixed an exception that occurred when the user performed the undo action after deleting a Recorder.</li>
+<li>Fixed a wrong label for the WebM codec.</li>
+<li>Fixed invalid values in the alpha channel when performing texture sampling for different rendering and output resolutions.</li>
+<li>Ensure that the Image Recorder encodes in sRGB when requested, even if the scripted render pipeline provides linear data.</li>
+<li>Fixed a memory leak in the AOV Recorder.</li>
+<li>Fixed the Tagged Camera capture process to follow any camera changes that might occur.</li>
+<li>Improve the console messages for errors and warnings when Recorders are not properly configured.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Removed legacy Recorders: MP4, EXR, PNG, WEBM and GIF Animation.</li>
+</ul>
+<h2 id="260-exp4---2021-02-22">[2.6.0-exp.4] - 2021-02-22</h2>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>Fixed an &quot;invalid AOV&quot; error that occurred when selecting the Albedo AOV.</li>
+</ul>
+<h2 id="260-exp3---2021-02-19">[2.6.0-exp.3] - 2021-02-19</h2>
+<h3 id="added-9">Added</h3>
+<ul>
+<li>Added support for recording accumulation in HDRP, for motion blur and path tracer.</li>
+<li>Integrated the AOV Recorder into this package.
+<br><strong>Note:</strong> If you previously installed the formerly separate AOV Recorder package, you should uninstall it to avoid any unexpected recording issues.</li>
+</ul>
+<h3 id="fixed-15">Fixed</h3>
+<ul>
+<li>Fixed an issue where the Recorder Window's display name would be incorrect when using the Recorder Editor Sample.</li>
+<li>Fixed a UI issue where foldouts in the RecorderSettingPreset asset would not open when clicking their header name.</li>
+</ul>
+<h2 id="255---2021-02-26">[2.5.5] - 2021-02-26</h2>
+<h3 id="fixed-16">Fixed</h3>
+<ul>
+<li>Fixed an error that occurred when setting the build target to macOS standalone from the Editor in Windows.</li>
+</ul>
+<h2 id="254---2021-01-25">[2.5.4] - 2021-01-25</h2>
+<h3 id="fixed-17">Fixed</h3>
+<ul>
+<li>Correctly update the absolute path when choosing a path with the folder picker in the Recorder Window.</li>
+<li>Removed a console error message displayed when the Recorder cannot find a custom Recorder icon.</li>
+<li>Fixed an exception that would occur when Recording with Unity 2021.2.</li>
+<li>Fixed a rounding error in the delta time when recording with non-integer frame rates.</li>
+</ul>
+<h2 id="252---2020-12-16">[2.5.2] - 2020-12-16</h2>
+<h3 id="fixed-18">Fixed</h3>
+<ul>
+<li>Fixed an issue where changing the active camera would be recorded one frame too late.</li>
+<li>Fixed an exception that would occur when undoing a Timeline Recorder Clip copy-paste action while the Inspector is active.</li>
+<li>Made the Animation Clip Recorder respect the Start Frame/Time setting instead of always recording from the first frame.</li>
+<li>Fixed Game View recording to get the expected rendering resolution, regardless of the current Game View dimensions.</li>
+<li>Fixed missing descriptions in Scripting API documentation.</li>
+</ul>
+<h2 id="250-pre1---2020-11-02">[2.5.0-pre.1] - 2020-11-02</h2>
+<h3 id="added-10">Added</h3>
+<ul>
+<li>Added a new sample showing how to set up a movie recording session via script.</li>
+</ul>
+<h3 id="changed-10">Changed</h3>
+<ul>
+<li>Removed support for versions prior to 2019.4.</li>
+</ul>
+<h3 id="fixed-19">Fixed</h3>
+<ul>
+<li>Fixed some errors with paths and wildcards in the sample code.</li>
+<li>Fixed broken internal links and inconsistencies in the user manual.</li>
+</ul>
+<h2 id="240-preview1---2020-10-21">[2.4.0-preview.1] - 2020-10-21</h2>
+<h3 id="features">Features</h3>
+<ul>
+<li>Added MonoBehaviour recording support in the Animation Recorder.</li>
+</ul>
+<h3 id="bugfixes">Bugfixes</h3>
+<ul>
+<li>Fixed a bug where the animation recorder settings game object bindings were not saved properly when saving as a recorder preset.</li>
+<li>Reset the window without having to close it when a version upgrade happens while the Recorder Window is open.</li>
+<li>Fixed a bug where switching from an absolute path to any other path type would create an invalid output path.</li>
+<li>Log a warning when multiple concurrent Movie Recorder instances are concurrent, because this is not supported.</li>
+<li>Fixed a visual glitch with the &quot;Cap FPS&quot; checkbox extending outside its GUI element.</li>
+<li>Forced the &quot;Render Frame Step&quot; values in Recorders to be larger than zero.</li>
+<li>Fixed a bug causing excessive Timeline updates while changing the output file.</li>
+<li>Removed superfluous &quot;CaptureAudio&quot; option from the AudioRecorder.</li>
+<li>Fixed a bug that caused Copy/Pasted RecorderClips to lose the settings when entering in playmode.</li>
+<li>Fixed a visual glitch with very long paths when inspecting RecorderClips.</li>
+<li>Fixed a bug where in a Scriptable Render Pipeline, the GameView recordings would export transparency for PNG files if the camera background had transparency.</li>
+<li>Fixed a crash issue when starting and stopping a GIF animation recording while the Play Mode is paused.</li>
+<li>Fixed an issue where multiple recorders with various camera targets would produce flipped content.</li>
+</ul>
+<h2 id="230-preview3---2020-09-23">[2.3.0-preview.3] - 2020-09-23</h2>
+<h3 id="features-1">Features</h3>
+<ul>
+<li>Added animation curve data compression setting with keyframe reduction options in the Animation Recorder.</li>
+<li>Added an option to set the generated animation key tangents to ClampedAuto in the Animation Recorder.</li>
+<li>Added ProRes encoder support in the MovieRecorder for OSX and Windows.</li>
+<li>Added option to specify the color space of the recorded images as either sRGB or Linear sRGB (unclamped).</li>
+<li>UX improvements</li>
+</ul>
+<h3 id="bugfixes-1">Bugfixes</h3>
+<ul>
+<li>Fixed a bug that in the texture sampler recorder for animated camera fov and animated physical properties</li>
+<li>Fixed a bug that caused the recorder to hang when docked next to the GameView.</li>
+<li>Fixed a bug that caused the recorder to hang if starting recording while already in playmode</li>
+<li>Fixed a bug where the AudioRecorder would not close the handle to the recorded file.</li>
+<li>Fixed a bug where the recorder could output multiple files in a single session, when only one was expected.</li>
+<li>Fixed a bug where one could not set a framerate larger than 120FPS</li>
+<li>Fixed a bug where the AnimationRecorder would not flush the data to disk when done recording.</li>
+<li>Fixed a bug where the RecorderWindow would get corrupted if some custom RecorderSettings code would not compile.</li>
+<li>Fixed a bug where the RecorderWindow would generate errors after a failed QuickRecord session.</li>
+<li>Fixed a bug where file creation could fail because of certain invalid characters in the file name.</li>
+<li>Fixed a bug where scripted Recorder sessions could generate errors if frames were recorded before the session was prepared.</li>
+</ul>
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li>When the animationRecorder starts at frame zero and the timelineWindow inspects the timeline, multiple clip files are generated (some empty). To Fix, please update to the latest version of the Timeline package.</li>
+</ul>
+<h2 id="220-preview4---2020-04-08">[2.2.0-preview.4] - 2020-04-08</h2>
+<h3 id="public-api-and-bugfixes">Public API and bugfixes</h3>
+<ul>
+<li>Added public api's to allow loading previously saved recorder lists.</li>
+<li>Fixed bug where the first few frames after going in play-mode were not recorded.</li>
+<li>Fixed a bug where the texture sampling recorder that did not correctly support the physical cameras.</li>
+<li>Fixed an issue when starting a record session from scripts.</li>
+<li>Fixed movie recoder's default framerate value being not set in the API. Default value is now set at 30 FPS.</li>
+</ul>
+<h2 id="210-preview1---2019-12-17">[2.1.0-preview.1] - 2019-12-17</h2>
+<h3 id="public-api-and-hdr-recording">Public API and HDR recording</h3>
+<ul>
+<li>Added public APIs to be able to implement custom recorders.</li>
+<li>Added the ability to enable recording HDR images (available only with HDRP)</li>
+</ul>
+<h2 id="203-preview1---2019-08-13">[2.0.3-preview.1] - 2019-08-13</h2>
+<h3 id="20193-hdrp-and-build-fixes">2019.3, HDRP and build Fixes</h3>
+<ul>
+<li>iOS Cloud build fails with an <code>exportArchive: Code signing &quot;fccore.bundle&quot; failed</code> error</li>
+<li>Recorder Clip with a Targeted Camera input gives black images with HDRP</li>
+<li>In 2019.3, HDRP is out of experimental and namespace was renamed</li>
+<li>Recorder settings warnings were not displayed in the console at recording start</li>
+<li>Massive documentation update</li>
+<li>Fixed &quot;NullReferenceException&quot; errors related to changes in GameView in 2019.3.0b1.</li>
+</ul>
+<h2 id="202-preview2---2019-05-28">[2.0.2-preview.2] - 2019-05-28</h2>
+<h3 id="fixes-and-linux-support">Fixes and Linux support</h3>
+<ul>
+<li>Add Gif and Legacy Recorders core library binaries for Linux</li>
+<li>Fix build errors related to fccore</li>
+<li>Fix a bug with Recorder Clip that would produce one frame movie if never displayed in the inspector</li>
+<li>Warning clean-up in 2018.4</li>
+<li>Remove ActiveCamera target when HDRP is available</li>
+<li>Fixed &quot;NullReferenceException&quot; errors related to changes in GameView in 2019.3</li>
+</ul>
+<h2 id="201-preview1---2019-05-20">[2.0.1-preview.1] - 2019-05-20</h2>
+<h3 id="audio-recorder-and-some-bug-fixes">Audio Recorder and some bug fixes</h3>
+<ul>
+<li>Integrate AudioRecorder in the package</li>
+<li>Fixed Recorder labels that were not editable anymore</li>
+<li>Fixed Recorder List presets that were reloaded with an empty name</li>
+<li>Clean UIElements warning in 2019.2</li>
+</ul>
+<h2 id="200-preview6---2019-03-26">[2.0.0-preview.6] - 2019-03-26</h2>
+<h3 id="first-package-release-of-the-unity-recorder">First package release of the <em>Unity Recorder</em>.</h3>
+<p>This mainly address moving from Asset Store to Package Manager. It also includes :</p>
+<ul>
+<li>Timeline dependency fix : since 2019.1 Timeline is a package. Code changes are compatible with
+both 2018.3 (2018.3.4f1 and up) and 2019.1 (2019.1.0b2 and up).</li>
+<li>Updates to use official UIElements module as experimental API is deprecated in 2019.1.</li>
+<li>Warnings clean-up</li>
+<li>Samples fixes : documentation updates and proper asmdef to avoid issues during build</li>
+<li>Improved texture readback. Most speed improvements will be effective with previous versions,
+BUT at their top in 2019.1.</li>
+<li>Ability to capture a Light Weight Render Pipeline camera (requires Scriptable Render Pipeline &gt; 5.3.0)</li>
+</ul>
+<h2 id="102---2018-09-07">[1.0.2] - 2018-09-07</h2>
+<h3 id="custom-resolutions-multi-scene-editing-various-bug-fixes">Custom resolutions. Multi-Scene editing. Various bug fixes.</h3>
+<ul>
+<li>Ability to use custom resolution and custom aspect ratio</li>
+<li>Fixed GameObject reference sometimes resetting to None when in multi-scenes editing</li>
+<li>Fixed the Recorder Clip duplication issue</li>
+<li>Little improvement for errors reporting in the Recorder Window</li>
+<li>Fixed 360 View being too dark when in linear color space</li>
+<li>Fixed Flip Vertical being too dark in linear color space</li>
+<li>Fixed frame skipped issue when two or more recorders end at the same frame.</li>
+<li>Ability to change/reset the Take value for all recorders</li>
+<li>Added option to exit Playmode automatically when recording's stopped</li>
+</ul>
+<h2 id="101---2018-08-17">[1.0.1] - 2018-08-17</h2>
+<h3 id="20181-support-various-ux-fixes">2018.1 support. Various UX fixes.</h3>
+<ul>
+<li>Added support for 2018.1 (2018.1.9f1 and up)</li>
+<li>UI Fixes when reducing RecorderWindow size in 2018.2 and up</li>
+<li>Added icons for messages in the Recorder Status Bar</li>
+<li>Ability to use Arrow keys to switch between recorders</li>
+<li>Added visual indication for when the Recorder List has focus</li>
+</ul>
+<h2 id="100---2018-08-02">[1.0.0] - 2018-08-02</h2>
+<h3 id="first-release-of-the-unity-recorder">First release of the <em>Unity Recorder</em>.</h3>
+<p>This is mainly a UX revamp of the Asset Store's Media Recorder. Main improvement is the ability to have multiple recorders in parallel.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

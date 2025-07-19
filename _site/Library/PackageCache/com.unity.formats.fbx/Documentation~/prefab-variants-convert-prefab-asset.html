@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Convert a Prefab asset to an FBX Prefab Variant | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Convert a Prefab asset to an FBX Prefab Variant | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/prefab-variants-convert-prefab-asset.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="convert-a-prefab-asset-to-an-fbx-prefab-variant">Convert a Prefab asset to an FBX Prefab Variant</h1>
+
+<p>Convert a Prefab asset file to a Prefab Variant based on an FBX model.</p>
+<h2 id="results-to-expect">Results to expect</h2>
+<p>When you perform this action, Unity:</p>
+<ul>
+<li>Exports the Prefab asset to an FBX file and generates the corresponding Model Prefab, and</li>
+<li>Creates a new Prefab Variant based on the generated Model Prefab.</li>
+</ul>
+<h2 id="convert-the-prefab-asset">Convert the Prefab asset</h2>
+<p>To perform the conversion:</p>
+<ol>
+<li><p>In the Project window, right-click on the Prefab asset to convert.</p>
+</li>
+<li><p>Select <strong>Convert To FBX Prefab Variant</strong>.</p>
+</li>
+<li><p>Adjust the export properties in the <a href="ref-convert-options.html">Convert Options</a> window and click <strong>Convert</strong>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can convert a Model Prefab to an FBX Prefab Variant via this method, but Unity overwrites the existing FBX file by default due to FBX re-export. If you need to skip the FBX re-export step, use Unity's default option to <a href="prefab-variants-create-from-model-prefab.html">create a Prefab Variant</a>.</p>
+</div>
+<h2 id="further-management">Further management</h2>
+<p>After you convert the Prefab asset:</p>
+<ul>
+<li><p>The exported FBX file becomes the new model source which you can edit via a 3D modeling application.</p>
+</li>
+<li><p>The created Prefab Variant becomes the only asset you should manipulate and instantiate in your Unity project.</p>
+</li>
+<li><p>The original Prefab asset file you selected for conversion has no more relationship with the created FBX file and Prefab Variant. You might get rid of it unless you need it for another context.</p>
+</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="prefab-variants-concepts.html">FBX files and Prefab Variants</a></li>
+<li><a href="prefab-variants-concepts.html">FBX Prefab Variant workflow</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/prefab-variants-convert-prefab-asset.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

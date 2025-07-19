@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Record an image sequence in linear sRGB color space | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Record an image sequence in linear sRGB color space | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecordingInLinearSrgbColorSpace.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="record-an-image-sequence-in-linear-srgb-color-space">Record an image sequence in linear sRGB color space</h1>
+
+<p>If your project uses <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest">High Definition Render Pipeline (HDRP)</a>, you can record images using the linear sRGB (unclamped) color profile. This setting is available in Image Sequence recorder or AOV Image Sequence recorder.</p>
+<p>In a compositing application, some mathematical operations such as color blending are more physically accurate using linear sRGB than the sRGB curve (gamma).</p>
+<p>In an unclamped recording, values outside of the 0.0 to 1.0 range of the linear sRGB gamut, that is, values that usually cannot be displayed on a monitor or screen, are saved in the file. These values, especially values greater than 1.0, can be useful for compositing.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Your project must use HDRP.</p>
+<p>To get unclamped values in the output:</p>
+<ul>
+<li><p>Disable Tonemapping. The Tonemapping post-process in HDRP compresses all values into the displayable range. As a result, values greater than 1.0 are not saved in the file.<br>
+To disable Tonemapping:</p>
+<ol>
+<li>In the top menu of the <strong>Editor</strong>, select <strong>Edit &gt; Project Settings &gt; HDRP Global Settings</strong>.</li>
+<li>In <strong>HDRP Global Settings</strong>, disable <strong>Tonemapping</strong>.</li>
+<li>In the <strong>Hierarchy</strong>, for each volume that includes a Tonemapping override, select the volume.  In the <strong>Inspector</strong>, disable <strong>Tonemapping</strong>.</li>
+</ol>
+</li>
+<li><p>In the camera used for the recording, disable dithering:<br> In the <strong>Hierarchy</strong>, select the camera. In the <strong>Inspector</strong>, under <strong>Rendering</strong>, disable <strong>Dithering</strong>.</p>
+</li>
+</ul>
+<h2 id="choose-a-recording-method">Choose a recording method</h2>
+<p>Choose the recording method that corresponds to your expected recording workflow:</p>
+<ul>
+<li><a href="get-started-recorder-window.html">A centralized recording session with one or multiple recorders (via the Recorder window)</a>, OR</li>
+<li><a href="get-started-timeline-track.html">One or multiple recordings triggered from Timeline (via Recorder Clips)</a>.</li>
+</ul>
+<h2 id="select-the-recorder-type">Select the recorder type</h2>
+<p>For this scenario, use either an <strong>Image Sequence Recorder</strong> or an <strong>AOV Image Sequence Recorder</strong>.</p>
+<h2 id="configure-the-recorder">Configure the recorder</h2>
+<p>To configure the recording of linear sRGB (unclamped) values in an Image Sequence recorder or AOV recorder:</p>
+<ol>
+<li>Under <strong>Input</strong>, select the source.</li>
+</ol>
+<ul>
+<li>In the Image Sequence Recorder, Linear sRGB (unclamped) is available for all sources except Game View.</li>
+<li>In the AOV recorder, Linear sRGB unclamped is available for all cameras.</li>
+</ul>
+<ol start="2">
+<li>Select the <strong>Camera</strong>.</li>
+<li>For <strong>Media File Format</strong>, select <strong>EXR</strong>.</li>
+<li>For <strong>Color Space</strong>, select <strong>Linear, sRGB (unclamped)</strong>.</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://docs.unity3d.com/2023.1/Documentation/Manual/LinearLighting.html">Color space</a></li>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest/index.html?subfolder=/manual/Post-Processing-Tonemapping.html">Tonemapping</a></li>
+<li><a href="aov-recorder-properties.html">AOV Image Sequence Recorder properties</a></li>
+<li><a href="RecorderImage.html">Image Sequence Recorder properties</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecordingInLinearSrgbColorSpace.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

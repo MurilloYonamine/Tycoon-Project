@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Hierarchy window | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Hierarchy window | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/hierarchy-window.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="hierarchy-window">Hierarchy window</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>From the Sequences package perspective, the Hierarchy window contains all GameObjects that correspond to the sequences of the Editorial structure you created through the <a href="sequences-window.html">Sequences window</a>. It also contains the GameObjects or Prefabs that represent all the creative content you include in each sequence.</p>
+<h2 id="editing-your-editorial-structure">Editing your Editorial structure</h2>
+<p>To safely create sequences and edit your editorial structure, you should primarily use the <a href="sequences-window.html">Sequences window</a>.</p>
+<p>However, the Sequences package doesn't prevent you from using the Hierarchy window among others to manually solve any sequence functionality issues if you have a good knowledge of the Unity Editor base features.</p>
+<p>For general information about the Hierarchy window and the management of GameObjects, see the <a href="https://docs.unity3d.com/Manual/index.html">Unity Manual</a>.</p>
+<h2 id="converting-a-sequence-gameobject-into-a-prefab">Converting a Sequence GameObject into a Prefab</h2>
+<p>You can convert any Sequence GameObject into a Prefab. However, this choice comes with a few side effects you should be aware of. See <a href="sequences-as-prefabs.html">how to manage Sequences as Prefabs</a>.</p>
+<h2 id="deleting-sequence-gameobjects-not-recommended">Deleting Sequence GameObjects <br>(not recommended)</h2>
+<p>The Unity Editor does not prevent you from deleting GameObjects that represent Sequences in the Hierarchy window.</p>
+<p>However, as these GameObjects use specific functional assets (Timelines and script) that make them compatible with the Sequences package features, you should preferably <a href="create-and-manage-sequences.html#deleting-sequences">delete your Sequences through the Sequences window</a> to prevent them from becoming invalid.</p>
+<p><img src="images/sequences-window-missing-gameobject.png" alt="">
+<br><em>Example: Sequence and Sequence child that became invalid in the Sequences window after deletion of their GameObjects from the Hierarchy.</em></p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<ul>
+<li>If you just deleted a Sequence GameObject by mistake, immediately use the undo action of the Unity Editor to properly restore the Sequence.</li>
+<li>Otherwise, delete the invalid Sequence from the Sequences window to complete the deletion.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/hierarchy-window.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

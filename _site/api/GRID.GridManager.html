@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GridManager | Tycoon Project API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GridManager | Tycoon Project API ">
+      
+      <meta name="description" content="Gerenciador central do sistema de grid respons&#225;vel pela coordena&#231;&#227;o de todos os m&#243;dulos e funcionalidades do grid. Implementa o padr&#227;o Singleton e atua como ponto de entrada para opera&#231;&#245;es relacionadas ao grid.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/new/main/apiSpec/new?filename=GRID_GridManager.md&amp;value=---%0Auid%3A%20GRID.GridManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="GRID.GridManager">
+
+
+
+  <h1 id="GRID_GridManager" data-uid="GRID.GridManager" class="text-break">
+Class GridManager  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="GRID.html">GRID</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Gerenciador central do sistema de grid responsável pela coordenação de todos os módulos e funcionalidades do grid.
+Implementa o padrão Singleton e atua como ponto de entrada para operações relacionadas ao grid.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GridManager : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">Component</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">GridManager</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+  <h2 id="GRID_GridManager_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Este gerenciador utiliza uma arquitetura modular onde cada funcionalidade específica é delegada
+para módulos especializados (PathManager, HoverManager, CellValidator, etc.). Isso permite
+manutenção mais fácil, testabilidade melhorada e clara separação de responsabilidades.</p>
+<p>O GridManager coordena:</p>
+<ul>
+<li>Inicialização e configuração de todos os módulos</li>
+<li>Comunicação entre módulos através de uma API pública</li>
+<li>Gerenciamento do ciclo de vida do sistema de grid</li>
+<li>Delegação de operações específicas para módulos apropriados</li>
+</ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="GRID_GridManager_Bounds_" data-uid="GRID.GridManager.Bounds*"></a>
+
+  <h3 id="GRID_GridManager_Bounds" data-uid="GRID.GridManager.Bounds">
+  Bounds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Limites calculados do grid baseados nos tiles marcados no Tilemap.
+Define a área utilizável do grid para posicionamento de tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BoundsInt Bounds { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">BoundsInt</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_BoundsCalculator_" data-uid="GRID.GridManager.BoundsCalculator*"></a>
+
+  <h3 id="GRID_GridManager_BoundsCalculator" data-uid="GRID.GridManager.BoundsCalculator">
+  BoundsCalculator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Módulo responsável pelo cálculo de limites e dimensões do grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GridBoundsCalculator BoundsCalculator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.MODULES.GridBoundsCalculator.html">GridBoundsCalculator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_CellValidator_" data-uid="GRID.GridManager.CellValidator*"></a>
+
+  <h3 id="GRID_GridManager_CellValidator" data-uid="GRID.GridManager.CellValidator">
+  CellValidator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Módulo responsável pela validação de células e ocupação de tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellValidator CellValidator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.MODULES.CellValidator.html">CellValidator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_ClickHandler_" data-uid="GRID.GridManager.ClickHandler*"></a>
+
+  <h3 id="GRID_GridManager_ClickHandler" data-uid="GRID.GridManager.ClickHandler">
+  ClickHandler
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Manipulador de cliques responsável por capturar e processar input do usuário.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClickHandler ClickHandler { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="ClickHandler.html">ClickHandler</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_ColumnUIGenerator_" data-uid="GRID.GridManager.ColumnUIGenerator*"></a>
+
+  <h3 id="GRID_GridManager_ColumnUIGenerator" data-uid="GRID.GridManager.ColumnUIGenerator">
+  ColumnUIGenerator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Módulo responsável pela geração de UI de colunas e coordenadas.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ColumnUIGenerator ColumnUIGenerator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.MODULES.ColumnUIGenerator.html">ColumnUIGenerator</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_CoordinateConverter_" data-uid="GRID.GridManager.CoordinateConverter*"></a>
+
+  <h3 id="GRID_GridManager_CoordinateConverter" data-uid="GRID.GridManager.CoordinateConverter">
+  CoordinateConverter
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Módulo responsável por conversões entre diferentes sistemas de coordenadas.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoordinateConverter CoordinateConverter { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.MODULES.CoordinateConverter.html">CoordinateConverter</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_CurrentHoveredCell_" data-uid="GRID.GridManager.CurrentHoveredCell*"></a>
+
+  <h3 id="GRID_GridManager_CurrentHoveredCell" data-uid="GRID.GridManager.CurrentHoveredCell">
+  CurrentHoveredCell
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtém a célula atualmente sob hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3Int CurrentHoveredCell { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3Int</span></dt>
+    <dd><p>Coordenada da célula sendo destacada, ou Vector3Int.zero se nenhuma.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_Grid_" data-uid="GRID.GridManager.Grid*"></a>
+
+  <h3 id="GRID_GridManager_Grid" data-uid="GRID.GridManager.Grid">
+  Grid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Core Components&quot;)]
+public Grid Grid { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Grid</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_HoverManager_" data-uid="GRID.GridManager.HoverManager*"></a>
+
+  <h3 id="GRID_GridManager_HoverManager" data-uid="GRID.GridManager.HoverManager">
+  HoverManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Módulo responsável pelos efeitos visuais de hover sobre tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HoverManager HoverManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.MODULES.HoverManager.html">HoverManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_Instance_" data-uid="GRID.GridManager.Instance*"></a>
+
+  <h3 id="GRID_GridManager_Instance" data-uid="GRID.GridManager.Instance">
+  Instance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Instância singleton do GridManager para acesso global.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static GridManager Instance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.GridManager.html">GridManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_IsHovering_" data-uid="GRID.GridManager.IsHovering*"></a>
+
+  <h3 id="GRID_GridManager_IsHovering" data-uid="GRID.GridManager.IsHovering">
+  IsHovering
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verifica se está fazendo hover sobre um tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHovering { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>True se um tile está sendo destacado por hover.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_PathManager_" data-uid="GRID.GridManager.PathManager*"></a>
+
+  <h3 id="GRID_GridManager_PathManager" data-uid="GRID.GridManager.PathManager">
+  PathManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Módulo responsável pelo gerenciamento de caminhos e pathfinding.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PathManager PathManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.MODULES.PathManager.html">PathManager</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_TileObjects_" data-uid="GRID.GridManager.TileObjects*"></a>
+
+  <h3 id="GRID_GridManager_TileObjects" data-uid="GRID.GridManager.TileObjects">
+  TileObjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Header(&quot;Debug&quot;)]
+public GameObject[,] TileObjects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span>[,]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_Tilemap_" data-uid="GRID.GridManager.Tilemap*"></a>
+
+  <h3 id="GRID_GridManager_Tilemap" data-uid="GRID.GridManager.Tilemap">
+  Tilemap
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tilemap onde os tiles base estão posicionados e que define a área jogável.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Tilemap Tilemap { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Tilemap</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="GRID_GridManager_AddTileToPathList_" data-uid="GRID.GridManager.AddTileToPathList*"></a>
+
+  <h3 id="GRID_GridManager_AddTileToPathList_GRID_TILE_Tile_" data-uid="GRID.GridManager.AddTileToPathList(GRID.TILE.Tile)">
+  AddTileToPathList(Tile)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adiciona um tile à lista de caminhos, reorganiza a lista e verifica por gaps.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTileToPathList(Tile tile)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tile</code> <a class="xref" href="GRID.TILE.Tile.html">Tile</a></dt>
+    <dd><p>Tile a ser adicionado ao sistema de pathfinding.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_GridManager_AddTileToPathList_GRID_TILE_Tile__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Delega a operação para o PathManager que gerencia a lógica de pathfinding
+e conectividade entre tiles de caminho.</p>
+</div>
+
+
+
+
+  <a id="GRID_GridManager_ClearHoverEffects_" data-uid="GRID.GridManager.ClearHoverEffects*"></a>
+
+  <h3 id="GRID_GridManager_ClearHoverEffects" data-uid="GRID.GridManager.ClearHoverEffects">
+  ClearHoverEffects()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove todos os efeitos de hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearHoverEffects()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_GetCellByCoordinate_" data-uid="GRID.GridManager.GetCellByCoordinate*"></a>
+
+  <h3 id="GRID_GridManager_GetCellByCoordinate_UnityEngine_Vector3Int_" data-uid="GRID.GridManager.GetCellByCoordinate(UnityEngine.Vector3Int)">
+  GetCellByCoordinate(Vector3Int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retorna o GameObject da célula especificada pela coordenada lógica (coluna, linha).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GetCellByCoordinate(Vector3Int coordinate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coordinate</code> <span class="xref">Vector3Int</span></dt>
+    <dd><p>Coordenada lógica [coluna, linha].</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd><p>GameObject na coordenada especificada, ou null se vazia.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_GetColumnObject_" data-uid="GRID.GridManager.GetColumnObject*"></a>
+
+  <h3 id="GRID_GridManager_GetColumnObject_System_Int32_" data-uid="GRID.GridManager.GetColumnObject(System.Int32)">
+  GetColumnObject(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retorna a coluna correspondente baseada no índice.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GetColumnObject(int col)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>col</code> <span class="xref">int</span></dt>
+    <dd><p>Índice da coluna desejada.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd><p>GameObject da coluna especificada.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_GridManager_GetColumnObject_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>As colunas são utilizadas para organização hierárquica dos tiles na interface.</p>
+</div>
+
+
+
+
+  <a id="GRID_GridManager_GetMouseWorldPosition_" data-uid="GRID.GridManager.GetMouseWorldPosition*"></a>
+
+  <h3 id="GRID_GridManager_GetMouseWorldPosition" data-uid="GRID.GridManager.GetMouseWorldPosition">
+  GetMouseWorldPosition()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtém a posição do mouse convertida para o mundo.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3 GetMouseWorldPosition()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3</span></dt>
+    <dd><p>Posição mundial do cursor do mouse.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_GetTileCoordinate_" data-uid="GRID.GridManager.GetTileCoordinate*"></a>
+
+  <h3 id="GRID_GridManager_GetTileCoordinate_UnityEngine_Vector3Int_" data-uid="GRID.GridManager.GetTileCoordinate(UnityEngine.Vector3Int)">
+  GetTileCoordinate(Vector3Int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converte uma posição de célula em coordenadas lógicas (coluna, linha), com origem no canto superior esquerdo.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector3Int GetTileCoordinate(Vector3Int cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <span class="xref">Vector3Int</span></dt>
+    <dd><p>Célula do grid a ser convertida.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector3Int</span></dt>
+    <dd><p>Coordenada lógica correspondente à célula.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_GridManager_GetTileCoordinate_UnityEngine_Vector3Int__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Delega para o CoordinateConverter que mantém a lógica de conversão entre sistemas.</p>
+</div>
+
+
+
+
+  <a id="GRID_GridManager_HasTileAtCell_" data-uid="GRID.GridManager.HasTileAtCell*"></a>
+
+  <h3 id="GRID_GridManager_HasTileAtCell_UnityEngine_Vector3Int_" data-uid="GRID.GridManager.HasTileAtCell(UnityEngine.Vector3Int)">
+  HasTileAtCell(Vector3Int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verifica se existe um tile na célula especificada no Tilemap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasTileAtCell(Vector3Int cell)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cell</code> <span class="xref">Vector3Int</span></dt>
+    <dd><p>Coordenada da célula no grid a ser verificada.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>True se existe um tile na célula, false caso contrário.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_GridManager_HasTileAtCell_UnityEngine_Vector3Int__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Delega para o CellValidator que mantém a lógica de validação de células.</p>
+</div>
+
+
+
+
+  <a id="GRID_GridManager_IsCellOccupied_" data-uid="GRID.GridManager.IsCellOccupied*"></a>
+
+  <h3 id="GRID_GridManager_IsCellOccupied_UnityEngine_Vector3Int_" data-uid="GRID.GridManager.IsCellOccupied(UnityEngine.Vector3Int)">
+  IsCellOccupied(Vector3Int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verifica se a célula lógica (coluna, linha) já está ocupada por um objeto.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCellOccupied(Vector3Int coordinate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coordinate</code> <span class="xref">Vector3Int</span></dt>
+    <dd><p>Coordenada lógica [coluna, linha] a ser verificada.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">bool</span></dt>
+    <dd><p>True se a célula está ocupada, false se está livre.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_GridManager_IsCellOccupied_UnityEngine_Vector3Int__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Utiliza o array TileObjects para verificação rápida de ocupação.</p>
+</div>
+
+
+
+
+  <a id="GRID_GridManager_SetHoverColor_" data-uid="GRID.GridManager.SetHoverColor*"></a>
+
+  <h3 id="GRID_GridManager_SetHoverColor_UnityEngine_Color_" data-uid="GRID.GridManager.SetHoverColor(UnityEngine.Color)">
+  SetHoverColor(Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L288"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define a cor do efeito de hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetHoverColor(Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>Nova cor para o efeito de hover.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_GridManager_SetHoverEnabled_" data-uid="GRID.GridManager.SetHoverEnabled*"></a>
+
+  <h3 id="GRID_GridManager_SetHoverEnabled_System_Boolean_" data-uid="GRID.GridManager.SetHoverEnabled(System.Boolean)">
+  SetHoverEnabled(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/GridManager.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ativa ou desativa o efeito de hover.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetHoverEnabled(bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enabled</code> <span class="xref">bool</span></dt>
+    <dd><p>True para ativar, false para desativar.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

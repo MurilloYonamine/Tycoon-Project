@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<p>All notable changes to this package will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="240---2024-03-13">[2.4.0] - 2024-03-13</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added library for Windows ARM64 platform support.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Updated Alembic to 1.8.5 (was 1.7.16).</li>
+<li>Updated ISPC to 1.21.0 (was 1.14.1).</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fixed bug where vertex color displayed as black when processing RGB, RGBA, and Normal attributes in the <code>Face</code> scope</li>
+<li>Fixed bug causing Editor to crash when a UV attribute is processed in the <code>Points</code> or <code>Face</code> scope.</li>
+<li>Prevent a NullReferenceException when adding a curve renderer to an Alembic file with non-visible meshes.</li>
+</ul>
+<h2 id="234---2023-10-30">[2.3.4] - 2023-10-30</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Prevent a NullReferenceException when upgrading a project with URP and Alembic to Unity 2023.3.</li>
+</ul>
+<h2 id="233---2023-08-25">[2.3.3] - 2023-08-25</h2>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Prevent a warning in the Console due to deprecated <code>RecorderInputSetting.ValidityCheck()</code> when Alembic is installed along with Recorder.</li>
+<li>Prevent warnings related to FindObjectOfType&lt;&gt; calls on package installation with Unity Editor 2023.1+.</li>
+<li>Prevent broken links in Alembic files that would be first imported and then moved outside of the Unity project folder.</li>
+<li>Prevent some memory leak resulting from Alembic mesh unload.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Removed support of Stadia as a build target.</li>
+</ul>
+<h2 id="232---2022-05-08">[2.3.2] - 2022-05-08</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>At import, additional data is added to GameObject cameras to conform with URP or HDRP rendering pipelines.</li>
+</ul>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Fixed an issue where a mesh from an Alembic file with visibility samples gets wrongly serialized in scenes.</li>
+<li>Fixed the Normals import settings of the Importer.</li>
+<li>When a user changes HDRP quality settings, the Editor no longer re-imports Alembic assets.</li>
+</ul>
+<h2 id="230---2022-01-28">[2.3.0] - 2022-01-28</h2>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>When building unsupported standalone targets, Unity excludes the Alembic components from the build.</li>
+</ul>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Make sure Unity always reads the Face Set names in the correct order.</li>
+<li>Fixed a compile error when a project does not have the analytics module.</li>
+</ul>
+<h2 id="230-pre3---2021-10-02">[2.3.0-pre.3] - 2021-10-02</h2>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Prevent build error when the Scene contains empty AlembicStreamPlayer components.</li>
+</ul>
+<h2 id="230-pre2---2021-09-02">[2.3.0-pre.2] - 2021-09-02</h2>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Prevent mesh import failure when changing import options after having set up material assignment overrides.</li>
+<li>Fixed a UI issue affecting the use of Importer options in multi-editing context.</li>
+<li>Prevent import failure when material mapping data is inconsistent with Alembic node hierarchy.</li>
+</ul>
+<h2 id="230-pre1---2021-07-11">[2.3.0-pre.1] - 2021-07-11</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Added support for importing the cage mesh of SubD Alembic nodes.</li>
+<li>The Alembic Importer window now has a Material tab to assign materials to the imported Alembic asset submeshes.</li>
+<li>The Material tab includes a tool to automatically assign materials based on the Face Set names of the original Alembic file.</li>
+</ul>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>GameObjects that only have a Transform component are now included when exporting Alembic files.</li>
+<li>Automatically set the timeline clip length when dragging an AlembicStreamPlayer onto a timeline Alembic track.</li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Fixed a bug that caused Unity Cloth Alembic export to ignore the world scale.</li>
+<li>Fixed a bug that caused an error when manually adding an AlembicStreamPlayer Component.</li>
+<li>Prevented material assignments from being lost for a streamed external Alembic file when changing the Alembic source file link.</li>
+</ul>
+<h2 id="220---2021-06-10">[2.2.0] - 2021-06-10</h2>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Fixed an issue where changing the start value of the streaming time range would slightly change the end of range value.</li>
+<li>Fixed a bug that was causing visual artefacts due to motion vector persistence when pausing Alembic playback.</li>
+</ul>
+<h2 id="220-pre4---2021-04-27">[2.2.0-pre.4] - 2021-04-27</h2>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fixed a bug that caused out of project stream files to have the wrong number of material slots.</li>
+<li>Fixed a bug that was causing data loss when resetting the AlembicStreamPlayer.</li>
+<li>Fixed a bug that was converting previous Alembic instance in prefabs into out-of-project references.</li>
+<li>Fixed a bug that was adding unnecessary Undo events during the Alembic asset import process.</li>
+<li>Fixed a bug that was re-importing Alembic files on every SRP project start.</li>
+<li>Fixed a bug that caused standalone builds to fail when the Alembic assets are read-only.</li>
+</ul>
+<h2 id="220-pre3---2021-04-07">[2.2.0-pre.3] - 2021-04-07</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>New option to automatically add the AlembicCurveRendering components for basic preview of the curves in the Scene.</li>
+<li>New option to stream Alembic files from outside a Unity project.</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Minimum Unity version is 2019.4.</li>
+<li>Added a custom dependency on the &quot;CurrentRenderPipeline&quot; setting and ensure assigning the correct SRP material by default.</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Fixed a bug that caused the Alembic exporter to fail if GameObjects were being deleted during the recording session.</li>
+<li>Fixed a memory leak that occurred when using varying topology meshes.</li>
+<li>Fixed a bug that caused the exported mesh normals to be unreadable in DCCs.</li>
+<li>Fixed a bug that caused memory leaks when the same StreamPlayer was being Enabled/Disabled/Updated on the same frame.</li>
+</ul>
+<h2 id="220-exp2---2021-01-21">[2.2.0-exp.2] - 2021-01-21</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added support for Stadia standalone builds.</li>
+<li>Added support for arm64 macOS.</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Updated to Alembic version 1.7.16.</li>
+<li>The package depends on the Cloth Unity Module.</li>
+<li>Renamed AlembicCurve CurvePointCount to CurveOffsets, and changed the semantic to a stride array.</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Fixed a bug where degenerate triangles would create NaN normals.</li>
+<li>Fixed a bug in the importer to prevent the Editor from crashing when importing meshes with empty geometry samples.</li>
+</ul>
+<h2 id="220-exp1---2020-12-17">[2.2.0-exp.1] - 2020-12-17</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Added support for piecewise constant Curve importing.</li>
+</ul>
+<h2 id="212---2020-12-14">[2.1.2] - 2020-12-14</h2>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Fixed a bug causing the Alembic binary libraries to be copied into unsupported platform build, eg: iOS.</li>
+</ul>
+<h2 id="211-pre1---2020-10-21">[2.1.1-pre.1] - 2020-10-21</h2>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Added Unity recorder integration (compatible with Unity Recorder &gt;= 2.2.0).</li>
+<li>When the timeline does discontinuous time updates (scrubbing), the alembic updates the scene synchronously.</li>
+<li>Updated optional dependency to Burst 1.1.1 or newer.</li>
+</ul>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>Fixed a bug on Windows where file pointers would leak, and after some time all alembic loads would fail.</li>
+<li>Fixed a bug that caused a crash when exporting a GameObject with a MeshRender but without a MeshFilter Component.</li>
+<li>Fixed a bug where the visibility was not properly read if it was the only animated property of the object.</li>
+</ul>
+<h2 id="201-preview1---2020-05-29">[2.0.1-preview.1] - 2020-05-29</h2>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Fixed a crash in the Alembic Exporter  when GameObject names contained / in the name.</li>
+<li>Fixed a bug where the Alembic motion vector direction was inverted.</li>
+<li>Fixed a bug where the time range slider in the importer inspector breaks when going beyond the upper bound.</li>
+<li>Fixed a crash in the Alembic Streamer when the object was being enabled and disabled very quickly.</li>
+<li>Fixed a bug where the exported SkinnedMesh scale was wrong if the transform contained a scale change.</li>
+<li>Fixed a bug where the exporter was writing the incorrect Camera rotation parameters.</li>
+</ul>
+<h2 id="200-preview1---2019-12-20">[2.0.0-preview.1] - 2019-12-20</h2>
+<h3 id="changes">Changes</h3>
+<ul>
+<li>Minimum Unity version is 2019.3.</li>
+<li>Introduced public API for Alembic playback and recording.</li>
+<li>Loading of Alembic files is now multi-threaded.</li>
+<li>Removed the LitAlembic HDRP shader that has been obsoleted by HDRP native shaders that now offers the once missing velocity option.</li>
+<li>HDF5 format is Obsolete.</li>
+<li>Fixed a bug where the face-id were being sorted in ascending order.</li>
+<li>Fixed a bug that caused crashes when importing point clouds that had no velocity information.</li>
+<li>Fixed a bug that caused exported geometries to have too many triangles.</li>
+</ul>
+<h2 id="106---2019-08-26">[1.0.6] - 2019-08-26</h2>
+<h3 id="changes-1">Changes</h3>
+<ul>
+<li>Added support for Linux</li>
+<li>Fixed incorrect normal calculation when the UVs were split</li>
+<li>Fixed lost references to the scene GameObject when renaming the alembic asset.</li>
+<li>Fixed the LitAlembic material compatibility with HDRP 4.10 (latest 2018.4 version). For 2019.2+ HDRP standard materials support vertex motion vectors.
+-Fixed Vertex colour import from Houdini.</li>
+</ul>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li>HDF5 is not supported under Linux for import or export.</li>
+</ul>
+<h2 id="105---2019-05-10">[1.0.5] - 2019-05-10</h2>
+<h3 id="changes-2">Changes</h3>
+<ul>
+<li>Fixed regression introduced in 1.0.4 where old Alembic scene instances would lose prefab connection. New scene instances made with 1.0.4 are unfortunately unrecoverable</li>
+</ul>
+<h2 id="104---2019-05-02">[1.0.4] - 2019-05-02</h2>
+<h3 id="changes-3">Changes</h3>
+<ul>
+<li>Fixed crash in the Exporter when using SwapFaces</li>
+<li>Fixed Branch recording mode in the Exporter</li>
+<li>Fixed Scene references being lost, when alembic prefab was being renamed</li>
+<li>Fixed initial import of Alembic files when both the alembic Package and assets are
+imported at the same time</li>
+<li>Fixed regression, where absolute paths to alembic assets were stored</li>
+<li>Alembic importer and Exporter correctly deals with physical Camera parameters</li>
+</ul>
+<h2 id="103---2019-04-09">[1.0.3] - 2019-04-09</h2>
+<h3 id="changes-4">Changes</h3>
+<ul>
+<li>Do not lock Alembic files when Windows</li>
+<li>Fix InheritXform on files from Blender</li>
+<li>Fix multibyte character names for Alembic nodes</li>
+<li>Fix crash from cyclic sampling</li>
+<li>Fix crash with empty samples</li>
+<li>Fix standalone player builds for Windows and OSX. Alembic files are now copied in
+the StreamingAssets folder of the built application</li>
+</ul>
+<h2 id="102---2019-03-21">[1.0.2] - 2019-03-21</h2>
+<h3 id="changes-5">Changes</h3>
+<ul>
+<li>Removed BuildTarget.LinuxStandalone (obsolete) references for 2019.2+</li>
+</ul>
+<h2 id="101---2019-03-14">[1.0.1] - 2019-03-14</h2>
+<h3 id="changes-6">Changes</h3>
+<ul>
+<li>Removed UnityEngine.UI references</li>
+</ul>
+<h2 id="100---2019-01-15">[1.0.0] - 2019-01-15</h2>
+<h3 id="changes-7">Changes</h3>
+<ul>
+<li>Removed Timeline Alembic recorder</li>
+<li>General cleanup</li>
+</ul>
+<h3 id="known-issues-1">Known Issues</h3>
+<ul>
+<li>The first time the Alembic package is used in a project, the shaders shipped with
+it need to be reimported, or else all Alembic imports will fail (case 1125012)</li>
+</ul>
+<h2 id="100-preview13---2019-01-15">[1.0.0-preview.13] - 2019-01-15</h2>
+<h3 id="changes-8">Changes</h3>
+<ul>
+<li>Removed broken recording of particles</li>
+<li>Moved testing code into the package</li>
+</ul>
+<h2 id="100-preview10---2019-01-15">[1.0.0-preview.10] - 2019-01-15</h2>
+<h3 id="changes-9">Changes</h3>
+<ul>
+<li>AlembicShotClip registers the time of the AlembicStreamPlayer as driven so timeline changes to the scene are not persistent</li>
+<li>AlembicRecorderClip uses tags to target GameObject root when recording a subset of
+the scene. If there are multiple GameObjects that match this Tag, a warning appears
+in the inspector and recording is disabled.</li>
+</ul>
+<h2 id="100-preview9---2019-01-03">[1.0.0-preview.9] - 2019-01-03</h2>
+<h3 id="changes-10">Changes</h3>
+<ul>
+<li>Meshes generated by the AlembicStreamPlayer are not serialized with the Scene</li>
+</ul>
+<h2 id="100-preview8---2018-12-19">[1.0.0-preview.8] - 2018-12-19</h2>
+<h3 id="changes-11">Changes</h3>
+<ul>
+<li>Alembic files are No longer copied to the StreamingAssets folder</li>
+<li>renamed Linux dso to abci.so for consistency</li>
+<li>reordered DllImport path selection so Editor locations are always found first</li>
+</ul>
+<h3 id="known-issues-2">Known Issues</h3>
+<ul>
+<li>If you rename the prefab once instantiated, all scene references are lost (move works)</li>
+</ul>
+<h2 id="100-preview7---2018-11-28">[1.0.0-preview.7] - 2018-11-28</h2>
+<h3 id="changes-12">Changes</h3>
+<ul>
+<li>Fixed Windows plugin platform settings</li>
+<li>Apply Transform On Points is now ON by default to be consistent with mesh behaviour</li>
+<li>Point clouds are no longer imported by default</li>
+<li>Bug fix: changes to time range were not persisted</li>
+<li>Updated label of assumeNonSkinnedMeshRendersAreConstant to &quot;Static MeshRenderers&quot; to prevent cropping at default width</li>
+</ul>
+<h3 id="known-issues-3">Known Issues</h3>
+<ul>
+<li>Camera objects aren't using Physical Camera mode</li>
+<li>Points renderer motion vector shader doesn't work</li>
+<li>Camera nodes are still created as GameObjects even if we don't import cameras</li>
+<li>AlembicWaitForEndOfFrame script is visible from the Component list in the inspector</li>
+</ul>
+<h2 id="100-preview6---2018-11-22">[1.0.0-preview.6] - 2018-11-22</h2>
+<ul>
+<li>Apply transform to points renderer by default</li>
+<li>Don't import point clouds by default</li>
+</ul>
+<h2 id="100-preview4---2018-10-05">[1.0.0-preview.4] - 2018-10-05</h2>
+<ul>
+<li>Added missing Linux dso</li>
+</ul>
+<h2 id="100-preview3---2018-09-26">[1.0.0-preview.3] - 2018-09-26</h2>
+<ul>
+<li>Reorganized to conform to Unity's package standards</li>
+<li>Updated Alembic to 1.7.9 (Ogawa is now memory-mapped by default)</li>
+</ul>
+<h2 id="100-preview2---2018-09-20">[1.0.0-preview.2] - 2018-09-20</h2>
+<ul>
+<li>Fixed AlembicStreamPlayerEditor warning in Unity 2018.3</li>
+</ul>
+<h2 id="100-preview1---2018-09-07">[1.0.0-preview.1] - 2018-09-07</h2>
+<ul>
+<li>Added Documentation for imported animation clips</li>
+<li>Removed UTJ/Alembic/Exporter component menu</li>
+<li>Normalized all line endings</li>
+</ul>
+<h2 id="100-preview---2018-08-21">[1.0.0-preview] - 2018-08-21</h2>
+<ul>
+<li>Updated Documentation</li>
+<li>Contains all changes up until <a href="https://github.com/unity3d-jp/AlembicForUnity/releases/tag/20180413">release 20180413</a> on github</li>
+</ul>
+<h2 id="020---2018-06-22">[0.2.0] - 2018-06-22</h2>
+<ul>
+<li>Internalized the API</li>
+<li>Updated Documentation</li>
+<li>Changed namespaces to Unity[Editor|Engine].Formats.Alembic.[Exporter|Importer]</li>
+<li>Removed Alembic Camera Params component</li>
+</ul>
+<h2 id="012---2018-03-19">[0.1.2] - 2018-03-19</h2>
+<ul>
+<li>Initial version for Package Manager</li>
+<li>Corresponds to <a href="https://github.com/unity3d-jp/AlembicImporter/releases/tag/20180222">release 20180222</a> on github</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Use the Unity Integration tool in Maya | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Use the Unity Integration tool in Maya | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/integration-maya-roundtrip.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="use-the-unity-integration-tool-in-maya">Use the Unity Integration tool in Maya</h1>
+
+<p>Work in Maya to import FBX files from a Unity project and re-export them after editing.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This page provides instructions to perform tasks in Autodesk Maya using the Unity Integration tool, which <a href="integration-setup.html">requires to be installed first</a>.</p>
+</div>
+<h2 id="import-a-unity-projects-fbx-file">Import a Unity Project's FBX file</h2>
+<p>Importing an FBX Model automatically configures the plug-in for export. The plug-in remembers your Unity Project, the export filenames for your Models and animations, and which objects to export per file.</p>
+<ol>
+<li><p>Open a file browser directly in your current Unity Project: select <strong>File</strong> &gt; <strong>Unity</strong> &gt; <strong>Import</strong>.</p>
+<p><img src="images/FBXExporter_MayaUnityGameExporter.png" alt=""></p>
+</li>
+<li><p>Use the file browser to select the FBX files to import.</p>
+<p><strong>Note:</strong> You can select multiple files at once: hold Shift or Ctrl to select multiple files.</p>
+<p><img src="images/FBXExporter_MayaUnityFileBrowser.png" alt="The FBX Import menu in Autodesk® Maya® and Autodesk® Maya LT™"></p>
+</li>
+</ol>
+<h3 id="result">Result</h3>
+<p>The FBX Exporter adds the contents of each imported file to an export set named after the imported FBX file. For example, if you import <code>model.fbx</code>, you can find its contents in an export set called <code>model_UnityExportSet</code>.</p>
+<p>In addition, the contents of the file are placed into a namespace based on the filename. For <code>model.fbx</code>, the contents are placed into the <code>model:</code> namespace.</p>
+<h3 id="the--notation">The <code>@</code> notation</h3>
+<p>Animation files that use the <code>@</code> notation (<code>modelname@animation.fbx</code>) are recognized as animation files belonging to the Model contained in <code>model.fbx</code>.</p>
+<p>For instance, if you import a file called <code>model@anim.fbx</code>, the export set and namespace name are based on the name before the <code>@</code> symbol. Therefore, it uses the same set and namespace as <code>model.fbx</code>.</p>
+<p>This allows animation files to be easily imported and applied to the appropriate objects in the Scene. Autodesk® Maya® and Autodesk® Maya LT™ store the animation filename and path for easy export. A single animation file is supported per model file. Importing a new animation overwrites the existing animation in the Scene.</p>
+<h2 id="re-export-the-objects-to-unity">Re-export the objects to Unity</h2>
+<p>There are three options available for export in Autodesk® Maya® and Autodesk® Maya LT™:</p>
+<ul>
+<li>Export</li>
+<li>Export Model Only</li>
+<li>Export Animation Only</li>
+</ul>
+<p><img src="images/FBXExporter_MayaUnityMenuItems.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>File &gt; Unity &gt; Export</strong></td>
+<td style="text-align: left;">Exports both the Models and animation contained in the export sets selected for export.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>File &gt; Unity &gt; Export Model Only</strong></td>
+<td style="text-align: left;">Exports all Models in the selected export sets, but does not export any animation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>File &gt; Unity &gt; Export Animation Only</strong></td>
+<td style="text-align: left;">Exports only the animation applied to the objects in the export set as well as the minimum components required for the animation (such as transforms).</td>
+</tr>
+</tbody>
+</table>
+<p>To export objects from the desired export set, you can select one or more objects in the set, or the set itself. In either case, the FBX Exporter exports the entire contents of the set.</p>
+<p>If you select multiple sets or objects from multiple sets, then the FBX Exporter exports each set to its respective file defined in the attributes of the set.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/integration-maya-roundtrip.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

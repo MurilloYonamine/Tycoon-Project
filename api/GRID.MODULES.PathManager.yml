@@ -1,0 +1,351 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.MODULES.PathManager
+  commentId: T:GRID.MODULES.PathManager
+  id: PathManager
+  parent: GRID.MODULES
+  children:
+  - GRID.MODULES.PathManager.#ctor(GRID.GridManager)
+  - GRID.MODULES.PathManager.AddTileToPathList(GRID.TILE.Tile)
+  - GRID.MODULES.PathManager.ClearPath
+  - GRID.MODULES.PathManager.GetPathTiles
+  langs:
+  - csharp
+  - vb
+  name: PathManager
+  nameWithType: PathManager
+  fullName: GRID.MODULES.PathManager
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/PathManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: PathManager
+    path: Assets/Scripts/Grid System/Modules/PathManager.cs
+    startLine: 14
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public class PathManager
+    content.vb: Public Class PathManager
+  inheritance:
+  - System.Object
+- uid: GRID.MODULES.PathManager.#ctor(GRID.GridManager)
+  commentId: M:GRID.MODULES.PathManager.#ctor(GRID.GridManager)
+  id: '#ctor(GRID.GridManager)'
+  parent: GRID.MODULES.PathManager
+  langs:
+  - csharp
+  - vb
+  name: PathManager(GridManager)
+  nameWithType: PathManager.PathManager(GridManager)
+  fullName: GRID.MODULES.PathManager.PathManager(GRID.GridManager)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/PathManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: .ctor
+    path: Assets/Scripts/Grid System/Modules/PathManager.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Inicializa o PathManager com uma referência ao GridManager.
+  example: []
+  syntax:
+    content: public PathManager(GridManager gridManager)
+    parameters:
+    - id: gridManager
+      type: GRID.GridManager
+    content.vb: Public Sub New(gridManager As GridManager)
+  overload: GRID.MODULES.PathManager.#ctor*
+  nameWithType.vb: PathManager.New(GridManager)
+  fullName.vb: GRID.MODULES.PathManager.New(GRID.GridManager)
+  name.vb: New(GridManager)
+- uid: GRID.MODULES.PathManager.AddTileToPathList(GRID.TILE.Tile)
+  commentId: M:GRID.MODULES.PathManager.AddTileToPathList(GRID.TILE.Tile)
+  id: AddTileToPathList(GRID.TILE.Tile)
+  parent: GRID.MODULES.PathManager
+  langs:
+  - csharp
+  - vb
+  name: AddTileToPathList(Tile)
+  nameWithType: PathManager.AddTileToPathList(Tile)
+  fullName: GRID.MODULES.PathManager.AddTileToPathList(GRID.TILE.Tile)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/PathManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: AddTileToPathList
+    path: Assets/Scripts/Grid System/Modules/PathManager.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Adiciona um tile à lista de caminhos, reorganiza a lista e verifica por gaps.
+  example: []
+  syntax:
+    content: public void AddTileToPathList(Tile tile)
+    parameters:
+    - id: tile
+      type: GRID.TILE.Tile
+    content.vb: Public Sub AddTileToPathList(tile As Tile)
+  overload: GRID.MODULES.PathManager.AddTileToPathList*
+- uid: GRID.MODULES.PathManager.GetPathTiles
+  commentId: M:GRID.MODULES.PathManager.GetPathTiles
+  id: GetPathTiles
+  parent: GRID.MODULES.PathManager
+  langs:
+  - csharp
+  - vb
+  name: GetPathTiles()
+  nameWithType: PathManager.GetPathTiles()
+  fullName: GRID.MODULES.PathManager.GetPathTiles()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/PathManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetPathTiles
+    path: Assets/Scripts/Grid System/Modules/PathManager.cs
+    startLine: 34
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Retorna uma cópia da lista de tiles do caminho.
+  example: []
+  syntax:
+    content: public List<Tile> GetPathTiles()
+    return:
+      type: System.Collections.Generic.List{GRID.TILE.Tile}
+    content.vb: Public Function GetPathTiles() As List(Of Tile)
+  overload: GRID.MODULES.PathManager.GetPathTiles*
+- uid: GRID.MODULES.PathManager.ClearPath
+  commentId: M:GRID.MODULES.PathManager.ClearPath
+  id: ClearPath
+  parent: GRID.MODULES.PathManager
+  langs:
+  - csharp
+  - vb
+  name: ClearPath()
+  nameWithType: PathManager.ClearPath()
+  fullName: GRID.MODULES.PathManager.ClearPath()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/PathManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ClearPath
+    path: Assets/Scripts/Grid System/Modules/PathManager.cs
+    startLine: 37
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Remove todos os tiles da lista de caminhos.
+  example: []
+  syntax:
+    content: public void ClearPath()
+    content.vb: Public Sub ClearPath()
+  overload: GRID.MODULES.PathManager.ClearPath*
+references:
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: GRID.MODULES.PathManager.#ctor*
+  commentId: Overload:GRID.MODULES.PathManager.#ctor
+  href: GRID.MODULES.PathManager.html#GRID_MODULES_PathManager__ctor_GRID_GridManager_
+  name: PathManager
+  nameWithType: PathManager.PathManager
+  fullName: GRID.MODULES.PathManager.PathManager
+  nameWithType.vb: PathManager.New
+  fullName.vb: GRID.MODULES.PathManager.New
+  name.vb: New
+- uid: GRID.GridManager
+  commentId: T:GRID.GridManager
+  parent: GRID
+  href: GRID.GridManager.html
+  name: GridManager
+  nameWithType: GridManager
+  fullName: GRID.GridManager
+- uid: GRID
+  commentId: N:GRID
+  href: GRID.html
+  name: GRID
+  nameWithType: GRID
+  fullName: GRID
+- uid: GRID.MODULES.PathManager.AddTileToPathList*
+  commentId: Overload:GRID.MODULES.PathManager.AddTileToPathList
+  href: GRID.MODULES.PathManager.html#GRID_MODULES_PathManager_AddTileToPathList_GRID_TILE_Tile_
+  name: AddTileToPathList
+  nameWithType: PathManager.AddTileToPathList
+  fullName: GRID.MODULES.PathManager.AddTileToPathList
+- uid: GRID.TILE.Tile
+  commentId: T:GRID.TILE.Tile
+  parent: GRID.TILE
+  href: GRID.TILE.Tile.html
+  name: Tile
+  nameWithType: Tile
+  fullName: GRID.TILE.Tile
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: GRID.MODULES.PathManager.GetPathTiles*
+  commentId: Overload:GRID.MODULES.PathManager.GetPathTiles
+  href: GRID.MODULES.PathManager.html#GRID_MODULES_PathManager_GetPathTiles
+  name: GetPathTiles
+  nameWithType: PathManager.GetPathTiles
+  fullName: GRID.MODULES.PathManager.GetPathTiles
+- uid: System.Collections.Generic.List{GRID.TILE.Tile}
+  commentId: T:System.Collections.Generic.List{GRID.TILE.Tile}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: GRID.TILE.Tile.html
+  name: List<Tile>
+  nameWithType: List<Tile>
+  fullName: System.Collections.Generic.List<GRID.TILE.Tile>
+  nameWithType.vb: List(Of Tile)
+  fullName.vb: System.Collections.Generic.List(Of GRID.TILE.Tile)
+  name.vb: List(Of Tile)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: <
+  - uid: GRID.TILE.Tile
+    name: Tile
+    href: GRID.TILE.Tile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: GRID.TILE.Tile
+    name: Tile
+    href: GRID.TILE.Tile.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: GRID.MODULES.PathManager.ClearPath*
+  commentId: Overload:GRID.MODULES.PathManager.ClearPath
+  href: GRID.MODULES.PathManager.html#GRID_MODULES_PathManager_ClearPath
+  name: ClearPath
+  nameWithType: PathManager.ClearPath
+  fullName: GRID.MODULES.PathManager.ClearPath

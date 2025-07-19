@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Working with Materials | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Working with Materials | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/materials.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="working-with-materials">Working with Materials</h1>
+
+<p>The Alembic format doesn't support any material data. Thus, when you import an Alembic file in Unity, the resulting imported asset can't have specific materials assigned by default to its submeshes.</p>
+<p>To guarantee an acceptable basic display of the imported Alembic asset, Unity first assigns the whole asset a <a href="#default-material-assignation-and-re-mapping">default material</a>. Then, you can re-map all its submeshes with specific materials of your project, according to your rendering needs.</p>
+<p><strong>Note:</strong> The instructions on this page only apply to Alembic files imported <a href="import-file-local.html">via your project folder</a>. They don't apply to Alembic files you would have added to a Scene <a href="import-file-external.html">via an external link</a>.</p>
+<h2 id="default-material-assignation-and-re-mapping">Default material assignation and re-mapping</h2>
+<p>By default, when you import an Alembic file, Unity automatically assigns all of its submeshes the <strong>Default Material</strong> corresponding to your project's render pipeline.</p>
+<p>If you need to re-map the imported submeshes with custom materials, you can do it directly from the Importer Settings window:</p>
+<ul>
+<li><a href="#automatic-re-mapping-based-on-face-set-names">Automatically</a> with materials of your project you would have named after the Face Sets of the original Alembic file.</li>
+<li><a href="#manual-assignation">Manually</a> with any materials of your project.</li>
+</ul>
+<h2 id="automatic-re-mapping-based-on-face-set-names">Automatic re-mapping based on Face Set names</h2>
+<p>To automatically search and assign materials based on Alembic Face Set names:</p>
+<ol>
+<li><p>Make sure to create all necessary materials in your project, and name them after the Face Sets of the original Alembic file.</p>
+</li>
+<li><p>Select the Alembic asset in the Project window.</p>
+</li>
+<li><p>In the Inspector, in the Import Settings window, select <a href="ref_Importer.html#materials">the <strong>Materials</strong> tab</a>.</p>
+<p><img src="images/abc_import_options_materials.png" alt="The Import Settings window (Materials tab)"></p>
+</li>
+<li><p>In the <strong>Material Search</strong> section, select a <strong>Location</strong> to adjust the material search scope.</p>
+<p><img src="images/abc_import_options_materials_search.png" alt="Material Search tool"></p>
+</li>
+<li><p>Click on <strong>Search and Remap</strong>.</p>
+</li>
+<li><p>In the <strong>Meshes / Face Sets</strong> list, review the material override field changes, and click on <strong>Apply</strong>.</p>
+</li>
+</ol>
+<p><strong>Note:</strong> If a material override field remains set to &quot;None (Material)&quot;, you can still <a href="#manual-assignation">assign it a material manually</a>. Otherwise, the Default Material assignation continues to apply to the submesh.</p>
+<h2 id="manual-assignation">Manual assignation</h2>
+<p>To manually assign materials of your project to the imported Alembic asset submeshes:</p>
+<ol>
+<li><p>Select the Alembic asset in the Project window.</p>
+</li>
+<li><p>In the Inspector, in the Import Settings window, select <a href="ref_Importer.html#materials">the <strong>Materials</strong> tab</a>.</p>
+<p><img src="images/abc_import_options_materials.png" alt="The Import Settings window (Materials tab)"></p>
+</li>
+<li><p>In the <strong>Meshes / Face Sets</strong> list, use the target fields to override the default material submesh assignations.</p>
+<p><strong>Note:</strong> If you leave a material override field set to &quot;None (Material)&quot;, the Default Material assignation continues to apply to the submesh.</p>
+</li>
+<li><p>Click on <strong>Apply</strong>.</p>
+</li>
+</ol>
+<h2 id="expand-and-collapse-large-hierarchies-of-submeshes">Expand and collapse large hierarchies of submeshes</h2>
+<p>To quickly expand or collapse the whole sub-hierarchy of any node in the <strong>Meshes / Face Sets</strong> list, click on the arrow beside the node name while pressing <strong>Alt</strong> (on Windows) or <strong>Option</strong> (on macOS).</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/materials.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

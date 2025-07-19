@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Record a video in Full HD MP4 | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Record a video in Full HD MP4 | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecordingVideo.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="record-a-video-in-full-hd-mp4">Record a video in Full HD MP4</h1>
+
+<p>Movie Recorder supports generating videos in the H.264 MP4, VP8 WebM, or ProRes QuickTime formats.</p>
+<p>Use the following example to configure and record a video with the most common format (MP4), resolution (1920 x 1080), and aspect ratio (16:9).  For information on using other formats, see <a href="RecorderMovie.html">Movie Recorder properties</a>.</p>
+<h2 id="choose-a-recording-method">Choose a recording method</h2>
+<p>Choose the recording method that corresponds to your expected recording workflow:</p>
+<ul>
+<li><a href="get-started-recorder-window.html">A centralized recording session with one or multiple recorders (via the Recorder window)</a>, OR</li>
+<li><a href="get-started-timeline-track.html">One or multiple recordings triggered from Timeline (via Recorder Clips)</a>.</li>
+</ul>
+<h2 id="select-the-recorder-type">Select the recorder type</h2>
+<p>To record a video, you have to use a <strong>Movie Recorder</strong>.</p>
+<h2 id="configure-the-input-properties">Configure the Input properties</h2>
+<p>Input properties define the source of the recording and its visual parameters.</p>
+<ol>
+<li><p>For <strong>Source</strong>, select <strong>Game View</strong>. If you want to use a different camera, select <strong>Targeted Camera</strong> and select the camera.</p>
+</li>
+<li><p>For <strong>Output Resolution</strong>, select <strong>FHD - 1080</strong>, which is Full HD 1920 x 1080.</p>
+</li>
+<li><p>For <strong>Aspect Ratio</strong>, select <strong>16:9 (1.7778)</strong>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the Output Resolution and/or Aspect Ratio in the Recorder is different than the Game view resolution, the Recorder switches the Game view to the Recorder's resolution before starting the recording. After the recording ends, the Game view does not automatically revert to its previous resolution. If you need to revert this change afterward, use the <strong>Aspect ratio</strong> dropdown menu in the <a href="https://docs.unity3d.com/Manual/GameView.html">Game view control bar</a>.</p>
+</div>
+<h2 id="configure-the-output-format-properties">Configure the Output Format properties</h2>
+<p>The Output Format properties define the media format to save the recorded frames in.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>The alpha channel is available for some encoders subject to the following conditions:
+<ul>
+<li>The render pipeline is High Definition Render Pipeline (HDRP) or Built-in render pipeline.</li>
+<li>The source is not Game View. The other sources can support alpha.</li>
+</ul>
+</li>
+<li>To enable recording when Include Audio is selected, in <strong>Project Settings</strong> &gt; <strong>Audio</strong> &gt; <strong>Default Speaker Mode</strong>, ensure that <strong>Mono</strong> or <strong>Stereo</strong> is selected.</li>
+</ul>
+</div>
+<p>In H.264 MP4, you can include audio, but alpha is not available.</p>
+<ol>
+<li><p>For <strong>Encoder</strong>, select <strong>Unity Media Encoder</strong>. H.264 MP4 is selected by default.</p>
+</li>
+<li><p>For <strong>Encoding quality</strong>, select <strong>Low</strong>, <strong>Medium</strong>, <strong>High</strong> or <strong>Custom</strong>. The lower the quality, the smaller the file size.</p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<p>For more complete information on Recorder properties, refer to the following:</p>
+<ul>
+<li><a href="RecorderWindowRecordingProperties.html">General recording properties</a></li>
+<li><a href="RecordingTimelineTrack.html">Recording from a Timeline Track</a></li>
+<li><a href="RecorderMovie.html">Movie Recorder properties</a></li>
+<li><a href="OutputFileProperties.html">Output File properties</a></li>
+</ul>
+<p>You can also configure the Movie Recorder to use a <a href="samples-custom-encoder.html">custom FFmpeg encoder</a> to generate video.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecordingVideo.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,528 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.MODULES.HoverManager
+  commentId: T:GRID.MODULES.HoverManager
+  id: HoverManager
+  parent: GRID.MODULES
+  children:
+  - GRID.MODULES.HoverManager.#ctor(GRID.GridManager,System.Boolean,UnityEngine.Color)
+  - GRID.MODULES.HoverManager.ClearHoverEffects
+  - GRID.MODULES.HoverManager.CurrentHoveredCell
+  - GRID.MODULES.HoverManager.HoverColor
+  - GRID.MODULES.HoverManager.IsHoverEnabled
+  - GRID.MODULES.HoverManager.IsHovering
+  - GRID.MODULES.HoverManager.SetHoverColor(UnityEngine.Color)
+  - GRID.MODULES.HoverManager.SetHoverEnabled(System.Boolean)
+  - GRID.MODULES.HoverManager.UpdateHover
+  langs:
+  - csharp
+  - vb
+  name: HoverManager
+  nameWithType: HoverManager
+  fullName: GRID.MODULES.HoverManager
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: HoverManager
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: >-
+    Módulo especializado responsável pelo sistema de hover visual sobre tiles vazios no grid.
+
+    Fornece feedback visual em tempo real quando o cursor está sobre células disponíveis para posicionamento.
+  remarks: >-
+    Este módulo implementa um sistema eficiente de hover que:
+
+    - Detecta movimento do mouse sobre o grid
+
+    - Valida se células são elegíveis para hover (vazias mas com tiles base)
+
+    - Aplica efeitos visuais temporários mantendo estado original
+
+    - Gerencia transições suaves entre células
+
+    - Otimiza performance evitando atualizações desnecessárias
+
+
+    O sistema de hover melhora significativamente a experiência do usuário ao
+
+    providenciar feedback visual claro sobre onde tiles podem ser posicionados.
+  example: []
+  syntax:
+    content: public class HoverManager
+    content.vb: Public Class HoverManager
+  inheritance:
+  - System.Object
+- uid: GRID.MODULES.HoverManager.#ctor(GRID.GridManager,System.Boolean,UnityEngine.Color)
+  commentId: M:GRID.MODULES.HoverManager.#ctor(GRID.GridManager,System.Boolean,UnityEngine.Color)
+  id: '#ctor(GRID.GridManager,System.Boolean,UnityEngine.Color)'
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: HoverManager(GridManager, bool, Color)
+  nameWithType: HoverManager.HoverManager(GridManager, bool, Color)
+  fullName: GRID.MODULES.HoverManager.HoverManager(GRID.GridManager, bool, UnityEngine.Color)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: .ctor
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 90
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Inicializa o HoverManager com configurações personalizáveis.
+  remarks: >-
+    O construtor configura todas as dependências necessárias e define configurações padrão
+
+    sensatas para o sistema de hover. A cor padrão amarela fornece bom contraste visual
+
+    na maioria dos cenários.
+  example: []
+  syntax:
+    content: public HoverManager(GridManager gridManager, bool enableHover = true, Color hoverColor = default)
+    parameters:
+    - id: gridManager
+      type: GRID.GridManager
+      description: Referência ao GridManager principal.
+    - id: enableHover
+      type: System.Boolean
+      description: Se os efeitos de hover devem estar habilitados inicialmente.
+    - id: hoverColor
+      type: UnityEngine.Color
+      description: Cor para efeitos de hover (padrão é amarelo se não especificado).
+    content.vb: Public Sub New(gridManager As GridManager, enableHover As Boolean = True, hoverColor As Color = Nothing)
+  overload: GRID.MODULES.HoverManager.#ctor*
+  nameWithType.vb: HoverManager.New(GridManager, Boolean, Color)
+  fullName.vb: GRID.MODULES.HoverManager.New(GRID.GridManager, Boolean, UnityEngine.Color)
+  name.vb: New(GridManager, Boolean, Color)
+- uid: GRID.MODULES.HoverManager.UpdateHover
+  commentId: M:GRID.MODULES.HoverManager.UpdateHover
+  id: UpdateHover
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: UpdateHover()
+  nameWithType: HoverManager.UpdateHover()
+  fullName: GRID.MODULES.HoverManager.UpdateHover()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: UpdateHover
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 109
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Atualiza o sistema de hover. Deve ser chamado no Update do GridManager.
+  remarks: >-
+    Este método deve ser chamado a cada frame para manter a responsividade do sistema de hover.
+
+    É otimizado para executar apenas quando necessário, verificando mudanças de estado
+
+    antes de processar efeitos visuais.
+  example: []
+  syntax:
+    content: public void UpdateHover()
+    content.vb: Public Sub UpdateHover()
+  overload: GRID.MODULES.HoverManager.UpdateHover*
+- uid: GRID.MODULES.HoverManager.ClearHoverEffects
+  commentId: M:GRID.MODULES.HoverManager.ClearHoverEffects
+  id: ClearHoverEffects
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: ClearHoverEffects()
+  nameWithType: HoverManager.ClearHoverEffects()
+  fullName: GRID.MODULES.HoverManager.ClearHoverEffects()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ClearHoverEffects
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 124
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Remove todos os efeitos de hover.
+  remarks: >-
+    Método útil para limpeza quando o sistema precisa ser reiniciado ou
+
+    quando o contexto muda (ex: abertura de menus). Garante que nenhum
+
+    efeito visual permanente seja deixado no grid.
+  example: []
+  syntax:
+    content: public void ClearHoverEffects()
+    content.vb: Public Sub ClearHoverEffects()
+  overload: GRID.MODULES.HoverManager.ClearHoverEffects*
+- uid: GRID.MODULES.HoverManager.SetHoverColor(UnityEngine.Color)
+  commentId: M:GRID.MODULES.HoverManager.SetHoverColor(UnityEngine.Color)
+  id: SetHoverColor(UnityEngine.Color)
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: SetHoverColor(Color)
+  nameWithType: HoverManager.SetHoverColor(Color)
+  fullName: GRID.MODULES.HoverManager.SetHoverColor(UnityEngine.Color)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetHoverColor
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 139
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Define a cor do efeito de hover.
+  remarks: >-
+    Permite personalização dinâmica da cor de hover, útil para diferentes
+
+    contextos de jogo ou preferências do usuário.
+  example: []
+  syntax:
+    content: public void SetHoverColor(Color color)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+      description: Nova cor para efeitos de hover.
+    content.vb: Public Sub SetHoverColor(color As Color)
+  overload: GRID.MODULES.HoverManager.SetHoverColor*
+- uid: GRID.MODULES.HoverManager.SetHoverEnabled(System.Boolean)
+  commentId: M:GRID.MODULES.HoverManager.SetHoverEnabled(System.Boolean)
+  id: SetHoverEnabled(System.Boolean)
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: SetHoverEnabled(bool)
+  nameWithType: HoverManager.SetHoverEnabled(bool)
+  fullName: GRID.MODULES.HoverManager.SetHoverEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetHoverEnabled
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 153
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Ativa ou desativa o efeito de hover.
+  remarks: >-
+    Quando desabilitado, automaticamente limpa qualquer efeito de hover ativo
+
+    para evitar artifacts visuais. Útil para diferentes modos de jogo onde
+
+    hover pode não ser apropriado.
+  example: []
+  syntax:
+    content: public void SetHoverEnabled(bool enabled)
+    parameters:
+    - id: enabled
+      type: System.Boolean
+      description: True para ativar, false para desativar.
+    content.vb: Public Sub SetHoverEnabled(enabled As Boolean)
+  overload: GRID.MODULES.HoverManager.SetHoverEnabled*
+  nameWithType.vb: HoverManager.SetHoverEnabled(Boolean)
+  fullName.vb: GRID.MODULES.HoverManager.SetHoverEnabled(Boolean)
+  name.vb: SetHoverEnabled(Boolean)
+- uid: GRID.MODULES.HoverManager.IsHovering
+  commentId: P:GRID.MODULES.HoverManager.IsHovering
+  id: IsHovering
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: IsHovering
+  nameWithType: HoverManager.IsHovering
+  fullName: GRID.MODULES.HoverManager.IsHovering
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: IsHovering
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 170
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Verifica se está fazendo hover sobre um tile.
+  remarks: >-
+    Propriedade somente leitura que permite outros sistemas verificarem
+
+    o estado do hover para coordenação de funcionalidades.
+  example: []
+  syntax:
+    content: public bool IsHovering { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: True se algum tile está atualmente destacado por hover.
+    content.vb: Public ReadOnly Property IsHovering As Boolean
+  overload: GRID.MODULES.HoverManager.IsHovering*
+- uid: GRID.MODULES.HoverManager.CurrentHoveredCell
+  commentId: P:GRID.MODULES.HoverManager.CurrentHoveredCell
+  id: CurrentHoveredCell
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: CurrentHoveredCell
+  nameWithType: HoverManager.CurrentHoveredCell
+  fullName: GRID.MODULES.HoverManager.CurrentHoveredCell
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: CurrentHoveredCell
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 180
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Obtém a célula atualmente sob hover.
+  remarks: >-
+    Útil para outros sistemas que precisam coordenar com o sistema de hover,
+
+    como sistemas de preview de posicionamento ou tooltips contextuais.
+  example: []
+  syntax:
+    content: public Vector3Int CurrentHoveredCell { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Vector3Int
+      description: Coordenada da célula sendo destacada, ou Vector3Int.zero se nenhuma.
+    content.vb: Public ReadOnly Property CurrentHoveredCell As Vector3Int
+  overload: GRID.MODULES.HoverManager.CurrentHoveredCell*
+- uid: GRID.MODULES.HoverManager.HoverColor
+  commentId: P:GRID.MODULES.HoverManager.HoverColor
+  id: HoverColor
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: HoverColor
+  nameWithType: HoverManager.HoverColor
+  fullName: GRID.MODULES.HoverManager.HoverColor
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: HoverColor
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 186
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Obtém a cor atual do hover.
+  example: []
+  syntax:
+    content: public Color HoverColor { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Color
+      description: Cor sendo usada para efeitos de hover.
+    content.vb: Public ReadOnly Property HoverColor As Color
+  overload: GRID.MODULES.HoverManager.HoverColor*
+- uid: GRID.MODULES.HoverManager.IsHoverEnabled
+  commentId: P:GRID.MODULES.HoverManager.IsHoverEnabled
+  id: IsHoverEnabled
+  parent: GRID.MODULES.HoverManager
+  langs:
+  - csharp
+  - vb
+  name: IsHoverEnabled
+  nameWithType: HoverManager.IsHoverEnabled
+  fullName: GRID.MODULES.HoverManager.IsHoverEnabled
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: IsHoverEnabled
+    path: Assets/Scripts/Grid System/Modules/HoverManager.cs
+    startLine: 192
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Verifica se o hover está habilitado.
+  example: []
+  syntax:
+    content: public bool IsHoverEnabled { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: True se o sistema de hover está ativo.
+    content.vb: Public ReadOnly Property IsHoverEnabled As Boolean
+  overload: GRID.MODULES.HoverManager.IsHoverEnabled*
+references:
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: GRID.MODULES.HoverManager.#ctor*
+  commentId: Overload:GRID.MODULES.HoverManager.#ctor
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager__ctor_GRID_GridManager_System_Boolean_UnityEngine_Color_
+  name: HoverManager
+  nameWithType: HoverManager.HoverManager
+  fullName: GRID.MODULES.HoverManager.HoverManager
+  nameWithType.vb: HoverManager.New
+  fullName.vb: GRID.MODULES.HoverManager.New
+  name.vb: New
+- uid: GRID.GridManager
+  commentId: T:GRID.GridManager
+  parent: GRID
+  href: GRID.GridManager.html
+  name: GridManager
+  nameWithType: GridManager
+  fullName: GRID.GridManager
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: UnityEngine.Color
+  commentId: T:UnityEngine.Color
+  parent: UnityEngine
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: UnityEngine.Color
+- uid: GRID
+  commentId: N:GRID
+  href: GRID.html
+  name: GRID
+  nameWithType: GRID
+  fullName: GRID
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.MODULES.HoverManager.UpdateHover*
+  commentId: Overload:GRID.MODULES.HoverManager.UpdateHover
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_UpdateHover
+  name: UpdateHover
+  nameWithType: HoverManager.UpdateHover
+  fullName: GRID.MODULES.HoverManager.UpdateHover
+- uid: GRID.MODULES.HoverManager.ClearHoverEffects*
+  commentId: Overload:GRID.MODULES.HoverManager.ClearHoverEffects
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_ClearHoverEffects
+  name: ClearHoverEffects
+  nameWithType: HoverManager.ClearHoverEffects
+  fullName: GRID.MODULES.HoverManager.ClearHoverEffects
+- uid: GRID.MODULES.HoverManager.SetHoverColor*
+  commentId: Overload:GRID.MODULES.HoverManager.SetHoverColor
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_SetHoverColor_UnityEngine_Color_
+  name: SetHoverColor
+  nameWithType: HoverManager.SetHoverColor
+  fullName: GRID.MODULES.HoverManager.SetHoverColor
+- uid: GRID.MODULES.HoverManager.SetHoverEnabled*
+  commentId: Overload:GRID.MODULES.HoverManager.SetHoverEnabled
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_SetHoverEnabled_System_Boolean_
+  name: SetHoverEnabled
+  nameWithType: HoverManager.SetHoverEnabled
+  fullName: GRID.MODULES.HoverManager.SetHoverEnabled
+- uid: GRID.MODULES.HoverManager.IsHovering*
+  commentId: Overload:GRID.MODULES.HoverManager.IsHovering
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_IsHovering
+  name: IsHovering
+  nameWithType: HoverManager.IsHovering
+  fullName: GRID.MODULES.HoverManager.IsHovering
+- uid: GRID.MODULES.HoverManager.CurrentHoveredCell*
+  commentId: Overload:GRID.MODULES.HoverManager.CurrentHoveredCell
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_CurrentHoveredCell
+  name: CurrentHoveredCell
+  nameWithType: HoverManager.CurrentHoveredCell
+  fullName: GRID.MODULES.HoverManager.CurrentHoveredCell
+- uid: UnityEngine.Vector3Int
+  commentId: T:UnityEngine.Vector3Int
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3Int
+  nameWithType: Vector3Int
+  fullName: UnityEngine.Vector3Int
+- uid: GRID.MODULES.HoverManager.HoverColor*
+  commentId: Overload:GRID.MODULES.HoverManager.HoverColor
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_HoverColor
+  name: HoverColor
+  nameWithType: HoverManager.HoverColor
+  fullName: GRID.MODULES.HoverManager.HoverColor
+- uid: GRID.MODULES.HoverManager.IsHoverEnabled*
+  commentId: Overload:GRID.MODULES.HoverManager.IsHoverEnabled
+  href: GRID.MODULES.HoverManager.html#GRID_MODULES_HoverManager_IsHoverEnabled
+  name: IsHoverEnabled
+  nameWithType: HoverManager.IsHoverEnabled
+  fullName: GRID.MODULES.HoverManager.IsHoverEnabled

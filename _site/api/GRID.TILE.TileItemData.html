@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class TileItemData | Tycoon Project API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class TileItemData | Tycoon Project API ">
+      
+      <meta name="description" content="ScriptableObject respons&#225;vel por armazenar dados configur&#225;veis de tiles para o sistema de grid. Permite cria&#231;&#227;o de diferentes tipos de tiles atrav&#233;s do Unity Editor com propriedades visuais e funcionais.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/new/main/apiSpec/new?filename=GRID_TILE_TileItemData.md&amp;value=---%0Auid%3A%20GRID.TILE.TileItemData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="GRID.TILE.TileItemData">
+
+
+
+  <h1 id="GRID_TILE_TileItemData" data-uid="GRID.TILE.TileItemData" class="text-break">
+Class TileItemData  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="GRID.html">GRID</a>.<a class="xref" href="GRID.TILE.html">TILE</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>ScriptableObject responsável por armazenar dados configuráveis de tiles para o sistema de grid.
+Permite criação de diferentes tipos de tiles através do Unity Editor com propriedades visuais e funcionais.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;TileItemData&quot;, menuName = &quot;Tiles/TileItemData&quot;, order = 1)]
+public class TileItemData : ScriptableObject</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">ScriptableObject</span></div>
+      <div><span class="xref">TileItemData</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+  <h2 id="GRID_TILE_TileItemData_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Este ScriptableObject facilita a criação e configuração de tiles de forma modular e reutilizável.
+Cada tile pode ter suas próprias propriedades visuais (sprite, cor) e funcionais (tipo, nome).
+A configuração via Inspector permite designers criarem novos tipos de tiles sem programação.</p>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="GRID_TILE_TileItemData_Color_" data-uid="GRID.TILE.TileItemData.Color*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_Color" data-uid="GRID.TILE.TileItemData.Color">
+  Color
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Cor visual aplicada ao tile para diferenciação visual no grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color Color { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Color</span></dt>
+    <dd><p>Cor branca por padrão.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_Coordinate_" data-uid="GRID.TILE.TileItemData.Coordinate*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_Coordinate" data-uid="GRID.TILE.TileItemData.Coordinate">
+  Coordinate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Coordenada atual do tile no sistema de grid 2D.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Coordinate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Vector2</span></dt>
+    <dd><p>Vector2.zero por padrão (posição 0,0).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_Name_" data-uid="GRID.TILE.TileItemData.Name*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_Name" data-uid="GRID.TILE.TileItemData.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Nome identificador do tile exibido na interface do usuário.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">string</span></dt>
+    <dd><p>String vazia por padrão.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_Sprite_" data-uid="GRID.TILE.TileItemData.Sprite*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_Sprite" data-uid="GRID.TILE.TileItemData.Sprite">
+  Sprite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sprite visual do tile renderizado no grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Sprite Sprite { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">Sprite</span></dt>
+    <dd><p>Null por padrão, deve ser configurado no Inspector.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_TileType_" data-uid="GRID.TILE.TileItemData.TileType*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_TileType" data-uid="GRID.TILE.TileItemData.TileType">
+  TileType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tipo funcional do tile que determina seu comportamento no grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileType TileType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.TILE.TileType.html">TileType</a></dt>
+    <dd><p>Valor padrão é <a class="xref" href="GRID.TILE.TileType.html#GRID_TILE_TileType_Default">Default</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="GRID_TILE_TileItemData_SetColor_" data-uid="GRID.TILE.TileItemData.SetColor*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_SetColor_UnityEngine_Color_" data-uid="GRID.TILE.TileItemData.SetColor(UnityEngine.Color)">
+  SetColor(Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define a cor visual do tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetColor(Color color)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <span class="xref">Color</span></dt>
+    <dd><p>Nova cor a ser aplicada ao tile.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_SetCoordinate_" data-uid="GRID.TILE.TileItemData.SetCoordinate*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_SetCoordinate_System_Int32_System_Int32_" data-uid="GRID.TILE.TileItemData.SetCoordinate(System.Int32,System.Int32)">
+  SetCoordinate(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define a coordenada do tile no grid usando valores inteiros.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetCoordinate(int column, int row)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>column</code> <span class="xref">int</span></dt>
+    <dd><p>Coordenada X (coluna) no grid.</p>
+</dd>
+    <dt><code>row</code> <span class="xref">int</span></dt>
+    <dd><p>Coordenada Y (linha) no grid.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_SetName_" data-uid="GRID.TILE.TileItemData.SetName*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_SetName_System_String_" data-uid="GRID.TILE.TileItemData.SetName(System.String)">
+  SetName(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define o nome identificador do tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetName(string name)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <span class="xref">string</span></dt>
+    <dd><p>Novo nome para o tile.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="GRID_TILE_TileItemData_SetTileType_" data-uid="GRID.TILE.TileItemData.SetTileType*"></a>
+
+  <h3 id="GRID_TILE_TileItemData_SetTileType_GRID_TILE_TileType_" data-uid="GRID.TILE.TileItemData.SetTileType(GRID.TILE.TileType)">
+  SetTileType(TileType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TileItemData.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Define o tipo funcional do tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTileType(TileType tileType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tileType</code> <a class="xref" href="GRID.TILE.TileType.html">TileType</a></dt>
+    <dd><p>Novo tipo que determina o comportamento do tile.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

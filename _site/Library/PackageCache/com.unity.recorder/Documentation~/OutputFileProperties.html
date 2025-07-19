@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Output File properties | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Output File properties | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/OutputFileProperties.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="output-file-properties">Output File properties</h1>
+
+<p>Use these properties to define file output options for any type of Recorder.</p>
+<p><img src="Images/OutputFileProperties.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>File Name</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The name of the output file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>[TEXT FIELD]</em></td>
+<td style="text-align: left;">Type the file name here.<br><br><strong>Tip:</strong> You can use <a href="#available-placeholders">placeholders</a> to include auto-generated text in the file name: use the <strong>+Wildcards</strong> drop-down menu or insert them manually.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>+Wildcards</strong> menu</td>
+<td style="text-align: left;">Allows you to quickly select <a href="#available-placeholders">placeholders</a> for auto-generated text to append them to the <strong>File Name</strong> string.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Path</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Use these controls to configure the path to the folder where the Recorder saves output files.<br><br><strong>Note:</strong><ul><li> UNC paths are <a href="KnownIssues.html#unc-paths-not-supported-as-output-locations">not supported</a>.<li> The <a href="RecorderAnimation.html">Animation Clip Recorder</a> can only output to a location within the Assets folder because the output format is only usable in Unity.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>[DROP-DOWN]</em></td>
+<td style="text-align: left;">Choose one of several pre-defined Unity folders, or choose <strong>Absolute</strong> to specify a custom path.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>[TEXT FIELD]</em></td>
+<td style="text-align: left;">If you choose a predefined path from the drop-down menu, the Recorder appends anything you enter here to that path.<br><br>If you choose <strong>Absolute</strong> from the drop-down menu, you can enter the custom output path here. <br><br><strong>Note:</strong> If you click the Output Location button (<strong>...</strong>) to choose an absolute path from the Unity file browser, the path you choose overwrites anything in this field.<br><br><strong>Tip:</strong> You can manually insert <a href="#available-placeholders">placeholders</a> to include auto-generated text in the path string.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Output Location button (<strong>...</strong>)</td>
+<td style="text-align: left;">Opens a Unity file browser where you can choose a custom output path. When you choose a path this way, the Recorder automatically sets the drop-down menu to <strong>Absolute</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>[PATH]</em></td>
+<td style="text-align: left;">Displays the full output path, as set in the <strong>File Name</strong> and <strong>Path</strong> properties, with resolved values for the <a href="#available-placeholders">placeholders</a> (if any).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">File Browser button <br><img src="Images/RecorderReveal.png" alt=""></td>
+<td style="text-align: left;">Opens your operating system's file browser to the current path.<br><br>If the path doesn't exist, the Recorder tries to generate the necessary folder structure on disk.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Take Number</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">A value that the Recorder uses to number recordings. It increments by one after each recording.<br><br>If your Recorder List includes multiple recorders, the Take value simultaneously increments by one on all recorders except the ones that are inactive.<br><br><strong>Tip:</strong> You can use the <code>&lt;Take&gt;</code> placeholder to append the current <strong>Take</strong> value to the <strong>File Name</strong>, for example.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="available-placeholders"></a></p>
+<h2 id="available-placeholders-wildcards">Available placeholders (Wildcards)</h2>
+<p>You can insert placeholders in the <strong>File Name</strong> and <strong>Path</strong> fields to include auto-generated text in the file name and path strings that the Recorder uses to save the output files. The Recorder replaces these placeholders with the proper contextual values to build the actual strings.</p>
+<p>You can combine multiple placeholders in the same string. For example, the date and time you generate the recording.</p>
+<p>The <strong>+Wildcards</strong> menu helps you quickly append them to the file name string, but you can also manually type them anywhere in the string. To use placeholders in the path string, you must type them manually.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>Make sure that you include the &lt; &gt; brackets with the placeholder name. Also note that the placeholder names are case sensitive.</li>
+<li>Some placeholders might not be available depending on the Recorder type you are using.</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Description</th>
+<th>Resolved value example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;AOV&gt;</code></td>
+<td>The name of the <a href="aov-recorder-properties.html#input"><strong>Arbitrary Output Variable (AOV)</strong> selected for recording</a>.<br>If you select multiple AOVs and enable the <strong>Multi-part file</strong> option, the value resolves to <code>multiAOV</code>.</td>
+<td><code>Beauty</code></td>
+</tr>
+<tr>
+<td><code>&lt;Date&gt;</code></td>
+<td>The date the recording is generated. Uses the <code>yyyy-MM-dd</code> format.</td>
+<td><code>2020-11-03</code></td>
+</tr>
+<tr>
+<td><code>&lt;Extension&gt;</code></td>
+<td>The file extension of the output format (without the period).</td>
+<td><code>png</code></td>
+</tr>
+<tr>
+<td><code>&lt;Frame&gt;</code></td>
+<td>The current frame number. Uses the <code>0000</code> format.<br><br>This is useful for Image Sequence Recorders which output each frame as a separate file.</td>
+<td><code>0154</code></td>
+</tr>
+<tr>
+<td><code>&lt;GameObject&gt;</code></td>
+<td>The name of the <a href="RecorderAnimation.html#input"><strong>GameObject</strong> targeted for recording</a>.</td>
+<td><code>My GameObject</code></td>
+</tr>
+<tr>
+<td><code>&lt;GameObjectScene&gt;</code></td>
+<td>The name of the Scene containing the <a href="RecorderAnimation.html#input"><strong>GameObject</strong> targeted for recording</a>.</td>
+<td><code>My Scene</code></td>
+</tr>
+<tr>
+<td><code>&lt;Product&gt;</code></td>
+<td>The value of the <a href="https://docs.unity3d.com/Manual/class-PlayerSettings.html#ProductName">Product Name</a> field from Unity's Player General Settings.</td>
+<td><code>My Product</code></td>
+</tr>
+<tr>
+<td><code>&lt;Project&gt;</code></td>
+<td>The name of the current Unity Project.</td>
+<td><code>My Project</code></td>
+</tr>
+<tr>
+<td><code>&lt;Recorder&gt;</code></td>
+<td><li> In Recorder window: the Recorder name from the Recorder list.<li> In Timeline track: the name of the Recorder Clip.</li></td>
+<td><code>My Recorder</code></td>
+</tr>
+<tr>
+<td><code>&lt;Resolution&gt;</code></td>
+<td>The output image dimensions (width by height) in pixels. Uses the <code>WxH</code> format.</td>
+<td><code>1920x1080</code></td>
+</tr>
+<tr>
+<td><code>&lt;Scene&gt;</code></td>
+<td>The name of the current Unity Scene.</td>
+<td><code>My Scene</code></td>
+</tr>
+<tr>
+<td><code>&lt;Take&gt;</code></td>
+<td>The <strong>Take Number</strong> value. Uses the <code>000</code> format.</td>
+<td><code>002</code></td>
+</tr>
+<tr>
+<td><code>&lt;Time&gt;</code></td>
+<td>The time the recording is generated. Uses the <code>00h00m</code> format.</td>
+<td><code>16h52m</code></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/OutputFileProperties.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

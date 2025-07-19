@@ -1,0 +1,484 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.TILE.TilePool
+  commentId: T:GRID.TILE.TilePool
+  id: TilePool
+  parent: GRID.TILE
+  children:
+  - GRID.TILE.TilePool.GetPooledObject
+  - GRID.TILE.TilePool.Instance
+  - GRID.TILE.TilePool.amountToPool
+  - GRID.TILE.TilePool.objectToPool
+  - GRID.TILE.TilePool.pooledObjects
+  - GRID.TILE.TilePool.pooledObjectsContainer
+  langs:
+  - csharp
+  - vb
+  name: TilePool
+  nameWithType: TilePool
+  fullName: GRID.TILE.TilePool
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TilePool
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 25
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: >-
+    Gerencia um pool de tiles para otimizar a criação e reutilização de GameObjects.
+
+    Implementa o padrão Object Pool para evitar instanciamentos e destruições frequentes.
+  remarks: >-
+    O sistema de pooling:
+
+    - Pré-instancia uma quantidade definida de tiles
+
+    - Reutiliza objetos inativos em vez de criar novos
+
+    - Organiza tiles em grupos de 10 para melhor hierarquia
+
+    - Melhora significativamente a performance do jogo
+
+    - Reduz o garbage collection
+  example: []
+  syntax:
+    content: 'public class TilePool : MonoBehaviour'
+    content.vb: Public Class TilePool Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+- uid: GRID.TILE.TilePool.Instance
+  commentId: P:GRID.TILE.TilePool.Instance
+  id: Instance
+  parent: GRID.TILE.TilePool
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: TilePool.Instance
+  fullName: GRID.TILE.TilePool.Instance
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Instance
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Instância singleton do TilePool.
+  example: []
+  syntax:
+    content: public static TilePool Instance { get; }
+    parameters: []
+    return:
+      type: GRID.TILE.TilePool
+    content.vb: Public Shared Property Instance As TilePool
+  overload: GRID.TILE.TilePool.Instance*
+- uid: GRID.TILE.TilePool.pooledObjectsContainer
+  commentId: F:GRID.TILE.TilePool.pooledObjectsContainer
+  id: pooledObjectsContainer
+  parent: GRID.TILE.TilePool
+  langs:
+  - csharp
+  - vb
+  name: pooledObjectsContainer
+  nameWithType: TilePool.pooledObjectsContainer
+  fullName: GRID.TILE.TilePool.pooledObjectsContainer
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: pooledObjectsContainer
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Container onde os objetos da pool serão organizados na hierarquia.
+  example: []
+  syntax:
+    content: >-
+      [Tooltip("GameObject pai que conterá todos os tiles da pool")]
+
+      public GameObject pooledObjectsContainer
+    return:
+      type: UnityEngine.GameObject
+    content.vb: >-
+      <Tooltip("GameObject pai que conterá todos os tiles da pool")>
+
+      Public pooledObjectsContainer As GameObject
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: GameObject pai que conterá todos os tiles da pool
+- uid: GRID.TILE.TilePool.objectToPool
+  commentId: F:GRID.TILE.TilePool.objectToPool
+  id: objectToPool
+  parent: GRID.TILE.TilePool
+  langs:
+  - csharp
+  - vb
+  name: objectToPool
+  nameWithType: TilePool.objectToPool
+  fullName: GRID.TILE.TilePool.objectToPool
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: objectToPool
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 45
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Prefab do tile que será usado para criar os objetos da pool.
+  example: []
+  syntax:
+    content: >-
+      [Tooltip("Prefab do tile a ser instanciado na pool")]
+
+      public GameObject objectToPool
+    return:
+      type: UnityEngine.GameObject
+    content.vb: >-
+      <Tooltip("Prefab do tile a ser instanciado na pool")>
+
+      Public objectToPool As GameObject
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Prefab do tile a ser instanciado na pool
+- uid: GRID.TILE.TilePool.pooledObjects
+  commentId: F:GRID.TILE.TilePool.pooledObjects
+  id: pooledObjects
+  parent: GRID.TILE.TilePool
+  langs:
+  - csharp
+  - vb
+  name: pooledObjects
+  nameWithType: TilePool.pooledObjects
+  fullName: GRID.TILE.TilePool.pooledObjects
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: pooledObjects
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 51
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Lista de todos os tiles disponíveis na pool.
+  example: []
+  syntax:
+    content: >-
+      [HideInInspector]
+
+      public List<GameObject> pooledObjects
+    return:
+      type: System.Collections.Generic.List{UnityEngine.GameObject}
+    content.vb: >-
+      <HideInInspector>
+
+      Public pooledObjects As List(Of GameObject)
+  attributes:
+  - type: UnityEngine.HideInInspector
+    ctor: UnityEngine.HideInInspector.#ctor
+    arguments: []
+- uid: GRID.TILE.TilePool.amountToPool
+  commentId: F:GRID.TILE.TilePool.amountToPool
+  id: amountToPool
+  parent: GRID.TILE.TilePool
+  langs:
+  - csharp
+  - vb
+  name: amountToPool
+  nameWithType: TilePool.amountToPool
+  fullName: GRID.TILE.TilePool.amountToPool
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: amountToPool
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 57
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Quantidade total de tiles para pré-instanciar na pool.
+  example: []
+  syntax:
+    content: >-
+      [Tooltip("Número de tiles a serem criados na inicialização")]
+
+      public int amountToPool
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Tooltip("Número de tiles a serem criados na inicialização")>
+
+      Public amountToPool As Integer
+  attributes:
+  - type: UnityEngine.TooltipAttribute
+    ctor: UnityEngine.TooltipAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Número de tiles a serem criados na inicialização
+- uid: GRID.TILE.TilePool.GetPooledObject
+  commentId: M:GRID.TILE.TilePool.GetPooledObject
+  id: GetPooledObject
+  parent: GRID.TILE.TilePool
+  langs:
+  - csharp
+  - vb
+  name: GetPooledObject()
+  nameWithType: TilePool.GetPooledObject()
+  fullName: GRID.TILE.TilePool.GetPooledObject()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TilePool.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetPooledObject
+    path: Assets/Scripts/Grid System/Tile/TilePool.cs
+    startLine: 117
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Obtém um tile inativo da pool para reutilização.
+  remarks: >-
+    Este método implementa o padrão Object Pool para otimização de performance,
+
+    evitando a criação e destruição constante de GameObjects durante o runtime.
+
+    Itera através da pool procurando por objetos inativos disponíveis para reutilização.
+  example: []
+  syntax:
+    content: public GameObject GetPooledObject()
+    return:
+      type: UnityEngine.GameObject
+      description: >-
+        Um GameObject inativo da pool, ou null se nenhum estiver disponível.
+
+        O tile retornado deve ser ativado pelo chamador antes do uso.
+    content.vb: Public Function GetPooledObject() As GameObject
+  overload: GRID.TILE.TilePool.GetPooledObject*
+references:
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.TILE.TilePool.Instance*
+  commentId: Overload:GRID.TILE.TilePool.Instance
+  href: GRID.TILE.TilePool.html#GRID_TILE_TilePool_Instance
+  name: Instance
+  nameWithType: TilePool.Instance
+  fullName: GRID.TILE.TilePool.Instance
+- uid: GRID.TILE.TilePool
+  commentId: T:GRID.TILE.TilePool
+  parent: GRID.TILE
+  href: GRID.TILE.TilePool.html
+  name: TilePool
+  nameWithType: TilePool
+  fullName: GRID.TILE.TilePool
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: System.Collections.Generic.List{UnityEngine.GameObject}
+  commentId: T:System.Collections.Generic.List{UnityEngine.GameObject}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<GameObject>
+  nameWithType: List<GameObject>
+  fullName: System.Collections.Generic.List<UnityEngine.GameObject>
+  nameWithType.vb: List(Of GameObject)
+  fullName.vb: System.Collections.Generic.List(Of UnityEngine.GameObject)
+  name.vb: List(Of GameObject)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: <
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: GRID.TILE.TilePool.GetPooledObject*
+  commentId: Overload:GRID.TILE.TilePool.GetPooledObject
+  href: GRID.TILE.TilePool.html#GRID_TILE_TilePool_GetPooledObject
+  name: GetPooledObject
+  nameWithType: TilePool.GetPooledObject
+  fullName: GRID.TILE.TilePool.GetPooledObject

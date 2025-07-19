@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Getting Started - Guia Pr&#225;tico | Tycoon Project API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Getting Started - Guia Pr&#225;tico | Tycoon Project API ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/docs/getting-started.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="getting-started---guia-prático">Getting Started - Guia Prático</h1>
+
+<p>Este guia irá levá-lo desde a configuração inicial até a criação de seu primeiro jogo usando o <strong>Tycoon Project</strong>. Em poucos minutos você terá um sistema de grid funcional com todas as funcionalidades principais.</p>
+<h2 id="-pré-requisitos">📋 Pré-requisitos</h2>
+<p>Antes de começar, certifique-se de ter:</p>
+<ul>
+<li><strong>Unity 2022.3 LTS</strong> ou superior</li>
+<li><strong>Visual Studio</strong> ou <strong>VS Code</strong> para edição de código</li>
+<li><strong>Conhecimento básico de C#</strong> e Unity</li>
+<li><strong>Git</strong> (opcional, para versionamento)</li>
+</ul>
+<h2 id="-configuração-rápida">🚀 Configuração Rápida</h2>
+<h3 id="passo-1-setup-do-projeto">Passo 1: Setup do Projeto</h3>
+<ol>
+<li><p><strong>Clone ou baixe o projeto</strong></p>
+<pre><code class="lang-bash">git clone https://github.com/MurilloYonamine/Tycoon-Project.git
+</code></pre>
+</li>
+<li><p><strong>Abra no Unity</strong></p>
+<ul>
+<li>Abra o Unity Hub</li>
+<li>Clique em &quot;Open&quot; e selecione a pasta do projeto</li>
+<li>Aguarde o Unity importar os assets</li>
+</ul>
+</li>
+<li><p><strong>Verifique as dependências</strong></p>
+<ul>
+<li>Unity Input System deve estar instalado</li>
+<li>TextMeshPro deve estar configurado</li>
+</ul>
+</li>
+</ol>
+<h3 id="passo-2-configuração-da-cena">Passo 2: Configuração da Cena</h3>
+<ol>
+<li><p><strong>Abra a cena principal</strong></p>
+<pre><code>Assets/Scenes/MainScene.unity
+</code></pre>
+</li>
+<li><p><strong>Verifique os componentes essenciais</strong></p>
+<ul>
+<li><strong>GridManager</strong> deve estar presente na cena</li>
+<li><strong>Tilemap</strong> e <strong>Grid</strong> devem estar configurados</li>
+<li><strong>TilePool</strong> deve estar vinculado</li>
+</ul>
+</li>
+<li><p><strong>Configure o Input System</strong></p>
+<pre><code class="lang-csharp">// O ClickHandler já está configurado para capturar:
+// - Cliques do mouse (posicionamento)
+// - Tecla Tab (abrir/fechar loja)
+</code></pre>
+</li>
+</ol>
+<h2 id="-primeiro-teste">🎯 Primeiro Teste</h2>
+<h3 id="execute-o-projeto">Execute o Projeto</h3>
+<ol>
+<li><strong>Pressione Play</strong> no Unity</li>
+<li><strong>Pressione Tab</strong> para abrir a loja</li>
+<li><strong>Clique em um tile</strong> na loja para selecioná-lo</li>
+<li><strong>Mova o mouse</strong> sobre o grid (observe o hover effect)</li>
+<li><strong>Clique no grid</strong> para posicionar o tile</li>
+</ol>
+<p>🎉 <strong>Parabéns!</strong> Seu sistema básico está funcionando!</p>
+<h2 id="-configuração-básica">🔧 Configuração Básica</h2>
+<h3 id="configurando-o-gridmanager">Configurando o GridManager</h3>
+<p>O <strong>GridManager</strong> é o coração do sistema. Aqui está como configurá-lo:</p>
+<pre><code class="lang-csharp">public class MyGameManager : MonoBehaviour
+{
+    void Start()
+    {
+        // Configurar hover effects
+        GridManager.Instance.SetHoverEnabled(true);
+        GridManager.Instance.SetHoverColor(Color.yellow);
+        
+        // Verificar se o sistema está inicializado
+        if (GridManager.Instance != null)
+        {
+            Debug.Log(&quot;Grid System inicializado com sucesso!&quot;);
+        }
+    }
+}
+</code></pre>
+<h3 id="configurando-a-loja">Configurando a Loja</h3>
+<p>A <strong>ShopManager</strong> controla a interface de seleção:</p>
+<pre><code class="lang-csharp">public class CustomShopSetup : MonoBehaviour
+{
+    void Start()
+    {
+        // A loja é configurada automaticamente
+        // Controles:
+        // - Tab: Abrir/Fechar
+        // - Clique: Selecionar tile
+        
+        // Para customizar tiles programaticamente:
+        CreateCustomTile();
+    }
+    
+    void CreateCustomTile()
+    {
+        // Criar dados customizados para tile
+        TileItemData customTile = ScriptableObject.CreateInstance&lt;TileItemData&gt;();
+        customTile.SetName(&quot;Meu Tile Customizado&quot;);
+        customTile.SetColor(Color.blue);
+        customTile.SetTileType(TileType.Building);
+    }
+}
+</code></pre>
+<h3 id="configurando-object-pool">Configurando Object Pool</h3>
+<p>O <strong>TilePool</strong> otimiza performance:</p>
+<pre><code class="lang-csharp">void ConfigureTilePool()
+{
+    // O pool é configurado automaticamente baseado no tamanho do grid
+    // Mas você pode ajustar manualmente:
+    
+    TilePool.Instance.amountToPool = 200; // Aumentar para grids maiores
+    
+    // Verificar tiles disponíveis
+    GameObject availableTile = TilePool.Instance.GetPooledObject();
+    if (availableTile != null)
+    {
+        Debug.Log(&quot;Tile disponível no pool!&quot;);
+    }
+}
+</code></pre>
+<h2 id="-exemplos-práticos">🎮 Exemplos Práticos</h2>
+<h3 id="exemplo-1-jogo-de-construção-de-cidade">Exemplo 1: Jogo de Construção de Cidade</h3>
+<pre><code class="lang-csharp">public class CityBuilder : MonoBehaviour
+{
+    [SerializeField] private TileItemData houseTile;
+    [SerializeField] private TileItemData roadTile;
+    [SerializeField] private TileItemData parkTile;
+    
+    void Start()
+    {
+        SetupCityTiles();
+    }
+    
+    void SetupCityTiles()
+    {
+        // Configurar tile de casa
+        houseTile.SetName(&quot;Casa&quot;);
+        houseTile.SetColor(Color.blue);
+        houseTile.SetTileType(TileType.Building);
+        
+        // Configurar tile de estrada
+        roadTile.SetName(&quot;Estrada&quot;);
+        roadTile.SetColor(Color.gray);
+        roadTile.SetTileType(TileType.Path);
+        
+        // Configurar tile de parque
+        parkTile.SetName(&quot;Parque&quot;);
+        parkTile.SetColor(Color.green);
+        parkTile.SetTileType(TileType.Building);
+    }
+    
+    void Update()
+    {
+        // Teclas de atalho para seleção rápida
+        if (Input.GetKeyDown(KeyCode.H))
+            SelectTile(houseTile);
+        if (Input.GetKeyDown(KeyCode.R))
+            SelectTile(roadTile);
+        if (Input.GetKeyDown(KeyCode.P))
+            SelectTile(parkTile);
+    }
+    
+    void SelectTile(TileItemData tileData)
+    {
+        GameObject newTile = TilePool.Instance.GetPooledObject();
+        if (newTile != null)
+        {
+            newTile.SetActive(true);
+            Tile tileComponent = newTile.GetComponent&lt;Tile&gt;();
+            tileComponent.SetTileItemData(tileData);
+            tileComponent.HandleSelection(true); // Ativar ghost mode
+        }
+    }
+}
+</code></pre>
+<h3 id="exemplo-2-sistema-de-fazenda">Exemplo 2: Sistema de Fazenda</h3>
+<pre><code class="lang-csharp">public class FarmSystem : MonoBehaviour
+{
+    [Header(&quot;Farm Tiles&quot;)]
+    public TileItemData wheatTile;
+    public TileItemData cornTile;
+    public TileItemData waterTile;
+    
+    void Start()
+    {
+        ConfigureFarmTiles();
+        SetupFarmControls();
+    }
+    
+    void ConfigureFarmTiles()
+    {
+        // Trigo
+        wheatTile.SetName(&quot;Trigo&quot;);
+        wheatTile.SetColor(Color.yellow);
+        wheatTile.SetTileType(TileType.Building);
+        
+        // Milho
+        cornTile.SetName(&quot;Milho&quot;);
+        cornTile.SetColor(new Color(1f, 0.8f, 0f)); // Dourado
+        cornTile.SetTileType(TileType.Building);
+        
+        // Irrigação
+        waterTile.SetName(&quot;Irrigação&quot;);
+        waterTile.SetColor(Color.cyan);
+        waterTile.SetTileType(TileType.Path);
+    }
+    
+    void SetupFarmControls()
+    {
+        // Configurar hover especial para fazenda
+        GridManager.Instance.SetHoverColor(Color.green);
+        
+        // Sistema automático de irrigação
+        StartCoroutine(AutoIrrigationSystem());
+    }
+    
+    IEnumerator AutoIrrigationSystem()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+            
+            // Verificar tiles que precisam de água
+            CheckIrrigationNeeds();
+        }
+    }
+    
+    void CheckIrrigationNeeds()
+    {
+        // Lógica para verificar tiles de plantio próximos à água
+        Debug.Log(&quot;Verificando necessidades de irrigação...&quot;);
+    }
+}
+</code></pre>
+<h3 id="exemplo-3-sistema-de-defesa-tower-defense">Exemplo 3: Sistema de Defesa Tower Defense</h3>
+<pre><code class="lang-csharp">public class TowerDefense : MonoBehaviour
+{
+    [Header(&quot;Defense Tiles&quot;)]
+    public TileItemData towerTile;
+    public TileItemData wallTile;
+    public TileItemData pathTile;
+    
+    void Start()
+    {
+        SetupDefenseTiles();
+        ConfigureTowerDefenseGrid();
+    }
+    
+    void SetupDefenseTiles()
+    {
+        // Torre de defesa
+        towerTile.SetName(&quot;Torre&quot;);
+        towerTile.SetColor(Color.red);
+        towerTile.SetTileType(TileType.Building);
+        
+        // Muralha
+        wallTile.SetName(&quot;Muralha&quot;);
+        wallTile.SetColor(Color.gray);
+        wallTile.SetTileType(TileType.Building);
+        
+        // Caminho dos inimigos
+        pathTile.SetName(&quot;Caminho&quot;);
+        pathTile.SetColor(Color.brown);
+        pathTile.SetTileType(TileType.Path);
+    }
+    
+    void ConfigureTowerDefenseGrid()
+    {
+        // Hover especial para áreas de construção
+        GridManager.Instance.SetHoverColor(Color.red);
+        
+        // Detectar quando uma torre é posicionada
+        // (Integrar com sistema de eventos)
+    }
+    
+    void OnTowerPlaced(Vector3Int position)
+    {
+        Debug.Log($&quot;Torre posicionada em: {position}&quot;);
+        
+        // Lógica de range de ataque
+        ShowTowerRange(position);
+    }
+    
+    void ShowTowerRange(Vector3Int towerPosition)
+    {
+        // Destacar células dentro do alcance da torre
+        int range = 3;
+        
+        for (int x = -range; x &lt;= range; x++)
+        {
+            for (int y = -range; y &lt;= range; y++)
+            {
+                Vector3Int checkPosition = towerPosition + new Vector3Int(x, y, 0);
+                // Destacar posição se estiver no alcance
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="-customização-avançada">⚙️ Customização Avançada</h2>
+<h3 id="criando-novos-tipos-de-tile">Criando Novos Tipos de Tile</h3>
+<pre><code class="lang-csharp">// 1. Estenda o enum TileType
+public enum TileType
+{
+    Default,
+    Building,
+    Path,
+    Water,      // Novo tipo
+    Forest,     // Novo tipo
+    Mountain    // Novo tipo
+}
+
+// 2. Crie comportamentos customizados
+public class WaterTile : MonoBehaviour
+{
+    void Start()
+    {
+        // Comportamento específico para tiles de água
+        AddRippleEffect();
+    }
+    
+    void AddRippleEffect()
+    {
+        // Adicionar efeito visual de ondulação
+    }
+}
+</code></pre>
+<h3 id="customizando-efeitos-visuais">Customizando Efeitos Visuais</h3>
+<pre><code class="lang-csharp">public class CustomVisualEffects : MonoBehaviour
+{
+    void Start()
+    {
+        CustomizeHoverEffects();
+        AddParticleEffects();
+    }
+    
+    void CustomizeHoverEffects()
+    {
+        // Hover customizado com gradiente
+        Color[] hoverGradient = { Color.yellow, Color.orange, Color.red };
+        
+        // Aplicar baseado no tipo de tile
+        GridManager.Instance.SetHoverColor(hoverGradient[0]);
+    }
+    
+    void AddParticleEffects()
+    {
+        // Adicionar partículas quando tiles são posicionados
+        // Integrar com sistema de eventos do GridManager
+    }
+}
+</code></pre>
+<h3 id="sistema-de-saveload">Sistema de Save/Load</h3>
+<pre><code class="lang-csharp">[System.Serializable]
+public class GridSaveData
+{
+    public List&lt;TileSaveData&gt; placedTiles = new List&lt;TileSaveData&gt;();
+}
+
+[System.Serializable]
+public class TileSaveData
+{
+    public Vector3Int position;
+    public TileType tileType;
+    public string tileName;
+    public Color tileColor;
+}
+
+public class SaveSystem : MonoBehaviour
+{
+    public void SaveGrid()
+    {
+        GridSaveData saveData = new GridSaveData();
+        
+        // Coletar todos os tiles posicionados
+        for (int x = 0; x &lt; GridManager.Instance.Bounds.size.x; x++)
+        {
+            for (int y = 0; y &lt; GridManager.Instance.Bounds.size.y; y++)
+            {
+                GameObject tileObject = GridManager.Instance.TileObjects[x, y];
+                if (tileObject != null)
+                {
+                    Tile tile = tileObject.GetComponent&lt;Tile&gt;();
+                    TileSaveData tileData = new TileSaveData
+                    {
+                        position = new Vector3Int(x, y, 0),
+                        tileType = tile.TileItemData.TileType,
+                        tileName = tile.TileItemData.Name,
+                        tileColor = tile.TileItemData.Color
+                    };
+                    saveData.placedTiles.Add(tileData);
+                }
+            }
+        }
+        
+        // Salvar em JSON
+        string json = JsonUtility.ToJson(saveData, true);
+        System.IO.File.WriteAllText(Application.persistentDataPath + &quot;/grid_save.json&quot;, json);
+        
+        Debug.Log(&quot;Grid salvo com sucesso!&quot;);
+    }
+    
+    public void LoadGrid()
+    {
+        string filePath = Application.persistentDataPath + &quot;/grid_save.json&quot;;
+        
+        if (System.IO.File.Exists(filePath))
+        {
+            string json = System.IO.File.ReadAllText(filePath);
+            GridSaveData saveData = JsonUtility.FromJson&lt;GridSaveData&gt;(json);
+            
+            // Limpar grid atual
+            ClearGrid();
+            
+            // Recriar tiles salvos
+            foreach (TileSaveData tileData in saveData.placedTiles)
+            {
+                RecreateFile(tileData);
+            }
+            
+            Debug.Log(&quot;Grid carregado com sucesso!&quot;);
+        }
+    }
+    
+    void ClearGrid()
+    {
+        // Retornar todos os tiles para o pool
+        for (int x = 0; x &lt; GridManager.Instance.Bounds.size.x; x++)
+        {
+            for (int y = 0; y &lt; GridManager.Instance.Bounds.size.y; y++)
+            {
+                GameObject tileObject = GridManager.Instance.TileObjects[x, y];
+                if (tileObject != null)
+                {
+                    TilePool.Instance.ReturnPooledObject(tileObject);
+                    GridManager.Instance.TileObjects[x, y] = null;
+                }
+            }
+        }
+    }
+    
+    void RecreateFile(TileSaveData tileData)
+    {
+        // Obter tile do pool
+        GameObject newTile = TilePool.Instance.GetPooledObject();
+        
+        if (newTile != null)
+        {
+            // Configurar tile
+            Tile tileComponent = newTile.GetComponent&lt;Tile&gt;();
+            TileItemData itemData = ScriptableObject.CreateInstance&lt;TileItemData&gt;();
+            
+            itemData.SetName(tileData.tileName);
+            itemData.SetColor(tileData.tileColor);
+            itemData.SetTileType(tileData.tileType);
+            itemData.SetCoordinate(tileData.position.x, tileData.position.y);
+            
+            tileComponent.SetTileItemData(itemData);
+            
+            // Posicionar no grid
+            Vector3 worldPosition = GridManager.Instance.Grid.GetCellCenterWorld(tileData.position);
+            newTile.transform.position = worldPosition;
+            newTile.SetActive(true);
+            
+            // Registrar no GridManager
+            GridManager.Instance.TileObjects[tileData.position.x, tileData.position.y] = newTile;
+        }
+    }
+}
+</code></pre>
+<h2 id="-troubleshooting">🐛 Troubleshooting</h2>
+<h3 id="problemas-comuns">Problemas Comuns</h3>
+<h4 id="1-tiles-não-aparecem-no-hover"><strong>1. Tiles não aparecem no hover</strong></h4>
+<pre><code class="lang-csharp">// Verificar se o Tilemap tem tiles marcados
+Debug.Log($&quot;Tiles no Tilemap: {GridManager.Instance.BoundsCalculator.GetAllMarkedTiles(GridManager.Instance.Bounds)}&quot;);
+
+// Verificar se hover está habilitado
+Debug.Log($&quot;Hover habilitado: {GridManager.Instance.IsHovering}&quot;);
+</code></pre>
+<h4 id="2-pool-de-tiles-vazio"><strong>2. Pool de tiles vazio</strong></h4>
+<pre><code class="lang-csharp">// Verificar configuração do pool
+Debug.Log($&quot;Tiles no pool: {TilePool.Instance.amountToPool}&quot;);
+
+// Reconfigurar se necessário
+TilePool.Instance.amountToPool = 100;
+</code></pre>
+<h4 id="3-cliques-não-funcionam"><strong>3. Cliques não funcionam</strong></h4>
+<pre><code class="lang-csharp">// Verificar se ClickHandler está ativo
+Debug.Log($&quot;ClickHandler ativo: {GridManager.Instance.ClickHandler != null}&quot;);
+
+// Verificar se Input System está configurado
+// Window &gt; Analysis &gt; Input Debugger
+</code></pre>
+<h3 id="dicas-de-performance">Dicas de Performance</h3>
+<h4 id="otimização-para-grids-grandes"><strong>Otimização para Grids Grandes</strong></h4>
+<pre><code class="lang-csharp">void OptimizeForLargeGrids()
+{
+    // Aumentar pool baseado no tamanho do grid
+    int gridSize = GridManager.Instance.Bounds.size.x * GridManager.Instance.Bounds.size.y;
+    TilePool.Instance.amountToPool = Mathf.Min(gridSize / 4, 500); // Máximo 500 tiles
+    
+    // Desabilitar hover se performance for crítica
+    if (gridSize &gt; 10000)
+    {
+        GridManager.Instance.SetHoverEnabled(false);
+    }
+}
+</code></pre>
+<h4 id="otimização-de-renderização"><strong>Otimização de Renderização</strong></h4>
+<pre><code class="lang-csharp">void OptimizeRendering()
+{
+    // Usar LOD para tiles distantes
+    // Implementar frustum culling
+    // Agrupar tiles similares em batches
+}
+</code></pre>
+<h2 id="-próximos-passos">📚 Próximos Passos</h2>
+<h3 id="aprofunde-seus-conhecimentos">Aprofunde seus Conhecimentos</h3>
+<ol>
+<li><strong><a href="../api/index.html">API Reference Completa</a></strong> - Explore todas as funcionalidades</li>
+<li><strong><a href="../api/index.html#grid-modules">Módulos Avançados</a></strong> - PathManager, HoverManager, etc.</li>
+<li><strong><a href="introduction.html#casos-de-uso">Casos de Uso Específicos</a></strong> - Exemplos por gênero de jogo</li>
+</ol>
+<h3 id="expanda-o-sistema">Expanda o Sistema</h3>
+<ol>
+<li><strong>Adicione novos tipos de tile</strong> - Customize para seu jogo</li>
+<li><strong>Implemente save/load</strong> - Persistência de dados</li>
+<li><strong>Crie efeitos visuais</strong> - Partículas e animações</li>
+<li><strong>Integre com outros sistemas</strong> - Audio, UI, Networking</li>
+</ol>
+<h2 id="-dicas-finais">💡 Dicas Finais</h2>
+<h3 id="melhores-práticas">Melhores Práticas</h3>
+<ul>
+<li><strong>Use Object Pooling</strong> sempre que possível</li>
+<li><strong>Mantenha módulos independentes</strong> para facilitar testes</li>
+<li><strong>Documente suas customizações</strong> para facilitar manutenção</li>
+<li><strong>Teste em diferentes tamanhos de grid</strong> para garantir performance</li>
+</ul>
+<h3 id="recursos-adicionais">Recursos Adicionais</h3>
+<ul>
+<li><strong><a href="https://docs.unity3d.com/">Documentação Unity</a></strong> - Referência oficial</li>
+<li><strong><a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/index.html">Input System Guide</a></strong> - Sistema de input moderno</li>
+<li><strong><a href="https://unity.com/how-to/optimize-game-performance">Performance Optimization</a></strong> - Guias de otimização</li>
+</ul>
+<p>Unity 6 | Sistema Modular | Performance Otimizada</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Alembic Exporter component | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Alembic Exporter component | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/ref_Exporter.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="alembic-exporter-component">Alembic Exporter component</h1>
+
+<p>The Alembic Exporter component allows you to customize how the Alembic package exports animation to an Alembic file.</p>
+<p><img src="images/abc_export_options.png" alt="The Export Settings window"></p>
+<p>The following topics describe the properties of the Alembic Exporter component in detail:</p>
+<ul>
+<li><a href="#exportRef_A"><strong>Output Path</strong> section</a></li>
+<li><a href="#exportRef_B"><strong>Alembic Settings</strong> section</a></li>
+<li><a href="#exportRef_C"><strong>Capture Settings</strong> section</a></li>
+<li><a href="#exportRef_D"><strong>Capture Components</strong> option group</a></li>
+<li><a href="#exportRef_E"><strong>Mesh Components</strong> option group</a></li>
+<li><a href="#exportRef_F">More Capture options</a></li>
+<li><a href="#exportRef_G"><strong>Misc</strong> section</a></li>
+<li><a href="#exportRef_H"><strong>Capture Control</strong> section</a></li>
+</ul>
+<blockquote>
+<p><em><strong>Note:</strong></em> The Alembic package appends an ID (for example, <code>(0000283C)</code>) to the name of the Alembic node on export. This is to avoid naming conflicts, because Alembic forces each node in a hierarchy to have a unique name.</p>
+</blockquote>
+<p><a name="exportRef_A"></a></p>
+<h2 id="output-path-section">Output Path section</h2>
+<p>Specify the location to save the Alembic file to. By default, the output path is relative to the current Unity Project path.</p>
+<p><img src="images/abc_export_options_A.png" alt="Output Path section"></p>
+<p><a name="exportRef_B"></a></p>
+<h2 id="alembic-settings-section">Alembic Settings section</h2>
+<p>Use these settings to define the properties of the Alembic output.</p>
+<p><img src="images/abc_export_options_B.png" alt="Alembic Settings section"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em><strong>Property</strong></em></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Xform Type</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Choose the transform type.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Matrix</strong></td>
+<td style="text-align: left;">Record the full transformation matrix.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>TRS</strong></td>
+<td style="text-align: left;">Record the TRS channels for position, rotation, scale of an object. This is the default transform type.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em><strong>Time Sampling</strong></em></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Type</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Choose the time sampling mode.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Uniform</strong></td>
+<td style="text-align: left;">The interval between frames on the Alembic side is always constant (<code>1 / Frame Rate seconds</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Acyclic</strong></td>
+<td style="text-align: left;">The delta time in Unity is the interval between the frames on the Alembic side. The interval is not constant, but the impact on the game progress is minimal. It is a mode mainly assuming 3D recording of games.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Frame Rate</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Set the frame rate to use for uniform sampling. This option is only available when Time Sampling <strong>Type</strong> is set to Uniform.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fix Delta Time</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enable this option to set <a href="https://docs.unity3d.com/ScriptReference/Time-maximumDeltaTime.html">Time.maximumDeltaTime</a> using the frame rate to ensure fixed delta time. In the case of video production, this is the desired behavior.<br><em><strong>Note:</strong></em> If you are managing <a href="https://docs.unity3d.com/ScriptReference/Time-maximumDeltaTime.html">Time.maximumDeltaTime</a> yourself, be aware that this could lead to non-uniform delta time. <br>This option is only available when Time Sampling <strong>Type</strong> is set to Uniform.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Swap Handedness</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enable to change from a left hand coordinate system (Unity) to a right hand coordinate system (Autodesk® Maya®).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Swap Faces</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enable to reverse the front and back of all faces.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scale Factor</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Set scale factor to convert between different system units. For example, using 0.1 converts the Unity units to 1/10 of their value in the resulting Alembic file. This also affects position and speed.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="exportRef_C"></a></p>
+<h2 id="capture-settings-section">Capture Settings section</h2>
+<p>Use these settings to determine the set of target GameObject(s) for the current capture. Once the capture begins, the target set is locked and does not change. Enabling or disabling a GameObject in the target set does not affect the capture. Any GameObjects generated after the start of the capture are not included.</p>
+<blockquote>
+<p><em><strong>Warning:</strong></em> Deleting a target GameObject in the middle of a capture interrupts the capture, and the Alembic file might have a non-uniform number of samples as a result. Some software might not handle this properly.</p>
+</blockquote>
+<p><img src="images/abc_export_options_C.png" alt="Capture Settings section"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em><strong>Property</strong></em></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Scope</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Choose the scope of the export. By default, this is set to the <strong>Entire Scene</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Entire Scene</strong></td>
+<td style="text-align: left;">Export the entire Scene. This is the default.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Target Branch</strong></td>
+<td style="text-align: left;">Export only a branch (or hierarchy) of the Scene. When you choose this option, the <strong>Target</strong> property appears, which allows you to select a GameObject.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Target</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Set a reference to the GameObject that is the root of the hierarchy you want to export.<br>This property is only available if the <strong>Scope</strong> property is set to <strong>Target Branch</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Static MeshRenderers</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enable this option to skip capturing animation on static Meshes.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="exportRef_D"></a></p>
+<h2 id="capture-components-option-group">Capture Components option group</h2>
+<p>Use these settings to define which components to save data for.</p>
+<p><img src="images/abc_export_options_D.png" alt="Capture Components option group"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em><strong>Property</strong></em></th>
+<th style="text-align: left;"><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>MeshRenderer</strong></td>
+<td style="text-align: left;">Enable to export <a href="https://docs.unity3d.com/Manual/class-MeshRenderer.html">MeshRenderer</a> components.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SkinnedMeshRenderer</strong></td>
+<td style="text-align: left;">Enable to export <a href="https://docs.unity3d.com/Manual/class-SkinnedMeshRenderer.html">SkinnedMeshRenderer</a> components.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Camera</strong></td>
+<td style="text-align: left;">Enable to export <a href="https://docs.unity3d.com/Manual/class-Camera.html">Camera</a> components.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="exportRef_E"></a></p>
+<h2 id="mesh-components-option-group">Mesh Components option group</h2>
+<p>Use these settings to fine-tune the Mesh data you are saving.</p>
+<p><img src="images/abc_export_options_E.png" alt="Mesh Components option group"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em><strong>Property</strong></em></th>
+<th style="text-align: left;"><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Normals</strong></td>
+<td style="text-align: left;">Enable to export Mesh normals.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UV 0</strong></td>
+<td style="text-align: left;">Enable to export the base texture coordinates of the Mesh.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UV 1</strong></td>
+<td style="text-align: left;">Enable to export the second texture coordinate set of the Mesh.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vertex Color</strong></td>
+<td style="text-align: left;">Enable to export vertex colors.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Submeshes</strong></td>
+<td style="text-align: left;">Enable to export sub-Meshes.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em><strong>Note:</strong></em> Alembic does not support Material export, and therefore neither does Alembic in Unity.</p>
+</blockquote>
+<p><a name="exportRef_F"></a></p>
+<h2 id="more-capture-options">More Capture options</h2>
+<p>These options allow you to control starting and stopping the capture.</p>
+<p><img src="images/abc_export_options_F.png" alt="More Capture options"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em><strong>Property</strong></em></th>
+<th style="text-align: left;"><em><strong>Description</strong></em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Capture On Start</strong></td>
+<td style="text-align: left;">Enable to begin capturing in <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html">Start()</a> when a Scene with an <a href="ref_Exporter.html">AlembicExporter</a> component is loaded.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ignore First Frame</strong></td>
+<td style="text-align: left;">Enable to skip capturing the first frame. <br>Only available if <strong>Capture On Start</strong> is enabled.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Max Capture Frame</strong></td>
+<td style="text-align: left;">Set the frame to stop capturing at.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="exportRef_G"></a></p>
+<h2 id="misc-section">Misc section</h2>
+<p>Enable the <strong>Detailed Log</strong> option to provide Debug logging for each captured frame.</p>
+<p><img src="images/abc_export_options_G.png" alt="Misc section"></p>
+<p><a name="exportRef_H"></a></p>
+<h2 id="capture-control-section">Capture Control section</h2>
+<p>The buttons in this section allow you to define how much of the animation to capture.</p>
+<p><img src="images/abc_export_options_H.png" alt="Capture Control section"></p>
+<blockquote>
+<p><strong>Note:</strong> The buttons of this section are usable only once you enter the Play mode.</p>
+</blockquote>
+<p>In Play mode, click <strong>Begin Recording</strong> to start capturing the entire Scene. Use this option if <strong>Capture On Start</strong> is disabled.</p>
+<p>To export only the current frame to the Alembic file, click <strong>One Shot</strong>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/ref_Exporter.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

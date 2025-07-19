@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Applying motion blur and shaders | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Applying motion blur and shaders | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/motion-vectors.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="applying-motion-blur-and-shaders">Applying motion blur and shaders</h1>
+
+<p>This section contains information about how to set up <a href="#blur">Motion Blur</a>. It also lists the <a href="#shaders">Shaders</a> included in this package and specifically customized to work with Alembic.</p>
+<p><a name="shaders"></a></p>
+<h2 id="alembic-shaders">Alembic Shaders</h2>
+<p>The Alembic package includes the following Shaders:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Shader:</em></th>
+<th style="text-align: left;"><em>Description:</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Overlay</strong></td>
+<td style="text-align: left;">Alembic visualization Shader. Use it to visualize the normals, tangents, UV spaces and vertex colors of your Mesh.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Points Standard</strong></td>
+<td style="text-align: left;">When importing Alembic Point Caches (or using the ones generated when you record a Unity particle system), you can assign a Mesh of your choice to each Point to achieve effects such as a flock of birds or falling rubble. <br>For optimization purposes, when Unity imports Alembic Points, it applies this Shader, which is a dedicated, simplified version of the <strong>Standard</strong> Shader.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Points Transparent</strong></td>
+<td style="text-align: left;">With this Shader, you can use transparency on Meshes acting as Alembic Points, and customize both their blending mode and how they interact with the Depth Buffer.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Points Motion Vectors</strong></td>
+<td style="text-align: left;">For proper conveyance of motion vectors with Point Caches, Alembic Points components need a dedicated Shader. Unity creates and assigns these Shaders and their associated Materials automatically.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Standard</strong></td>
+<td style="text-align: left;">Standard Physically Based Renderer (PBR) Material with Motion Blur support added.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Standard (Roughness setup)</strong></td>
+<td style="text-align: left;">Standard PBR Roughness Material with Motion Blur support added.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Standard (Specular setup)</strong></td>
+<td style="text-align: left;">Standard Specular Material with Motion Blur support added.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="blur"></a></p>
+<h2 id="motion-blur">Motion Blur</h2>
+<p>Although Unity generates motion vectors for Mesh Renderers and Skinned Mesh Renderers, the Alembic Shaders add motion vector support to Alembic files only. This is useful for rendering that requires motion vectors, such as the Motion Blur post processing effect.</p>
+<p><img src="images/abc_motionblur.png" alt="Alembic Motion Blur">|</p>
+<p>In the above image, on the left the character is unprocessed. On the right you can see the output of motion vector and Motion Blur applied by the post processing stack.</p>
+<p>If you want to add the motion vector generation function to your own Shader, add this line inside a SubShader:</p>
+<pre><code class="lang-c++">UsePass &quot;Hidden / Alembic / MotionVectors / MOTIONVECTORS&quot;
+</code></pre>
+<p>Because the velocity data is passed to the fourth UV, Unity uses this data to calculate the apex position of the previous frame. See <em>AlembicMotionVectors.cginc</em> for the <strong>MotionVectorData</strong> struct.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/motion-vectors.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

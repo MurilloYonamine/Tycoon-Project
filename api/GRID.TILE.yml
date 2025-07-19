@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  id: GRID.TILE
+  children:
+  - GRID.TILE.Tile
+  - GRID.TILE.TileItemData
+  - GRID.TILE.TilePool
+  - GRID.TILE.TileState
+  - GRID.TILE.TileType
+  langs:
+  - csharp
+  - vb
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: GRID.TILE.TilePool
+  commentId: T:GRID.TILE.TilePool
+  parent: GRID.TILE
+  href: GRID.TILE.TilePool.html
+  name: TilePool
+  nameWithType: TilePool
+  fullName: GRID.TILE.TilePool
+- uid: GRID.TILE.Tile
+  commentId: T:GRID.TILE.Tile
+  parent: GRID.TILE
+  href: GRID.TILE.Tile.html
+  name: Tile
+  nameWithType: Tile
+  fullName: GRID.TILE.Tile
+- uid: GRID.TILE.TileType
+  commentId: T:GRID.TILE.TileType
+  parent: GRID.TILE
+  href: GRID.TILE.TileType.html
+  name: TileType
+  nameWithType: TileType
+  fullName: GRID.TILE.TileType
+- uid: GRID.TILE.TileState
+  commentId: T:GRID.TILE.TileState
+  parent: GRID.TILE
+  href: GRID.TILE.TileState.html
+  name: TileState
+  nameWithType: TileState
+  fullName: GRID.TILE.TileState
+- uid: GRID.TILE.TileItemData
+  commentId: T:GRID.TILE.TileItemData
+  parent: GRID.TILE
+  href: GRID.TILE.TileItemData.html
+  name: TileItemData
+  nameWithType: TileItemData
+  fullName: GRID.TILE.TileItemData
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html

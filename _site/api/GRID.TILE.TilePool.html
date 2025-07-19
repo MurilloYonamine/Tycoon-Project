@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class TilePool | Tycoon Project API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class TilePool | Tycoon Project API ">
+      
+      <meta name="description" content="Gerencia um pool de tiles para otimizar a cria&#231;&#227;o e reutiliza&#231;&#227;o de GameObjects. Implementa o padr&#227;o Object Pool para evitar instanciamentos e destrui&#231;&#245;es frequentes.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/new/main/apiSpec/new?filename=GRID_TILE_TilePool.md&amp;value=---%0Auid%3A%20GRID.TILE.TilePool%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="GRID.TILE.TilePool">
+
+
+
+  <h1 id="GRID_TILE_TilePool" data-uid="GRID.TILE.TilePool" class="text-break">
+Class TilePool  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="GRID.html">GRID</a>.<a class="xref" href="GRID.TILE.html">TILE</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Gerencia um pool de tiles para otimizar a criação e reutilização de GameObjects.
+Implementa o padrão Object Pool para evitar instanciamentos e destruições frequentes.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TilePool : MonoBehaviour</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><span class="xref">object</span></div>
+      <div><span class="xref">Object</span></div>
+      <div><span class="xref">Component</span></div>
+      <div><span class="xref">Behaviour</span></div>
+      <div><span class="xref">MonoBehaviour</span></div>
+      <div><span class="xref">TilePool</span></div>
+    </dd>
+  </dl>
+
+
+
+
+
+
+
+  <h2 id="GRID_TILE_TilePool_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>O sistema de pooling:</p>
+<ul>
+<li>Pré-instancia uma quantidade definida de tiles</li>
+<li>Reutiliza objetos inativos em vez de criar novos</li>
+<li>Organiza tiles em grupos de 10 para melhor hierarquia</li>
+<li>Melhora significativamente a performance do jogo</li>
+<li>Reduz o garbage collection</li>
+</ul>
+</div>
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="GRID_TILE_TilePool_amountToPool" data-uid="GRID.TILE.TilePool.amountToPool">
+  amountToPool
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Quantidade total de tiles para pré-instanciar na pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;N&#250;mero de tiles a serem criados na inicializa&#231;&#227;o&quot;)]
+public int amountToPool</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">int</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="GRID_TILE_TilePool_objectToPool" data-uid="GRID.TILE.TilePool.objectToPool">
+  objectToPool
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefab do tile que será usado para criar os objetos da pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Prefab do tile a ser instanciado na pool&quot;)]
+public GameObject objectToPool</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="GRID_TILE_TilePool_pooledObjects" data-uid="GRID.TILE.TilePool.pooledObjects">
+  pooledObjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lista de todos os tiles disponíveis na pool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HideInInspector]
+public List&lt;GameObject&gt; pooledObjects</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">List</span>&lt;<span class="xref">GameObject</span>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="GRID_TILE_TilePool_pooledObjectsContainer" data-uid="GRID.TILE.TilePool.pooledObjectsContainer">
+  pooledObjectsContainer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Container onde os objetos da pool serão organizados na hierarquia.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;GameObject pai que conter&#225; todos os tiles da pool&quot;)]
+public GameObject pooledObjectsContainer</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="GRID_TILE_TilePool_Instance_" data-uid="GRID.TILE.TilePool.Instance*"></a>
+
+  <h3 id="GRID_TILE_TilePool_Instance" data-uid="GRID.TILE.TilePool.Instance">
+  Instance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Instância singleton do TilePool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TilePool Instance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="GRID.TILE.TilePool.html">TilePool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="GRID_TILE_TilePool_GetPooledObject_" data-uid="GRID.TILE.TilePool.GetPooledObject*"></a>
+
+  <h3 id="GRID_TILE_TilePool_GetPooledObject" data-uid="GRID.TILE.TilePool.GetPooledObject">
+  GetPooledObject()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Assets/Scripts/Grid System/Tile/TilePool.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtém um tile inativo da pool para reutilização.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameObject GetPooledObject()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">GameObject</span></dt>
+    <dd><p>Um GameObject inativo da pool, ou null se nenhum estiver disponível.
+O tile retornado deve ser ativado pelo chamador antes do uso.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="GRID_TILE_TilePool_GetPooledObject_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Este método implementa o padrão Object Pool para otimização de performance,
+evitando a criação e destruição constante de GameObjects durante o runtime.
+Itera através da pool procurando por objetos inativos disponíveis para reutilização.</p>
+</div>
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

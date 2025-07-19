@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changes in FBX SDK C# Bindings | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changes in FBX SDK C# Bindings | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.autodesk.fbx/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changes-in-fbx-sdk-c-bindings">Changes in FBX SDK C# Bindings</h1>
+
+<h2 id="511---2024-03-18">[5.1.1] - 2024-03-18</h2>
+<ul>
+<li>Update FBX SDK to 2020.3.4.</li>
+<li>Add support for Windows ARM64.</li>
+</ul>
+<h2 id="510---2023-09-08">[5.1.0] - 2023-09-08</h2>
+<ul>
+<li>Updated package version number for release.</li>
+</ul>
+<h2 id="510-pre1---2023-05-02">[5.1.0-pre.1] - 2023-05-02</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>Expose FbxCamera focus distance and use depth of field properties.</li>
+</ul>
+<h2 id="500---2022-11-15">[5.0.0] - 2022-11-15</h2>
+<p>CHANGES</p>
+<ul>
+<li>Update FBX SDK to 2020.3.2.</li>
+</ul>
+<h2 id="500-pre1---2022-08-24">[5.0.0-pre.1] - 2022-08-24</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>Expose functions to get/set geometric transforms.</li>
+</ul>
+<p>CHANGES</p>
+<ul>
+<li>Increase minimum supported Unity version to 2020.3.</li>
+<li>Update FBX SDK to 2020.3.1.</li>
+<li>Update FBX SDK Windows binaries to use VS2019.</li>
+</ul>
+<p>BUGFIXES</p>
+<ul>
+<li>Fix IOException when overwriting an existing build. Thank you to @julienkay for the contribution.</li>
+<li>Changes names of test assemblies to reduce the risk of assembly name conflict in projects.</li>
+</ul>
+<h2 id="420---2022-07-08">[4.2.0] - 2022-07-08</h2>
+<p>Released, no changes from release candidate 4.2.0-pre.1.</p>
+<h2 id="420-pre1---2022-04-20">[4.2.0-pre.1] - 2022-04-20</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>Added bindings for FbxScene::GetMaterialCount, FbxScene::GetMaterial, FbxNode::GetMaterialCount.</li>
+</ul>
+<p>CHANGES</p>
+<ul>
+<li>Upgraded to FBX SDK 2020.3.1.</li>
+</ul>
+<h2 id="411---2021-09-03">[4.1.1] - 2021-09-03</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>Additional bindings for FbxAnimCurve, FbxAnimCurveBase, FbxCollection, and FbxGeometryBase. Thank you to @utjkaz for the addition.</li>
+</ul>
+<h2 id="410---2021-07-06">[4.1.0] - 2021-07-06</h2>
+<p>CHANGES</p>
+<ul>
+<li>Update from prerelease to released package.</li>
+</ul>
+<h2 id="410-pre3---2021-06-28">[4.1.0-pre.3] - 2021-06-28</h2>
+<p>CHANGES</p>
+<ul>
+<li>Universal Mac binary supporting Apple M1 and OSX 10.13+.</li>
+</ul>
+<h2 id="410-pre1---2021-04-30">[4.1.0-pre.1] - 2021-04-30</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>Add support for Apple M1.</li>
+<li>Add binding to set a string on an FbxProperty.</li>
+</ul>
+<h2 id="401---2021-03-10">[4.0.1] - 2021-03-10</h2>
+<p>CHANGES</p>
+<ul>
+<li>Update from prerelease to released package.</li>
+</ul>
+<h2 id="400-pre2---2021-01-08">[4.0.0-pre.2] - 2021-01-08</h2>
+<p>CHANGES</p>
+<ul>
+<li>Updated documentation.
+<ul>
+<li>Updated minimum supported Unity version.</li>
+<li>Removed IL2CPP backend not supported section.</li>
+<li>Updated link to FBX SDK API documentation.</li>
+<li>Moved API documentation to Scripting API landing page.</li>
+</ul>
+</li>
+<li>Update Third Party Notices.md with new FBX License.</li>
+<li>Upgraded to FBX SDK 2020.2.</li>
+</ul>
+<h2 id="400-pre1---2020-10-07">[4.0.0-pre.1] - 2020-10-07</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>Binding for FbxMesh::GetPolygonVertexNormal(). Thank you to @julienkay for the addition.</li>
+<li>Bindings for FbxNurbsCurve. Thank you to @jeanblouin for the addition.</li>
+</ul>
+<p>CHANGES</p>
+<ul>
+<li>Switched to using Unity code coverage to test unit test coverage.</li>
+<li>Made UnityFbxSdkNative dll and scripts Editor only by default. In order to use at runtime,
+add the FBXSDK_RUNTIME define to Edit &gt; Project Settings... &gt; Player &gt; Other Settings &gt; Scripting Define Symbols.</li>
+<li>Update minimum supported Unity version from 2018.2 to 2018.4.</li>
+</ul>
+<p>BUGFIXES</p>
+<ul>
+<li>UnityFbxSdkNative dll is no longer included in builds, fixing an issue with shipping on the Mac App Store.</li>
+</ul>
+<h2 id="310-preview2---2020-07-21">[3.1.0-preview.2] - 2020-07-21</h2>
+<p>CHANGES</p>
+<ul>
+<li>ERRATA: The &quot;Upgraded to FBX SDK 2020.0&quot; entry in the previous version should have been &quot;Upgraded to FBX SDK 2020.1&quot;.</li>
+</ul>
+<h2 id="310-preview1---2020-07-17">[3.1.0-preview.1] - 2020-07-17</h2>
+<p>CHANGES</p>
+<ul>
+<li>Upgraded to FBX SDK 2020.0</li>
+</ul>
+<h2 id="301-preview1---2020-03-31">[3.0.1-preview.1] - 2020-03-31</h2>
+<p>BUGFIXES</p>
+<ul>
+<li>Fix incorrect DLL path used when calling functions, giving DLL not found errors.</li>
+</ul>
+<h2 id="300-preview1---2019-12-03">[3.0.0-preview.1] - 2019-12-03</h2>
+<p>CHANGES</p>
+<ul>
+<li>Upgraded to FBX SDK 2020.0</li>
+<li>Added bindings for FbxAnimCurve::KeySetTangents and FbxAnimCurve::KeyGetTangents</li>
+<li>Added bindings for FbxAnimCurveKey methods to set and get tangent mode and data</li>
+<li>Added bindings for FbxAxisSystem::DeepConvertScene</li>
+</ul>
+<p>BUGFIXES</p>
+<ul>
+<li>The FBX SDK C# Bindings package now supports the IL2CPP backend.</li>
+</ul>
+<p>KNOW ISSUES</p>
+<ul>
+<li>For Linux support use Ubuntu 18.04 (Bionic Beaver). The FBX SDK C# Bindings package is not compatible with CentOS 7.</li>
+</ul>
+<h2 id="200-preview3---2018-12-03">[2.0.0-preview.3] - 2018-12-03</h2>
+<p>CHANGES</p>
+<ul>
+<li>Updated documentation</li>
+</ul>
+<h2 id="200-preview2---2018-11-13">[2.0.0-preview.2] - 2018-11-13</h2>
+<p>CHANGES</p>
+<ul>
+<li>Removed version number from documentation (already available in changelog)</li>
+<li>Added missing .meta files</li>
+<li>Corrected asmdef name and platform settings</li>
+<li>Corrected plugin .meta file platform settings</li>
+<li>Experimental Linux support</li>
+</ul>
+<h2 id="200-preview1---2018-10-25">[2.0.0-preview.1] - 2018-10-25</h2>
+<p>CHANGES</p>
+<ul>
+<li>Updated documentation to conform to package validation requirements</li>
+</ul>
+<h2 id="200-preview---2018-06-22">[2.0.0-preview] - 2018-06-22</h2>
+<p>NEW FEATURES</p>
+<ul>
+<li>The C# Bindings package has been renamed to com.autodesk.fbx</li>
+<li>The Autodesk.Fbx assembly can now be used in standalone builds (runtime)</li>
+<li>Added support for physical camera attributes</li>
+<li>Added support for constraints: FbxConstraint, FbxConstraintParent, FbxConstraintAim, and related methods</li>
+<li>Updated to FBX SDK 2018.1</li>
+</ul>
+<p>KNOWN ISSUES</p>
+<ul>
+<li>The FBX SDK C# Bindings package is not supported if you build using the IL2CPP backend.</li>
+</ul>
+<h2 id="130---2018-04-17">[1.3.0] - 2018-04-17</h2>
+<p>NOTES</p>
+<ul>
+<li>This is the last Asset Store version. It is also known as 1.3.0f1.</li>
+</ul>
+<p>NEW FEATURES</p>
+<ul>
+<li>Added bindings for FbxAnimCurveFilterUnroll</li>
+<li>Added binding for FbxGlobalSettings SetTimeMode to set frame rate</li>
+<li>Exposed bindings to set FbxNode's transformation inherit type</li>
+<li>Added binding for FbxCamera's FieldOfView property</li>
+<li>Added FbxObject::GetScene</li>
+<li>Added bindings for FbxIOFileHeaderInfo.</li>
+<li>Exposed mCreator and mFileVersion as read-only attributes.</li>
+</ul>
+<p>FIXES</p>
+<ul>
+<li>Fix Universal Windows Platform build error caused by UnityFbxSdk.dll being set as compatible with any platform instead of editor only.</li>
+<li>Enforced FbxSdk DLL only works with Unity 2017.1+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.autodesk.fbx/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

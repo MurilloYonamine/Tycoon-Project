@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Reference: Components | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Reference: Components | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/ref-components.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="reference-components">Reference: Components</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>This page lists all components that are available through the Sequences package.</p>
+<h2 id="scene-loading-policy">Scene Loading Policy</h2>
+<p><img src="images/component-scene-loading-policy.png" alt=""></p>
+<p>Use the Scene Loading Policy component to ensure that Unity loads all Scenes that you might have added through <a href="timeline-window.html#scene-activation-track">Scene Activation tracks</a> when you enter the Play mode or when you run a Player build of your project.</p>
+<blockquote>
+<p><strong>Note:</strong> The Scene Loading Policy has no effect on the current Scene loading status in Edit mode.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Active Policy</strong></td>
+<td></td>
+<td>The Scene loading policy to apply in the targeted <strong>Runtime Mode</strong> to any unloaded Scene of the current Master Sequence.</td>
+</tr>
+<tr>
+<td></td>
+<td>Do Not Load Unloaded Scenes</td>
+<td>Unity does not load any Scenes that are not already loaded.</td>
+</tr>
+<tr>
+<td></td>
+<td>Load All Unloaded Scenes</td>
+<td>Unity loads all Scenes that are part of the current Master Sequence structure.</td>
+</tr>
+<tr>
+<td><strong>Runtime Mode</strong></td>
+<td></td>
+<td>The runtime mode(s), for instance, the Play mode, the Player build, or both, to apply the <strong>Active Policy</strong> to.</td>
+</tr>
+<tr>
+<td></td>
+<td>Play Mode Only</td>
+<td>Applies the policy only when you enter the Play mode.</td>
+</tr>
+<tr>
+<td></td>
+<td>Player Build Only *</td>
+<td>Applies the policy only when you run a Player build of your project.</td>
+</tr>
+<tr>
+<td></td>
+<td>Play Mode And Player Build *</td>
+<td>Applies the policy when you enter the Play mode and when you build a Player from your project.</td>
+</tr>
+</tbody>
+</table>
+<p><em>* These options automatically update the Scene list in the <a href="https://docs.unity3d.com/Manual/BuildSettings.html">Build Settings</a> to make sure that you include all necessary Scenes when you build your project.</em></p>
+<p>You can add this component to any Sequence, but the best practice is to add it to the Master Sequence. Also, you should define only one Scene Loading Policy per Master Sequence hierarchy.</p>
+<p>If you don't add a Scene Loading Policy component to your Master Sequence hierarchy, Unity doesn't load any unloaded Scene when you enter the Play mode or when you run a Player build of your project, even if you include the Scenes in the <a href="https://docs.unity3d.com/Manual/BuildSettings.html">Build Settings</a>.</p>
+<h2 id="sequence-asset">Sequence Asset</h2>
+<p><img src="images/component-sequence-asset.png" alt=""></p>
+<p>A Prefab or a Prefab Variant that has a Sequence Asset component represents a Sequence Asset usable in a Sequence.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td>The <a href="concepts.html#asset-collections">Asset Collection type</a> the Sequence Asset belongs to.<br><br><strong>Note:</strong> Unity automatically assigns the value of this property when you create a Sequence Asset from the <a href="sequence-assets-window.html">Sequence Assets window</a>. You shouldn't change it unless you exactly know what you're doing.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sequence-filter">Sequence Filter</h2>
+<p><img src="images/component-sequence-filter.png" alt=""></p>
+<p>A GameObject that has a Sequence Filter component represents a Sequence in the Hierarchy.</p>
+<table>
+<thead>
+<tr>
+<th>Property/Button</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Master Sequence</strong></td>
+<td>The Master Sequence script asset that holds and manages the whole Sequence structure within the current Master Sequence.<br>This property is read-only.</td>
+</tr>
+<tr>
+<td><strong>Add Scene Loading Policy</strong></td>
+<td>Adds a <a href="#scene-loading-policy">Scene Loading Policy</a> component to the current Sequence.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/ref-components.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

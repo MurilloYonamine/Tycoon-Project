@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Understand sub-frame capture | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Understand sub-frame capture | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecorderAccumulationUnderstandSubFrameCapture.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="understand-sub-frame-capture">Understand sub-frame capture</h1>
+
+<p>When Accumulation is enabled, the image that is rendered on each frame is based on the sub frames accumulated during the recording. The Samples and Shutter Interval properties define the sub frames to accumulate. The Shutter Profile property defines the weight applied to each sub frame in the rendered image.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>Sub frames that precede the first frame, as defined by the Start Frame property, are not captured on the first frame. Accumulation begins in the interval before the second frame.</li>
+<li>The number of samples (sub frames) in the diagram below is for illustration only. Hundreds of samples may be needed to produce a smooth motion-blur trail; thousands of path-tracing samples may be needed to converge on a clean image.</li>
+</ul>
+</div>
+<p><img src="Images/recorder-accumulate-properties.png" alt="Image shows that the interval between one frame and the next is divided into sub frames, shutter interval starts immediately after the last frame and contains a number of the sub frames; the shutter profile is fully contained in the interval, and the sub frames in the interval are recorded on the following frame."></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A</strong></td>
+<td style="text-align: left;"><strong>Frame</strong>. Accumulated sub frames (C) are recorded on the next frame (A).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>B</strong></td>
+<td style="text-align: left;"><strong>Samples</strong>. Defines the number of sub frames between one frame and the next.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C</strong></td>
+<td style="text-align: left;"><strong>Shutter Interval</strong>.<ul><li>If greater than 0, each sub frame in the Shutter interval is accumulated. Only these sub frames are recorded on the frame.</li><li>If equal to 0, motion blur is turned off. Path-tracing is accumulated for each sub frame defined in Samples (B).</li></ul>See additional information <a href="#shutterInterval-explained">below</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>D</strong></td>
+<td style="text-align: left;"><strong>Shutter Profile</strong>. Defines the weight that each sub frame in the Shutter Interval contributes to the rendered image recorded on the frame.</td>
+</tr>
+</tbody>
+</table>
+<p><href id="shutterInterval-explained"></href> The Shutter Interval affects sub-frame accumulation as follows:</p>
+<ul>
+<li><p>When the Shutter Interval is greater than 0, sub frames are incremental points in time between one frame and the next. Only sub frames within the Shutter Interval (<strong>C</strong>) are accumulated.</p>
+</li>
+<li><p>Setting the Shutter Interval to 0 turns off motion blur accumulation. When the Shutter Interval is 0, time does not advance between one sub frame and the next. Path-tracing samples are accumulated for the number of sub frames specified in Samples (<strong>B</strong>).</p>
+</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<p><a href="RecorderAccumulationProperties.html">Accumulation properties</a></p>
+<p>To configure accumulation in Recorder, see:</p>
+<ul>
+<li><a href="RecordingAccumulationMotionBlur.html">Accumulate motion blur</a></li>
+<li><a href="RecordingAccumulationPathTracing.html">Accumulate path tracing</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecorderAccumulationUnderstandSubFrameCapture.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

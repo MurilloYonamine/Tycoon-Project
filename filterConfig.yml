@@ -1,0 +1,43 @@
+apiRules:
+- include:
+    uidRegex: ^Global
+    type: Namespace
+- include:
+    uidRegex: GRID
+    type: Namespace
+- include:
+    uidRegex: GRID.TILE
+    type: Namespace
+- include:
+    uidRegex: GRID.MODULES
+    type: Namespace
+- include:
+    uidRegex: SHOP
+    type: Namespace
+- exclude:
+    uidRegex: .*
+    type: Namespace
+
+# Filtrar membros herdados desnecessários
+- exclude:
+    uidRegex: .*\.Awake.*
+    hasAttribute:
+      uid: System.ObsoleteAttribute
+- exclude:
+    uidRegex: .*\.Start.*
+    hasAttribute:
+      uid: System.ObsoleteAttribute
+- exclude:
+    uidRegex: .*\.Update.*
+    hasAttribute:
+      uid: System.ObsoleteAttribute
+- exclude:
+    uidRegex: UnityEngine\.MonoBehaviour\..*
+- exclude:
+    uidRegex: UnityEngine\.Behaviour\..*
+- exclude:
+    uidRegex: UnityEngine\.Component\..*
+- exclude:
+    uidRegex: UnityEngine\.Object\..*
+- exclude:
+    uidRegex: System\.Object\..*

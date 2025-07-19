@@ -1,0 +1,158 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.TILE.TileType
+  commentId: T:GRID.TILE.TileType
+  id: TileType
+  parent: GRID.TILE
+  children:
+  - GRID.TILE.TileType.Building
+  - GRID.TILE.TileType.Default
+  - GRID.TILE.TileType.Path
+  langs:
+  - csharp
+  - vb
+  name: TileType
+  nameWithType: TileType
+  fullName: GRID.TILE.TileType
+  type: Enum
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileType.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TileType
+    path: Assets/Scripts/Grid System/Tile/TileType.cs
+    startLine: 20
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define os diferentes tipos de tiles disponíveis no sistema de grid.
+  remarks: >-
+    Cada tipo de tile tem comportamentos específicos:
+
+    - Default: Tile básico sem funcionalidades especiais
+
+    - Building: Tiles para construções e estruturas
+
+    - Path: Tiles que formam caminhos e conectam outras estruturas
+  example: []
+  syntax:
+    content: public enum TileType
+    content.vb: Public Enum TileType
+- uid: GRID.TILE.TileType.Default
+  commentId: F:GRID.TILE.TileType.Default
+  id: Default
+  parent: GRID.TILE.TileType
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: TileType.Default
+  fullName: GRID.TILE.TileType.Default
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileType.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Default
+    path: Assets/Scripts/Grid System/Tile/TileType.cs
+    startLine: 25
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Tipo padrão de tile sem funcionalidades especiais.
+  example: []
+  syntax:
+    content: Default = 0
+    return:
+      type: GRID.TILE.TileType
+- uid: GRID.TILE.TileType.Building
+  commentId: F:GRID.TILE.TileType.Building
+  id: Building
+  parent: GRID.TILE.TileType
+  langs:
+  - csharp
+  - vb
+  name: Building
+  nameWithType: TileType.Building
+  fullName: GRID.TILE.TileType.Building
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileType.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Building
+    path: Assets/Scripts/Grid System/Tile/TileType.cs
+    startLine: 30
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Tile usado para construções e estruturas do jogo.
+  example: []
+  syntax:
+    content: Building = 1
+    return:
+      type: GRID.TILE.TileType
+- uid: GRID.TILE.TileType.Path
+  commentId: F:GRID.TILE.TileType.Path
+  id: Path
+  parent: GRID.TILE.TileType
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: TileType.Path
+  fullName: GRID.TILE.TileType.Path
+  type: Field
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileType.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Path
+    path: Assets/Scripts/Grid System/Tile/TileType.cs
+    startLine: 36
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: >-
+    Tile usado para criar caminhos e conectar diferentes áreas.
+
+    Participa do sistema de pathfinding automático.
+  example: []
+  syntax:
+    content: Path = 2
+    return:
+      type: GRID.TILE.TileType
+references:
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: GRID.TILE.TileType
+  commentId: T:GRID.TILE.TileType
+  parent: GRID.TILE
+  href: GRID.TILE.TileType.html
+  name: TileType
+  nameWithType: TileType
+  fullName: GRID.TILE.TileType

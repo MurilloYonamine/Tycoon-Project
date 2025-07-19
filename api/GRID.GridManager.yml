@@ -1,0 +1,1303 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.GridManager
+  commentId: T:GRID.GridManager
+  id: GridManager
+  parent: GRID
+  children:
+  - GRID.GridManager.AddTileToPathList(GRID.TILE.Tile)
+  - GRID.GridManager.Bounds
+  - GRID.GridManager.BoundsCalculator
+  - GRID.GridManager.CellValidator
+  - GRID.GridManager.ClearHoverEffects
+  - GRID.GridManager.ClickHandler
+  - GRID.GridManager.ColumnUIGenerator
+  - GRID.GridManager.CoordinateConverter
+  - GRID.GridManager.CurrentHoveredCell
+  - GRID.GridManager.GetCellByCoordinate(UnityEngine.Vector3Int)
+  - GRID.GridManager.GetColumnObject(System.Int32)
+  - GRID.GridManager.GetMouseWorldPosition
+  - GRID.GridManager.GetTileCoordinate(UnityEngine.Vector3Int)
+  - GRID.GridManager.Grid
+  - GRID.GridManager.HasTileAtCell(UnityEngine.Vector3Int)
+  - GRID.GridManager.HoverManager
+  - GRID.GridManager.Instance
+  - GRID.GridManager.IsCellOccupied(UnityEngine.Vector3Int)
+  - GRID.GridManager.IsHovering
+  - GRID.GridManager.PathManager
+  - GRID.GridManager.SetHoverColor(UnityEngine.Color)
+  - GRID.GridManager.SetHoverEnabled(System.Boolean)
+  - GRID.GridManager.TileObjects
+  - GRID.GridManager.Tilemap
+  langs:
+  - csharp
+  - vb
+  name: GridManager
+  nameWithType: GridManager
+  fullName: GRID.GridManager
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GridManager
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: >-
+    Gerenciador central do sistema de grid responsável pela coordenação de todos os módulos e funcionalidades do grid.
+
+    Implementa o padrão Singleton e atua como ponto de entrada para operações relacionadas ao grid.
+  remarks: >-
+    Este gerenciador utiliza uma arquitetura modular onde cada funcionalidade específica é delegada
+
+    para módulos especializados (PathManager, HoverManager, CellValidator, etc.). Isso permite
+
+    manutenção mais fácil, testabilidade melhorada e clara separação de responsabilidades.
+
+
+    O GridManager coordena:
+
+    - Inicialização e configuração de todos os módulos
+
+    - Comunicação entre módulos através de uma API pública
+
+    - Gerenciamento do ciclo de vida do sistema de grid
+
+    - Delegação de operações específicas para módulos apropriados
+  example: []
+  syntax:
+    content: 'public class GridManager : MonoBehaviour'
+    content.vb: Public Class GridManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+- uid: GRID.GridManager.Instance
+  commentId: P:GRID.GridManager.Instance
+  id: Instance
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: GridManager.Instance
+  fullName: GRID.GridManager.Instance
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Instance
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 38
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Instância singleton do GridManager para acesso global.
+  example: []
+  syntax:
+    content: public static GridManager Instance { get; }
+    parameters: []
+    return:
+      type: GRID.GridManager
+    content.vb: Public Shared Property Instance As GridManager
+  overload: GRID.GridManager.Instance*
+- uid: GRID.GridManager.Grid
+  commentId: P:GRID.GridManager.Grid
+  id: Grid
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: Grid
+  nameWithType: GridManager.Grid
+  fullName: GRID.GridManager.Grid
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Grid
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 40
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  syntax:
+    content: >-
+      [Header("Core Components")]
+
+      public Grid Grid { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Grid
+    content.vb: >-
+      <Header("Core Components")>
+
+      Public Property Grid As Grid
+  overload: GRID.GridManager.Grid*
+  attributes:
+  - type: UnityEngine.HeaderAttribute
+    ctor: UnityEngine.HeaderAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Core Components
+- uid: GRID.GridManager.Tilemap
+  commentId: P:GRID.GridManager.Tilemap
+  id: Tilemap
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: Tilemap
+  nameWithType: GridManager.Tilemap
+  fullName: GRID.GridManager.Tilemap
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Tilemap
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 49
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Tilemap onde os tiles base estão posicionados e que define a área jogável.
+  example: []
+  syntax:
+    content: public Tilemap Tilemap { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Tilemaps.Tilemap
+    content.vb: Public Property Tilemap As Tilemap
+  overload: GRID.GridManager.Tilemap*
+- uid: GRID.GridManager.ClickHandler
+  commentId: P:GRID.GridManager.ClickHandler
+  id: ClickHandler
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: ClickHandler
+  nameWithType: GridManager.ClickHandler
+  fullName: GRID.GridManager.ClickHandler
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ClickHandler
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 54
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Manipulador de cliques responsável por capturar e processar input do usuário.
+  example: []
+  syntax:
+    content: public ClickHandler ClickHandler { get; }
+    parameters: []
+    return:
+      type: ClickHandler
+    content.vb: Public Property ClickHandler As ClickHandler
+  overload: GRID.GridManager.ClickHandler*
+- uid: GRID.GridManager.TileObjects
+  commentId: P:GRID.GridManager.TileObjects
+  id: TileObjects
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: TileObjects
+  nameWithType: GridManager.TileObjects
+  fullName: GRID.GridManager.TileObjects
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TileObjects
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 78
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  syntax:
+    content: >-
+      [Header("Debug")]
+
+      public GameObject[,] TileObjects { get; }
+    parameters: []
+    return:
+      type: UnityEngine.GameObject[,]
+    content.vb: >-
+      <Header("Debug")>
+
+      Public Property TileObjects As GameObject(,)
+  overload: GRID.GridManager.TileObjects*
+  attributes:
+  - type: UnityEngine.HeaderAttribute
+    ctor: UnityEngine.HeaderAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Debug
+- uid: GRID.GridManager.PathManager
+  commentId: P:GRID.GridManager.PathManager
+  id: PathManager
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: PathManager
+  nameWithType: GridManager.PathManager
+  fullName: GRID.GridManager.PathManager
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: PathManager
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 89
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Módulo responsável pelo gerenciamento de caminhos e pathfinding.
+  example: []
+  syntax:
+    content: public PathManager PathManager { get; }
+    parameters: []
+    return:
+      type: GRID.MODULES.PathManager
+    content.vb: Public Property PathManager As PathManager
+  overload: GRID.GridManager.PathManager*
+- uid: GRID.GridManager.BoundsCalculator
+  commentId: P:GRID.GridManager.BoundsCalculator
+  id: BoundsCalculator
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: BoundsCalculator
+  nameWithType: GridManager.BoundsCalculator
+  fullName: GRID.GridManager.BoundsCalculator
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: BoundsCalculator
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 94
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Módulo responsável pelo cálculo de limites e dimensões do grid.
+  example: []
+  syntax:
+    content: public GridBoundsCalculator BoundsCalculator { get; }
+    parameters: []
+    return:
+      type: GRID.MODULES.GridBoundsCalculator
+    content.vb: Public Property BoundsCalculator As GridBoundsCalculator
+  overload: GRID.GridManager.BoundsCalculator*
+- uid: GRID.GridManager.CellValidator
+  commentId: P:GRID.GridManager.CellValidator
+  id: CellValidator
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: CellValidator
+  nameWithType: GridManager.CellValidator
+  fullName: GRID.GridManager.CellValidator
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: CellValidator
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 99
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Módulo responsável pela validação de células e ocupação de tiles.
+  example: []
+  syntax:
+    content: public CellValidator CellValidator { get; }
+    parameters: []
+    return:
+      type: GRID.MODULES.CellValidator
+    content.vb: Public Property CellValidator As CellValidator
+  overload: GRID.GridManager.CellValidator*
+- uid: GRID.GridManager.CoordinateConverter
+  commentId: P:GRID.GridManager.CoordinateConverter
+  id: CoordinateConverter
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: CoordinateConverter
+  nameWithType: GridManager.CoordinateConverter
+  fullName: GRID.GridManager.CoordinateConverter
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: CoordinateConverter
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 104
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Módulo responsável por conversões entre diferentes sistemas de coordenadas.
+  example: []
+  syntax:
+    content: public CoordinateConverter CoordinateConverter { get; }
+    parameters: []
+    return:
+      type: GRID.MODULES.CoordinateConverter
+    content.vb: Public Property CoordinateConverter As CoordinateConverter
+  overload: GRID.GridManager.CoordinateConverter*
+- uid: GRID.GridManager.ColumnUIGenerator
+  commentId: P:GRID.GridManager.ColumnUIGenerator
+  id: ColumnUIGenerator
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: ColumnUIGenerator
+  nameWithType: GridManager.ColumnUIGenerator
+  fullName: GRID.GridManager.ColumnUIGenerator
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ColumnUIGenerator
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 109
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Módulo responsável pela geração de UI de colunas e coordenadas.
+  example: []
+  syntax:
+    content: public ColumnUIGenerator ColumnUIGenerator { get; }
+    parameters: []
+    return:
+      type: GRID.MODULES.ColumnUIGenerator
+    content.vb: Public Property ColumnUIGenerator As ColumnUIGenerator
+  overload: GRID.GridManager.ColumnUIGenerator*
+- uid: GRID.GridManager.HoverManager
+  commentId: P:GRID.GridManager.HoverManager
+  id: HoverManager
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: HoverManager
+  nameWithType: GridManager.HoverManager
+  fullName: GRID.GridManager.HoverManager
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: HoverManager
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 114
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Módulo responsável pelos efeitos visuais de hover sobre tiles.
+  example: []
+  syntax:
+    content: public HoverManager HoverManager { get; }
+    parameters: []
+    return:
+      type: GRID.MODULES.HoverManager
+    content.vb: Public Property HoverManager As HoverManager
+  overload: GRID.GridManager.HoverManager*
+- uid: GRID.GridManager.Bounds
+  commentId: P:GRID.GridManager.Bounds
+  id: Bounds
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: Bounds
+  nameWithType: GridManager.Bounds
+  fullName: GRID.GridManager.Bounds
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Bounds
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 120
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: >-
+    Limites calculados do grid baseados nos tiles marcados no Tilemap.
+
+    Define a área utilizável do grid para posicionamento de tiles.
+  example: []
+  syntax:
+    content: public BoundsInt Bounds { get; }
+    parameters: []
+    return:
+      type: UnityEngine.BoundsInt
+    content.vb: Public Property Bounds As BoundsInt
+  overload: GRID.GridManager.Bounds*
+- uid: GRID.GridManager.AddTileToPathList(GRID.TILE.Tile)
+  commentId: M:GRID.GridManager.AddTileToPathList(GRID.TILE.Tile)
+  id: AddTileToPathList(GRID.TILE.Tile)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: AddTileToPathList(Tile)
+  nameWithType: GridManager.AddTileToPathList(Tile)
+  fullName: GRID.GridManager.AddTileToPathList(GRID.TILE.Tile)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: AddTileToPathList
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 219
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Adiciona um tile à lista de caminhos, reorganiza a lista e verifica por gaps.
+  remarks: >-
+    Delega a operação para o PathManager que gerencia a lógica de pathfinding
+
+    e conectividade entre tiles de caminho.
+  example: []
+  syntax:
+    content: public void AddTileToPathList(Tile tile)
+    parameters:
+    - id: tile
+      type: GRID.TILE.Tile
+      description: Tile a ser adicionado ao sistema de pathfinding.
+    content.vb: Public Sub AddTileToPathList(tile As Tile)
+  overload: GRID.GridManager.AddTileToPathList*
+- uid: GRID.GridManager.HasTileAtCell(UnityEngine.Vector3Int)
+  commentId: M:GRID.GridManager.HasTileAtCell(UnityEngine.Vector3Int)
+  id: HasTileAtCell(UnityEngine.Vector3Int)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: HasTileAtCell(Vector3Int)
+  nameWithType: GridManager.HasTileAtCell(Vector3Int)
+  fullName: GRID.GridManager.HasTileAtCell(UnityEngine.Vector3Int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: HasTileAtCell
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 230
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Verifica se existe um tile na célula especificada no Tilemap.
+  remarks: Delega para o CellValidator que mantém a lógica de validação de células.
+  example: []
+  syntax:
+    content: public bool HasTileAtCell(Vector3Int cell)
+    parameters:
+    - id: cell
+      type: UnityEngine.Vector3Int
+      description: Coordenada da célula no grid a ser verificada.
+    return:
+      type: System.Boolean
+      description: True se existe um tile na célula, false caso contrário.
+    content.vb: Public Function HasTileAtCell(cell As Vector3Int) As Boolean
+  overload: GRID.GridManager.HasTileAtCell*
+- uid: GRID.GridManager.IsCellOccupied(UnityEngine.Vector3Int)
+  commentId: M:GRID.GridManager.IsCellOccupied(UnityEngine.Vector3Int)
+  id: IsCellOccupied(UnityEngine.Vector3Int)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: IsCellOccupied(Vector3Int)
+  nameWithType: GridManager.IsCellOccupied(Vector3Int)
+  fullName: GRID.GridManager.IsCellOccupied(UnityEngine.Vector3Int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: IsCellOccupied
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 240
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Verifica se a célula lógica (coluna, linha) já está ocupada por um objeto.
+  remarks: Utiliza o array TileObjects para verificação rápida de ocupação.
+  example: []
+  syntax:
+    content: public bool IsCellOccupied(Vector3Int coordinate)
+    parameters:
+    - id: coordinate
+      type: UnityEngine.Vector3Int
+      description: Coordenada lógica [coluna, linha] a ser verificada.
+    return:
+      type: System.Boolean
+      description: True se a célula está ocupada, false se está livre.
+    content.vb: Public Function IsCellOccupied(coordinate As Vector3Int) As Boolean
+  overload: GRID.GridManager.IsCellOccupied*
+- uid: GRID.GridManager.GetCellByCoordinate(UnityEngine.Vector3Int)
+  commentId: M:GRID.GridManager.GetCellByCoordinate(UnityEngine.Vector3Int)
+  id: GetCellByCoordinate(UnityEngine.Vector3Int)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: GetCellByCoordinate(Vector3Int)
+  nameWithType: GridManager.GetCellByCoordinate(Vector3Int)
+  fullName: GRID.GridManager.GetCellByCoordinate(UnityEngine.Vector3Int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetCellByCoordinate
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 247
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Retorna o GameObject da célula especificada pela coordenada lógica (coluna, linha).
+  example: []
+  syntax:
+    content: public GameObject GetCellByCoordinate(Vector3Int coordinate)
+    parameters:
+    - id: coordinate
+      type: UnityEngine.Vector3Int
+      description: Coordenada lógica [coluna, linha].
+    return:
+      type: UnityEngine.GameObject
+      description: GameObject na coordenada especificada, ou null se vazia.
+    content.vb: Public Function GetCellByCoordinate(coordinate As Vector3Int) As GameObject
+  overload: GRID.GridManager.GetCellByCoordinate*
+- uid: GRID.GridManager.GetTileCoordinate(UnityEngine.Vector3Int)
+  commentId: M:GRID.GridManager.GetTileCoordinate(UnityEngine.Vector3Int)
+  id: GetTileCoordinate(UnityEngine.Vector3Int)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: GetTileCoordinate(Vector3Int)
+  nameWithType: GridManager.GetTileCoordinate(Vector3Int)
+  fullName: GRID.GridManager.GetTileCoordinate(UnityEngine.Vector3Int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetTileCoordinate
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 258
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Converte uma posição de célula em coordenadas lógicas (coluna, linha), com origem no canto superior esquerdo.
+  remarks: Delega para o CoordinateConverter que mantém a lógica de conversão entre sistemas.
+  example: []
+  syntax:
+    content: public Vector3Int GetTileCoordinate(Vector3Int cell)
+    parameters:
+    - id: cell
+      type: UnityEngine.Vector3Int
+      description: Célula do grid a ser convertida.
+    return:
+      type: UnityEngine.Vector3Int
+      description: Coordenada lógica correspondente à célula.
+    content.vb: Public Function GetTileCoordinate(cell As Vector3Int) As Vector3Int
+  overload: GRID.GridManager.GetTileCoordinate*
+- uid: GRID.GridManager.GetMouseWorldPosition
+  commentId: M:GRID.GridManager.GetMouseWorldPosition
+  id: GetMouseWorldPosition
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: GetMouseWorldPosition()
+  nameWithType: GridManager.GetMouseWorldPosition()
+  fullName: GRID.GridManager.GetMouseWorldPosition()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetMouseWorldPosition
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 264
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Obtém a posição do mouse convertida para o mundo.
+  example: []
+  syntax:
+    content: public Vector3 GetMouseWorldPosition()
+    return:
+      type: UnityEngine.Vector3
+      description: Posição mundial do cursor do mouse.
+    content.vb: Public Function GetMouseWorldPosition() As Vector3
+  overload: GRID.GridManager.GetMouseWorldPosition*
+- uid: GRID.GridManager.GetColumnObject(System.Int32)
+  commentId: M:GRID.GridManager.GetColumnObject(System.Int32)
+  id: GetColumnObject(System.Int32)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: GetColumnObject(int)
+  nameWithType: GridManager.GetColumnObject(int)
+  fullName: GRID.GridManager.GetColumnObject(int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetColumnObject
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 275
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Retorna a coluna correspondente baseada no índice.
+  remarks: As colunas são utilizadas para organização hierárquica dos tiles na interface.
+  example: []
+  syntax:
+    content: public GameObject GetColumnObject(int col)
+    parameters:
+    - id: col
+      type: System.Int32
+      description: Índice da coluna desejada.
+    return:
+      type: UnityEngine.GameObject
+      description: GameObject da coluna especificada.
+    content.vb: Public Function GetColumnObject(col As Integer) As GameObject
+  overload: GRID.GridManager.GetColumnObject*
+  nameWithType.vb: GridManager.GetColumnObject(Integer)
+  fullName.vb: GRID.GridManager.GetColumnObject(Integer)
+  name.vb: GetColumnObject(Integer)
+- uid: GRID.GridManager.ClearHoverEffects
+  commentId: M:GRID.GridManager.ClearHoverEffects
+  id: ClearHoverEffects
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: ClearHoverEffects()
+  nameWithType: GridManager.ClearHoverEffects()
+  fullName: GRID.GridManager.ClearHoverEffects()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ClearHoverEffects
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 281
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Remove todos os efeitos de hover.
+  example: []
+  syntax:
+    content: public void ClearHoverEffects()
+    content.vb: Public Sub ClearHoverEffects()
+  overload: GRID.GridManager.ClearHoverEffects*
+- uid: GRID.GridManager.SetHoverColor(UnityEngine.Color)
+  commentId: M:GRID.GridManager.SetHoverColor(UnityEngine.Color)
+  id: SetHoverColor(UnityEngine.Color)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: SetHoverColor(Color)
+  nameWithType: GridManager.SetHoverColor(Color)
+  fullName: GRID.GridManager.SetHoverColor(UnityEngine.Color)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetHoverColor
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 287
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Define a cor do efeito de hover.
+  example: []
+  syntax:
+    content: public void SetHoverColor(Color color)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+      description: Nova cor para o efeito de hover.
+    content.vb: Public Sub SetHoverColor(color As Color)
+  overload: GRID.GridManager.SetHoverColor*
+- uid: GRID.GridManager.SetHoverEnabled(System.Boolean)
+  commentId: M:GRID.GridManager.SetHoverEnabled(System.Boolean)
+  id: SetHoverEnabled(System.Boolean)
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: SetHoverEnabled(bool)
+  nameWithType: GridManager.SetHoverEnabled(bool)
+  fullName: GRID.GridManager.SetHoverEnabled(bool)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetHoverEnabled
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 293
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Ativa ou desativa o efeito de hover.
+  example: []
+  syntax:
+    content: public void SetHoverEnabled(bool enabled)
+    parameters:
+    - id: enabled
+      type: System.Boolean
+      description: True para ativar, false para desativar.
+    content.vb: Public Sub SetHoverEnabled(enabled As Boolean)
+  overload: GRID.GridManager.SetHoverEnabled*
+  nameWithType.vb: GridManager.SetHoverEnabled(Boolean)
+  fullName.vb: GRID.GridManager.SetHoverEnabled(Boolean)
+  name.vb: SetHoverEnabled(Boolean)
+- uid: GRID.GridManager.IsHovering
+  commentId: P:GRID.GridManager.IsHovering
+  id: IsHovering
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: IsHovering
+  nameWithType: GridManager.IsHovering
+  fullName: GRID.GridManager.IsHovering
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: IsHovering
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 299
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Verifica se está fazendo hover sobre um tile.
+  example: []
+  syntax:
+    content: public bool IsHovering { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: True se um tile está sendo destacado por hover.
+    content.vb: Public ReadOnly Property IsHovering As Boolean
+  overload: GRID.GridManager.IsHovering*
+- uid: GRID.GridManager.CurrentHoveredCell
+  commentId: P:GRID.GridManager.CurrentHoveredCell
+  id: CurrentHoveredCell
+  parent: GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: CurrentHoveredCell
+  nameWithType: GridManager.CurrentHoveredCell
+  fullName: GRID.GridManager.CurrentHoveredCell
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/GridManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: CurrentHoveredCell
+    path: Assets/Scripts/Grid System/GridManager.cs
+    startLine: 305
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID
+  summary: Obtém a célula atualmente sob hover.
+  example: []
+  syntax:
+    content: public Vector3Int CurrentHoveredCell { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Vector3Int
+      description: Coordenada da célula sendo destacada, ou Vector3Int.zero se nenhuma.
+    content.vb: Public ReadOnly Property CurrentHoveredCell As Vector3Int
+  overload: GRID.GridManager.CurrentHoveredCell*
+references:
+- uid: GRID
+  commentId: N:GRID
+  href: GRID.html
+  name: GRID
+  nameWithType: GRID
+  fullName: GRID
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.GridManager.Instance*
+  commentId: Overload:GRID.GridManager.Instance
+  href: GRID.GridManager.html#GRID_GridManager_Instance
+  name: Instance
+  nameWithType: GridManager.Instance
+  fullName: GRID.GridManager.Instance
+- uid: GRID.GridManager
+  commentId: T:GRID.GridManager
+  parent: GRID
+  href: GRID.GridManager.html
+  name: GridManager
+  nameWithType: GridManager
+  fullName: GRID.GridManager
+- uid: GRID.GridManager.Grid*
+  commentId: Overload:GRID.GridManager.Grid
+  href: GRID.GridManager.html#GRID_GridManager_Grid
+  name: Grid
+  nameWithType: GridManager.Grid
+  fullName: GRID.GridManager.Grid
+- uid: UnityEngine.Grid
+  commentId: T:UnityEngine.Grid
+  parent: UnityEngine
+  isExternal: true
+  name: Grid
+  nameWithType: Grid
+  fullName: UnityEngine.Grid
+- uid: GRID.GridManager.Tilemap*
+  commentId: Overload:GRID.GridManager.Tilemap
+  href: GRID.GridManager.html#GRID_GridManager_Tilemap
+  name: Tilemap
+  nameWithType: GridManager.Tilemap
+  fullName: GRID.GridManager.Tilemap
+- uid: UnityEngine.Tilemaps.Tilemap
+  commentId: T:UnityEngine.Tilemaps.Tilemap
+  parent: UnityEngine.Tilemaps
+  isExternal: true
+  name: Tilemap
+  nameWithType: Tilemap
+  fullName: UnityEngine.Tilemaps.Tilemap
+- uid: UnityEngine.Tilemaps
+  commentId: N:UnityEngine.Tilemaps
+  isExternal: true
+  name: UnityEngine.Tilemaps
+  nameWithType: UnityEngine.Tilemaps
+  fullName: UnityEngine.Tilemaps
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Tilemaps
+    name: Tilemaps
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Tilemaps
+    name: Tilemaps
+    isExternal: true
+- uid: GRID.GridManager.ClickHandler*
+  commentId: Overload:GRID.GridManager.ClickHandler
+  href: GRID.GridManager.html#GRID_GridManager_ClickHandler
+  name: ClickHandler
+  nameWithType: GridManager.ClickHandler
+  fullName: GRID.GridManager.ClickHandler
+- uid: ClickHandler
+  commentId: T:ClickHandler
+  href: ClickHandler.html
+  name: ClickHandler
+  nameWithType: ClickHandler
+  fullName: ClickHandler
+- uid: GRID.GridManager.TileObjects*
+  commentId: Overload:GRID.GridManager.TileObjects
+  href: GRID.GridManager.html#GRID_GridManager_TileObjects
+  name: TileObjects
+  nameWithType: GridManager.TileObjects
+  fullName: GRID.GridManager.TileObjects
+- uid: UnityEngine.GameObject[,]
+  isExternal: true
+  name: GameObject[,]
+  nameWithType: GameObject[,]
+  fullName: UnityEngine.GameObject[,]
+  nameWithType.vb: GameObject(,)
+  fullName.vb: UnityEngine.GameObject(,)
+  name.vb: GameObject(,)
+  spec.csharp:
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: '['
+  - name: ','
+  - name: ']'
+  spec.vb:
+  - uid: UnityEngine.GameObject
+    name: GameObject
+    isExternal: true
+  - name: (
+  - name: ','
+  - name: )
+- uid: GRID.GridManager.PathManager*
+  commentId: Overload:GRID.GridManager.PathManager
+  href: GRID.GridManager.html#GRID_GridManager_PathManager
+  name: PathManager
+  nameWithType: GridManager.PathManager
+  fullName: GRID.GridManager.PathManager
+- uid: GRID.MODULES.PathManager
+  commentId: T:GRID.MODULES.PathManager
+  parent: GRID.MODULES
+  href: GRID.MODULES.PathManager.html
+  name: PathManager
+  nameWithType: PathManager
+  fullName: GRID.MODULES.PathManager
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+- uid: GRID.GridManager.BoundsCalculator*
+  commentId: Overload:GRID.GridManager.BoundsCalculator
+  href: GRID.GridManager.html#GRID_GridManager_BoundsCalculator
+  name: BoundsCalculator
+  nameWithType: GridManager.BoundsCalculator
+  fullName: GRID.GridManager.BoundsCalculator
+- uid: GRID.MODULES.GridBoundsCalculator
+  commentId: T:GRID.MODULES.GridBoundsCalculator
+  parent: GRID.MODULES
+  href: GRID.MODULES.GridBoundsCalculator.html
+  name: GridBoundsCalculator
+  nameWithType: GridBoundsCalculator
+  fullName: GRID.MODULES.GridBoundsCalculator
+- uid: GRID.GridManager.CellValidator*
+  commentId: Overload:GRID.GridManager.CellValidator
+  href: GRID.GridManager.html#GRID_GridManager_CellValidator
+  name: CellValidator
+  nameWithType: GridManager.CellValidator
+  fullName: GRID.GridManager.CellValidator
+- uid: GRID.MODULES.CellValidator
+  commentId: T:GRID.MODULES.CellValidator
+  parent: GRID.MODULES
+  href: GRID.MODULES.CellValidator.html
+  name: CellValidator
+  nameWithType: CellValidator
+  fullName: GRID.MODULES.CellValidator
+- uid: GRID.GridManager.CoordinateConverter*
+  commentId: Overload:GRID.GridManager.CoordinateConverter
+  href: GRID.GridManager.html#GRID_GridManager_CoordinateConverter
+  name: CoordinateConverter
+  nameWithType: GridManager.CoordinateConverter
+  fullName: GRID.GridManager.CoordinateConverter
+- uid: GRID.MODULES.CoordinateConverter
+  commentId: T:GRID.MODULES.CoordinateConverter
+  parent: GRID.MODULES
+  href: GRID.MODULES.CoordinateConverter.html
+  name: CoordinateConverter
+  nameWithType: CoordinateConverter
+  fullName: GRID.MODULES.CoordinateConverter
+- uid: GRID.GridManager.ColumnUIGenerator*
+  commentId: Overload:GRID.GridManager.ColumnUIGenerator
+  href: GRID.GridManager.html#GRID_GridManager_ColumnUIGenerator
+  name: ColumnUIGenerator
+  nameWithType: GridManager.ColumnUIGenerator
+  fullName: GRID.GridManager.ColumnUIGenerator
+- uid: GRID.MODULES.ColumnUIGenerator
+  commentId: T:GRID.MODULES.ColumnUIGenerator
+  parent: GRID.MODULES
+  href: GRID.MODULES.ColumnUIGenerator.html
+  name: ColumnUIGenerator
+  nameWithType: ColumnUIGenerator
+  fullName: GRID.MODULES.ColumnUIGenerator
+- uid: GRID.GridManager.HoverManager*
+  commentId: Overload:GRID.GridManager.HoverManager
+  href: GRID.GridManager.html#GRID_GridManager_HoverManager
+  name: HoverManager
+  nameWithType: GridManager.HoverManager
+  fullName: GRID.GridManager.HoverManager
+- uid: GRID.MODULES.HoverManager
+  commentId: T:GRID.MODULES.HoverManager
+  parent: GRID.MODULES
+  href: GRID.MODULES.HoverManager.html
+  name: HoverManager
+  nameWithType: HoverManager
+  fullName: GRID.MODULES.HoverManager
+- uid: GRID.GridManager.Bounds*
+  commentId: Overload:GRID.GridManager.Bounds
+  href: GRID.GridManager.html#GRID_GridManager_Bounds
+  name: Bounds
+  nameWithType: GridManager.Bounds
+  fullName: GRID.GridManager.Bounds
+- uid: UnityEngine.BoundsInt
+  commentId: T:UnityEngine.BoundsInt
+  parent: UnityEngine
+  isExternal: true
+  name: BoundsInt
+  nameWithType: BoundsInt
+  fullName: UnityEngine.BoundsInt
+- uid: GRID.GridManager.AddTileToPathList*
+  commentId: Overload:GRID.GridManager.AddTileToPathList
+  href: GRID.GridManager.html#GRID_GridManager_AddTileToPathList_GRID_TILE_Tile_
+  name: AddTileToPathList
+  nameWithType: GridManager.AddTileToPathList
+  fullName: GRID.GridManager.AddTileToPathList
+- uid: GRID.TILE.Tile
+  commentId: T:GRID.TILE.Tile
+  parent: GRID.TILE
+  href: GRID.TILE.Tile.html
+  name: Tile
+  nameWithType: Tile
+  fullName: GRID.TILE.Tile
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: GRID.GridManager.HasTileAtCell*
+  commentId: Overload:GRID.GridManager.HasTileAtCell
+  href: GRID.GridManager.html#GRID_GridManager_HasTileAtCell_UnityEngine_Vector3Int_
+  name: HasTileAtCell
+  nameWithType: GridManager.HasTileAtCell
+  fullName: GRID.GridManager.HasTileAtCell
+- uid: UnityEngine.Vector3Int
+  commentId: T:UnityEngine.Vector3Int
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3Int
+  nameWithType: Vector3Int
+  fullName: UnityEngine.Vector3Int
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: GRID.GridManager.IsCellOccupied*
+  commentId: Overload:GRID.GridManager.IsCellOccupied
+  href: GRID.GridManager.html#GRID_GridManager_IsCellOccupied_UnityEngine_Vector3Int_
+  name: IsCellOccupied
+  nameWithType: GridManager.IsCellOccupied
+  fullName: GRID.GridManager.IsCellOccupied
+- uid: GRID.GridManager.GetCellByCoordinate*
+  commentId: Overload:GRID.GridManager.GetCellByCoordinate
+  href: GRID.GridManager.html#GRID_GridManager_GetCellByCoordinate_UnityEngine_Vector3Int_
+  name: GetCellByCoordinate
+  nameWithType: GridManager.GetCellByCoordinate
+  fullName: GRID.GridManager.GetCellByCoordinate
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: GRID.GridManager.GetTileCoordinate*
+  commentId: Overload:GRID.GridManager.GetTileCoordinate
+  href: GRID.GridManager.html#GRID_GridManager_GetTileCoordinate_UnityEngine_Vector3Int_
+  name: GetTileCoordinate
+  nameWithType: GridManager.GetTileCoordinate
+  fullName: GRID.GridManager.GetTileCoordinate
+- uid: GRID.GridManager.GetMouseWorldPosition*
+  commentId: Overload:GRID.GridManager.GetMouseWorldPosition
+  href: GRID.GridManager.html#GRID_GridManager_GetMouseWorldPosition
+  name: GetMouseWorldPosition
+  nameWithType: GridManager.GetMouseWorldPosition
+  fullName: GRID.GridManager.GetMouseWorldPosition
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: GRID.GridManager.GetColumnObject*
+  commentId: Overload:GRID.GridManager.GetColumnObject
+  href: GRID.GridManager.html#GRID_GridManager_GetColumnObject_System_Int32_
+  name: GetColumnObject
+  nameWithType: GridManager.GetColumnObject
+  fullName: GRID.GridManager.GetColumnObject
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: GRID.GridManager.ClearHoverEffects*
+  commentId: Overload:GRID.GridManager.ClearHoverEffects
+  href: GRID.GridManager.html#GRID_GridManager_ClearHoverEffects
+  name: ClearHoverEffects
+  nameWithType: GridManager.ClearHoverEffects
+  fullName: GRID.GridManager.ClearHoverEffects
+- uid: GRID.GridManager.SetHoverColor*
+  commentId: Overload:GRID.GridManager.SetHoverColor
+  href: GRID.GridManager.html#GRID_GridManager_SetHoverColor_UnityEngine_Color_
+  name: SetHoverColor
+  nameWithType: GridManager.SetHoverColor
+  fullName: GRID.GridManager.SetHoverColor
+- uid: UnityEngine.Color
+  commentId: T:UnityEngine.Color
+  parent: UnityEngine
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: UnityEngine.Color
+- uid: GRID.GridManager.SetHoverEnabled*
+  commentId: Overload:GRID.GridManager.SetHoverEnabled
+  href: GRID.GridManager.html#GRID_GridManager_SetHoverEnabled_System_Boolean_
+  name: SetHoverEnabled
+  nameWithType: GridManager.SetHoverEnabled
+  fullName: GRID.GridManager.SetHoverEnabled
+- uid: GRID.GridManager.IsHovering*
+  commentId: Overload:GRID.GridManager.IsHovering
+  href: GRID.GridManager.html#GRID_GridManager_IsHovering
+  name: IsHovering
+  nameWithType: GridManager.IsHovering
+  fullName: GRID.GridManager.IsHovering
+- uid: GRID.GridManager.CurrentHoveredCell*
+  commentId: Overload:GRID.GridManager.CurrentHoveredCell
+  href: GRID.GridManager.html#GRID_GridManager_CurrentHoveredCell
+  name: CurrentHoveredCell
+  nameWithType: GridManager.CurrentHoveredCell
+  fullName: GRID.GridManager.CurrentHoveredCell

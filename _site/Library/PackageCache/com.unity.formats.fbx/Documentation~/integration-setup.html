@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Set up Unity Integration for your 3D modeling application | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Set up Unity Integration for your 3D modeling application | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/integration-setup.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="set-up-unity-integration-for-your-3d-modeling-application">Set up Unity Integration for your 3D modeling application</h1>
+
+<p>The Unity Integration tool is a plug-in that installs on top of <strong>Autodesk® Maya®</strong>, <strong>Autodesk® Maya LT™</strong>, or <strong>Autodesk® 3ds Max®</strong>.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>The Unity Integration tool is <strong>only supported on Windows and MacOS</strong>.</li>
+<li>The 3D modeling application to integrate with must be installed on the same machine as the Unity Editor.</li>
+</ul>
+<h2 id="automatic-setup-from-unity">Automatic setup from Unity</h2>
+<p>To install the Unity Integration tool and make it available in your 3D modeling application:</p>
+<ol>
+<li><p><strong>In Unity</strong>, open the <a href="ref-project-settings.html">Fbx Export Settings</a>: from the Unity Editor main menu, select <strong>Edit &gt; Project Settings &gt; Fbx Export</strong>.</p>
+<p><img src="images/FBXExporter_FBXExportSettingsWindow.png" alt="FBX Export Settings window"></p>
+</li>
+<li><p>Use the <strong>3D Application</strong> property to choose the 3D modeling software and version where you want to install the Unity Integration.</p>
+</li>
+<li><p>To select a version of Autodesk® Maya®, Autodesk® Maya LT™, or Autodesk® 3ds Max® installed outside the default location, click the <strong>[...]</strong> (Browse) button.</p>
+<p><img src="images/FBXExporter_3DApplicationOption.png" alt="3D Application property with Browse button (red outline)"></p>
+</li>
+<li><p>Before you install Unity Integration, close all instances of the selected 3D modeling software that matches the specified version.</p>
+</li>
+<li><p>Select <strong>Install Unity Integration</strong> to install the Unity Integration for the selected 3D modeling software.</p>
+<p><strong>Note:</strong> If you already unpacked a previous integration in the selected folder, Unity prompts you to either use the existing integration or to overwrite it with the newer version.</p>
+<p><img src="images/FBXExporter_AlreadyExist.png" alt=""></p>
+</li>
+<li><p>Unity Integration comes packaged in several zip files (one zip file per supported application). When prompted, select a target folder where you want to extract the Unity Integration.</p>
+<p><strong>Note:</strong> The target folder can be outside of your current Project. Autodesk® Maya® and Autodesk® Maya LT™ both use the same zip folder.</p>
+<p>The application starts, configures the plug-in, and automatically exits. Unity reports whether the installation was a success.</p>
+<p><img src="images/FBXExporter_IntegrationSuccessMsg.png" alt=""></p>
+</li>
+</ol>
+<p>If an error occurs during startup, Autodesk® Maya® or Autodesk® Maya LT™ may not close. If this happens, check the Autodesk® Maya® or Autodesk® Maya LT™ console to see if you can resolve the issue, and then manually close Autodesk® Maya® or Autodesk® Maya LT™.</p>
+<p>If you enabled the <strong>Keep Open</strong> option in the <a href="ref-project-settings.html">Fbx Export Settings</a> window, then Autodesk® Maya® or Autodesk® Maya LT™ remains open after installation completes.</p>
+<h2 id="customize-fbx-importexport-settings-in-the-3d-modeling-application">Customize FBX import/export settings in the 3D modeling application</h2>
+<p>To customize the FBX Importer or Exporter settings in Autodesk® Maya® or Autodesk® Maya LT™, use the <code>unityFbxImportSettings.mel</code> and <code>unityFbxExportSettings.mel</code> files. Both files are located in the <code>Integrations/Autodesk/maya/scripts</code> folder.</p>
+<p>For Autodesk® 3ds Max®, use the <code>unityFbxImportSettings.ms</code> and <code>unityFbxExportSettings.ms</code> files located in the <code>Integrations/Autodesk/max/scripts</code> folder.</p>
+<h2 id="manual-setup-workaround-for-mayamaya-lt-only">Manual setup (workaround for Maya/Maya LT only)</h2>
+<p>In some cases, you have to install your integration manually. For example, you might be using an unsupported version of Autodesk® Maya® or Autodesk® Maya LT™.</p>
+<p>To manually install an Autodesk® Maya® or Autodesk® Maya LT™ Integration:</p>
+<ol>
+<li><p>Locate the <code>UnityFbxForMaya.zip</code> file. You can find it in Unity's Project view, under the <code>Packages/FBX Exporter/Editor/Integrations</code> folder.</p>
+</li>
+<li><p>Extract the archive to a folder where you have write permission. This can be in or outside of your Unity Project.</p>
+</li>
+<li><p>Copy the contents of <code>Integrations/Autodesk/maya/UnityFbxForMaya.txt</code> from the unzipped folder to the following file:</p>
+<ul>
+<li>On Windows: <code>C:\Users\\{username}\Documents\maya\modules\UnityFbxForMaya.mod</code></li>
+<li>On Mac: <code>$HOME/Library/Preferences/Autodesk/Maya/modules/UnityFbxForMaya.mod</code>
+<br></li>
+</ul>
+</li>
+<li><p>In <code>UnityFbxForMaya.mod</code>, modify the following line (mel code):</p>
+<p><code>UnityFbxForMaya {Version} {UnityIntegrationsPath}/Integrations/Autodesk/maya</code></p>
+<p><strong>Note:</strong> You need to replace:</p>
+<ul>
+<li><code>{Version}</code> by the version number of your FBX Exporter package (for example, <code>4.0.1</code>)</li>
+<li><code>{UnityIntegrationsPath}</code> by the location where you unzipped <code>UnityFbxForMaya.zip</code> in first step.
+<br></li>
+</ul>
+</li>
+<li><p>Locate the following file (if it doesn't exist, create the file):</p>
+<ul>
+<li>On Windows: <code>C:\Users\{username}\Documents\maya\scripts\userSetup.mel</code></li>
+<li>On Mac: <code>$HOME/Library/Preferences/Autodesk/Maya/scripts/userSetup.mel</code>
+<br></li>
+</ul>
+</li>
+<li><p>Add this line (mel code):</p>
+<p><code>if(`exists unitySetupUI`){ unitySetupUI; }</code></p>
+</li>
+<li><p>Open Autodesk® Maya® or Autodesk® Maya LT™, and then open the Script Editor:</p>
+</li>
+</ol>
+<p><img src="images/FBXExporter_MayaAccessScriptEditor.png" alt=""></p>
+<ol start="8">
+<li><p>Run the following (mel code):</p>
+<p><code>unityConfigure &quot;{UnityProjectPath}&quot; &quot;{ExportSettingsPath}&quot; &quot;{ImportSettingsPath}&quot; 0 0;</code></p>
+<p><strong>Note:</strong> You need to replace:</p>
+<ul>
+<li><code>{UnityProjectPath}</code> with the path to your Unity Project</li>
+<li><code>{ExportSettingsPath}</code> with the path to <code>Integrations/Autodesk/maya/scripts/unityFbxExportSettings.mel</code></li>
+<li><code>{ImportSettingsPath}</code> with the path to <code>Integrations/Autodesk/maya/scripts/unityFbxImportSettings.mel</code>.</li>
+</ul>
+</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/integration-setup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

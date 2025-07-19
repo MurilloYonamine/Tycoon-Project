@@ -1,0 +1,243 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.MODULES.GridBoundsCalculator
+  commentId: T:GRID.MODULES.GridBoundsCalculator
+  id: GridBoundsCalculator
+  parent: GRID.MODULES
+  children:
+  - GRID.MODULES.GridBoundsCalculator.#ctor(UnityEngine.Tilemaps.Tilemap)
+  - GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles(UnityEngine.BoundsInt)
+  - GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds
+  langs:
+  - csharp
+  - vb
+  name: GridBoundsCalculator
+  nameWithType: GridBoundsCalculator
+  fullName: GRID.MODULES.GridBoundsCalculator
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GridBoundsCalculator
+    path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public class GridBoundsCalculator
+    content.vb: Public Class GridBoundsCalculator
+  inheritance:
+  - System.Object
+- uid: GRID.MODULES.GridBoundsCalculator.#ctor(UnityEngine.Tilemaps.Tilemap)
+  commentId: M:GRID.MODULES.GridBoundsCalculator.#ctor(UnityEngine.Tilemaps.Tilemap)
+  id: '#ctor(UnityEngine.Tilemaps.Tilemap)'
+  parent: GRID.MODULES.GridBoundsCalculator
+  langs:
+  - csharp
+  - vb
+  name: GridBoundsCalculator(Tilemap)
+  nameWithType: GridBoundsCalculator.GridBoundsCalculator(Tilemap)
+  fullName: GRID.MODULES.GridBoundsCalculator.GridBoundsCalculator(UnityEngine.Tilemaps.Tilemap)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: .ctor
+    path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public GridBoundsCalculator(Tilemap tilemap)
+    parameters:
+    - id: tilemap
+      type: UnityEngine.Tilemaps.Tilemap
+    content.vb: Public Sub New(tilemap As Tilemap)
+  overload: GRID.MODULES.GridBoundsCalculator.#ctor*
+  nameWithType.vb: GridBoundsCalculator.New(Tilemap)
+  fullName.vb: GRID.MODULES.GridBoundsCalculator.New(UnityEngine.Tilemaps.Tilemap)
+  name.vb: New(Tilemap)
+- uid: GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds
+  commentId: M:GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds
+  id: GetTrimmedBounds
+  parent: GRID.MODULES.GridBoundsCalculator
+  langs:
+  - csharp
+  - vb
+  name: GetTrimmedBounds()
+  nameWithType: GridBoundsCalculator.GetTrimmedBounds()
+  fullName: GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetTrimmedBounds
+    path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+    startLine: 26
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: >-
+    Calcula os limites reais do Tilemap, baseando-se apenas nas células que possuem tiles.
+
+    Ignora células vazias nas bordas que ainda estão inclusas em Tilemap.cellBounds.
+  example: []
+  syntax:
+    content: public BoundsInt GetTrimmedBounds()
+    return:
+      type: UnityEngine.BoundsInt
+    content.vb: Public Function GetTrimmedBounds() As BoundsInt
+  overload: GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds*
+- uid: GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles(UnityEngine.BoundsInt)
+  commentId: M:GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles(UnityEngine.BoundsInt)
+  id: GetAllMarkedTiles(UnityEngine.BoundsInt)
+  parent: GRID.MODULES.GridBoundsCalculator
+  langs:
+  - csharp
+  - vb
+  name: GetAllMarkedTiles(BoundsInt)
+  nameWithType: GridBoundsCalculator.GetAllMarkedTiles(BoundsInt)
+  fullName: GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles(UnityEngine.BoundsInt)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetAllMarkedTiles
+    path: Assets/Scripts/Grid System/Modules/GridBoundsCalculator.cs
+    startLine: 62
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Conta quantas células dentro dos limites (_bounds) do Tilemap estão marcadas com tiles.
+  example: []
+  syntax:
+    content: public int GetAllMarkedTiles(BoundsInt bounds)
+    parameters:
+    - id: bounds
+      type: UnityEngine.BoundsInt
+    return:
+      type: System.Int32
+    content.vb: Public Function GetAllMarkedTiles(bounds As BoundsInt) As Integer
+  overload: GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles*
+references:
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: GRID.MODULES.GridBoundsCalculator.#ctor*
+  commentId: Overload:GRID.MODULES.GridBoundsCalculator.#ctor
+  href: GRID.MODULES.GridBoundsCalculator.html#GRID_MODULES_GridBoundsCalculator__ctor_UnityEngine_Tilemaps_Tilemap_
+  name: GridBoundsCalculator
+  nameWithType: GridBoundsCalculator.GridBoundsCalculator
+  fullName: GRID.MODULES.GridBoundsCalculator.GridBoundsCalculator
+  nameWithType.vb: GridBoundsCalculator.New
+  fullName.vb: GRID.MODULES.GridBoundsCalculator.New
+  name.vb: New
+- uid: UnityEngine.Tilemaps.Tilemap
+  commentId: T:UnityEngine.Tilemaps.Tilemap
+  parent: UnityEngine.Tilemaps
+  isExternal: true
+  name: Tilemap
+  nameWithType: Tilemap
+  fullName: UnityEngine.Tilemaps.Tilemap
+- uid: UnityEngine.Tilemaps
+  commentId: N:UnityEngine.Tilemaps
+  isExternal: true
+  name: UnityEngine.Tilemaps
+  nameWithType: UnityEngine.Tilemaps
+  fullName: UnityEngine.Tilemaps
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Tilemaps
+    name: Tilemaps
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Tilemaps
+    name: Tilemaps
+    isExternal: true
+- uid: GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds*
+  commentId: Overload:GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds
+  href: GRID.MODULES.GridBoundsCalculator.html#GRID_MODULES_GridBoundsCalculator_GetTrimmedBounds
+  name: GetTrimmedBounds
+  nameWithType: GridBoundsCalculator.GetTrimmedBounds
+  fullName: GRID.MODULES.GridBoundsCalculator.GetTrimmedBounds
+- uid: UnityEngine.BoundsInt
+  commentId: T:UnityEngine.BoundsInt
+  parent: UnityEngine
+  isExternal: true
+  name: BoundsInt
+  nameWithType: BoundsInt
+  fullName: UnityEngine.BoundsInt
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles*
+  commentId: Overload:GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles
+  href: GRID.MODULES.GridBoundsCalculator.html#GRID_MODULES_GridBoundsCalculator_GetAllMarkedTiles_UnityEngine_BoundsInt_
+  name: GetAllMarkedTiles
+  nameWithType: GridBoundsCalculator.GetAllMarkedTiles
+  fullName: GRID.MODULES.GridBoundsCalculator.GetAllMarkedTiles
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Working with Curves | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Working with Curves | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/curves.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="working-with-curves">Working with Curves</h1>
+
+<p>You can import Alembic files with curve data to Unity, and optionally preview the curves in your Scene and Game views if you don't have a custom curve renderer.</p>
+<h2 id="importing-alembic-curve-data">Importing Alembic Curve data</h2>
+<p>To import an Alembic file with curve data, start the Alembic file <a href="import.html">import process</a>, and then in the <a href="ref_Importer.html">import settings</a>, select <strong>Import Curves</strong>.</p>
+<p>In the hierarchy of the imported Prefab instance, the Alembic importer adds an <strong>Alembic Curves</strong> component to each GameObject that corresponds to an Alembic curve node, in order to manage the curve data that comes from your Alembic file.</p>
+<p>Unity imports the curves as piecewise linear segments, and the imported curve data includes the following attributes:</p>
+<ul>
+<li>Visibility</li>
+<li>vertexPositions</li>
+<li>nVertices</li>
+<li>width</li>
+<li>UV</li>
+<li>Velocities.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The imported curve data does <strong>not</strong> include the spline information from the original Alembic Curve schema.</p>
+</blockquote>
+<h2 id="rendering-alembic-curves">Rendering Alembic Curves</h2>
+<p>Unity does not currently include any built-in curve renderer. This means that, by default, you cannot see the imported curves in the Scene and Game views of your Unity Editor, unless you implemented a custom curve renderer.</p>
+<p>However, the Alembic package provides you with a custom basic rendering feature that makes the curves minimally visible in Unity while you are working on your project.</p>
+<blockquote>
+<p><strong>Note:</strong> You should only use this option as a temporary preview solution, and keep it disabled if you need to produce a final quality render through your own custom curve renderer.</p>
+</blockquote>
+<p>To enable the basic preview of Alembic curves in Unity, when you configure the <a href="#importing-alembic-curve-data">import of Alembic curve data</a>, also select <strong>Add Curve Renderer</strong>.</p>
+<p>In the hierarchy of the imported Prefab instance, the Alembic importer adds three components to each GameObject that corresponds to an Alembic curve node, in addition to the <strong>Alembic Curves</strong> component:</p>
+<ul>
+<li>A <strong>Mesh Renderer</strong> component</li>
+<li>A <strong>Mesh Filter</strong> component</li>
+<li>An <strong>Alembic Curves Renderer</strong> component, which maps the curve data of the <strong>Alembic Curves</strong> component with the rendered mesh.</li>
+</ul>
+<p><img src="images/abc_import_curves.png" alt="">
+<br><em>Example of imported curves with the basic rendering option enabled for preview purposes.</em></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/curves.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

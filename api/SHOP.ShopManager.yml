@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: SHOP.ShopManager
+  commentId: T:SHOP.ShopManager
+  id: ShopManager
+  parent: SHOP
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ShopManager
+  nameWithType: ShopManager
+  fullName: SHOP.ShopManager
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Shop System/ShopManager.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ShopManager
+    path: Assets/Scripts/Shop System/ShopManager.cs
+    startLine: 27
+  assemblies:
+  - Assembly-CSharp
+  namespace: SHOP
+  summary: >-
+    Gerenciador principal do sistema de loja responsável pela interface, animações e seleção de tiles.
+
+    Controla a abertura/fechamento da loja, configuração de tiles disponíveis e instanciação de tiles selecionados.
+  remarks: >-
+    Este gerenciador implementa um sistema completo de loja para o jogo de tycoon, permitindo
+
+    que jogadores selecionem diferentes tipos de tiles para posicionamento no grid. Inclui
+
+    animações suaves de abertura/fechamento, configuração dinâmica de tiles e integração
+
+    com o sistema de Object Pool para otimização de performance.
+  example: []
+  syntax:
+    content: 'public class ShopManager : MonoBehaviour'
+    content.vb: Public Class ShopManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.Component
+  - UnityEngine.Behaviour
+  - UnityEngine.MonoBehaviour
+references:
+- uid: SHOP
+  commentId: N:SHOP
+  href: SHOP.html
+  name: SHOP
+  nameWithType: SHOP
+  fullName: SHOP
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.Component
+  commentId: T:UnityEngine.Component
+  parent: UnityEngine
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: UnityEngine.Component
+- uid: UnityEngine.Behaviour
+  commentId: T:UnityEngine.Behaviour
+  parent: UnityEngine
+  isExternal: true
+  name: Behaviour
+  nameWithType: Behaviour
+  fullName: UnityEngine.Behaviour
+- uid: UnityEngine.MonoBehaviour
+  commentId: T:UnityEngine.MonoBehaviour
+  parent: UnityEngine
+  isExternal: true
+  name: MonoBehaviour
+  nameWithType: MonoBehaviour
+  fullName: UnityEngine.MonoBehaviour
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

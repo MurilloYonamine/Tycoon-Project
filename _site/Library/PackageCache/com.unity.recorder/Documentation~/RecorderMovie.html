@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Movie Recorder properties | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Movie Recorder properties | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecorderMovie.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="movie-recorder-properties">Movie Recorder properties</h1>
+
+<p>The <strong>Movie Recorder</strong> generates videos in the H.264 MP4, VP8 WebM, or ProRes QuickTime format. Movie Recorder also generates GIF files.</p>
+<p>This page covers all properties specific to the Movie Recorder type.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To fully configure any Recorder, you must also set the general recording properties according to the recording interface you are using: the <a href="RecorderWindowRecordingProperties.html">Recorder window</a> or a <a href="RecordingTimelineTrack.html#recorder-clip-properties">Recorder Clip</a>.</p>
+</div>
+<p><img src="Images/RecorderMovie.png" alt=""></p>
+<p>The Movie Recorder properties fall into three main categories:</p>
+<ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#output-format">Output Format</a></li>
+<li><a href="#output-file">Output File</a></li>
+</ul>
+<h2 id="input">Input</h2>
+<p>Use this section to define the source of your recording.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Source</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Specifies the input for the recording.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Game View</td>
+<td style="text-align: left;">Records frames rendered in the Game View.<br><br>Selecting this option displays the <a href="#game-view-source-properties">Game View source properties</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Targeted Camera</td>
+<td style="text-align: left;">Records frames captured by a specific camera, even if the Game View does not use that camera.<br><br>Selecting this option displays the <a href="#targeted-camera-source-properties">Targeted Camera source properties</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">360 View</td>
+<td style="text-align: left;">Records a 360-degree video.<br><br>Selecting this option displays the <a href="#360-view-source-properties">360 View source properties</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Render Texture Asset</td>
+<td style="text-align: left;">Records frames rendered in a Render Texture.<br><br>Selecting this option displays the <a href="#render-texture-asset-source-properties">Render Texture Asset source properties</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Texture Sampling</td>
+<td style="text-align: left;">Supersamples the source camera during the capture to generate anti-aliased images in the recording.<br><br>Selecting this option displays the <a href="#texture-sampling-source-properties">Texture Sampling source properties</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flip Vertical</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">When you enable this option, the Recorder flips the output image vertically.<br>This is useful to correct for systems that output video upside down.<br><br>This option is not available when you record the Game View.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Render Frame Step</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Available when you set <strong>Playback</strong> to <strong>Variable</strong>. Specifies the number of rendered frames to discard between recorded frames. The duration of the discarded frames is preserved, reducing frames per second. Example: if the value is 2, every second frame is discarded, but the duration of the recording remains the same.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Accumulation</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Available if your project uses <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest">HDRP (High Definition Render Pipeline)</a>.<br><br>Enable this feature to render <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@10.3/manual/Accumulation.html">multiple sub-frames</a> for accumulation purposes.<br><br>See <a href="#accumulation-properties">Accumulation properties</a> below. <br>For set up and use cases, see <a href="RecordingAccumulation.html">Recording Accumulation</a>.<br><br><strong>Note:</strong> Enabling the <strong>Accumulation</strong> feature might slow down your recording process considerably as it involves more rendering steps.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="game-view-source-properties">Game View source properties</h3>
+<p>These properties appear when you set <strong>Source</strong> to <strong>Game View</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>If you have multiple Game Views in your project, the Recorder captures only the last one you selected in the Editor.</li>
+<li>If you are using more than one Recorder to capture Game View, they must all use the same resolution settings.</li>
+<li>If the Output Resolution and/or Aspect Ratio in the Recorder is different than the Game view resolution, the Recorder switches the Game view to the Recorder's resolution before starting the recording. After the recording ends, the Game view does not automatically revert to its previous resolution. If you need to revert this change afterward, use the <strong>Aspect ratio</strong> dropdown menu in the <a href="https://docs.unity3d.com/Manual/GameView.html">Game view control bar</a>.</li>
+<li>Recording the Simulator view is <a href="KnownIssues.html#simulator-view-recording-not-supported">not supported</a>.</li>
+</ul>
+</div>
+<p><img src="Images/CaptureOptionsGameView.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Output Resolution</strong></td>
+<td></td>
+<td>Allows you to set the dimensions of the recorded view using different methods.</td>
+</tr>
+<tr>
+<td></td>
+<td>Use Game View Resolution</td>
+<td>Matches the resolution and aspect ratio of the currently selected Game View.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>[PRESET RESOLUTIONS]</em></td>
+<td>Choose from several standard video resolutions such as FHD (1080p) and 4K (2160p).<br><br>The numeric value represents the image height. To set the image width, you must select a specific <strong>Aspect Ratio</strong>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Custom</td>
+<td>Uses custom width and height values that you supply in the <strong>W</strong> and <strong>H</strong> fields.</td>
+</tr>
+<tr>
+<td><strong>Aspect Ratio</strong></td>
+<td></td>
+<td>Specifies the ratio of width to height (w:h) of the recorded view when you set the <strong>Output Resolution</strong> to a preset resolution.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>[PRESET ASPECT RATIOS]</em></td>
+<td>Choose from several standard aspect ratios such as 16:9 (1.7778) and 4:3 (1.3333).</td>
+</tr>
+<tr>
+<td></td>
+<td>Custom</td>
+<td>Uses a custom aspect ratio that you supply in the displayed fields (w:h).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="targeted-camera-source-properties">Targeted Camera source properties</h3>
+<p>These properties appear when you set <strong>Source</strong> to <strong>Targeted Camera</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>If the Output Resolution and/or Aspect Ratio in the Recorder is different than the Game view resolution, the Recorder switches the Game view to the Recorder's resolution before starting the recording. After the recording ends, the Game view does not automatically revert to its previous resolution. If you need to revert this change afterward, use the <strong>Aspect ratio</strong> dropdown menu in the <a href="https://docs.unity3d.com/Manual/GameView.html">Game view control bar</a>.</li>
+<li>You can't capture images from a Targeted Camera if you are using a URP 2D Renderer, due to a <a href="KnownIssues.html#targeted-camera-recording-is-not-available-with-urp-2d-renderer">known limitation</a>. As an alternative, you can capture from the Game View or from a Render Texture Asset.</li>
+</ul>
+</div>
+<p><img src="Images/CaptureOptionsTargetedCamera.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Camera</strong></td>
+<td></td>
+<td>Specifies which camera the Recorder uses to capture the recording.</td>
+</tr>
+<tr>
+<td></td>
+<td>ActiveCamera</td>
+<td>The Camera that is active when you launch the recording.<br><br><strong>Note:</strong> <a href="KnownIssues.html#activecamera-recording-not-available-with-srps">The ActiveCamera option is not available</a> when your project uses a Scriptable Render Pipeline (SRP).</td>
+</tr>
+<tr>
+<td></td>
+<td>MainCamera</td>
+<td>The Camera tagged with the MainCamera <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td>TaggedCamera</td>
+<td>A camera tagged with a specific <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.<br><br>If you select this option, you must enter a value in the <strong>Tag</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Tag</strong></td>
+<td></td>
+<td>Specifies which Camera Tag to look for when you set <strong>Camera</strong> to <strong>Tagged Camera</strong>.</td>
+</tr>
+<tr>
+<td><strong>Output Resolution</strong></td>
+<td></td>
+<td>Allows you to set the dimensions of the recorded view using different methods.</td>
+</tr>
+<tr>
+<td></td>
+<td>Use Game View Resolution</td>
+<td>Matches the resolution and aspect ratio of the currently selected Game View.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>[PRESET RESOLUTIONS]</em></td>
+<td>Choose from several standard video resolutions such as FHD (1080p) and 4K (2160p).<br><br>The numeric value represents the image height. To set the image width, you must select a specific <strong>Aspect Ratio</strong>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Custom</td>
+<td>Uses custom width and height values that you supply in the <strong>W</strong> and <strong>H</strong> fields.</td>
+</tr>
+<tr>
+<td><strong>Aspect Ratio</strong></td>
+<td></td>
+<td>Specifies the ratio of width to height (w:h) of the recorded view when you set the <strong>Output Resolution</strong> to a preset resolution.</td>
+</tr>
+<tr>
+<td></td>
+<td><em>[PRESET ASPECT RATIOS]</em></td>
+<td>Choose from several standard aspect ratios such as 16:9 (1.7778) and 4:3 (1.3333).</td>
+</tr>
+<tr>
+<td></td>
+<td>Custom</td>
+<td>Uses a custom aspect ratio that you supply in the displayed fields (w:h).</td>
+</tr>
+<tr>
+<td><strong>Include UI</strong></td>
+<td></td>
+<td>Enable this option to include UI GameObjects in the recording.<br><br>This option only appears when you set <strong>Source</strong> to <strong>ActiveCamera</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="360-view-source-properties">360 View source properties</h3>
+<p>These properties appear when you set <strong>Source</strong> to <strong>360 View</strong>.</p>
+<p>To capture 360 degree recordings, the Recorder rotates the <strong>Camera</strong> 360 degrees around its <strong>Y</strong> axis.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Recorder doesn't fully support 360 View recording. See the <a href="KnownIssues.html#360-view">Known issues and limitations</a> for more details.</p>
+</div>
+<p><img src="Images/CaptureOptions360View.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Camera</strong></td>
+<td></td>
+<td>Specifies which camera the Recorder uses to capture the 360 degree recording.</td>
+</tr>
+<tr>
+<td></td>
+<td>MainCamera</td>
+<td>The Camera tagged with the MainCamera <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td>TaggedCamera</td>
+<td>A camera tagged with a specific  <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.<br><br>If you select this option, you must enter a value in the <strong>Tag</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Tag</strong></td>
+<td></td>
+<td>Specifies which Camera Tag to look for when you set <strong>Camera</strong> to <strong>Tagged Camera</strong>.</td>
+</tr>
+<tr>
+<td><strong>Output Dimensions</strong></td>
+<td></td>
+<td><strong>W</strong> and <strong>H</strong> specify the width and height, in pixels, of the 360-degree video.</td>
+</tr>
+<tr>
+<td><strong>Cube Map Size</strong></td>
+<td></td>
+<td>The side length of the cube map, in pixels, for the 360-degree video.</td>
+</tr>
+<tr>
+<td><strong>Record in Stereo</strong></td>
+<td></td>
+<td>Use this option to record separate left and right stereoscopic views of the 360-degree video.<br><br>The Recorder includes both views in the same image: left view at the top and right view at the bottom.</td>
+</tr>
+<tr>
+<td><strong>Stereo Separation</strong></td>
+<td></td>
+<td>When you select <strong>Record in Stereo</strong>, this is the angle between the left and right views on the selected <strong>Camera</strong>'s <strong>Y</strong> axis.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="render-texture-asset-source-properties">Render Texture Asset source properties</h3>
+<p>These properties appear when you set <strong>Source</strong> to <strong>Render Texture Asset</strong>.</p>
+<p><img src="Images/CaptureOptionsRenderTextureAsset.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Render Texture</td>
+<td>Points to the render texture you want the Recorder to capture.</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>The actual dimensions (width x height) of the targeted Render Texture.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="texture-sampling-source-properties">Texture Sampling source properties</h3>
+<p>These properties appear when you set <strong>Source</strong> to <strong>Texture Sampling</strong>.</p>
+<p>Use this capture method when the <strong>Rendering Resolution</strong> has the same or higher resolution than the <strong>Output Resolution</strong>.</p>
+<p><img src="Images/CaptureOptionsTextureSampling.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th></th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Camera</strong></td>
+<td></td>
+<td>Specifies which camera the Recorder uses to capture the recording.</td>
+</tr>
+<tr>
+<td></td>
+<td>ActiveCamera</td>
+<td>The Camera that is active when you launch the recording.</td>
+</tr>
+<tr>
+<td></td>
+<td>MainCamera</td>
+<td>The Camera tagged with the MainCamera <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.</td>
+</tr>
+<tr>
+<td></td>
+<td>TaggedCamera</td>
+<td>A camera tagged with a specific <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.<br><br>If you select this option, you must enter a value in the <strong>Tag</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Tag</strong></td>
+<td></td>
+<td>Specifies which Camera Tag to look for when you set <strong>Camera</strong> to <strong>Tagged Camera</strong>.</td>
+</tr>
+<tr>
+<td><strong>Aspect Ratio</strong></td>
+<td></td>
+<td>The ratio of width to height of the recorded output.</td>
+</tr>
+<tr>
+<td><strong>Supersampling Grid</strong></td>
+<td></td>
+<td>The size of the grid of sub-pixels to use for supersampling patterns.</td>
+</tr>
+<tr>
+<td><strong>Rendering Resolution</strong></td>
+<td></td>
+<td>The vertical resolution of the input to sample from.</td>
+</tr>
+<tr>
+<td><strong>Output Resolution</strong></td>
+<td></td>
+<td>The vertical resolution of the recording to output to.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accumulation-properties">Accumulation properties</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The use of the <strong>Accumulation</strong> feature is subject to very specific conditions:</p>
+<ul>
+<li>Your project must use <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@latest">High Definition Render Pipeline (HDRP)</a>.</li>
+<li>You can only select <strong>Game View</strong> or <strong>Targeted Camera</strong> as the <strong>Source</strong> for the recording.</li>
+<li>You can only use one active Recorder at a time when you capture accumulation.</li>
+</ul>
+</div>
+<p>Use the properties in this section to specify the number of samples to accumulate, the interval for accumulation between subsequent frames, and the weight each sample contributes to the rendered frame.</p>
+<p>To understand how Accumulation properties relate to each other, see <a href="RecorderAccumulationUnderstandSubFrameCapture.html">Understanding sub frame capture</a>.</p>
+<p><img src="Images/AccumulationProperties.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Samples</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The number of sub-frames to capture and accumulate between two subsequent frames.<br><br>Depending on the specified <strong>Shutter Interval</strong>, the <strong>Effective number of accumulated samples</strong> might be lower than the value you specify here.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Shutter Interval</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The portion of the interval between two subsequent frames in which the Recorder actually applies the specified <strong>Shutter Profile</strong>.<br><br>Select <strong>Normalized</strong> or <strong>Angle</strong> according to your preferred way to specify the value.<ul><li> The maximum value applies the shutter profile to the whole interval between the two frames.<li> A value of 0 disables the accumulation of motion blur. If path tracing is enabled, path-tracing samples are captured for the number of sub frames defined in <strong>Samples</strong>.<li> Any value in between proportionally rescales the shutter profile and makes the shutter remain closed during the rest of the interval to the next frame.</li></ul><strong>Note:</strong> A longer Shutter Interval results in more motion blur.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Normalized</td>
+<td style="text-align: left;">Lets you define a portion of the interval using a value normalized to the interval's full length (between 0 and 1).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Angle</td>
+<td style="text-align: left;">Lets you define a portion of the interval using an angle value (between 0 and 360 degrees).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Shutter Profile</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Allows you to define a custom response profile that simulates the physical motion of a camera shutter at each frame when the Recorder captures the sub-frames.<br> 0 is a closed shutter and 1 is a fully open shutter. A fully open shutter produces the strongest image. The visibility of the image is weighted according to the degree to which the shutter is open.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Range</td>
+<td style="text-align: left;">Select this type to use a trapezoidal shutter profile.<br>Specify two values to define the time range in which the shutter remains fully open.<ul><li> The values, between 0 and 1, are relative to the full length of the shutter profile.<li> The shutter opening and closing portions (from 0 to the first value, and from the second value to 1) are linear.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Curve</td>
+<td style="text-align: left;">Select this type to use a curve as the shutter profile.<br><a href="https://docs.unity3d.com/Manual/EditingCurves.html">Select or draw a curve</a> according to your needs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Anti-aliasing</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enables subpixel jitter anti-aliasing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Effective number of accumulated samples</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Displays the actual number of samples to be effectively accumulated from the specified number of <strong>Samples</strong>, according to the specified <strong>Shutter Interval</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-format">Output Format</h2>
+<p>Use this section to set up the media format you need to save the recorded images in.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Encoder</strong></td>
+<td style="text-align: left;">The encoder to use for the recording. Each encoder has a specific set of properties:<br>• Select <a href="#unity-media-encoder-properties">Unity Media Encoder</a> to generate an H.264 MP4 or VP8 WebM video.<br>• Select <a href="#gif-encoder-properties">GIF Encoder</a> to generate an animated GIF.<br>• Select <a href="#prores-encoder-properties">ProRes Encoder</a> to generate a video file encoded with an Apple ProRes codec.<br><br><strong>Note:</strong> To integrate a custom command line encoder such as FFmpeg and make it available from this list, use the <a href="samples-custom-encoder.html"><strong>Custom Encoder: FFmpeg</strong></a> sample provided along with the Recorder package.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Include Audio</strong></td>
+<td style="text-align: left;">Enable this option to include audio in the recording when the <strong>Encoder</strong> supports it. The Unity Media Encoder supports Mono or Stereo audio recording. The ProRes encoder supports Stereo only.<br><br>To enable recording when Include Audio is selected, in <strong>Project Settings</strong> &gt; <strong>Audio</strong> &gt; <strong>Default Speaker Mode</strong>, ensure that  <strong>Mono</strong>, or <strong>Stereo</strong> is selected.<br><br><strong>Note:</strong> If you include audio, during recording, the audio signal is sent to the Recorder, not to your system's audio output.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Include Alpha</strong></td>
+<td style="text-align: left;">Enable this property to include the alpha channel in the recording. Disable it to only record the RGB channels.<br><br>This property is not available when the selected <strong>Codec</strong> doesn't support transparency, when the <strong>Source</strong> is set to <strong>Game View</strong>, or when Movie Recorder is used as a camera input to the Universal Rendering Pipeline (<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest">URP</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unity-media-encoder-properties">Unity Media Encoder properties</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Codec</strong></td>
+<td style="text-align: left;">The video codec to use to encode the output file.<br><br>The <strong>Unity Media Encoder</strong> includes <strong>H.264 MP4</strong> and <strong>VP8 WebM</strong> codecs.<br><br><strong>Note:</strong> Encoding with H.264 MP4 codec is not supported on Linux.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Encoding quality</strong></td>
+<td style="text-align: left;">The quality of the output movie: <strong>Low</strong>, <strong>Medium</strong>, or <strong>High</strong>.<br>The lower the quality, the smaller the file size.<br><br>Select <strong>Custom</strong> to set up specific quality properties.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Target Bitrate</strong></td>
+<td style="text-align: left;">Custom value for the bitrate the encoder tries to average throughout the video, in Mbps.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GOP Size</strong> or<br><strong>Keyframe Distance</strong></td>
+<td style="text-align: left;">Custom value for the interval between two full images (<a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">I-frames</a>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Encoding Profile</strong><br>(H.264 MP4 only)</td>
+<td style="text-align: left;">Custom encoding profile: choose <strong>H.264 Baseline</strong>, <strong>H.264 Main</strong>, or <strong>H.264 High</strong>. Each <a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding#Profiles">encoding profile</a> defines a different set of capabilities and constraints on which decoders rely.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>B-Frames</strong><br>(H.264 MP4 only)</td>
+<td style="text-align: left;">Custom value for the number of bidirectional predicted frames (<a href="https://en.wikipedia.org/wiki/Video_compression_picture_types">B-frames</a>).</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>See Youtube's <a href="https://support.google.com/youtube/answer/1722171?hl=en#zippy=%2Ccontainer-mp%2Cvideo-codec-h%2Cframe-rate%2Cbitrate">Recommended upload encoding settings</a> for H.264 MP4.</p>
+</div>
+<h3 id="gif-encoder-properties">GIF Encoder properties</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Quality</strong></td>
+<td style="text-align: left;">The encoding quality of the GIF file. A higher quality results in a larger file size.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Loop</strong></td>
+<td style="text-align: left;">Makes the generated file loop the frame sequence indefinitely.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prores-encoder-properties">ProRes Encoder properties</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Codec</strong></td>
+<td style="text-align: left;">The video codec to use to encode the output file.<br><br>The <strong>ProRes Encoder</strong> includes a variety of <a href="https://en.wikipedia.org/wiki/Apple_ProRes">Apple ProRes</a> codecs: <strong>ProRes 4444 XQ</strong>, <strong>ProRes 4444</strong>, <strong>ProRes 422 HQ</strong>, <strong>ProRes 422</strong>, <strong>ProRes 422 LT</strong> or <strong>ProRes 422 Proxy</strong>.<br><br><strong>Notes:</strong><br><ul><li>Encoding with ProRes codecs is not supported on Linux and Windows Arm64.</li><li> The ProRes encoder does not support variable frame rate recording.</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-file">Output File</h2>
+<p>Use this section to specify the output <strong>Path</strong> and <strong>File Name</strong> pattern to save the recorded movie file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="OutputFileProperties.html">Output File properties</a> work the same for all types of recorders.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/RecorderMovie.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,319 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https:// murilloyonamine.github.io/Tycoon-Project/",
+    "changefreq": "weekly"
+  },
+  "source_base_path": "D:/Unity Projects/Tycoon Project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.GridManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.GridManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.GridManager",
+      "Summary": "<p sourcefile=\"api/GRID.GridManager.yml\" sourcestartlinenumber=\"1\">Gerenciador central do sistema de grid responsável pela coordenação de todos os módulos e funcionalidades do grid.\nImplementa o padrão Singleton e atua como ponto de entrada para operações relacionadas ao grid.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.CellValidator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.CellValidator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES.CellValidator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.ColumnUIGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.ColumnUIGenerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES.ColumnUIGenerator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.CoordinateConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.CoordinateConverter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES.CoordinateConverter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.GridBoundsCalculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.GridBoundsCalculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES.GridBoundsCalculator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.HoverManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.HoverManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES.HoverManager",
+      "Summary": "<p sourcefile=\"api/GRID.MODULES.HoverManager.yml\" sourcestartlinenumber=\"1\">Módulo especializado responsável pelo sistema de hover visual sobre tiles vazios no grid.\nFornece feedback visual em tempo real quando o cursor está sobre células disponíveis para posicionamento.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.PathManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.PathManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES.PathManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.MODULES.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.MODULES.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.MODULES",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.TILE.Tile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.TILE.Tile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.TILE.Tile",
+      "Summary": "<p sourcefile=\"api/GRID.TILE.Tile.yml\" sourcestartlinenumber=\"1\">Componente responsável pelo comportamento individual de cada tile no sistema de grid.\nGerencia posicionamento, estado visual, interação com mouse e integração com o sistema de grade.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.TILE.TileItemData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.TILE.TileItemData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.TILE.TileItemData",
+      "Summary": "<p sourcefile=\"api/GRID.TILE.TileItemData.yml\" sourcestartlinenumber=\"1\">ScriptableObject responsável por armazenar dados configuráveis de tiles para o sistema de grid.\nPermite criação de diferentes tipos de tiles através do Unity Editor com propriedades visuais e funcionais.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.TILE.TilePool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.TILE.TilePool.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.TILE.TilePool",
+      "Summary": "<p sourcefile=\"api/GRID.TILE.TilePool.yml\" sourcestartlinenumber=\"1\">Gerencia um pool de tiles para otimizar a criação e reutilização de GameObjects.\nImplementa o padrão Object Pool para evitar instanciamentos e destruições frequentes.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.TILE.TileState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.TILE.TileState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.TILE.TileState",
+      "Summary": "<p sourcefile=\"api/GRID.TILE.TileState.yml\" sourcestartlinenumber=\"1\">Define os estados possíveis de um tile durante seu ciclo de vida.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.TILE.TileType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.TILE.TileType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.TILE.TileType",
+      "Summary": "<p sourcefile=\"api/GRID.TILE.TileType.yml\" sourcestartlinenumber=\"1\">Define os diferentes tipos de tiles disponíveis no sistema de grid.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.TILE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.TILE.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID.TILE",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GRID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GRID.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "GRID",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SHOP.ShopManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SHOP.ShopManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SHOP.ShopManager",
+      "Summary": "<p sourcefile=\"api/SHOP.ShopManager.yml\" sourcestartlinenumber=\"1\">Gerenciador principal do sistema de loja responsável pela interface, animações e seleção de tiles.\nControla a abertura/fechamento da loja, configuração de tiles disponíveis e instanciação de tiles selecionados.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SHOP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SHOP.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SHOP",
+      "Summary": null
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

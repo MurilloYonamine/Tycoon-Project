@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID
+  commentId: N:GRID
+  id: GRID
+  children:
+  - GRID.GridManager
+  langs:
+  - csharp
+  - vb
+  name: GRID
+  nameWithType: GRID
+  fullName: GRID
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: GRID.GridManager
+  commentId: T:GRID.GridManager
+  parent: GRID
+  href: GRID.GridManager.html
+  name: GridManager
+  nameWithType: GridManager
+  fullName: GRID.GridManager
+- uid: GRID
+  commentId: N:GRID
+  href: GRID.html
+  name: GRID
+  nameWithType: GRID
+  fullName: GRID

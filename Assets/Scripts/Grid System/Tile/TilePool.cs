@@ -11,15 +11,57 @@ using UnityEngine;
 
 namespace GRID.TILE
 {
+    /// <summary>
+    /// Gerencia um pool de tiles para otimizar a criação e reutilização de GameObjects.
+    /// Implementa o padrão Object Pool para evitar instanciamentos e destruições frequentes.
+    /// </summary>
+    /// <remarks>
+    /// O sistema de pooling:
+    /// - Pré-instancia uma quantidade definida de tiles
+    /// - Reutiliza objetos inativos em vez de criar novos
+    /// - Organiza tiles em grupos de 10 para melhor hierarquia
+    /// - Melhora significativamente a performance do jogo
+    /// - Reduz o garbage collection
+    /// </remarks>
     public class TilePool : MonoBehaviour
     {
+        #region Singleton
+        /// <summary>
+        /// Instância singleton do TilePool.
+        /// </summary>
         public static TilePool Instance { get; private set; }
+        #endregion
 
+        #region Public Fields
+        /// <summary>
+        /// Container onde os objetos da pool serão organizados na hierarquia.
+        /// </summary>
+        [Tooltip("GameObject pai que conterá todos os tiles da pool")]
         public GameObject pooledObjectsContainer;
+        
+        /// <summary>
+        /// Prefab do tile que será usado para criar os objetos da pool.
+        /// </summary>
+        [Tooltip("Prefab do tile a ser instanciado na pool")]
         public GameObject objectToPool;
-        [HideInInspector] public List<GameObject> pooledObjects;
+        
+        /// <summary>
+        /// Lista de todos os tiles disponíveis na pool.
+        /// </summary>
+        [HideInInspector] 
+        public List<GameObject> pooledObjects;
+        
+        /// <summary>
+        /// Quantidade total de tiles para pré-instanciar na pool.
+        /// </summary>
+        [Tooltip("Número de tiles a serem criados na inicialização")]
         public int amountToPool;
+        #endregion
 
+        #region Unity Lifecycle
+        /// <summary>
+        /// Inicializa o singleton e garante que apenas uma instância existe.
+        /// </summary>
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -29,6 +71,10 @@ namespace GRID.TILE
             }
             Instance = this;
         }
+
+        /// <summary>
+        /// Inicializa a pool criando todos os tiles e organizando-os em containers.
+        /// </summary>
         private void Start()
         {
             pooledObjects = new List<GameObject>();
@@ -54,7 +100,21 @@ namespace GRID.TILE
                 temp.transform.SetParent(subContainers[parentIndex].transform);
             }
         }
-        /// <summary> Retorna um GameObject inativo da pool, ativa-o e retorna a referência. </summary>
+        #endregion
+
+        #region Pool Management Methods
+        /// <summary>
+        /// Obtém um tile inativo da pool para reutilização.
+        /// </summary>
+        /// <returns>
+        /// Um GameObject inativo da pool, ou null se nenhum estiver disponível.
+        /// O tile retornado deve ser ativado pelo chamador antes do uso.
+        /// </returns>
+        /// <remarks>
+        /// Este método implementa o padrão Object Pool para otimização de performance,
+        /// evitando a criação e destruição constante de GameObjects durante o runtime.
+        /// Itera através da pool procurando por objetos inativos disponíveis para reutilização.
+        /// </remarks>
         public GameObject GetPooledObject()
         {
             for (int i = 0; i < amountToPool; i++)
@@ -63,5 +123,6 @@ namespace GRID.TILE
             }
             return null;
         }
+        #endregion
     }
 }

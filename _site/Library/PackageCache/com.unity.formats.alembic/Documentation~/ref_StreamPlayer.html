@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Alembic Stream Player component | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Alembic Stream Player component | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/ref_StreamPlayer.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="alembic-stream-player-component">Alembic Stream Player component</h1>
+
+<p>The purpose and properties of the Alembic Stream Player component varies depending on the context in which you are using it:</p>
+<ul>
+<li>On an imported instance of Alembic asset whose source is located <a href="#alembic-asset-located-in-your-project">in your project</a>, it allows you to customize import and playback for this specific instance.</li>
+<li>On a GameObject or Prefab that contains an imported Alembic asset whose source is located <a href="#alembic-asset-located-outside-your-project">outside your project</a>, it allows you to manage all import properties for the imported asset.</li>
+</ul>
+<h2 id="alembic-asset-located-in-your-project">Alembic asset located in your project</h2>
+<p>When you are using an imported instance of Alembic asset whose source is located in your Unity project, the properties of its Alembic Stream Player component are the following:</p>
+<p><img src="images/abc_stream_player.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Time</strong></td>
+<td style="text-align: left;">Set the time in seconds of the animation that is currently displayed on the screen. This property operates like a playhead control, as you can scrub or animate it to play the animation. Valid values are from 0 to the length of the animation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vertex Motion Scale</strong></td>
+<td style="text-align: left;">Set the magnification factor when calculating velocity. Greater velocity means more blurring when used with Motion Blur. By default, the value is set to 1 (the velocity is not scaled).<br><strong>Note:</strong> This setting only applies to computed velocity values. It has no effect on velocity property values read from the Alembic asset source.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Time Range</strong></td>
+<td style="text-align: left;">Select the time range that corresponds to the portion of the animation you want to be able to play back in Unity. By default, this includes the entire animation.<br>To change the time range, either drag the handles or directly enter the start and end values in seconds.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="alembic-asset-located-outside-your-project">Alembic asset located outside your Project</h2>
+<p>When you are using an imported Alembic asset whose source is located outside your Unity project, the properties of its Alembic Stream Player component are the following:</p>
+<p><img src="images/abc_stream_player_external_file.png" alt=""></p>
+<p>The properties of the Alembic Stream Player component fall into the following categories:</p>
+<ul>
+<li><a href="#alembic-file-options">Alembic file options</a></li>
+<li><a href="#playback-options">Playback options</a></li>
+<li><a href="#scene-options">Scene options</a></li>
+<li><a href="#geometry-options">Geometry options</a></li>
+<li><a href="#cameras-options">Cameras options</a></li>
+</ul>
+<h3 id="alembic-file-options">Alembic file options</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property/Button</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Alembic file</strong></td>
+<td style="text-align: left;">Allows you to select the Alembic file to import from outside your project.<br><br><strong>Note:</strong> You can only select a file from any local folder or any mapped network drive available through your file system. You cannot target a file through a direct network path or an FTP/HTTP link.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Create Missing GameObjects</strong></td>
+<td style="text-align: left;">Creates in the current hierarchy of your imported Alembic asset* any GameObject that would be missing according to the actual node hierarchy of the external Alembic file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Remove Unused GameObjects</strong></td>
+<td style="text-align: left;">Removes from the current hierarchy of your imported Alembic asset* any GameObject that would not correspond to an actual node in the external Alembic file.</td>
+</tr>
+</tbody>
+</table>
+<p>* If your imported Alembic asset is part of a Prefab, you should perform these actions directly from the Prefab asset located in your Project window rather than from any Prefab instance of your Scene, in order to avoid any unexpected issues with Prefab overrides.</p>
+<h3 id="playback-options">Playback options</h3>
+<p><img src="images/abc_stream_player_playback_options.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Time</strong></td>
+<td style="text-align: left;">Set the time in seconds of the animation that is currently displayed on the screen. This property operates like a playhead control, as you can scrub or animate it to play the animation. Valid values are from 0 to the length of the animation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Vertex Motion Scale</strong></td>
+<td style="text-align: left;">Set the magnification factor when calculating velocity. Greater velocity means more blurring when used with Motion Blur. By default, the value is set to 1 (the velocity is not scaled).<br><strong>Note:</strong> This setting only applies to computed velocity values. It has no effect on velocity property values read from the Alembic asset source.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Time Range</strong></td>
+<td style="text-align: left;">Select the time range that corresponds to the portion of the animation you want to be able to play back in Unity. By default, this includes the entire animation.<br>To change the time range, either drag the handles or directly enter the start and end values in seconds.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scene-options">Scene options</h3>
+<p>Use these options to customize the scale factor, handedness, interpolation, and which components to import from the Alembic file.</p>
+<p><img src="images/abc_import_options_A.png" alt="Import Scene options"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Scale Factor</strong></td>
+<td style="text-align: left;">Set the scale factor to convert between different system units. For example, using 0.1 converts the Alembic units to 1/10 of their value in the resulting Unity GameObject. This also affects position and speed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Swap Handedness</strong></td>
+<td style="text-align: left;">Enable to invert the X axis' direction.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Interpolate Samples</strong></td>
+<td style="text-align: left;">Enable to interpolate animation for Transform, Camera, and Mesh components for which the topology does not change (that is, for which the number of vertices and indices are immutable).<br>If <strong>Interpolate Samples</strong> is enabled, or velocity data is included in the .abc file, you can pass velocity data to an Alembic shader.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Import Visibility</strong></td>
+<td style="text-align: left;">Enable to import Visibility (i.e. the control of the active state of the objects).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Import Camera</strong></td>
+<td style="text-align: left;">Enable to import Camera data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Import Meshes</strong></td>
+<td style="text-align: left;">Enable to import Mesh data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Import Points</strong></td>
+<td style="text-align: left;">Enable to import Point (particle cloud) data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Import Curves</strong></td>
+<td style="text-align: left;">Enable to import Curve (hair or fur) data. See <a href="curves.html">Working with Curves</a> for more details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Add Curve Renderers</strong></td>
+<td style="text-align: left;">Enable to get a <a href="curves.html#rendering-alembic-curves">basic preview</a> of the Alembic curves in your Scene and Game views if you don't have a curve renderer.<br>This option is only available when you select <strong>Import Curves</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="geometry-options">Geometry options</h3>
+<p>Use these options to customize how Meshes are imported.</p>
+<p><img src="images/abc_import_options_B.png" alt="Import Geometry options"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Normals</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Define whether to use the normals from the Alembic file, or to calculate them based on vertex position.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Calculate If Missing</td>
+<td style="text-align: left;">Use Alembic file normals if they exist; otherwise the Alembic Importer calculates them. This is the default.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Always Calculate</td>
+<td style="text-align: left;">Calculate the normals on import.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tangents</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Determine whether or not tangents are computed on import or not added at all. Tangents are not stored in Alembic, so if you choose not to calculate tangents on import, there will be no tangent data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Do not calculate or add tangents at all. Choose this option if you don't need to compute the tangents. Computing tangents is resource-intensive, so choosing this option increases the speed of playback.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Calculate</td>
+<td style="text-align: left;">Calculate tangents on import. This is the default option for this property.<br><strong>Note:</strong> The calculation of tangents requires normals and UV data. If these are missing, the tangent cannot be computed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flip Faces</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Enable to invert the orientation of the polygons.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cameras-options">Cameras options</h3>
+<p>Use these options to customize which components to import from the Alembic file.</p>
+<p><img src="images/abc_import_options_C.png" alt="Import Cameras options"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Camera Aspect Ratio</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Define how to set the Unity Camera's aspect ratio.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Current Resolution</td>
+<td style="text-align: left;">Determine the aspect ratio from the current resolution which is defined by the screen.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Default Resolution</td>
+<td style="text-align: left;">Determine the aspect ratio from the default resolution defined in the Project Settings window for the Player (under <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Resolution and Presentation</strong> &gt; <strong>Resolution</strong>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Camera Aperture</td>
+<td style="text-align: left;">Determine the aspect ratio from the Camera in the Alembic file. This is the default.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><em><strong>Note:</strong></em> Since Materials are not supported in Alembic, the Alembic package does not import or export Materials.</p>
+</blockquote>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/ref_StreamPlayer.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

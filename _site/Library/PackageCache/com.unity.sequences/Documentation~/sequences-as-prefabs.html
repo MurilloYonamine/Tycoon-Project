@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Managing Sequences as Prefabs | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Managing Sequences as Prefabs | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/sequences-as-prefabs.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="managing-sequences-as-prefabs">Managing Sequences as Prefabs</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>Unity doesn't prevent you from converting a <a href="under-the-hood.html#sequence-gameobjects">Sequence GameObject</a> of your <a href="concepts.html#editorial-structure">Editorial structure</a> into a <a href="https://docs.unity3d.com/Manual/Prefabs.html">Prefab</a>. However, this choice comes with a few side effects you should be aware of, mostly because of the inherent characteristics and behaviors of Prefabs in Unity.</p>
+<h2 id="understanding-the-prefab-flow-in-sequences">Understanding the Prefab flow in Sequences</h2>
+<h3 id="prefab-instance-and-prefab-asset">Prefab instance and Prefab asset</h3>
+<p>Once you convert a Sequence GameObject into a Prefab, you have two distinct items to be aware of when performing common tasks with Sequences:</p>
+<ul>
+<li>In your Scene Hierarchy, a Prefab instance, in place of the original Sequence GameObject.</li>
+<li>In your Project window, a Prefab Asset resulting from the conversion.</li>
+</ul>
+<p>From the Sequences perspective:</p>
+<ul>
+<li>The Prefab instance (in the Scene) always remains the one that drives the status and behavior of the Sequence in the Sequences window and the Timeline window.</li>
+<li>The Prefab Asset (in the Project) acts as a copy of the Sequence with all its structure and content, outside of its Editorial context.</li>
+</ul>
+<h3 id="prefab-behaviors-in-sequences-workflow">Prefab behaviors in Sequences workflow</h3>
+<p>In Unity, Prefabs and GameObjects have inherently different behaviors. As soon as you convert a Sequence GameObject into a Prefab, it might impact your Sequences workflow. Overall, you should be aware of the following aspects when you work through the Sequences main windows:</p>
+<ul>
+<li>When you <em>add new content</em> to a prefab-converted Sequence, the changes only apply locally to the Scene. Then, if you want to keep the Prefab Asset synchronized with the Prefab instance, you might need to regularly <a href="https://docs.unity3d.com/Manual/EditingPrefabViaInstance.html">apply overrides</a> from the Prefab instance to the Prefab Asset.</li>
+<li>When you want to <em>edit the existing content</em> of a prefab-converted Sequence, Unity prevents you from doing it through the Prefab instance. You have to enter the <a href="https://docs.unity3d.com/Manual/EditingInPrefabMode.html">Prefab Mode</a> and make your edits directly in the Prefab Asset.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> If you're editing content that is still new to the Prefab instance, which means you didn't apply the overrides to the Prefab Asset for this content yet, you don't have to enter the Prefab Mode, because this content doesn't exist in the Prefab Asset in that case.</p>
+</blockquote>
+<h2 id="converting-a-sequence-gameobject-into-a-prefab">Converting a Sequence GameObject into a Prefab</h2>
+<p>To convert a Sequence GameObject into a Prefab, follow the <a href="https://docs.unity3d.com/Manual/CreatingPrefabs.html">same process</a> as for any other GameObject. However, you first have to disable the <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/tl_selector.html">Preview mode</a> in the Timeline window to be able to do it. Unity warns you if you didn't disable the Preview mode:</p>
+<p><img src="images/cannot-create-prefab.png" alt=""></p>
+<h2 id="editing-a-sequence-already-converted-into-a-prefab">Editing a Sequence already converted into a Prefab</h2>
+<h3 id="renaming-the-sequence">Renaming the Sequence</h3>
+<p>Currently, you can’t rename a Prefab-converted Sequence directly from the Sequences window. However, you can <a href="known-issues.html">work around this issue</a> through manual actions depending on your actual needs.</p>
+<h3 id="adding-content-to-the-sequence">Adding content to the Sequence</h3>
+<p>Once you’ve converted a Sequence GameObject into a Prefab, you can still use the Sequences and Sequence Assembly windows to add sub-sequences or Sequence Assets to it. You can also freely rename its existing sub-sequences.</p>
+<p>Once you’re done, don’t forget to <a href="https://docs.unity3d.com/Manual/EditingPrefabViaInstance.html">apply overrides</a> from the instantiated Prefab of the Scene’s Hierarchy to the Prefab Asset of your Project if you want to keep them synchronized.</p>
+<h3 id="editing-or-removing-sequence-content">Editing or removing Sequence content</h3>
+<p>If you just added any content to the Sequence and you didn’t apply the corresponding overrides yet to its Prefab Asset, you can freely edit, swap, or remove this content.</p>
+<p>Conversely, if you need to edit, swap, or remove any Sequence content for which you already applied overrides, you must first open the Sequence in <a href="https://docs.unity3d.com/Manual/EditingInPrefabMode.html">Prefab Mode</a>.</p>
+<blockquote>
+<p><strong>Note:</strong> If you try to perform such actions from the Sequences and Sequence Assembly windows, Unity doesn’t process your action and warns you about the Prefab Mode requirement.</p>
+<p><img src="images/cannot-restructure-prefab-instance.png" alt=""></p>
+<p>Then, once you open the Sequence Prefab in Prefab Mode, you must re-attempt the action you initially tried to perform, but you can continue to edit the Sequence content normally.</p>
+</blockquote>
+<p>Once you’re done with your Sequence content changes, save the Prefab and exit the Prefab Mode.</p>
+<h2 id="navigating-through-the-editorial-structure-when-in-prefab-mode">Navigating through the Editorial structure when in Prefab Mode</h2>
+<p>When you open a Sequence Prefab in <a href="https://docs.unity3d.com/Manual/EditingInPrefabMode.html">Prefab Mode</a>, the Sequences window and the Timeline window only allow you to navigate through the content of this Sequence. This is to maintain consistency with the treeview the Hierarchy displays.</p>
+<p>If you need to access the Sequence parent levels, you must exit the Prefab Mode.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Example: Sequence Prefab &quot;Seq-02&quot; open in Prefab Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><img src="images/navigation-in-prefab-mode.png" alt=""></td>
+</tr>
+<tr>
+<td style="text-align: left;">In the Sequences window, any Sequences outside Seq-02 are identified as &quot;Not in the Hierarchy&quot; and you can't edit them or access their content.</td>
+</tr>
+<tr>
+<td style="text-align: left;">In the Timeline window, the breadcrumb top level is Seq-02, which prevents you from navigating through the timeline of the whole master sequence.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/sequences-as-prefabs.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

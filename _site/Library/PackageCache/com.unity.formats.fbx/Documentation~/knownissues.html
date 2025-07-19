@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Known issues and limitations | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Known issues and limitations | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/knownissues.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="known-issues-and-limitations">Known issues and limitations</h1>
+
+<h4 id="limitations">Limitations</h4>
+<ul>
+<li><p>The FBX Exporter package does not support exporting <code>.asset</code> files.</p>
+</li>
+<li><p>The bind poses of animated skinned Meshes are lost on export. For example, if you export an animated skinned Mesh from Unity and import it into Autodesk® Maya® and Autodesk® Maya LT™, you will not be able to set the character into the bind pose using the <strong>Rigging</strong> &gt; <strong>Skin</strong> &gt; <strong>Go to Bind Pose</strong> command.</p>
+</li>
+<li><p>The FBX Exporter package ignores name or path changes when converting a Model instance.</p>
+</li>
+<li><p>The FBX Exporter package does not support exporting animation only for animated Lights and Cameras from Autodesk® Maya® and Maya LT™.</p>
+</li>
+<li><p>Exporting an empty mesh (MeshFilter with null sharedMesh), fails to export with ArgumentNullException.</p>
+</li>
+<li><p>Integrations with Autodesk® Maya® and Autodesk® 3ds Max® are not available on Linux.</p>
+</li>
+</ul>
+<h4 id="incorrect-skinning-on-animated-skinned-mesh">Incorrect skinning on Animated Skinned Mesh</h4>
+<p>If animated skinned Meshes do not export with the correct skinning, it may be because they are not in the bind pose on export.</p>
+<p>Before exporting the animated skinned Mesh, make sure that:</p>
+<ul>
+<li><p>The skinned mesh animation is not being previewed in the Animation of Timeline windows, as this may cause issues on export.</p>
+</li>
+<li><p>The original Rig's FBX does not contain animation.</p>
+<p><strong>NOTE</strong>: It is currently not possible to fix this issue in Unity. You need to separate your animation from the Rig in a separate modeling software such as Autodesk® Maya® first.</p>
+</li>
+</ul>
+<h4 id="converting-gameobjects-with-ui-components">Converting GameObjects with UI components</h4>
+<p>Converting hierarchies with UI components (for example, <strong>RectTransform</strong>) breaks the UI.</p>
+<p>To work around this:</p>
+<ol>
+<li>Prepare the hierarchy so that it has no GameObjects with UI elements before converting.</li>
+<li>Add the UI elements to the FBX Linked Prefab afterwards.</li>
+</ol>
+<h4 id="overwriting-fbx-files">Overwriting FBX files</h4>
+<p>If you have a Variant of an FBX Model, avoid exporting your Variant to the FBX file; otherwise your changes might be applied twice after the export. For example, if your Variant adds an object, then after exporting, you'll have two copies of the object: the one in the new FBX Model you just exported, plus the one that you had previously added to the Variant.</p>
+<h4 id="tree-primitive-no-longer-editable-after-conversion">Tree primitive no longer editable after conversion</h4>
+<p>Converting a Tree primitive makes the Tree read-only.</p>
+<p>To avoid this, make sure to convert only the Tree when finished editing. Otherwise, Undo the conversion to return to previous state where the Tree was editable.</p>
+<h4 id="trail-and-line-particles-lose-material-after-being-converted">Trail and line particles lose Material after being converted</h4>
+<p>If you lose Materials when converting trail or line particles, you need to re-apply the Materials to the FBX Prefab Variant after conversion.</p>
+<h4 id="uninstalling-fbx-exporter-breaks-unity-recorder">Uninstalling FBX Exporter breaks Unity Recorder</h4>
+<p>If you want to uninstall the FBX Exporter package but still need to use the Unity Recorder, make sure to first remove all existing FBX Recorders you might have added in the Recorder List or in a Timeline Recorder Track:</p>
+<ul>
+<li>In the Recorder Window: right click on any FBX Recorder listed in the Recorder List (at the left of the window) and select <strong>Delete</strong>.</li>
+<li>In any Timeline of your project: look for Recorder Tracks, right click on any Recorder Clip that use an FBX Recorder, and select <strong>Delete</strong>, or simply delete the Recorder Track the same way.</li>
+</ul>
+<p>If you have already uninstalled the FBX Exporter package and are experiencing issues with the Unity Recorder:</p>
+<ol>
+<li>Re-install the FBX Exporter package.</li>
+<li>Find and remove all FBX recorder instances (see above).</li>
+<li>Uninstall the FBX Exporter from the Package Manager.</li>
+</ol>
+<h4 id="exporting-camera-animation-only-from-maya-gives-incorrect-camera-rotations">Exporting camera animation only from Maya gives incorrect camera rotations</h4>
+<p>When using the Unity FBX Exporter Maya plugin to export camera animation with the <strong>File &gt; Unity &gt; Export Animation Only</strong> menu option,
+the resulting exported camera animation may be incorrect.</p>
+<p>The reason for this is that using the <strong>Export Animation Only</strong> menu option will export only transform animation and not the camera or its animated properties.</p>
+<p>The workaround for this issue is to export the camera with the <strong>File &gt; Unity &gt; Export</strong> menu option, which will export the camera as well as its animation.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/knownissues.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

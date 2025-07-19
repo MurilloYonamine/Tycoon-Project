@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Timeline window | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Timeline window | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/timeline-window.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="timeline-window">Timeline window</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>In the context of the Sequences package, the Timeline window allows you to edit, reorder and trim all Sequences and clips of your cinematic, and play them back for preview purposes.</p>
+<p>To open the Timeline window, from the main menu of the Editor, select <strong>Window &gt; Sequencing &gt; Timeline</strong>.</p>
+<p><img src="images/timeline-editorial-track-master-sequence.png" alt=""></p>
+<blockquote>
+<p><strong>Note:</strong> This page only provides straightforward instructions to guide you through the specific use of the Sequences features available from the <a href="https://docs.unity3d.com/Packages/com.unity.timeline@latest">Timeline</a> window.</p>
+</blockquote>
+<h2 id="navigation">Navigation</h2>
+<p>When you navigate through your Sequences from the Sequences window or from the Hierarchy window, the Timeline window displays the Timeline of the current selected Sequence.</p>
+<p>You can also navigate through your Sequences from the Timeline window:</p>
+<ul>
+<li><p>Double click on any clip that represents an element of your Editorial structure to access its Timeline (at the lower level of the structure).</p>
+</li>
+<li><p>The breadcrumb trail at the top of the Timeline window allows you to access any parent Timeline of the currently displayed one.</p>
+</li>
+</ul>
+<p><img src="images/timeline-breadcrumb-trail.png" alt=""></p>
+<blockquote>
+<p><strong>Note:</strong> If you open a Sequence in Prefab Mode, you can only navigate through the structure of this Sequence. See <a href="sequences-as-prefabs.html">how to manage Sequences as Prefabs</a>.</p>
+</blockquote>
+<h2 id="timeline-track-types">Timeline track types</h2>
+<h3 id="editorial-track">Editorial track</h3>
+<p>When a Sequence contains other Sequences, its Timeline includes an <strong>Editorial</strong> track with clips that represent the Sequences it contains.</p>
+<p><img src="images/timeline-editorial-track-master-sequence.png" alt="">
+<br><em>Example: In a Master Sequence timeline, the Editorial track (here, named &quot;Sequences&quot;) with two Sequence clips.</em></p>
+<p>You can double-click on a Sequence clip to access the Timeline of this Sequence at the immediate sub-level of the structure.</p>
+<p><img src="images/timeline-editorial-track-sub-sequence.png" alt="">
+<br><em>Example: In a Sequence timeline of 2nd level, the Editorial track (here, named &quot;Sequences&quot;) with three Sequence clips.</em></p>
+<p>The Sequences package automatically creates and configures Editorial tracks when you create Sequences through the Sequences window.</p>
+<blockquote>
+<p><strong>Note:</strong> You can manually create an Editorial track through the Timeline Add Track menu: select the <strong>+</strong> (plus) button or right-click in an empty area of the track list, and then select <strong>Sequencing &gt; Editorial Track</strong>. However, such a track would require some more advanced configuration to become usable in the context of Sequences.</p>
+</blockquote>
+<h3 id="sequence-asset-track">Sequence Asset track</h3>
+<p>When a Sequence contains Sequence Assets, its Timeline includes one track per Sequence Asset, all regrouped by Asset Collection type.</p>
+<p>Each Sequence Asset track includes a unique clip that represents the Sequence Asset or Variant that you are currently using in your cinematic.</p>
+<p><img src="images/timeline-sequence-asset-tracks.png" alt="">
+<br><em>Example: Timeline of a Shot with three Sequence Asset tracks in their corresponding Asset Collection track groups: two characters and one camera.</em></p>
+<p>You can double-click on each clip to directly access the Timeline of the corresponding Sequence Asset or Variant, and edit it.</p>
+<p><img src="images/timeline-sequence-asset-timeline.png" alt="">
+<br><em>Example: Timeline of a Sequence Asset with a simple animation clip.</em></p>
+<p>The Sequences package automatically creates and configures Sequence Asset tracks when you add Sequence Assets to a Sequence through the Sequence Assembly window or through the Hierarchy.</p>
+<blockquote>
+<p><strong>Note:</strong> You can manually create a Sequence Asset track through the Timeline Add Track menu: select the <strong>+</strong> (plus) button or right-click in an empty area of the track list, and then select <strong>Sequencing &gt; Sequence Asset Track</strong>. However, such a track would require some more advanced configuration to become usable in the context of Sequences.</p>
+</blockquote>
+<h3 id="scene-activation-track">Scene Activation track</h3>
+<p>When a Sequence uses a Scene that needs to be activated in its specific context, the Timeline of this Sequence includes a Scene Activation track.</p>
+<p><img src="images/timeline-scene-activation-track.png" alt="">
+<br><em>Example: Timeline of a Sequence with one Scene Activation track.</em></p>
+<blockquote>
+<p><strong>Important:</strong> To actually see a Scene in your Scene and Game views when Unity activates it through a Scene Activation track, you must ensure to have previously additively loaded it along with the Scene that contains your Sequences structure. For convenience, the Sequences package allows you to <a href="scene-management.html#loading-scenes-contextually">load Scenes in context</a>.</p>
+</blockquote>
+<p>The Sequences package automatically creates and configures Scene Activation tracks when you create a Scene for a Sequence through the Sequences window.</p>
+<p>You can also manually create and configure a Sequence Asset track through the Timeline Add Track menu:</p>
+<ol>
+<li><p>Select the <strong>+</strong> (plus) button or right-click in an empty area of the track list, and then select <strong>Scene Activation Track</strong>.</p>
+</li>
+<li><p>Select the created track in the track list.</p>
+</li>
+<li><p>In the Inspector, use the <strong>Scene</strong> field to target an existing Scene.</p>
+<p><img src="images/inspector-scene-activation-track.png" alt=""></p>
+</li>
+<li><p>Select <strong>Load</strong> if you need to load the targeted Scene in the Hierarchy, in addition to the Scene that contains your Sequences.</p>
+</li>
+</ol>
+<h2 id="managing-clips">Managing clips</h2>
+<h3 id="moving-and-trimming-clips">Moving and trimming clips</h3>
+<p>You can <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/clp_position.html">move</a> and <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/clp_trim.html">trim</a> any Sequence, Sequence Asset and Scene Activation clips within the Timeline track that contains them, as any other Timeline clip type.</p>
+<blockquote>
+<p><strong>Note:</strong> The actual behavior of these actions depends on the <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/clp_about.html#clip-edit-modes">clip edit mode</a> currently selected in Timeline.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Example: Trimmed Sequence clip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">The arrow tips at the left and at the right of the clip indicate that the Sequence is trimmed at both the start and the end.<br><br><img src="images/timeline-clips-trimmed.png" alt=""><br><br>In the clip content, notice how the highlighted area shows the actual used portion of the sequence.<br><br><img src="images/timeline-clips-trimmed-content.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="matching-a-clip-to-its-overall-content">Matching a clip to its overall content</h3>
+<p>You can automatically adjust the length of any clip to <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/clp_about.html#clips-and-the-clips-view">match its content</a> overall, that is, the range that includes all immediate sub-items of the clip, regardless of their type.</p>
+<ul>
+<li>To adjust the length of any clip to match its content overall:
+<ol>
+<li>Right click on the clip.</li>
+<li>select <strong>Match Content</strong>.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> The actual behavior of this action depends on the <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/clp_about.html#clip-edit-modes">clip edit mode</a> currently selected in Timeline.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Example: Match Content on Sequence clip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Before:</strong> Seq-01 clip (frames 0 to 72) is shorter than its actual content.<br>In the clip content, notice that its largest sub-item, the AudioAsset clip, covers 144 frames.<br><br><img src="images/timeline-match-content-before.png" alt=""><br><br><img src="images/timeline-match-content-before-sub-items.png" alt=""><br></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>After:</strong> Seq-01 clip covers frames 0 to 144.<br><br><img src="images/timeline-match-content-after.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<h3 id="matching-a-sequence-clip-to-its-editorial-content">Matching a Sequence clip to its editorial content</h3>
+<p>You can automatically adjust the length of Sequence clips to exclusively match their editorial content, that is, only the Sequence clips from their immediate sub-level.</p>
+<blockquote>
+<p><strong>Note:</strong> This content matching process ignores any sub-items that are not Sequence clips. If the targeted Sequence contains clips of any other types that are longer than the total length of the sub-sequences, the process automatically cuts off the end of these clips. This is equivalent to selectively trimming the Sequence.</p>
+</blockquote>
+<ul>
+<li>To adjust the length of <strong>a single Sequence clip</strong> to match its editorial content:
+<ol>
+<li>Right click on the Sequence clip.</li>
+<li>Select <strong>Match Editorial Content (Ripple)</strong>.</li>
+</ol>
+</li>
+</ul>
+<p>You can also perform the same action in batch at the track level.</p>
+<ul>
+<li>To adjust the length of <strong>all Sequence clips in a track</strong> to match their editorial content:
+<ol>
+<li>Right click on the Editorial track that contains the Sequence clips.</li>
+<li>Select <strong>Match Editorial Content (Ripple)</strong>.</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> In both cases, this action uses the <a href="https://docs.unity3d.com/Packages/com.unity.timeline@1.6/manual/clp_about.html#ripple-mode">Ripple mode</a> behavior, regardless to the selected mode in the Timeline view.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Example: Match Editorial Content on single Sequence clip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Before:</strong> Seq-01 clip (frames 0 to 72) is shorter than its actual editorial content (3 sequence clips covering 96 frames).<br>In the clip content, notice the additional AudioAsset clip that covers a larger range and is not a Sequence clip. Also remember that Match Editorial Content ignores clips that are not Sequence clips.<br><br><img src="images/timeline-match-editorial-content-before.png" alt=""><br><br><img src="images/timeline-match-editorial-content-before-sub-sequences.png" alt=""><br></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>After:</strong> Seq-01 clip covers frames 0 to 96, and Seq-02 and Seq-03 clips accordingly shifted to the right. Notice the process ignored the AudioAsset clip length because it's not a Sequence clip.<br><br><img src="images/timeline-match-editorial-content-after-clip.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Example: Match Editorial Content on Editorial track</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Before:</strong> Let's assume Seq-01 and Seq-03 clips are shorter than their actual editorial content, and Seq-02 clip is longer than its own one.<br><br><img src="images/timeline-match-editorial-content-before.png" alt=""><br></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>After:</strong> All 3 clips match their editorial content according to the above assumption, and the overall adjustment kept the continuity of the whole editorial track.<br><br><img src="images/timeline-match-editorial-content-after-track.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/timeline-window.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

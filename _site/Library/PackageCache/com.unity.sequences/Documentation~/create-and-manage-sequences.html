@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Create and manage an editorial structure | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Create and manage an editorial structure | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/create-and-manage-sequences.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="create-and-manage-an-editorial-structure">Create and manage an editorial structure</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+<h2 id="creating-a-sequence">Creating a Sequence</h2>
+<p>To create a Master Sequence, select the <strong>+</strong> (plus) button at the top left of the Sequences window, then select <strong>Create Master Sequence</strong>.</p>
+<blockquote>
+<p><strong>Note:</strong> Regardless of whether a Sequence is selected in the window, the new Master Sequence will appear in alphabetical order at the same level as other Master Sequences in the Sequences window.</p>
+</blockquote>
+<p>To create a Sequence within another Sequence:</p>
+<ol>
+<li>Select the Sequence (or Master Sequence) to contain the one you want to create.</li>
+<li>Select the <strong>+</strong> (plus) button at the top left of the Sequences window and select <strong>Create Sequence</strong>.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> If the parent Sequence is a Prefab, you might need to apply overrides from the Prefab instance to the Prefab asset to keep them synchronized. See <a href="sequences-as-prefabs.html">how to manage Sequences as Prefabs</a>.</p>
+</blockquote>
+<p>When the new Sequence appears in the structure, you can directly rename it and press the Enter key or click anywhere to complete the creation.</p>
+<p>Once you have created a new Sequence, you can use the <a href="sequence-assembly-window.html">Sequence Assembly window</a> to populate it with Sequence Assets or Variants from your <a href="sequence-assets-window.html">Asset Collections</a>.</p>
+<h2 id="renaming-a-sequence">Renaming a Sequence</h2>
+<p>To rename a Sequence:</p>
+<ol>
+<li>Right-click the sequence and select <strong>Rename</strong>.</li>
+<li>Type the new name.</li>
+<li>Press the Enter key or click anywhere to confirm the renaming.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ul>
+<li>The Sequences window currently prevents you from renaming a Sequence that is a Prefab (see the <a href="known-issues.html">suggested workaround</a>).</li>
+<li>If you rename a Sequence within a Sequence that is a Prefab, you might need to apply overrides from the Prefab instance to the Prefab asset to keep them synchronized. See <a href="sequences-as-prefabs.html">how to manage Sequences as Prefabs</a>.</li>
+</ul>
+</blockquote>
+<h2 id="deleting-sequences">Deleting Sequences</h2>
+<p>To delete a Sequence from your project, select it and press the Delete key or right-click on it and select <strong>Delete</strong>. This also automatically deletes from your project all Sequences the deleted Sequence may contain.</p>
+<p>You can also select multiple Sequences and delete them as a batch.</p>
+<blockquote>
+<p><strong>Note:</strong> If you want to delete a Sequence within a Sequence that is a Prefab, you might need to enter the Prefab Mode first. See <a href="sequences-as-prefabs.html">how to manage Sequences as Prefabs</a>.</p>
+</blockquote>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/create-and-manage-sequences.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

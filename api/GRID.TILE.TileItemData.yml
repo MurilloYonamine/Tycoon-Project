@@ -1,0 +1,536 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.TILE.TileItemData
+  commentId: T:GRID.TILE.TileItemData
+  id: TileItemData
+  parent: GRID.TILE
+  children:
+  - GRID.TILE.TileItemData.Color
+  - GRID.TILE.TileItemData.Coordinate
+  - GRID.TILE.TileItemData.Name
+  - GRID.TILE.TileItemData.SetColor(UnityEngine.Color)
+  - GRID.TILE.TileItemData.SetCoordinate(System.Int32,System.Int32)
+  - GRID.TILE.TileItemData.SetName(System.String)
+  - GRID.TILE.TileItemData.SetTileType(GRID.TILE.TileType)
+  - GRID.TILE.TileItemData.Sprite
+  - GRID.TILE.TileItemData.TileType
+  langs:
+  - csharp
+  - vb
+  name: TileItemData
+  nameWithType: TileItemData
+  fullName: GRID.TILE.TileItemData
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TileItemData
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: >-
+    ScriptableObject responsável por armazenar dados configuráveis de tiles para o sistema de grid.
+
+    Permite criação de diferentes tipos de tiles através do Unity Editor com propriedades visuais e funcionais.
+  remarks: >-
+    Este ScriptableObject facilita a criação e configuração de tiles de forma modular e reutilizável.
+
+    Cada tile pode ter suas próprias propriedades visuais (sprite, cor) e funcionais (tipo, nome).
+
+    A configuração via Inspector permite designers criarem novos tipos de tiles sem programação.
+  example: []
+  syntax:
+    content: >-
+      [CreateAssetMenu(fileName = "TileItemData", menuName = "Tiles/TileItemData", order = 1)]
+
+      public class TileItemData : ScriptableObject
+    content.vb: >-
+      <CreateAssetMenu(fileName:="TileItemData", menuName:="Tiles/TileItemData", order:=1)>
+
+      Public Class TileItemData Inherits ScriptableObject
+  inheritance:
+  - System.Object
+  - UnityEngine.Object
+  - UnityEngine.ScriptableObject
+  attributes:
+  - type: UnityEngine.CreateAssetMenuAttribute
+    ctor: UnityEngine.CreateAssetMenuAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: fileName
+      type: System.String
+      value: TileItemData
+    - name: menuName
+      type: System.String
+      value: Tiles/TileItemData
+    - name: order
+      type: System.Int32
+      value: 1
+- uid: GRID.TILE.TileItemData.TileType
+  commentId: P:GRID.TILE.TileItemData.TileType
+  id: TileType
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: TileType
+  nameWithType: TileItemData.TileType
+  fullName: GRID.TILE.TileItemData.TileType
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: TileType
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 29
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Tipo funcional do tile que determina seu comportamento no grid.
+  example: []
+  syntax:
+    content: public TileType TileType { get; }
+    parameters: []
+    return:
+      type: GRID.TILE.TileType
+      description: Valor padrão é <xref href="GRID.TILE.TileType.Default" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Property TileType As TileType
+  overload: GRID.TILE.TileItemData.TileType*
+- uid: GRID.TILE.TileItemData.Name
+  commentId: P:GRID.TILE.TileItemData.Name
+  id: Name
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: TileItemData.Name
+  fullName: GRID.TILE.TileItemData.Name
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Name
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 35
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Nome identificador do tile exibido na interface do usuário.
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: String vazia por padrão.
+    content.vb: Public Property Name As String
+  overload: GRID.TILE.TileItemData.Name*
+- uid: GRID.TILE.TileItemData.Color
+  commentId: P:GRID.TILE.TileItemData.Color
+  id: Color
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: TileItemData.Color
+  fullName: GRID.TILE.TileItemData.Color
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Color
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 41
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Cor visual aplicada ao tile para diferenciação visual no grid.
+  example: []
+  syntax:
+    content: public Color Color { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Color
+      description: Cor branca por padrão.
+    content.vb: Public Property Color As Color
+  overload: GRID.TILE.TileItemData.Color*
+- uid: GRID.TILE.TileItemData.Sprite
+  commentId: P:GRID.TILE.TileItemData.Sprite
+  id: Sprite
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: Sprite
+  nameWithType: TileItemData.Sprite
+  fullName: GRID.TILE.TileItemData.Sprite
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Sprite
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 47
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Sprite visual do tile renderizado no grid.
+  example: []
+  syntax:
+    content: public Sprite Sprite { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Sprite
+      description: Null por padrão, deve ser configurado no Inspector.
+    content.vb: Public Property Sprite As Sprite
+  overload: GRID.TILE.TileItemData.Sprite*
+- uid: GRID.TILE.TileItemData.Coordinate
+  commentId: P:GRID.TILE.TileItemData.Coordinate
+  id: Coordinate
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: Coordinate
+  nameWithType: TileItemData.Coordinate
+  fullName: GRID.TILE.TileItemData.Coordinate
+  type: Property
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: Coordinate
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 53
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Coordenada atual do tile no sistema de grid 2D.
+  example: []
+  syntax:
+    content: public Vector2 Coordinate { get; }
+    parameters: []
+    return:
+      type: UnityEngine.Vector2
+      description: Vector2.zero por padrão (posição 0,0).
+    content.vb: Public Property Coordinate As Vector2
+  overload: GRID.TILE.TileItemData.Coordinate*
+- uid: GRID.TILE.TileItemData.SetColor(UnityEngine.Color)
+  commentId: M:GRID.TILE.TileItemData.SetColor(UnityEngine.Color)
+  id: SetColor(UnityEngine.Color)
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: SetColor(Color)
+  nameWithType: TileItemData.SetColor(Color)
+  fullName: GRID.TILE.TileItemData.SetColor(UnityEngine.Color)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetColor
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 61
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define a cor visual do tile.
+  example: []
+  syntax:
+    content: public void SetColor(Color color)
+    parameters:
+    - id: color
+      type: UnityEngine.Color
+      description: Nova cor a ser aplicada ao tile.
+    content.vb: Public Sub SetColor(color As Color)
+  overload: GRID.TILE.TileItemData.SetColor*
+- uid: GRID.TILE.TileItemData.SetName(System.String)
+  commentId: M:GRID.TILE.TileItemData.SetName(System.String)
+  id: SetName(System.String)
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: SetName(string)
+  nameWithType: TileItemData.SetName(string)
+  fullName: GRID.TILE.TileItemData.SetName(string)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetName
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 67
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define o nome identificador do tile.
+  example: []
+  syntax:
+    content: public void SetName(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: Novo nome para o tile.
+    content.vb: Public Sub SetName(name As String)
+  overload: GRID.TILE.TileItemData.SetName*
+  nameWithType.vb: TileItemData.SetName(String)
+  fullName.vb: GRID.TILE.TileItemData.SetName(String)
+  name.vb: SetName(String)
+- uid: GRID.TILE.TileItemData.SetTileType(GRID.TILE.TileType)
+  commentId: M:GRID.TILE.TileItemData.SetTileType(GRID.TILE.TileType)
+  id: SetTileType(GRID.TILE.TileType)
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: SetTileType(TileType)
+  nameWithType: TileItemData.SetTileType(TileType)
+  fullName: GRID.TILE.TileItemData.SetTileType(GRID.TILE.TileType)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetTileType
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 73
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define o tipo funcional do tile.
+  example: []
+  syntax:
+    content: public void SetTileType(TileType tileType)
+    parameters:
+    - id: tileType
+      type: GRID.TILE.TileType
+      description: Novo tipo que determina o comportamento do tile.
+    content.vb: Public Sub SetTileType(tileType As TileType)
+  overload: GRID.TILE.TileItemData.SetTileType*
+- uid: GRID.TILE.TileItemData.SetCoordinate(System.Int32,System.Int32)
+  commentId: M:GRID.TILE.TileItemData.SetCoordinate(System.Int32,System.Int32)
+  id: SetCoordinate(System.Int32,System.Int32)
+  parent: GRID.TILE.TileItemData
+  langs:
+  - csharp
+  - vb
+  name: SetCoordinate(int, int)
+  nameWithType: TileItemData.SetCoordinate(int, int)
+  fullName: GRID.TILE.TileItemData.SetCoordinate(int, int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: SetCoordinate
+    path: Assets/Scripts/Grid System/Tile/TileItemData.cs
+    startLine: 80
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.TILE
+  summary: Define a coordenada do tile no grid usando valores inteiros.
+  example: []
+  syntax:
+    content: public void SetCoordinate(int column, int row)
+    parameters:
+    - id: column
+      type: System.Int32
+      description: Coordenada X (coluna) no grid.
+    - id: row
+      type: System.Int32
+      description: Coordenada Y (linha) no grid.
+    content.vb: Public Sub SetCoordinate(column As Integer, row As Integer)
+  overload: GRID.TILE.TileItemData.SetCoordinate*
+  nameWithType.vb: TileItemData.SetCoordinate(Integer, Integer)
+  fullName.vb: GRID.TILE.TileItemData.SetCoordinate(Integer, Integer)
+  name.vb: SetCoordinate(Integer, Integer)
+references:
+- uid: GRID.TILE
+  commentId: N:GRID.TILE
+  href: GRID.html
+  name: GRID.TILE
+  nameWithType: GRID.TILE
+  fullName: GRID.TILE
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.TILE
+    name: TILE
+    href: GRID.TILE.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: UnityEngine.Object
+  commentId: T:UnityEngine.Object
+  parent: UnityEngine
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: UnityEngine.Object
+- uid: UnityEngine.ScriptableObject
+  commentId: T:UnityEngine.ScriptableObject
+  parent: UnityEngine
+  isExternal: true
+  name: ScriptableObject
+  nameWithType: ScriptableObject
+  fullName: UnityEngine.ScriptableObject
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.TILE.TileType.Default
+  commentId: F:GRID.TILE.TileType.Default
+  href: GRID.TILE.TileType.html#GRID_TILE_TileType_Default
+  name: Default
+  nameWithType: TileType.Default
+  fullName: GRID.TILE.TileType.Default
+- uid: GRID.TILE.TileItemData.TileType*
+  commentId: Overload:GRID.TILE.TileItemData.TileType
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_TileType
+  name: TileType
+  nameWithType: TileItemData.TileType
+  fullName: GRID.TILE.TileItemData.TileType
+- uid: GRID.TILE.TileType
+  commentId: T:GRID.TILE.TileType
+  parent: GRID.TILE
+  href: GRID.TILE.TileType.html
+  name: TileType
+  nameWithType: TileType
+  fullName: GRID.TILE.TileType
+- uid: GRID.TILE.TileItemData.Name*
+  commentId: Overload:GRID.TILE.TileItemData.Name
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_Name
+  name: Name
+  nameWithType: TileItemData.Name
+  fullName: GRID.TILE.TileItemData.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: GRID.TILE.TileItemData.Color*
+  commentId: Overload:GRID.TILE.TileItemData.Color
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_Color
+  name: Color
+  nameWithType: TileItemData.Color
+  fullName: GRID.TILE.TileItemData.Color
+- uid: UnityEngine.Color
+  commentId: T:UnityEngine.Color
+  parent: UnityEngine
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: UnityEngine.Color
+- uid: GRID.TILE.TileItemData.Sprite*
+  commentId: Overload:GRID.TILE.TileItemData.Sprite
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_Sprite
+  name: Sprite
+  nameWithType: TileItemData.Sprite
+  fullName: GRID.TILE.TileItemData.Sprite
+- uid: UnityEngine.Sprite
+  commentId: T:UnityEngine.Sprite
+  parent: UnityEngine
+  isExternal: true
+  name: Sprite
+  nameWithType: Sprite
+  fullName: UnityEngine.Sprite
+- uid: GRID.TILE.TileItemData.Coordinate*
+  commentId: Overload:GRID.TILE.TileItemData.Coordinate
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_Coordinate
+  name: Coordinate
+  nameWithType: TileItemData.Coordinate
+  fullName: GRID.TILE.TileItemData.Coordinate
+- uid: UnityEngine.Vector2
+  commentId: T:UnityEngine.Vector2
+  parent: UnityEngine
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: GRID.TILE.TileItemData.SetColor*
+  commentId: Overload:GRID.TILE.TileItemData.SetColor
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_SetColor_UnityEngine_Color_
+  name: SetColor
+  nameWithType: TileItemData.SetColor
+  fullName: GRID.TILE.TileItemData.SetColor
+- uid: GRID.TILE.TileItemData.SetName*
+  commentId: Overload:GRID.TILE.TileItemData.SetName
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_SetName_System_String_
+  name: SetName
+  nameWithType: TileItemData.SetName
+  fullName: GRID.TILE.TileItemData.SetName
+- uid: GRID.TILE.TileItemData.SetTileType*
+  commentId: Overload:GRID.TILE.TileItemData.SetTileType
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_SetTileType_GRID_TILE_TileType_
+  name: SetTileType
+  nameWithType: TileItemData.SetTileType
+  fullName: GRID.TILE.TileItemData.SetTileType
+- uid: GRID.TILE.TileItemData.SetCoordinate*
+  commentId: Overload:GRID.TILE.TileItemData.SetCoordinate
+  href: GRID.TILE.TileItemData.html#GRID_TILE_TileItemData_SetCoordinate_System_Int32_System_Int32_
+  name: SetCoordinate
+  nameWithType: TileItemData.SetCoordinate
+  fullName: GRID.TILE.TileItemData.SetCoordinate
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

@@ -1,0 +1,274 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.MODULES.ColumnUIGenerator
+  commentId: T:GRID.MODULES.ColumnUIGenerator
+  id: ColumnUIGenerator
+  parent: GRID.MODULES
+  children:
+  - GRID.MODULES.ColumnUIGenerator.#ctor(UnityEngine.Grid,UnityEngine.Tilemaps.Tilemap,TMPro.TMP_FontAsset,UnityEngine.BoundsInt)
+  - GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates
+  - GRID.MODULES.ColumnUIGenerator.GetColumnObject(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: ColumnUIGenerator
+  nameWithType: ColumnUIGenerator
+  fullName: GRID.MODULES.ColumnUIGenerator
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: ColumnUIGenerator
+    path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+    startLine: 13
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public class ColumnUIGenerator
+    content.vb: Public Class ColumnUIGenerator
+  inheritance:
+  - System.Object
+- uid: GRID.MODULES.ColumnUIGenerator.#ctor(UnityEngine.Grid,UnityEngine.Tilemaps.Tilemap,TMPro.TMP_FontAsset,UnityEngine.BoundsInt)
+  commentId: M:GRID.MODULES.ColumnUIGenerator.#ctor(UnityEngine.Grid,UnityEngine.Tilemaps.Tilemap,TMPro.TMP_FontAsset,UnityEngine.BoundsInt)
+  id: '#ctor(UnityEngine.Grid,UnityEngine.Tilemaps.Tilemap,TMPro.TMP_FontAsset,UnityEngine.BoundsInt)'
+  parent: GRID.MODULES.ColumnUIGenerator
+  langs:
+  - csharp
+  - vb
+  name: ColumnUIGenerator(Grid, Tilemap, TMP_FontAsset, BoundsInt)
+  nameWithType: ColumnUIGenerator.ColumnUIGenerator(Grid, Tilemap, TMP_FontAsset, BoundsInt)
+  fullName: GRID.MODULES.ColumnUIGenerator.ColumnUIGenerator(UnityEngine.Grid, UnityEngine.Tilemaps.Tilemap, TMPro.TMP_FontAsset, UnityEngine.BoundsInt)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: .ctor
+    path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+    startLine: 21
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public ColumnUIGenerator(Grid grid, Tilemap tilemap, TMP_FontAsset font, BoundsInt bounds)
+    parameters:
+    - id: grid
+      type: UnityEngine.Grid
+    - id: tilemap
+      type: UnityEngine.Tilemaps.Tilemap
+    - id: font
+      type: TMPro.TMP_FontAsset
+    - id: bounds
+      type: UnityEngine.BoundsInt
+    content.vb: Public Sub New(grid As Grid, tilemap As Tilemap, font As TMP_FontAsset, bounds As BoundsInt)
+  overload: GRID.MODULES.ColumnUIGenerator.#ctor*
+  nameWithType.vb: ColumnUIGenerator.New(Grid, Tilemap, TMP_FontAsset, BoundsInt)
+  fullName.vb: GRID.MODULES.ColumnUIGenerator.New(UnityEngine.Grid, UnityEngine.Tilemaps.Tilemap, TMPro.TMP_FontAsset, UnityEngine.BoundsInt)
+  name.vb: New(Grid, Tilemap, TMP_FontAsset, BoundsInt)
+- uid: GRID.MODULES.ColumnUIGenerator.GetColumnObject(System.Int32)
+  commentId: M:GRID.MODULES.ColumnUIGenerator.GetColumnObject(System.Int32)
+  id: GetColumnObject(System.Int32)
+  parent: GRID.MODULES.ColumnUIGenerator
+  langs:
+  - csharp
+  - vb
+  name: GetColumnObject(int)
+  nameWithType: ColumnUIGenerator.GetColumnObject(int)
+  fullName: GRID.MODULES.ColumnUIGenerator.GetColumnObject(int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetColumnObject
+    path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+    startLine: 31
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Retorna a coluna correspondente baseada no índice.
+  example: []
+  syntax:
+    content: public GameObject GetColumnObject(int col)
+    parameters:
+    - id: col
+      type: System.Int32
+    return:
+      type: UnityEngine.GameObject
+    content.vb: Public Function GetColumnObject(col As Integer) As GameObject
+  overload: GRID.MODULES.ColumnUIGenerator.GetColumnObject*
+  nameWithType.vb: ColumnUIGenerator.GetColumnObject(Integer)
+  fullName.vb: GRID.MODULES.ColumnUIGenerator.GetColumnObject(Integer)
+  name.vb: GetColumnObject(Integer)
+- uid: GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates
+  commentId: M:GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates
+  id: GenerateColumnsAndCoordinates
+  parent: GRID.MODULES.ColumnUIGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateColumnsAndCoordinates()
+  nameWithType: ColumnUIGenerator.GenerateColumnsAndCoordinates()
+  fullName: GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GenerateColumnsAndCoordinates
+    path: Assets/Scripts/Grid System/Modules/ColumnUIGenerator.cs
+    startLine: 39
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Cria os objetos de coluna e os textos de coordenada dentro de cada coluna.
+  example: []
+  syntax:
+    content: public void GenerateColumnsAndCoordinates()
+    content.vb: Public Sub GenerateColumnsAndCoordinates()
+  overload: GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates*
+references:
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: GRID.MODULES.ColumnUIGenerator.#ctor*
+  commentId: Overload:GRID.MODULES.ColumnUIGenerator.#ctor
+  href: GRID.MODULES.ColumnUIGenerator.html#GRID_MODULES_ColumnUIGenerator__ctor_UnityEngine_Grid_UnityEngine_Tilemaps_Tilemap_TMPro_TMP_FontAsset_UnityEngine_BoundsInt_
+  name: ColumnUIGenerator
+  nameWithType: ColumnUIGenerator.ColumnUIGenerator
+  fullName: GRID.MODULES.ColumnUIGenerator.ColumnUIGenerator
+  nameWithType.vb: ColumnUIGenerator.New
+  fullName.vb: GRID.MODULES.ColumnUIGenerator.New
+  name.vb: New
+- uid: UnityEngine.Grid
+  commentId: T:UnityEngine.Grid
+  parent: UnityEngine
+  isExternal: true
+  name: Grid
+  nameWithType: Grid
+  fullName: UnityEngine.Grid
+- uid: UnityEngine.Tilemaps.Tilemap
+  commentId: T:UnityEngine.Tilemaps.Tilemap
+  parent: UnityEngine.Tilemaps
+  isExternal: true
+  name: Tilemap
+  nameWithType: Tilemap
+  fullName: UnityEngine.Tilemaps.Tilemap
+- uid: TMPro.TMP_FontAsset
+  commentId: T:TMPro.TMP_FontAsset
+  parent: TMPro
+  isExternal: true
+  name: TMP_FontAsset
+  nameWithType: TMP_FontAsset
+  fullName: TMPro.TMP_FontAsset
+- uid: UnityEngine.BoundsInt
+  commentId: T:UnityEngine.BoundsInt
+  parent: UnityEngine
+  isExternal: true
+  name: BoundsInt
+  nameWithType: BoundsInt
+  fullName: UnityEngine.BoundsInt
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEngine.Tilemaps
+  commentId: N:UnityEngine.Tilemaps
+  isExternal: true
+  name: UnityEngine.Tilemaps
+  nameWithType: UnityEngine.Tilemaps
+  fullName: UnityEngine.Tilemaps
+  spec.csharp:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Tilemaps
+    name: Tilemaps
+    isExternal: true
+  spec.vb:
+  - uid: UnityEngine
+    name: UnityEngine
+    isExternal: true
+  - name: .
+  - uid: UnityEngine.Tilemaps
+    name: Tilemaps
+    isExternal: true
+- uid: TMPro
+  commentId: N:TMPro
+  isExternal: true
+  name: TMPro
+  nameWithType: TMPro
+  fullName: TMPro
+- uid: GRID.MODULES.ColumnUIGenerator.GetColumnObject*
+  commentId: Overload:GRID.MODULES.ColumnUIGenerator.GetColumnObject
+  href: GRID.MODULES.ColumnUIGenerator.html#GRID_MODULES_ColumnUIGenerator_GetColumnObject_System_Int32_
+  name: GetColumnObject
+  nameWithType: ColumnUIGenerator.GetColumnObject
+  fullName: GRID.MODULES.ColumnUIGenerator.GetColumnObject
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: UnityEngine.GameObject
+  commentId: T:UnityEngine.GameObject
+  parent: UnityEngine
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: UnityEngine.GameObject
+- uid: GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates*
+  commentId: Overload:GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates
+  href: GRID.MODULES.ColumnUIGenerator.html#GRID_MODULES_ColumnUIGenerator_GenerateColumnsAndCoordinates
+  name: GenerateColumnsAndCoordinates
+  nameWithType: ColumnUIGenerator.GenerateColumnsAndCoordinates
+  fullName: GRID.MODULES.ColumnUIGenerator.GenerateColumnsAndCoordinates

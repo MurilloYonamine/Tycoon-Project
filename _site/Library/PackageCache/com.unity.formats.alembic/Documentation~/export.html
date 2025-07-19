@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Exporting Unity GameObjects to Alembic | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Exporting Unity GameObjects to Alembic | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/export.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="exporting-unity-gameobjects-to-alembic">Exporting Unity GameObjects to Alembic</h1>
+
+<p>Using alembic to export objects out of Unity is useful when you want to bake data that is not key-frame animated. This allows you to get deterministic data that you can re-use in other Digital Content Creation Softwares (DCCs) or in Unity itself.</p>
+<p>For example, if you have a physics simulation that does not behave exactly the same every time you run it, baking it to alembic ensures it will always behave the same. Similarly, you might want to bake the properties/position/orientation of a Cinemachine camera if you want to re-use it in another DCC.</p>
+<h2 id="export-methods">Export methods</h2>
+<p>There are two ways to export Unity GameObjects to Alembic:</p>
+<ul>
+<li>Via an <a href="export-abc-exporter.html">Alembic Exporter component</a> (available by default in the Alembic package).</li>
+<li>Via an <a href="export-abc-clip-recorder.html">Alembic Clip Recorder</a> (available if you install the <a href="https://docs.unity3d.com/Packages/com.unity.recorder@latest/index.html">Unity Recorder</a> package, minimum version: 2.0.0).</li>
+</ul>
+<h2 id="export-capabilities">Export capabilities</h2>
+<p>Both methods support exporting single frame and multi-frame Alembic files, and can export GameObjects with the following components:</p>
+<ul>
+<li>Static Meshes (<a href="https://docs.unity3d.com/Manual/class-MeshRenderer.html"><strong>MeshRenderer</strong></a> component)</li>
+<li>Skinned Meshes (<a href="https://docs.unity3d.com/Manual/class-SkinnedMeshRenderer.html"><strong>SkinnedMeshRenderer</strong></a> component)</li>
+<li>Particles (<a href="https://docs.unity3d.com/Manual/class-ParticleSystem.html"><strong>ParticleSystem</strong></a> component)</li>
+<li>Cameras (<a href="https://docs.unity3d.com/Manual/class-Camera.html"><strong>Camera</strong></a> component)</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Alembic Exporter uses the Ogawa archive type to encode the exported file data.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.alembic/Documentation~/export.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

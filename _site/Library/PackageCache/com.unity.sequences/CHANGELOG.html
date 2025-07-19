@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<p>All notable changes to this package will be documented in this file.</p>
+<p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>
+and this project adheres to <a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="213---2024-10-01">[2.1.3] - 2024-10-01</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Prepared the package for end of support as of Unity 6.1.</li>
+</ul>
+<h2 id="212---2024-07-05">[2.1.2] - 2024-07-05</h2>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Renamed the Sequence Asset Indexer file for consistency.</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Prevent calls to <code>InitializeWithExistingData()</code> when there are no sequences in the project.</li>
+</ul>
+<h2 id="211---2023-11-07">[2.1.1] - 2023-11-07</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Prevent unexpected path error when switching the Editor from dark theme to light theme.</li>
+</ul>
+<h2 id="210---2023-05-01">[2.1.0] - 2023-05-01</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Improved the documentation structure and removed obsolete information.</li>
+</ul>
+<h2 id="210-pre1---2022-12-09">[2.1.0-pre.1] - 2022-12-09</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>New search field in the Sequences window.</li>
+<li>New MasterSequenceRegistry asset to store references to all Master Sequence timelines of the project and their associated Master Scenes.</li>
+<li>New Project Settings property allowing to change the default MasterSequenceRegistry asset (Unity creates one by default on first Master Sequence creation).</li>
+<li>New option to open the Master Scene associated to an editorial structure from the Sequences window.</li>
+<li>Ability to multi-select and bulk-delete Sequence Assets from the Sequence Assets window.</li>
+<li>Ability to clear an Asset Collection (i.e. delete all Sequence Assets it contains) in one single action.</li>
+<li>Use of an empty state message to the Sequence Assembly Window when no sequence is selected.</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Unity now preserves the Sequence Assembly's view on domain reload.</li>
+<li>Systematically remove from the Sequences window any Master Sequence that has no corresponding timeline.</li>
+<li>Sequence Assets are now sorted alphabetically in menus and selection lists.</li>
+<li>Sequence Assets and their variants are now sorted alphabetically in the Sequence Assets window.</li>
+<li>Sequences and their children are now sorted alphabetically in the Sequences window.</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Prevent Unity from throwing an exception when going into Play Mode while the Sequence Assembly Window is opened.</li>
+<li>Make sure that the &quot;Unload&quot; button is always disabled in the Scene Activation Track Inspector when no valid Scene is specified.</li>
+<li>Make sure that the Sequence Assets window always displays specific icons for all Asset Collection types.</li>
+<li>When creating a new sequence, make sure that its Timeline clip doesn't overlap with existing sequence clips in the same editorial track.</li>
+<li>After creating a sub-sequence, make sure that the order in the Sequences window is maintained when saving.</li>
+<li>When deleting an invalid sequence, make sure to systematically delete its corresponding GameObject in the Hierarchy.</li>
+<li>Prevent the Sequence Assets window from being in error when the user deletes a Sequence Asset from the Project window.</li>
+<li>Prevent the Sequence Assembly window from clearing after deleting a Sequence Asset.</li>
+<li>Make sure that users can instantiate an editorial structure in multiple scenes without getting issues.</li>
+</ul>
+<h2 id="200-pre2---2022-05-13">[2.0.0-pre.2] - 2022-05-13</h2>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Systematically remove from the Sequences window any Master Sequence that has no corresponding asset.</li>
+<li>The &quot;Load&quot; button in the Scene Activation Track Inspector is now disabled until the user specifies a valid Scene.</li>
+</ul>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Adapt the Scene Management Sample to make it properly work according to Sequences 2.0.0-pre.1 feature changes.</li>
+<li>Ensure Sequence timeline opens after clicking an already-selected item in the Sequences window.</li>
+<li>Prevent entering rename mode when clicking on a Sequence in an unfocused Sequences window.</li>
+<li>Substitute invalid filename characters in Sequence and Sequence Asset names.</li>
+<li>Seamlessly ignore any renaming of a Sequence to a whitespace-only name.</li>
+<li>Ensure the Scene Asset picker of the Scene Activation Track only shows Scenes.</li>
+<li>Prevent Unity from throwing an exception when the user clicks on the &quot;Load&quot; button in a Scene Activation Track immediately after assigning a Scene.</li>
+<li>Prevent Unity from throwing an exception when adding a manually-created Sequence to a Master Sequence Timeline.</li>
+<li>Ensure the icons appear in all Sequences window tabs when the Unity Editor opens.</li>
+</ul>
+<h2 id="200-pre1---2022-04-18">[2.0.0-pre.1] - 2022-04-18</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Sequence and Sequence Asset management features:
+<ul>
+<li>New context menu action available from the empty area of the Sequences window to create a new Master Sequence.</li>
+<li>New context menu action in the Sequence Assets window to open and edit the Prefabs (base and variants).</li>
+<li>New context menu action in the Sequences window to instantiate an Editorial structure in the active Scene.</li>
+<li>Keyboard shortcut to duplicate a Sequence Asset Variant: control-D (Windows) / command-D (macOS).</li>
+<li>Ability to multi-select and bulk-delete sequences from the Sequences window.</li>
+</ul>
+</li>
+<li>Help icons with documentation links in the Sequences window, Sequence Assets window and Sequence Assembly window.</li>
+<li>Possibility to use the regular Unity Editor features to manually fix invalid sequences if needed.</li>
+</ul>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Update of the Unity Editor minimum supported version to 2022.1.</li>
+<li>Users can now create Editorial structures with more than 3 levels.</li>
+<li>Split of the Sequences window into two separate windows:
+<ul>
+<li>The Sequences window is still the main entry point to use Sequences and focuses on managing editorial structures.</li>
+<li>The new Sequence Assets window replaces the Asset Collections panel and allows managing Sequence Assets and Variants.</li>
+</ul>
+</li>
+<li>Sequence recording functionality adjustments:
+<ul>
+<li>A single Record option is now available in the Sequences window context menu to simplify the recording flow.</li>
+<li>The Record action of the Sequences window no longer automatically sets the output file path in the Recorder window.</li>
+</ul>
+</li>
+<li>Compliance with Unity standard namings and workflows:
+<ul>
+<li>The default Sequences folder and file names no longer have spaces.</li>
+<li>Users can now rename Sequence Asset Variants on creation.</li>
+<li>Renaming a Sequence GameObject from the Hierarchy no longer renames the Sequence in the Sequences and Project windows.</li>
+</ul>
+</li>
+<li>UI consolidation and clean-up to streamline the user experience:
+<ul>
+<li>Prevent users from editing an Editorial structure that is not loaded in the Hierarchy.</li>
+<li>Remove the Sequence/Master Sequence creation actions from the Hierarchy. The Sequences window is now the unique place to do it.</li>
+<li>Hide fields of the MasterSequence asset Inspector that don't currently have any effect.</li>
+</ul>
+</li>
+<li>Public API clean-up: remove unused/deprecated API elements.</li>
+</ul>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Prevent Unity from throwing an exception when deleting a Sequence after removing all clips from a Master Sequence's timeline.</li>
+</ul>
+<h2 id="110---2022-01-11">[1.1.0] - 2022-01-11</h2>
+<ul>
+<li>Update package version to 1.1.0.</li>
+</ul>
+<h2 id="110-pre2---2021-12-13">[1.1.0-pre.2] - 2021-12-13</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>New API method overload for <code>SequenceAssetUtility.RemoveFromSequence()</code> with an optional parameter <code>InteractionMode</code> that allows to skip the user confirmation pop-up.</li>
+</ul>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Make sure users can swap Sequence Asset Variants from the Sequence Assembly window in any scenario.</li>
+<li>Make sure users can undo the &quot;Match Editorial Content (Ripple)&quot; action.</li>
+<li>Avoid issues when creating a Master Sequence from the Add menu while an existing Sequence is being renamed.</li>
+<li>Prevent the Structure view from showing an empty but selectable entry that might result from a sequence deletion.</li>
+<li>Prevent Unity from throwing an exception on new Sequence creation from the GameObject menu.</li>
+<li>Prevent Unity from throwing an exception when transforming a sequence's GameObject into a Prefab if the GameObject includes a Scene Loading Policy component.</li>
+<li>Prevent Unity from throwing an exception on <code>Assets/Sequences/</code> folder deletion.</li>
+<li>Prevent Unity from throwing an exception when finding in SceneManager a registered Scene that was actually unloaded but visible in the Hierarchy.</li>
+<li>Fix the recording end frame of sub-sequence to respect the parent sequence frame end when it is earlier than the sub-sequence's one.</li>
+</ul>
+<h2 id="110-pre1---2021-10-11">[1.1.0-pre.1] - 2021-10-11</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>Add a &quot;Rename&quot; context menu option in Sequences window, applicable to any Sequence, Sequence Asset, and Variant.</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Make sure Sequence GameObjects are inactive by default at their creation to minimize the use of system resources when Timeline is out of preview mode.</li>
+</ul>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Preload Sequence and Asset Collection icons to prevent them from flickering.</li>
+<li>Make sure to update the Timeline context according to the current Hierarchy content when opening a Sequence in Prefab isolation mode.</li>
+<li>Fix Timeline Window display when selecting a PlayableDirector inside a Sequence Asset, including related exception thrown in the Console.</li>
+<li>In Play mode, make sure the Sequence Assembly window displays a read-only list of the Sequence Assets contained in the current selected Sequence.</li>
+<li>Make sure users can still edit a Sequence that has been transformed into a Prefab.</li>
+</ul>
+<h2 id="103---2021-09-09">[1.0.3] - 2021-09-09</h2>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Change internal code to comply with UIToolkit changes in 2022.1.</li>
+</ul>
+<h2 id="102---2021-08-25">[1.0.2] - 2021-08-25</h2>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Update the help URL for the SequenceFilter, SequenceAsset and SceneLoadPolicy components.</li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Ignore SequenceAsset components added on GameObjects that are not part of a Prefab instance when listing the actual Sequence Assets included in a Sequence.</li>
+<li>Ignore SequenceAsset renaming from the Sequence Assembly window if the input name is invalid.</li>
+<li>Properly delete a Sequence previously converted to a Prefab.</li>
+<li>Make sure the Structure treeview always keeps its current expanded/collapsed state.</li>
+<li>Ensure that the Timeline Window always displays the correct breadcrumb context and Timeline asset when selecting a Sequence Asset in the Hierarchy.</li>
+<li>Improved the handling of invalid sequence deletion from the Sequences window.</li>
+<li>Make sure to properly rename a Sequence when the user only appends a suffix to the current name.</li>
+</ul>
+<h2 id="100---2021-06-30">[1.0.0] - 2021-06-30</h2>
+<h3 id="changed-9">Changed</h3>
+<ul>
+<li>Optimize the Sequence Asset search method to improve the Editor responsiveness when selecting a Sequence or performing simple operations on it.</li>
+<li>Optimize caching to improve the overall responsiveness of the Sequences window.</li>
+<li>Use by default the Timeline framerate value from the Project Settings when creating a MasterSequence with no specified FPS value.</li>
+</ul>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Make sure the renaming of a MasterSequence works under all conditions and with all supported Unity versions.</li>
+<li>Prevent the Sequences Structure from displaying an invalid Sequence entry after the renaming of a MasterSequence.</li>
+<li>Fix the Sequence Asset renaming process to handle edge cases for whitespace and duplicate names.</li>
+<li>Ensure to always update and refresh the Sequence Assembly window and the Asset Collection view after renaming a Sequence Asset.</li>
+<li>Ensure that the Asset Collection captures all the Sequence Assets when the project imports.</li>
+<li>Fix cases where the Variant dropdowns of the Sequence Assembly window become unresponsive.</li>
+<li>Preserve the Timeline playhead position when updating a Prefab instance.</li>
+<li>Don't prevent users from changing the framerate (FPS) of a Timeline associated to a Sequence via the Timeline Window.</li>
+<li>Make the Sequences Window retain the state of the Structure treeview between domain reloads.</li>
+<li>Avoid throwing exception on prefabized Sequences when setting the Timeline breadcrumb.</li>
+<li>Complete the public API Documentation.</li>
+</ul>
+<h2 id="100-pre6---2021-05-18">[1.0.0-pre.6] - 2021-05-18</h2>
+<h3 id="changed-10">Changed</h3>
+<ul>
+<li>Consolidate the public API documentation generation.</li>
+</ul>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Prevent Sequences window treeviews from unfolding their whole hierarchy when they update.</li>
+<li>Prevent Scenes from getting dirty on first selection of a Sequence in the Hierarchy when no change actually occurred.</li>
+<li>Ensure to rename or delete any corresponding folder in the Project window when the user renames or deletes a Sequence from the Sequences window.</li>
+<li>Ensure to get a complete expected behavior when undoing a swap of Sequence Asset Variant done from the Sequence Assembly window.</li>
+<li>Ensure that the Scene Loading Policy component does not load Scenes that are already in memory.</li>
+<li>Ensure to assign the proper default material to the Scene Management sample according to the current render pipeline used in the project.</li>
+<li>Fix an issue that was throwing an exception when canceling the creation of a Sequence Asset.</li>
+<li>Fix an issue that was throwing an exception when opening the Profiler window as a standalone process.</li>
+</ul>
+<h2 id="100-pre5---2021-04-27">[1.0.0-pre.5] - 2021-04-27</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added a Third Party Notices file in the package</li>
+</ul>
+<h2 id="100-pre4---2021-04-26">[1.0.0-pre.4] - 2021-04-26</h2>
+<h3 id="changed-11">Changed</h3>
+<ul>
+<li>Minor update in the CHANGELOG.</li>
+</ul>
+<h2 id="100-pre3---2021-04-21">[1.0.0-pre.3] - 2021-04-21</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Added additional tooltips to various fields and buttons in Sequences and SequenceAssembly windows.</li>
+</ul>
+<h3 id="changed-12">Changed</h3>
+<ul>
+<li>Update all icons for Dark and Light themes as per latest UX design and for better visibility of selected items.</li>
+<li>Update the Unity Editor minimum required version to 2020.3.</li>
+<li>Update terminology and tooltips in the SceneLoadingPolicy component.</li>
+<li>Make the Add Scene Loading Policy button more straightforward in Sequence Filter component.</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Ensure to set the Recorder with the correct Start and End frame numbers when recording a Master Sequence.</li>
+</ul>
+<h2 id="100-pre2---2021-04-09">[1.0.0-pre.2] - 2021-04-09</h2>
+<h3 id="changed-13">Changed</h3>
+<ul>
+<li>Users can now delete the GameObject that corresponds to a Sequence in the Hierarchy (regular Unity workflow).
+<ul>
+<li>This action does not delete anything Sequence-related from the Project but invalidates the Sequence that remains in the Sequences window.</li>
+<li>When a Sequence is invalid, the Sequences window now displays a visual cue according to the reason of the error.</li>
+</ul>
+</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Ensure to preserve the &quot;Match Editorial Content&quot; option results in Timeline after restarting Unity.</li>
+<li>Ensure that the start time of a new sequence corresponds to the end time of the last created sibling sequence.</li>
+</ul>
+<h2 id="100-pre1---2021-03-31">[1.0.0-pre.1] - 2021-03-31</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>New sample to show how the Scene Activation track works and introduce users to Scene Management features in general.</li>
+<li>Add confirmation step on deletion of Sequence-related items from the Hierarchy, Sequences, and Sequence Assembly windows.</li>
+</ul>
+<h3 id="changed-14">Changed</h3>
+<ul>
+<li>Change the minimum requirements: Timeline 1.5.2 and Recorder 2.5.5.</li>
+<li>Global naming refactor around Performance, Take and Cinematic concepts:
+<ul>
+<li>Remove the old Performance/Take objects and functions from the API.
+Rename related functions and UI to match the new Sequence Asset and Collection type terminology.</li>
+<li>Rename the Cinematic asset to MasterSequence. Rename the whole Cinematic related API to reflect the new Master Sequence/Sequence terminology.</li>
+<li>Rename the package assemblies and namespaces to replace &quot;CinematicToolbox&quot; by the new package name &quot;Sequences&quot;.</li>
+</ul>
+</li>
+<li>Make the <strong>Sequence Assembly</strong> window read-only in Play mode and show the instance name of the SequenceAssets populating the selected Sequence.</li>
+<li>The Sequence Assembly &quot;Name&quot; field now shows the selected Sequence name instead of the related TimelineAsset name.</li>
+</ul>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>When creating Sequences and Sub-Sequences, they are now always created consecutively in time.</li>
+</ul>
+<h2 id="100-exp2---2021-02-26">[1.0.0-exp.2] - 2021-02-26</h2>
+<h3 id="changed-15">Changed</h3>
+<ul>
+<li>Make the <strong>Sequence Assembly</strong> windows inaccessible in Play mode to prevent from getting errors.</li>
+</ul>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Error in Play mode when the Performance clip editor tries to display information about null objects.</li>
+</ul>
+<h2 id="100-exp1---2021-02-22">[1.0.0-exp.1] - 2021-02-22</h2>
+<h3 id="changed-16">Changed</h3>
+<ul>
+<li>Enable &quot;Clip-in&quot; option on Editorial clips since Timeline 1.5.2.
+<ul>
+<li>Editorial clips no longer automatically adapt their duration to their sub-editorial total duration.</li>
+<li>Use the new <code>Match Editorial Content (Ripple)</code> action, available on Editorial tracks and clips, to adapt
+all selected clips duration to their respective sub-editorial total duration.</li>
+</ul>
+</li>
+<li>Make the <code>Scene Load Policy</code> component more user friendly:
+<ul>
+<li>Automatically add needed scene in Build Settings when domain is <code>Player Build Only</code> or <code>Editor and Player Build</code>.</li>
+<li>Load scenes in Editor Playmode without extra setup needed.</li>
+</ul>
+</li>
+<li>Update documentation to reflect the new Sequence terminology and Sequence Asset structure.</li>
+<li>Rename <code>Sound</code> Sequence Asset type to <code>Audio</code>.</li>
+<li>Replace Asset Collections icons with Prefab and Prefab variant icons.</li>
+<li>Rename the assets in the UpgradeToSequence sample.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Cleaned-up unused icons and UXML / USS files.</li>
+<li>Removed the dummy search bar in Sequences window.</li>
+</ul>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>Fix edge cases related to the upgrade from Performances to SequenceAssets.</li>
+<li>Sequences Structure window better reflect invalid sequences and Master sequences and prevent user to do unwanted actions.</li>
+</ul>
+<h2 id="010-preview17---2021-02-12">[0.1.0-preview.17] - 2021-02-12</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>New Scene management features in the context of Sequences:
+<ul>
+<li>Scene Activation track in Timeline.</li>
+<li>Scene loading workflow in the Sequences window.</li>
+</ul>
+</li>
+<li>New sample with UpgradeToSequence script to help users convert their existing Performances into new Sequence Assets.</li>
+</ul>
+<h2 id="010-preview16---2021-02-01">[0.1.0-preview.16] - 2021-02-01</h2>
+<p><em>First release under the new name: com.unity.sequences.</em></p>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>New SequenceAsset API, which replaces the former Performance/Take API.</li>
+</ul>
+<h3 id="changed-17">Changed</h3>
+<ul>
+<li>Change the package name to <strong>Sequences (com.unity.sequences)</strong>.</li>
+<li>Rename menus and labels according to the new namings.</li>
+<li>Update com.unity.settings-manager dependency to 1.0.3.</li>
+<li>Declare implicit dependencies to allow true isolation.</li>
+<li>Rename the PerformanceTrack and Clip to fit with the new SequenceAsset naming.</li>
+<li>Move the SequenceAsset track and Editorial track into a Sequencing menu (instead of Cinematic).</li>
+<li>Make private functions that shouldn't be exposed in the public API.</li>
+</ul>
+<h3 id="removed-1">Removed</h3>
+<ul>
+<li>Remove former Live Capture integration.</li>
+<li>Remove the <code>Promote to Performance</code> action from the GameObject menu.</li>
+</ul>
+<h3 id="deprecated">Deprecated</h3>
+<ul>
+<li>The Performance/Take API is now deprecated, replaced by the new SequenceAsset API.</li>
+</ul>
+<h3 id="fixed-15">Fixed</h3>
+<ul>
+<li>Fix serialization error of the Cinematic asset.</li>
+<li>Make the Cinematic.Save function more robust so it can be used in an Asset Postprocessor.</li>
+</ul>
+<h2 id="010-preview15---2020-10-26">[0.1.0-preview.15] - 2020-10-26</h2>
+<h3 id="changed-18">Changed</h3>
+<ul>
+<li>Organize the cinematic timeline tracks (Editorial, Performance and Storyboard) under a &quot;Cinematic&quot; menu item.</li>
+<li>Update the Performance types list with a new Sound type.</li>
+<li>Performance group and performance take can't be renamed. Enforce this behaviour from the Cinematic Explorer UI to prevent potential confusion.</li>
+</ul>
+<h3 id="fixed-16">Fixed</h3>
+<ul>
+<li>Fix NullRef exception occuring when deleting the selected take of a performance. The Manager UI now shows that take as &quot;INVALID&quot;.</li>
+<li>Fix added GameObjects and Components that was not taken into account when switching take and checking for unsaved modifications.</li>
+</ul>
+<h2 id="010-preview14---2020-09-30">[0.1.0-preview.14] - 2020-09-30</h2>
+<h3 id="changed-19">Changed</h3>
+<ul>
+<li>Update UI element styles and made them properly display in Light theme (personal).</li>
+<li>Update Recorder dependency to 2.3.0-preview.3.</li>
+</ul>
+<h3 id="fixed-17">Fixed</h3>
+<ul>
+<li>Fix exception when renaming a VCam Performance that is still connected to a device.</li>
+<li>Fix the lost bindings on the EditorialClips when Editor opens.</li>
+<li>Fix the offset on start and end frame values between Recorder and Timeline.</li>
+</ul>
+<h2 id="010-preview13---2020-09-14">[0.1.0-preview.13] - 2020-09-14</h2>
+<h3 id="changed-20">Changed</h3>
+<ul>
+<li>Update requirement: <code>com.unity.virtual-production@3.0.0-preview.6</code>.</li>
+<li>Switch to a new VCam take will set Timeline's time at the beginning of the active shot.</li>
+</ul>
+<h3 id="fixed-18">Fixed</h3>
+<ul>
+<li>Fix VCam app not playing the entire active shot context. Only the active shot timeline used to be played.</li>
+<li>Fix VCam broken video stream under certain circumstances.</li>
+</ul>
+<h2 id="010-preview12---2020-09-11">[0.1.0-preview.12] - 2020-09-11</h2>
+<h3 id="fixed-19">Fixed</h3>
+<ul>
+<li>Fix NullRef exceptions that could happen in the Cinematic Manager when manipulating takes.</li>
+</ul>
+<h2 id="010-preview11---2020-09-10">[0.1.0-preview.11] - 2020-09-10</h2>
+<h3 id="fixed-20">Fixed</h3>
+<ul>
+<li>Fix compiler error with runtime builds.</li>
+</ul>
+<h2 id="010-preview10---2020-09-09">[0.1.0-preview.10] - 2020-09-09</h2>
+<h3 id="changed-21">Changed</h3>
+<ul>
+<li>The Cinematic Manager now displays the selected take in the performance widgets when folded.</li>
+<li>Remove the Scene track until we define the right workflow for scenes manipulations.</li>
+<li>When deleting a GameObject associated with a cinematic, ask user whether the associated asset(s) should be deleted as well or not.</li>
+<li>When swapping Take, ask user what to do with current take if it has unsaved modifications.</li>
+<li>Duplicating a take doesn't append &quot;(Clone)&quot; to its name anymore.</li>
+<li>Add audio listener component on VCam performance.</li>
+</ul>
+<h3 id="removed-2">Removed</h3>
+<ul>
+<li>The <code>Create new Performance</code> item has been removed from the GameObject &gt; Cinematic menu.</li>
+</ul>
+<h3 id="fixed-21">Fixed</h3>
+<ul>
+<li>Fix Cinematic Explorer not reflecting Cinematic element selection from the Hierarchy view.</li>
+<li>Fix Timeline's playhead jumping back to frame 0 when moving between cinematic contexts.</li>
+<li>Fix Virtual Camera live link toggle not always in sync with the LiveLink internal state.</li>
+</ul>
+<h2 id="010-preview9---2020-09-02">[0.1.0-preview.9] - 2020-09-02</h2>
+<h3 id="added-9">Added</h3>
+<ul>
+<li>Add an EditorialTrack used to represent sequences and shots in the Timeline.</li>
+<li>Add a PerformanceTrack used to represent performances in the Timeline.</li>
+</ul>
+<h3 id="changed-22">Changed</h3>
+<ul>
+<li>Enable latent selection in Cinematic Manager. It will stay active on the latest valid Cinematic element (cinematic, sequence, shot).</li>
+<li>Remove the NestedTimelineTrack (replaced by the EditorialTrack and PerformanceTrack, see in &quot;Features&quot;).</li>
+</ul>
+<h3 id="fixed-22">Fixed</h3>
+<ul>
+<li>Fix Cinematic Manager not showing performances from a prefab instance of a shot.</li>
+<li>Fix the Virtual Camera not responding when trying to record more than one take.</li>
+<li>Fix Cinematic element getting destroyed when leaving Prefab isolation.</li>
+<li>Ensure performances are created and saved with unique name in folder with unique name.</li>
+<li>Fix the <code>Promote to Performance</code> menu item that was not available anymore.</li>
+<li>Fix a bug where duplicating a performance take that contains another number than the take number
+was incrementing the other number as well as the take number.</li>
+<li>Fix Cinematic Manager getting focused when a selection happens in the Hierarchy window.</li>
+<li>Fix Cinematic element creation not dirtying the active scene.</li>
+<li>Fix the switch of performance take that was throwing exceptions before and loosing timeline binding.</li>
+<li>Fix deletion of cinematic GameObject that was throwing a null exception when the Cinematic asset was already removed from the Project.</li>
+<li>Fix PlayableDirector's bindings field not properly cleaned up on performance removal.</li>
+</ul>
+<h2 id="010-preview8---2020-08-20">[0.1.0-preview.8] - 2020-08-20</h2>
+<h3 id="changed-23">Changed</h3>
+<ul>
+<li>Selection of any level of a Cinematic or of a performance sets the Timeline Window in the context - represented by the breadcrumb - of that selection.</li>
+</ul>
+<h3 id="fixed-23">Fixed</h3>
+<ul>
+<li>Fix button <code>New VCam</code> that would stay enabled regardless of the presence of Virtual Production in the project.</li>
+<li>Fix cinematic element buttons not being grayed out when they are not available in the contextual menu of the Hierarchy window.</li>
+<li>Fix performance renaming where related GameObject, Timeline tracks and clips were not renamed accordingly.</li>
+<li>Fix the cinematic and performance delete operations by also deleting related folders when needed.</li>
+</ul>
+<h2 id="010-preview7---2020-08-07">[0.1.0-preview.7] - 2020-08-07</h2>
+<h3 id="fixed-24">Fixed</h3>
+<ul>
+<li>Clip in a NestedTimelineTrack track with &quot;Match Content Duration&quot; at true will match their content only if it's not empty.</li>
+<li>Fix regression introduced with <code>0.1.0-preview.6</code> where the Cinematic Manager would not display performances.</li>
+</ul>
+<h2 id="010-preview6---2020-08-06">[0.1.0-preview.6] - 2020-08-06</h2>
+<h3 id="added-10">Added</h3>
+<ul>
+<li>Add a new kind of Performance: Virtual Camera performance. Must have <code>com.unity.virtual-production</code> 3.0.0-preview.4 or later installed to unlock this feature.</li>
+<li>Cinematic, sequences and shots can be recorded from the Cinematic Explorer window. Start time, end time, fps and output path are automatically set.</li>
+<li>Add a new type of Timeline Track and Clip: Storyboard Track and Storyboard Clip.
+<ul>
+<li>Storyboard Clip displays an image in overlay over the Game View.</li>
+</ul>
+</li>
+</ul>
+<h3 id="changed-24">Changed</h3>
+<ul>
+<li>Improve the editorial workflow:
+<ul>
+<li>Users can now create cinematic elements (Cinematic/Sequence/Shot) directly from the Hierarchy view using the GameObject menu or right-click.</li>
+<li>Data and bindings are now serialized in scenes rather than in prefabs.</li>
+<li>Prefabs, scene lighting and timelines are no longer generated when creating a new cinematic element.</li>
+<li>Retired the use of Prefab tracks. Everything is now based on the NestedTimelineTrack.</li>
+</ul>
+</li>
+<li>Cinematic, Sequences and Shots start time and duration are update when new items are added or removed from a Cinematic.</li>
+<li>NestedTimelineTrack now control the activation of the controlled PlayableDirector.</li>
+<li>Cinematic Timelines and Performances created in the context of a Cinematic/Sequence/Shot are organized within the AssetDatabase
+in folders that reflect their creation context.</li>
+</ul>
+<h2 id="010-preview5---2020-07-22">[0.1.0-preview.5] - 2020-07-22</h2>
+<h3 id="changed-25">Changed</h3>
+<ul>
+<li>Move <code>Clear Performance User Types</code> to the Cinematic Explorer menu, under <code>Reset Performance Types</code>.</li>
+<li>Move <code>Cinematic Toolbox</code> menu under <code>Window</code>.</li>
+</ul>
+<h2 id="010-preview4---2020-07-15">[0.1.0-preview.4] - 2020-07-15</h2>
+<h3 id="fixed-25">Fixed</h3>
+<ul>
+<li>Fix bug in Cinematic Manager where PerformanceGroups were not updated when a Performance was deleted from the Explorer.</li>
+<li>Fix bug in Cinematic Explorer where creating a new PerformanceType would immediately throw an exception.</li>
+<li>Fix bug in Cinematic Explorer where pressing the Delete key would delete the selected items in both Cinematics and Performances tree views regardless of the focus.</li>
+<li>Fix bug in Cinematic Explorer where deleting the last take of a performance with the Delete key would execute and leave the Performance in an undefined state. A performance can't be empty.</li>
+<li>Fix name field always showing &quot;filler text&quot; in the Cinematic Manager window.</li>
+</ul>
+<h2 id="010-preview3---2020-07-08">[0.1.0-preview.3] - 2020-07-08</h2>
+<h3 id="added-11">Added</h3>
+<ul>
+<li>Add drag and drop in hierarchy for cinematics.</li>
+<li>Add ability to create a Performance from a GameObject selection in Hierarchy window.</li>
+</ul>
+<h3 id="changed-26">Changed</h3>
+<ul>
+<li>Update minimal Unity version to 2019.4.</li>
+<li>Update all icons in the Cinematic Explorer window.</li>
+<li>Streamline selection system with Cinematic's element.
+<ul>
+<li>Single left click opens the asset in the Cinematic Manager window.</li>
+<li>Double left clicks executes the Single left click action and select the associated Timeline.</li>
+<li>Single left click will no longer show the Cinematic Manager content in Inspector.</li>
+</ul>
+</li>
+<li>Rename the Shot Manager window to Cinematic Manager.</li>
+</ul>
+<h2 id="010-preview2---2020-06-18">[0.1.0-preview.2] - 2020-06-18</h2>
+<h3 id="added-12">Added</h3>
+<ul>
+<li>Add new type of Timeline track to load/unload scenes.</li>
+<li>PrefabTrack instantiate Prefab under the GameObject that own the PlayableDirector. Allow edition &quot;in context&quot;.</li>
+<li>Add children track naming based on their role (Sequences or Shots).</li>
+</ul>
+<h2 id="010-preview1---2020-06-10">[0.1.0-preview.1] - 2020-06-10</h2>
+<h3 id="added-13">Added</h3>
+<ul>
+<li>Add DeleteFolder(), RenameFolder(), IsRenameValid(), GenerateUniqueAssetName() and GetAssetPath() functions to CinematicAssetDatabase.</li>
+<li>Add name validation to Rename() function calls.</li>
+<li>Add ability to remove Performance from Shot Manager.</li>
+<li>Add GetFirstClip() function to TrackAssetExtensions.</li>
+</ul>
+<h3 id="fixed-26">Fixed</h3>
+<ul>
+<li>Fix bug in Cinematic/Shot/Performance Rename() where parent folder was not renamed.</li>
+<li>Fix bug in Cinematic/Shot/Performance Delete() where parent folder was not deleted.</li>
+<li>Fix bug where Cinematic Explorer window would not stay when reopening Uni.y.</li>
+<li>Fix refresh issue in the ShotManager's performances add dropdown menu when a Performance is created or deleted.</li>
+<li>Fix refresh issue in the ShotManager's take selection dropdown when a new take is created or renamed.</li>
+<li>Fix Performance take selection not being properly serialized.</li>
+<li>Fix bug in CinematicManager AddPerformance() where adding performance in a shot did not create a new track.</li>
+<li>Fix bug where Cinematic Explorer window would not stay when reopening Unity.</li>
+<li>Fix a bug where Cinematics/Performance Explorers would clip on the bottom when there are too many items and related resizing issues.</li>
+<li>Fix bug where the fps of a Shot's Timeline did not match the fps of the associated TimelineCinematicClip.</li>
+<li>Fix bug where the fps of a Performance's timeline did not match the fps of the associated Shot.</li>
+<li>Fix bug where Performance clip would not display name of associated Take.</li>
+</ul>
+<h2 id="010-preview---2020-05-28">[0.1.0-preview] - 2020-05-28</h2>
+<p><em>This is the first release of com.unity.cinematic-toolbox.</em></p>
+<h3 id="added-14">Added</h3>
+<ul>
+<li>Cinematic and Performance Explorer window.</li>
+<li>Shot Manager window.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

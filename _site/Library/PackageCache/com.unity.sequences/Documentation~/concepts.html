@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Concepts and terminology | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Concepts and terminology | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/concepts.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="concepts-and-terminology">Concepts and terminology</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>This section describes the main elements involved in a cinematic as they appear
+in the Sequences features, and explains their mutual relationships.</p>
+<h2 id="editorial">Editorial</h2>
+<p>The Editorial represents all the content of a cinematic, as it is structurally and chronologically organized in Unity.</p>
+<p>The Sequences package allows you to manage two types of complementary elements that help you iterate faster in your editorial tasks:</p>
+<ul>
+<li><p><a href="#sequences">Sequences</a>, which act as <strong>structural containers</strong> of your Editorial.</p>
+</li>
+<li><p><a href="#sequence-assets">Sequence Assets and Variants</a>, which represent the actual <strong>creative content</strong> that you can use to populate the Sequences.</p>
+</li>
+</ul>
+<h2 id="sequences">Sequences</h2>
+<p>Sequences are structural containers that help you organize and manage your cinematic Editorial in a modular way.</p>
+<h3 id="editorial-structure">Editorial structure</h3>
+<p>You can structure your Editorial with Sequences containing other Sequences:</p>
+<p><img src="images/editorial-structure.png" alt=""></p>
+<p>The Master Sequence represents the top level of your cinematic. You can create more than one Master Sequence within the same Unity project.</p>
+<p>The Master Sequence can contain several Sequences, which can also contain several Sequences. All of them work the same way and benefit from the same functionality, according to their hierarchical position.</p>
+<p>You can use nested Sequences to organize your creative content, for example:</p>
+<ul>
+<li>The Master Sequence could represent a film, a piece of a film, a series episode, a game cinematic, an archviz, or a design cinematic.</li>
+<li>The second level of Sequences could represent a different unit of time and place according to the story you are telling.</li>
+<li>The third level of Sequences could represent a section of animation from one cut to the next cut.</li>
+</ul>
+<h3 id="initial-structure-content">Initial structure content</h3>
+<p>When you create a Sequence, Unity automatically creates, configures, and links all the necessary GameObjects and assets that allow you to easily control all levels of your Editorial structure.</p>
+<p>From a creative point of view, Sequences are placeholders ready to be populated.</p>
+<h3 id="populating-your-editorial">Populating your Editorial</h3>
+<p>You can populate Sequences at any level of your Editorial structure, either by adding creative content that you might already have, or by creating new content as you go.</p>
+<p>The Sequences package includes features that help you manage your creative content elements in an organized and modular way, through the use of categorized, self-contained, and easily swappable <a href="#sequence-assets">Sequence Assets</a>.</p>
+<p><strong>Note:</strong> You can use the basic features of the Unity Editor to populate your Sequences with your own assets if you need to keep a full control over your content sources and the way to manage them. However in that case, you cannot benefit from the Sequence Asset categorization and in-context management features of the Sequences package.</p>
+<h2 id="sequence-assets">Sequence Assets</h2>
+<p>A Sequence Asset represents the creative unit of a Sequence. This can be, for example, a character, a camera, an FX, a lighting set...</p>
+<p>A Sequence Asset can consist of static or animated elements, or both. Animated elements can be:</p>
+<ul>
+<li>Baked – for example: keyframed animation of a character</li>
+<li>Real-time – for example: procedurally animated character</li>
+<li>Live – for example: a virtual camera or motion capture</li>
+<li>Recorded – for example: a virtual camera record</li>
+</ul>
+<p>Sequence Assets are <a href="https://docs.unity3d.com/Manual/Prefabs.html">Prefabs</a> that benefit from a specific <a href="under-the-hood.html#sequence-assets-and-variants">configuration and structure</a> that make them ready to use in your Sequences.</p>
+<p>You can create <a href="#sequence-asset-variants">Sequence Asset Variants</a> to safely explore variations of your Sequence Assets and easily swap them in context to allow you to choose the one that best suits your needs.</p>
+<p>All Sequence Assets and their Variants are organized in <a href="#asset-collections">Asset Collections</a> to help you better identify them and keep them organized while you work on your cinematic.</p>
+<h3 id="asset-collections">Asset Collections</h3>
+<p>By default, there are 7 types of Asset Collections:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Asset Collection type</strong></th>
+<th><strong>Typical use</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Character</td>
+<td>For animated characters (actors).</td>
+</tr>
+<tr>
+<td>Fx</td>
+<td>For special effects (smoke, fire, physics simulation…)</td>
+</tr>
+<tr>
+<td>Lighting</td>
+<td>For lighting sets.</td>
+</tr>
+<tr>
+<td>Photography</td>
+<td>For cameras and compositing layers.</td>
+</tr>
+<tr>
+<td>Prop</td>
+<td>For various accessories.</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>For environments and backgrounds.</td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>For music, voice or any other sound effects.</td>
+</tr>
+</tbody>
+</table>
+<p>A Sequence Asset is necessarily part of an Asset Collection. This defines the way Unity regroups all your Sequence Assets in the Editor interface and stores their data in your project folders.</p>
+<h3 id="sequence-asset-variants">Sequence Asset Variants</h3>
+<p>Sequence Asset Variants are <a href="https://docs.unity3d.com/Manual/PrefabVariants.html">Prefab Variants</a>. In summary, this means the following:</p>
+<ul>
+<li><p>When you create a Variant from a Sequence Asset, it dynamically inherits from all properties that you might change in the base Sequence Asset.</p>
+</li>
+<li><p>You can apply local overrides on specific properties of the Variant without affecting the base Sequence Asset.</p>
+</li>
+<li><p>If needed, you can backport overrides from a Variant to its base Sequence Asset. This automatically spreads specific changes across all Variants of this base Sequence Asset, unless the other Variants have a local override on the involved properties.</p>
+</li>
+</ul>
+<p><strong>Note:</strong> The Sequences package allows you to duplicate Variants based on the same Sequence Asset, but does not allow you to create Variants of Variants.</p>
+<h2 id="editorial-cuts">Editorial cuts</h2>
+<p>You can trim any Sequence within your Editorial structure to only get the portions of the contained Sequences or Sequence Asset tracks that you need in your cinematic. You can also reorder them.</p>
+<p><img src="images/editorial-cuts.png" alt="">
+<br><em>Conceptual example of Sequence Asset tracks cut throughout the Editorial structure.</em></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/concepts.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SHOP
+  commentId: N:SHOP
+  id: SHOP
+  children:
+  - SHOP.ShopManager
+  langs:
+  - csharp
+  - vb
+  name: SHOP
+  nameWithType: SHOP
+  fullName: SHOP
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: SHOP.ShopManager
+  commentId: T:SHOP.ShopManager
+  href: SHOP.ShopManager.html
+  name: ShopManager
+  nameWithType: ShopManager
+  fullName: SHOP.ShopManager

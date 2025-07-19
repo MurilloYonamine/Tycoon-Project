@@ -1,0 +1,253 @@
+### YamlMime:ManagedReference
+items:
+- uid: GRID.MODULES.CoordinateConverter
+  commentId: T:GRID.MODULES.CoordinateConverter
+  id: CoordinateConverter
+  parent: GRID.MODULES
+  children:
+  - GRID.MODULES.CoordinateConverter.#ctor(UnityEngine.BoundsInt)
+  - GRID.MODULES.CoordinateConverter.GetMouseWorldPosition
+  - GRID.MODULES.CoordinateConverter.GetTileCoordinate(UnityEngine.Vector3Int)
+  - GRID.MODULES.CoordinateConverter.UpdateBounds(UnityEngine.BoundsInt)
+  langs:
+  - csharp
+  - vb
+  name: CoordinateConverter
+  nameWithType: CoordinateConverter
+  fullName: GRID.MODULES.CoordinateConverter
+  type: Class
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: CoordinateConverter
+    path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+    startLine: 12
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public class CoordinateConverter
+    content.vb: Public Class CoordinateConverter
+  inheritance:
+  - System.Object
+- uid: GRID.MODULES.CoordinateConverter.#ctor(UnityEngine.BoundsInt)
+  commentId: M:GRID.MODULES.CoordinateConverter.#ctor(UnityEngine.BoundsInt)
+  id: '#ctor(UnityEngine.BoundsInt)'
+  parent: GRID.MODULES.CoordinateConverter
+  langs:
+  - csharp
+  - vb
+  name: CoordinateConverter(BoundsInt)
+  nameWithType: CoordinateConverter.CoordinateConverter(BoundsInt)
+  fullName: GRID.MODULES.CoordinateConverter.CoordinateConverter(UnityEngine.BoundsInt)
+  type: Constructor
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: .ctor
+    path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+    startLine: 16
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  syntax:
+    content: public CoordinateConverter(BoundsInt bounds)
+    parameters:
+    - id: bounds
+      type: UnityEngine.BoundsInt
+    content.vb: Public Sub New(bounds As BoundsInt)
+  overload: GRID.MODULES.CoordinateConverter.#ctor*
+  nameWithType.vb: CoordinateConverter.New(BoundsInt)
+  fullName.vb: GRID.MODULES.CoordinateConverter.New(UnityEngine.BoundsInt)
+  name.vb: New(BoundsInt)
+- uid: GRID.MODULES.CoordinateConverter.GetTileCoordinate(UnityEngine.Vector3Int)
+  commentId: M:GRID.MODULES.CoordinateConverter.GetTileCoordinate(UnityEngine.Vector3Int)
+  id: GetTileCoordinate(UnityEngine.Vector3Int)
+  parent: GRID.MODULES.CoordinateConverter
+  langs:
+  - csharp
+  - vb
+  name: GetTileCoordinate(Vector3Int)
+  nameWithType: CoordinateConverter.GetTileCoordinate(Vector3Int)
+  fullName: GRID.MODULES.CoordinateConverter.GetTileCoordinate(UnityEngine.Vector3Int)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetTileCoordinate
+    path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+    startLine: 23
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Converte uma posição de célula em coordenadas lógicas (coluna, linha), com origem no canto superior esquerdo.
+  example: []
+  syntax:
+    content: public Vector3Int GetTileCoordinate(Vector3Int cell)
+    parameters:
+    - id: cell
+      type: UnityEngine.Vector3Int
+    return:
+      type: UnityEngine.Vector3Int
+    content.vb: Public Function GetTileCoordinate(cell As Vector3Int) As Vector3Int
+  overload: GRID.MODULES.CoordinateConverter.GetTileCoordinate*
+- uid: GRID.MODULES.CoordinateConverter.GetMouseWorldPosition
+  commentId: M:GRID.MODULES.CoordinateConverter.GetMouseWorldPosition
+  id: GetMouseWorldPosition
+  parent: GRID.MODULES.CoordinateConverter
+  langs:
+  - csharp
+  - vb
+  name: GetMouseWorldPosition()
+  nameWithType: CoordinateConverter.GetMouseWorldPosition()
+  fullName: GRID.MODULES.CoordinateConverter.GetMouseWorldPosition()
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: GetMouseWorldPosition
+    path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+    startLine: 32
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Obtém a posição do mouse convertida para o mundo.
+  example: []
+  syntax:
+    content: public Vector3 GetMouseWorldPosition()
+    return:
+      type: UnityEngine.Vector3
+    content.vb: Public Function GetMouseWorldPosition() As Vector3
+  overload: GRID.MODULES.CoordinateConverter.GetMouseWorldPosition*
+- uid: GRID.MODULES.CoordinateConverter.UpdateBounds(UnityEngine.BoundsInt)
+  commentId: M:GRID.MODULES.CoordinateConverter.UpdateBounds(UnityEngine.BoundsInt)
+  id: UpdateBounds(UnityEngine.BoundsInt)
+  parent: GRID.MODULES.CoordinateConverter
+  langs:
+  - csharp
+  - vb
+  name: UpdateBounds(BoundsInt)
+  nameWithType: CoordinateConverter.UpdateBounds(BoundsInt)
+  fullName: GRID.MODULES.CoordinateConverter.UpdateBounds(UnityEngine.BoundsInt)
+  type: Method
+  source:
+    remote:
+      path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+      branch: main
+      repo: https://github.com/MurilloYonamine/Tycoon-Project.git
+    id: UpdateBounds
+    path: Assets/Scripts/Grid System/Modules/CoordinateConverter.cs
+    startLine: 42
+  assemblies:
+  - Assembly-CSharp
+  namespace: GRID.MODULES
+  summary: Atualiza os bounds para recálculos de coordenadas.
+  example: []
+  syntax:
+    content: public void UpdateBounds(BoundsInt newBounds)
+    parameters:
+    - id: newBounds
+      type: UnityEngine.BoundsInt
+    content.vb: Public Sub UpdateBounds(newBounds As BoundsInt)
+  overload: GRID.MODULES.CoordinateConverter.UpdateBounds*
+references:
+- uid: GRID.MODULES
+  commentId: N:GRID.MODULES
+  href: GRID.html
+  name: GRID.MODULES
+  nameWithType: GRID.MODULES
+  fullName: GRID.MODULES
+  spec.csharp:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+  spec.vb:
+  - uid: GRID
+    name: GRID
+    href: GRID.html
+  - name: .
+  - uid: GRID.MODULES
+    name: MODULES
+    href: GRID.MODULES.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: GRID.MODULES.CoordinateConverter.#ctor*
+  commentId: Overload:GRID.MODULES.CoordinateConverter.#ctor
+  href: GRID.MODULES.CoordinateConverter.html#GRID_MODULES_CoordinateConverter__ctor_UnityEngine_BoundsInt_
+  name: CoordinateConverter
+  nameWithType: CoordinateConverter.CoordinateConverter
+  fullName: GRID.MODULES.CoordinateConverter.CoordinateConverter
+  nameWithType.vb: CoordinateConverter.New
+  fullName.vb: GRID.MODULES.CoordinateConverter.New
+  name.vb: New
+- uid: UnityEngine.BoundsInt
+  commentId: T:UnityEngine.BoundsInt
+  parent: UnityEngine
+  isExternal: true
+  name: BoundsInt
+  nameWithType: BoundsInt
+  fullName: UnityEngine.BoundsInt
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: GRID.MODULES.CoordinateConverter.GetTileCoordinate*
+  commentId: Overload:GRID.MODULES.CoordinateConverter.GetTileCoordinate
+  href: GRID.MODULES.CoordinateConverter.html#GRID_MODULES_CoordinateConverter_GetTileCoordinate_UnityEngine_Vector3Int_
+  name: GetTileCoordinate
+  nameWithType: CoordinateConverter.GetTileCoordinate
+  fullName: GRID.MODULES.CoordinateConverter.GetTileCoordinate
+- uid: UnityEngine.Vector3Int
+  commentId: T:UnityEngine.Vector3Int
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3Int
+  nameWithType: Vector3Int
+  fullName: UnityEngine.Vector3Int
+- uid: GRID.MODULES.CoordinateConverter.GetMouseWorldPosition*
+  commentId: Overload:GRID.MODULES.CoordinateConverter.GetMouseWorldPosition
+  href: GRID.MODULES.CoordinateConverter.html#GRID_MODULES_CoordinateConverter_GetMouseWorldPosition
+  name: GetMouseWorldPosition
+  nameWithType: CoordinateConverter.GetMouseWorldPosition
+  fullName: GRID.MODULES.CoordinateConverter.GetMouseWorldPosition
+- uid: UnityEngine.Vector3
+  commentId: T:UnityEngine.Vector3
+  parent: UnityEngine
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: GRID.MODULES.CoordinateConverter.UpdateBounds*
+  commentId: Overload:GRID.MODULES.CoordinateConverter.UpdateBounds
+  href: GRID.MODULES.CoordinateConverter.html#GRID_MODULES_CoordinateConverter_UpdateBounds_UnityEngine_BoundsInt_
+  name: UpdateBounds
+  nameWithType: CoordinateConverter.UpdateBounds
+  fullName: GRID.MODULES.CoordinateConverter.UpdateBounds

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introdu&#231;&#227;o ao Tycoon Project | Tycoon Project API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introdu&#231;&#227;o ao Tycoon Project | Tycoon Project API ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="">
+      <meta name="docfx:tocrel" content="">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/docs/introduction.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introdução-ao-tycoon-project">Introdução ao Tycoon Project</h1>
+
+<p>Bem-vindo ao <strong>Tycoon Project</strong>, um sistema modular e robusto de grid desenvolvido em Unity para criação de jogos do gênero tycoon. Este projeto implementa uma arquitetura escalável que facilita o desenvolvimento de jogos de construção e gerenciamento.</p>
+<h2 id="-o-que-é-o-tycoon-project">🎯 O que é o Tycoon Project?</h2>
+<p>O <strong>Tycoon Project</strong> é uma solução completa que fornece:</p>
+<ul>
+<li><strong>Sistema de Grid Inteligente</strong> - Gerenciamento avançado de posicionamento de objetos</li>
+<li><strong>Arquitetura Modular</strong> - Componentes independentes e reutilizáveis</li>
+<li><strong>Performance Otimizada</strong> - Object pooling e otimizações de rendering</li>
+<li><strong>Interface Intuitiva</strong> - Sistema de loja e seleção responsivo</li>
+<li><strong>Efeitos Visuais</strong> - Hover effects e feedback visual em tempo real</li>
+</ul>
+<h2 id="-arquitetura-do-sistema">🏗️ Arquitetura do Sistema</h2>
+<h3 id="princípios-fundamentais">Princípios Fundamentais</h3>
+<p>O projeto foi construído seguindo princípios sólidos de engenharia de software:</p>
+<h4 id="1-separação-de-responsabilidades"><strong>1. Separação de Responsabilidades</strong></h4>
+<p>Cada módulo tem uma responsabilidade específica e bem definida:</p>
+<ul>
+<li><strong>GridManager</strong> - Coordenação central e orquestração</li>
+<li><strong>HoverManager</strong> - Efeitos visuais de hover</li>
+<li><strong>PathManager</strong> - Sistema de pathfinding</li>
+<li><strong>TilePool</strong> - Gerenciamento de performance via object pooling</li>
+<li><strong>ShopManager</strong> - Interface de seleção e compra</li>
+</ul>
+<h4 id="2-modularidade"><strong>2. Modularidade</strong></h4>
+<pre><code class="lang-csharp">// Cada módulo é independente e pode ser usado separadamente
+HoverManager hoverModule = new HoverManager(gridManager, true, Color.yellow);
+PathManager pathModule = new PathManager(gridManager);
+</code></pre>
+<h4 id="3-performance-first"><strong>3. Performance First</strong></h4>
+<pre><code class="lang-csharp">// Object pooling para reutilização eficiente
+GameObject tile = TilePool.Instance.GetPooledObject();
+// Atualizações otimizadas apenas quando necessário
+if (currentCell != previousCell) ProcessHover();
+</code></pre>
+<h2 id="-funcionalidades-principais">🎮 Funcionalidades Principais</h2>
+<h3 id="sistema-de-grid-avançado">Sistema de Grid Avançado</h3>
+<p>O coração do sistema é o <strong>GridManager</strong>, que coordena todas as operações:</p>
+<pre><code class="lang-csharp">// Inicialização automática de todos os módulos
+GridManager.Instance.InitializeModules();
+
+// API unificada para operações de grid
+bool isOccupied = GridManager.Instance.IsCellOccupied(coordinate);
+Vector3Int logicalCoord = GridManager.Instance.GetTileCoordinate(cellPosition);
+</code></pre>
+<h3 id="efeitos-visuais-responsivos">Efeitos Visuais Responsivos</h3>
+<p>O <strong>HoverManager</strong> fornece feedback visual imediato:</p>
+<pre><code class="lang-csharp">// Configuração simples de hover
+GridManager.Instance.SetHoverEnabled(true);
+GridManager.Instance.SetHoverColor(Color.yellow);
+
+// Sistema automático de detecção
+// Destaca células livres quando o mouse passa sobre elas
+</code></pre>
+<h3 id="sistema-de-tiles-inteligente">Sistema de Tiles Inteligente</h3>
+<p>Cada tile possui comportamento rico e estados bem definidos:</p>
+<pre><code class="lang-csharp">// Estados do ciclo de vida
+public enum TileState
+{
+    Unplaced, // Modo fantasma durante posicionamento
+    Placed    // Definitivamente posicionado no grid
+}
+
+// Comportamento de ghost mode
+tile.HandleSelection(true);  // Ativa preview transparente
+tile.FollowMouse();          // Segue cursor do mouse
+</code></pre>
+<h3 id="object-pool-para-performance">Object Pool para Performance</h3>
+<p>O <strong>TilePool</strong> otimiza performance reutilizando objetos:</p>
+<pre><code class="lang-csharp">// Singleton pattern para acesso global
+TilePool.Instance.amountToPool = 100;
+
+// Reutilização eficiente
+GameObject reusedTile = TilePool.Instance.GetPooledObject();
+TilePool.Instance.ReturnPooledObject(tileToReturn);
+</code></pre>
+<h2 id="-tecnologias-e-padrões">🛠️ Tecnologias e Padrões</h2>
+<h3 id="tecnologias-utilizadas">Tecnologias Utilizadas</h3>
+<ul>
+<li><strong>Unity 2022.3 LTS</strong> - Engine principal</li>
+<li><strong>C# 9.0</strong> - Linguagem de programação</li>
+<li><strong>Unity Input System</strong> - Sistema moderno de input</li>
+<li><strong>ScriptableObjects</strong> - Configuração flexível de dados</li>
+<li><strong>Tilemap System</strong> - Renderização eficiente de tiles</li>
+</ul>
+<h3 id="padrões-de-design-implementados">Padrões de Design Implementados</h3>
+<h4 id="singleton-pattern"><strong>Singleton Pattern</strong></h4>
+<pre><code class="lang-csharp">public class GridManager : MonoBehaviour
+{
+    public static GridManager Instance { get; private set; }
+    
+    private void Awake()
+    {
+        if (Instance != null &amp;&amp; Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
+}
+</code></pre>
+<h4 id="object-pool-pattern"><strong>Object Pool Pattern</strong></h4>
+<pre><code class="lang-csharp">public class TilePool : MonoBehaviour
+{
+    private List&lt;GameObject&gt; pooledObjects;
+    
+    public GameObject GetPooledObject()
+    {
+        for (int i = 0; i &lt; pooledObjects.Count; i++)
+        {
+            if (!pooledObjects[i].activeInHierarchy)
+                return pooledObjects[i];
+        }
+        return null;
+    }
+}
+</code></pre>
+<h4 id="module-pattern"><strong>Module Pattern</strong></h4>
+<pre><code class="lang-csharp">// Cada funcionalidade como módulo independente
+public class HoverManager { /* Lógica de hover */ }
+public class PathManager { /* Lógica de pathfinding */ }
+public class CellValidator { /* Lógica de validação */ }
+</code></pre>
+<h2 id="-casos-de-uso">🎯 Casos de Uso</h2>
+<h3 id="jogos-de-construção-de-cidades">Jogos de Construção de Cidades</h3>
+<ul>
+<li>Posicionamento de edifícios</li>
+<li>Sistema de ruas e pathfinding</li>
+<li>Zonas de construção definidas</li>
+</ul>
+<h3 id="jogos-de-fazendaagricultura">Jogos de Fazenda/Agricultura</h3>
+<ul>
+<li>Plantio em grid organizado</li>
+<li>Sistema de irrigação</li>
+<li>Expansão de terrenos</li>
+</ul>
+<h3 id="jogos-de-estratégia">Jogos de Estratégia</h3>
+<ul>
+<li>Posicionamento de unidades</li>
+<li>Construção de bases</li>
+<li>Sistema de recursos por tile</li>
+</ul>
+<h3 id="jogos-de-puzzle">Jogos de Puzzle</h3>
+<ul>
+<li>Posicionamento preciso de peças</li>
+<li>Validação de movimentos</li>
+<li>Sistema de snap-to-grid</li>
+</ul>
+<h2 id="-vantagens-do-sistema">🚀 Vantagens do Sistema</h2>
+<h3 id="para-desenvolvedores">Para Desenvolvedores</h3>
+<ol>
+<li><strong>Produtividade</strong> - Sistema pronto para uso imediato</li>
+<li><strong>Flexibilidade</strong> - Módulos intercambiáveis e configuráveis</li>
+<li><strong>Documentação</strong> - API completamente documentada</li>
+<li><strong>Exemplos</strong> - Casos de uso práticos incluídos</li>
+<li><strong>Performance</strong> - Otimizações já implementadas</li>
+</ol>
+<h3 id="para-jogadores">Para Jogadores</h3>
+<ol>
+<li><strong>Responsividade</strong> - Feedback visual imediato</li>
+<li><strong>Intuitividade</strong> - Controles naturais e previsíveis</li>
+<li><strong>Fluidez</strong> - Animações suaves e transições</li>
+<li><strong>Precisão</strong> - Sistema de snap automático</li>
+<li><strong>Visual</strong> - Efeitos de hover e preview</li>
+</ol>
+<h2 id="-próximos-passos">📈 Próximos Passos</h2>
+<h3 id="configuração-inicial">Configuração Inicial</h3>
+<ol>
+<li><strong><a href="getting-started.html">Setup do Projeto</a></strong> - Configure seu ambiente</li>
+<li><strong><a href="getting-started.html#configuracao-basica">Configuração Básica</a></strong> - Primeiros passos</li>
+<li><strong><a href="getting-started.html#exemplos">Exemplos Práticos</a></strong> - Casos de uso reais</li>
+</ol>
+<h3 id="exploração-avançada">Exploração Avançada</h3>
+<ol>
+<li><strong><a href="../api/index.html">API Reference</a></strong> - Documentação completa</li>
+<li><strong><a href="../api/index.html#grid-modules">Módulos Especializados</a></strong> - Funcionalidades avançadas</li>
+<li><strong><a href="getting-started.html#customizacao">Customização</a></strong> - Adaptação para suas necessidades</li>
+</ol>
+<h2 id="-filosofia-de-design">🎨 Filosofia de Design</h2>
+<h3 id="simplicidade-sem-comprometer-poder">Simplicidade sem Comprometer Poder</h3>
+<p>O projeto foi desenhado com a filosofia de <strong>&quot;fácil de usar, difícil de quebrar&quot;</strong>:</p>
+<ul>
+<li><strong>Interface Simples</strong> - API intuitiva para operações comuns</li>
+<li><strong>Poder Avançado</strong> - Funcionalidades sofisticadas quando necessário</li>
+<li><strong>Documentação Clara</strong> - Cada funcionalidade bem explicada</li>
+<li><strong>Exemplos Práticos</strong> - Código pronto para adaptar</li>
+</ul>
+<h3 id="escalabilidade-incorporada">Escalabilidade Incorporada</h3>
+<ul>
+<li><strong>Arquitetura Modular</strong> - Adicione novos módulos facilmente</li>
+<li><strong>Performance Otimizada</strong> - Suporta grids grandes sem impacto</li>
+<li><strong>Configuração Flexível</strong> - Adapte-se a diferentes necessidades</li>
+<li><strong>Extensibilidade</strong> - Herde classes base para funcionalidades customizadas</li>
+</ul>
+<hr>
+<h2 id="-conclusão">🏁 Conclusão</h2>
+<p>O <strong>Tycoon Project</strong> não é apenas um sistema de grid - é uma <strong>plataforma completa</strong> para desenvolvimento de jogos que requerem posicionamento preciso, interface intuitiva e performance otimizada.</p>
+<p>Com sua arquitetura modular, documentação completa e foco em performance, este projeto oferece uma base sólida para criar experiências de jogo envolventes e profissionais.</p>
+<p><strong>Pronto para começar?</strong> Explore a <a href="../api/index.html">documentação da API</a> ou siga o <a href="getting-started.html">guia de configuração</a> para dar seus primeiros passos!</p>
+<hr>
+<p><strong>Desenvolvido por Murillo Gomes Yonamine</strong><br>
+Unity 2022.3 LTS | C# 9.0 | Arquitetura Modular</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

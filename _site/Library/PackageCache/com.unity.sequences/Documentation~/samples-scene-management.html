@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Scene Management (sample) | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Scene Management (sample) | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/samples-scene-management.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="scene-management-sample">Scene Management (sample)</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Support for the Sequences package is scheduled to end as of Unity 6.1.</p>
+</div>
+
+<p>Use this sample to practice with Scene Activation tracks and Scene loading features in Sequences.</p>
+<blockquote>
+<p><strong>Before you begin:</strong> Make sure to have the <a href="sequences-window.html">Sequences</a> and <a href="timeline-window.html">Timeline</a> windows open in the Editor.</p>
+</blockquote>
+<h2 id="getting-the-sample">Getting the sample</h2>
+<p>To get and open the sample:</p>
+<ol>
+<li><p>Open the Package Manager and select the <strong>Sequences</strong> package in the list.</p>
+</li>
+<li><p>In the right pane, expand the <strong>Samples</strong> section and next to <strong>Scene Management</strong>, click on <strong>Import</strong>.</p>
+</li>
+<li><p>In the Project window, from the <code>Assets/Samples/Sequences/.../Scene Management</code> folder, open the <code>SceneManagementSample.unity</code> Scene.</p>
+</li>
+</ol>
+<h2 id="testing-the-sample">Testing the sample</h2>
+<p>The sample demonstrates the possibility to activate/deactivate separate Scenes through a simple Sequences structure. To be able to see the Scene activation/deactivation effects in the Unity Editor, it is necessary to first load the targeted Scenes.</p>
+<p>To load the Scenes and test the sample:</p>
+<ol>
+<li>In the Sequences window, right click on <strong>SceneManagementSample</strong> and select <strong>Load Scenes</strong>.</li>
+</ol>
+<p><img src="images/sample-scene-management-load-scenes.png" alt=""></p>
+<ol start="2">
+<li>In the Hierarchy, notice the three new loaded Scenes: <strong>set01.unity</strong>, <strong>shot_10_lights.unity</strong> and <strong>shot_20_lights.unity</strong>.</li>
+</ol>
+<p><img src="images/sample-scene-management-loaded-scenes.png" alt=""></p>
+<ol start="3">
+<li>In the Timeline window, hit the Play button or scrub the playhead to observe how the various Scenes are activated and deactivated throughout the Master Sequence.</li>
+</ol>
+<p><img src="images/sample-scene-management-game-view.png" alt=""></p>
+<ul>
+<li>The <strong>set01.unity</strong> Scene (four cubes on a plane) remains active all the time.</li>
+<li>The <strong>shot_10_lights.unity</strong> Scene (lighting the set from the left) is active only during the first half of the Master Sequence.</li>
+<li>The <strong>shot_20_lights.unity</strong> Scene (lighting the set from the right) is active only during the second half of the Master Sequence.</li>
+</ul>
+<h2 id="understanding-scene-activation">Understanding scene activation</h2>
+<p>The activation/deactivation of each Scene in the sample is driven through a Scene Activation track in Timeline.</p>
+<ol>
+<li>In the Sequences window, expand <strong>SceneManagementSample</strong> and select <strong>seq_001</strong>.</li>
+</ol>
+<p><img src="images/sample-scene-management-scene-activation-track-seq_001.png" alt=""></p>
+<p>In the Timeline window, the yellow track named <strong>set01</strong> is a Scene Activation track. It drives the activation of the <strong>set01.unity</strong> Scene during the <strong>seq_001</strong> Sequence time range.</p>
+<ol start="2">
+<li>In the Sequences window, expand <strong>seq_001</strong> and select <strong>shot_10</strong>.</li>
+</ol>
+<p><img src="images/sample-scene-management-scene-activation-track-shot_10.png" alt=""></p>
+<p>In the Timeline window, notice that <strong>shot_10</strong> also has a Scene Activation track. This track drives the activation of the <strong>shot_10_lights.unity</strong> Scene during the <strong>shot_10</strong> Sequence time range.</p>
+<ol start="3">
+<li>In the Sequences window, select <strong>shot_20</strong>, and notice it also has a Scene Activation track. This track drives the activation of the <strong>shot_20_lights.unity</strong> Scene during the <strong>shot_20</strong> Sequence time range.</li>
+</ol>
+<blockquote>
+<p><strong>See also:</strong></p>
+<ul>
+<li><a href="scene-management.html#setting-up-scene-activation-in-a-sequence">Setting up Scene activation in a Sequence</a></li>
+<li><a href="timeline-window.html#scene-activation-track">Scene Activation track in Timeline</a>.</li>
+</ul>
+</blockquote>
+<h2 id="understanding-scene-loading">Understanding scene loading</h2>
+<p>A Scene Activation track can't activate a Scene if this Scene isn't first loaded. You can load Scenes in the Unity Editor through the Sequences structure, but you can also set up a Scene Loading policy that automatically loads Scenes when you enter the Play mode or when you run a Player build of your project.</p>
+<blockquote>
+<p><strong>Note:</strong> This sample was not designed for being built as a standalone player. To avoid unwanted behaviors, don't try to run a Player build with it.</p>
+</blockquote>
+<p>To understand how a Scene Loading Policy works in the Play mode context:</p>
+<ol>
+<li><p>In the Hierarchy, right-click on the <strong>shot_20_lights.unity</strong> Scene and select <strong>Unload Scene</strong>.</p>
+</li>
+<li><p>In the Sequences window, select <strong>seq_001</strong>, and in the Timeline window, hit the Play button or scrub the playhead.</p>
+</li>
+</ol>
+<p>Notice the <strong>shot_20_lights.unity</strong> Scene is no longer activated when you reach the <strong>shot_20</strong> Sequence.</p>
+<ol start="3">
+<li>In the Hierarchy, in the <strong>SceneManagementSample</strong> Scene, select the <strong>SceneManagementSample</strong> GameObject.</li>
+</ol>
+<p><img src="images/sample-scene-management-master-sequence-gameobject.png" alt=""></p>
+<ol start="4">
+<li>In the Inspector, in the <strong>Sequence Filter</strong> component, click on <strong>Add Scene Loading Policy</strong>.</li>
+</ol>
+<p><img src="images/sample-scene-management-scene-loading-policy.png" alt=""></p>
+<p>This adds the <strong>Scene Loading Policy</strong> component. Leave the properties set to their default values.</p>
+<ol start="5">
+<li>Enter the Play mode.</li>
+</ol>
+<p>Notice the <strong>shot_20_lights.unity</strong> Scene automatically loads in the Hierarchy at the beginning, and activates when expected.</p>
+<ol start="6">
+<li>Exit the Play mode.</li>
+</ol>
+<p>Notice the <strong>shot_20_lights.unity</strong> Scene is unloaded, as it was before you entered the Play mode.</p>
+<blockquote>
+<p><strong>See also:</strong></p>
+<ul>
+<li><a href="scene-management.html#loading-scenes-contextually">Loading Scenes contextually</a></li>
+<li><a href="scene-management.html#setting-up-a-scene-loading-policy">Setting up a Scene Loading Policy</a></li>
+<li><a href="ref-components.html#scene-loading-policy">Scene Loading Policy component</a></li>
+</ul>
+</blockquote>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.sequences/Documentation~/samples-scene-management.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

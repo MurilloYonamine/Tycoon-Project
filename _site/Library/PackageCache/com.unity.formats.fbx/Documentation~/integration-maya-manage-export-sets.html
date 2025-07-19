@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Manage Export Sets in Maya | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Manage Export Sets in Maya | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/integration-maya-manage-export-sets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="manage-export-sets-in-maya">Manage Export Sets in Maya</h1>
+
+<p>Create Export Sets to export Maya objects that are not part of an existing export set. Edit export options of existing Export Sets.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This page provides instructions to perform tasks in Autodesk Maya using the Unity Integration tool, which <a href="integration-setup.html">requires to be installed first</a>.</p>
+</div>
+<h2 id="create-a-new-export-set">Create a new Export Set</h2>
+<p>To export objects that are not part of an existing export set, you need to prepare a new export set. To do this, follow these steps:</p>
+<ol>
+<li><p>Select the desired objects for export.</p>
+</li>
+<li><p>Select <strong>File &gt; Unity</strong> and then select one of the following menu items:</p>
+<p><img src="images/FBXExporter_MayaUnityMenuItems.png" alt=""></p>
+<ul>
+<li>Select <strong>Create Export Set</strong> OR <strong>Export</strong> to create an export set with settings for exporting animation and model FBX files,
+<br>OR</li>
+<li>Select <strong>Export Model Only</strong> OR <strong>Export Animation Only</strong> to setup an export set for exporting a model or animation file.</li>
+</ul>
+</li>
+<li><p>Use the window that opens to set the options for the export set:</p>
+<p><img src="images/FBXExporter_MayaCreateExportSetDialog.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Model File Path</strong></td>
+<td style="text-align: left;">The file path to export to when you select <strong>File &gt; Unity &gt; Export</strong> or <strong>File &gt; Unity &gt; Export Model Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Model File Name</strong></td>
+<td style="text-align: left;">The name of the file to export to when you select <strong>File &gt; Unity &gt; Export</strong> or <strong>File &gt; Unity &gt; Export Model Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Anim File Path</strong></td>
+<td style="text-align: left;">The file path to export to when you select <strong>File &gt; Unity &gt; Export Animation Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Anim File Name</strong></td>
+<td style="text-align: left;">The name of the file to export to when you select <strong>File &gt; Unity &gt; Export Animation Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Strip Namespaces on Export</strong></td>
+<td style="text-align: left;">Enable this option to automatically strip the most common namespace in the set on export.<br><br>For example, if you enable this option and most objects are in namespace <code>model:</code>, then <code>model:</code> is stripped on export.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Action button</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Create Set And Export</strong></td>
+<td style="text-align: left;">Creates the set and immediately exports the selection.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Create Set</strong></td>
+<td style="text-align: left;">Creates the set without exporting.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cancel</strong></td>
+<td style="text-align: left;">Cancels the set creation and closes the window.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="edit-export-set-attributes">Edit Export Set Attributes</h2>
+<p>After you created an export set (through <strong>File &gt; Unity &gt; Import</strong> or <strong>File &gt; Unity &gt; Create Export Set</strong>, or one of the export options), you can edit the export options
+on the set.</p>
+<p>To do so, select the set, and in the <strong>Attribute Editor</strong>, in the <strong>Extra Attributes</strong> section, modify the Unity attributes.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If Arnold is installed, the attributes might appear in the <strong>Arnold &gt; Extra Attributes</strong> section.</p>
+</div>
+<p><img src="images/FBXExporter_MayaExportSetAttributes.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Unity Fbx Model File Path</strong></td>
+<td style="text-align: left;">The file path to export to when you select <strong>File &gt; Unity &gt; Export</strong> or <strong>File &gt; Unity &gt; Export Model Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unity Fbx Model File Name</strong></td>
+<td style="text-align: left;">The name of the file to export to when you select <strong>File &gt; Unity &gt; Export</strong> or <strong>File &gt; Unity &gt; Export Model Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unity Fbx Anim File Path</strong></td>
+<td style="text-align: left;">The file path to export to when you select <strong>File &gt; Unity &gt; Export Animation Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unity Fbx Anim File Name</strong></td>
+<td style="text-align: left;">The name of the file to export to when you select <strong>File &gt; Unity &gt; Export Animation Only</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unity Fbx Strip Namespace</strong></td>
+<td style="text-align: left;">Enable this option to automatically strip the most common namespace in the set on export.<br><br>For example, if you enable this option and most objects are in namespace <code>model:</code>, then the export strips <code>model:</code>.<br><br>If you want to strip another namespace instead of the most common one, you can type it in the <strong>Strip Specific Namespace</strong> field.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Strip Specific Namespace</strong></td>
+<td style="text-align: left;">(Optional) Use this property to specify the namespace to strip on export when you enable the <strong>Unity Fbx Strip Namespace</strong> option, instead of the most common namespace.<br><br>If you leave this field empty, the <strong>Unity Fbx Strip Namespace</strong> option uses by default the most common namespace in the set.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.formats.fbx/Documentation~/integration-maya-manage-export-sets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

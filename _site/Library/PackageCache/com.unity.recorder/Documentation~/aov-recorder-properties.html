@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>AOV Image Sequence Recorder properties | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="AOV Image Sequence Recorder properties | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/aov-recorder-properties.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="aov-image-sequence-recorder-properties">AOV Image Sequence Recorder properties</h1>
+
+<p>Use the AOV Image Sequence Recorder properties to select an AOV or multiple AOVs to export, choose a source camera, and configure how the AOV passes are recorded and saved.</p>
+<p><img src="Images/aov-recorder-window.png" alt="">
+<br><em>AOV Image Sequence Recorder properties in the Recorder window context.</em></p>
+<h2 id="input">Input</h2>
+<p>Use this section to define the source of your recording. It includes settings to select the <a href="#arbitrary-output-variables-aovs">AOVs to export</a>, choose the <a href="#camera">source camera</a> to use for the recording, and adjust other properties of the <a href="#output-resolution">output resolution</a>.</p>
+<h3 id="arbitrary-output-variables-aovs">Arbitrary Output Variables (AOVs)</h3>
+<p>Select the AOVs to record according to your needs.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Review the <a href="aov-concepts.html#use-case-examples">list of use case examples</a> to get some more perspective and help you make your selection.</p>
+</div>
+<p>The following sections describe the exportable AOVs grouped in categories, including the type of data recorded in each frame and the meaning behind the value of a single pixel for each specific AOV.</p>
+<h4 id="beauty">Beauty</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">AOV</th>
+<th style="text-align: left;">Recorded data</th>
+<th style="text-align: left;">Pixel value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Beauty</strong></td>
+<td style="text-align: left;">The final rendered view after post-process.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="material-properties">Material Properties</h4>
+<p>Common inherent material properties of the surfaces in view. This includes data from material values or material maps.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">AOV</th>
+<th style="text-align: left;">Recorded data</th>
+<th style="text-align: left;">Pixel value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Albedo</strong></td>
+<td style="text-align: left;">The overall perceived colors of the surfaces in view, with no lighting calculation and no shadows.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alpha</strong></td>
+<td style="text-align: left;">The opacity of the surfaces in view.</td>
+<td style="text-align: left;">Grayscale:<li>  Black (value of 0) = transparent<li> White (value of 1) = opaque</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Metal</strong></td>
+<td style="text-align: left;">The metallic aspect of the surfaces in view.</td>
+<td style="text-align: left;">Grayscale:<li>  Black (value of 0) = non-metal<li>  White (value of 1) = metal</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Smoothness</strong></td>
+<td style="text-align: left;">The smoothness of the surfaces in view.</td>
+<td style="text-align: left;">Grayscale:<li>  Black (value of 0) = rough<li>  White (value of 1) = glossy</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Specular</strong></td>
+<td style="text-align: left;">The specular colors of the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="lighting">Lighting</h4>
+<p>All lighting modes that contribute to the Beauty. These specific AOVs are for light decomposition purposes. The recorded data depends on the current lighting of the Scene and on the surface materials, and includes shadows.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">AOV</th>
+<th style="text-align: left;">Recorded data</th>
+<th style="text-align: left;">Pixel value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Direct Diffuse</strong></td>
+<td style="text-align: left;">The direct diffuse light response of the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Direct Specular</strong></td>
+<td style="text-align: left;">The direct specular light response of the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Emissive</strong></td>
+<td style="text-align: left;">The light emitted by the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Indirect Diffuse</strong></td>
+<td style="text-align: left;">The indirect diffuse light response of the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reflection</strong></td>
+<td style="text-align: left;">The light reflected by the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Refraction</strong></td>
+<td style="text-align: left;">The light refracted by the surfaces in view.</td>
+<td style="text-align: left;">RGB color.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="utility">Utility</h4>
+<p>Various data computed from the Scene.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">AOV</th>
+<th style="text-align: left;">Recorded data</th>
+<th style="text-align: left;">Pixel value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ambient Occlusion</strong></td>
+<td style="text-align: left;">The data resulting from ambient occlusion post-process of the Scene.</td>
+<td style="text-align: left;">Grayscale:<li> Black (value of 0) = fully occluded<li> White (value of 1) = not occluded</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Depth</strong></td>
+<td style="text-align: left;">The relative distances of the Scene elements in view between the Far Plane and the Near Plane of the recording Camera.</td>
+<td style="text-align: left;">Grayscale:<li> Black (value of 0) = at Far Plane<li> White (value of 1) = at Near Plane</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Motion Vectors</strong></td>
+<td style="text-align: left;">The 2D vectors representing the movements in the Scene relative to the recording Camera.</td>
+<td style="text-align: left;">R and G channels only:<li> The values of the R and G channels respectively represent the horizontal and vertical coordinates of the vectors in the image plane.<li> The range of values is between -1 and 1, normalized to the <strong>Output Resolution</strong> you selected for the recording.</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Normal</strong></td>
+<td style="text-align: left;">The data resulting from geometric normals and normal maps of the surfaces in view.</td>
+<td style="text-align: left;">R, G and B channels:<br>The values of the R,G,B channels respectively represent the X,Y,Z vector coordinates of the normals in World Space.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="camera">Camera</h3>
+<p>Select the camera to use for the recording.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Camera</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Specifies which camera the Recorder uses to capture the AOV recording.<br><br><strong>Note:</strong> <a href="KnownIssues.html#activecamera-recording-not-available-with-srps">You can't set the Camera property to ActiveCamera</a> due to a High Definition Render Pipeline (HDRP) limitation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MainCamera</td>
+<td style="text-align: left;">The Camera tagged with the MainCamera <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">TaggedCamera</td>
+<td style="text-align: left;">A camera tagged with a specific <a href="https://docs.unity3d.com/Manual/Tags.html">Tag</a>.<br><br>If you select this option, you must enter a value in the <strong>Tag</strong> field.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tag</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Specifies which Camera Tag to look for when you set <strong>Camera</strong> to <strong>Tagged Camera</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-resolution">Output Resolution</h3>
+<p>Set the dimensions and other properties of the recorded view.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the Output Resolution and/or Aspect Ratio in the Recorder is different than the Game view resolution, the Recorder switches the Game view to the Recorder's resolution before starting the recording. After the recording ends, the Game view does not automatically revert to its previous resolution.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Output Resolution</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Allows you to set the dimensions of the recorded view using different methods.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Match Window Size</td>
+<td style="text-align: left;">Matches the resolution and aspect ratio of the currently selected Game View.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>[PRESET RESOLUTIONS]</em></td>
+<td style="text-align: left;">Choose from several standard video resolutions such as FHD (1080p) and 4K (2160p).<br><br>The numeric value represents the image height. To set the image width, you must select a specific <strong>Aspect Ratio</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Custom</td>
+<td style="text-align: left;">Uses custom width and height values that you supply in the <strong>W</strong> and <strong>H</strong> fields.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Aspect Ratio</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Specifies the ratio of width to height (w:h) of the recorded view when you set the <strong>Output Resolution</strong> to a preset resolution.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>[PRESET ASPECT RATIOS]</em></td>
+<td style="text-align: left;">Choose from several standard aspect ratios such as 16:9 (1.7778) and 4:3 (1.3333).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Custom</td>
+<td style="text-align: left;">Uses custom aspect ratio that you supply in the displayed fields (w:h).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Render Frame Step</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Available when you set <strong>Playback</strong> to <strong>Variable</strong>. Specifies the number of rendered frames to discard between recorded frames. Example: if the value is 2, every second frame is discarded.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-format">Output Format</h2>
+<p>Use this section to set up the media format you want to save the recorded images in.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Format</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The file encoding format.<br><br>Choose <strong>PNG</strong> or <strong>EXR</strong> (<a href="https://en.wikipedia.org/wiki/OpenEXR">OpenEXR</a>). The Recorder encodes EXR in 16 bits. Note that a single EXR file can include multiple AOVs.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>Multi-part file</strong></td>
+<td style="text-align: left;">Export all selected AOVs to a single multi-part file instead of exporting each AOV to a separate file. This only applies to EXR files.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Color Space</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The color space (gamma curve and gamut) to use in the output images.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">sRGB, sRGB</td>
+<td style="text-align: left;">Uses sRGB curve and sRGB primaries.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Linear, sRGB (unclamped)</td>
+<td style="text-align: left;">Uses linear curve and sRGB primaries.<br>This option is only available when you set the <strong>Format</strong> to <strong>EXR</strong>.<br><br><strong>Important:</strong> To get the expected unclamped values in the output images, you must:<ul><li> Disable any Tonemapping post-processing effects in your Scene (menu: <strong>Edit &gt; Project Settings &gt; HDRP Default Settings</strong> and deselect <strong>Tonemapping</strong>) and in any Volume that includes a Tonemapping override (select the Volume, navigate in the Inspector and deselect <strong>Tonemapping</strong> if present).<li> Disable <strong>Dithering</strong> on the Camera selected for the capture (in the Inspector, navigate to <strong>General</strong> and deselect <strong>Dithering</strong>).</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compression</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">The <a href="https://en.wikipedia.org/wiki/OpenEXR#Compression_methods">EXR compression method</a> to apply when saving the data.<br>This property is only available when you set the <strong>Format</strong> to <strong>EXR</strong>.<li> Available <em>lossless</em> compression types: <strong>RLE</strong>, <strong>Zip</strong> (default), <strong>Zips</strong>, <strong>PIZ</strong>.<li> Available <em>lossy</em> compression types: <strong>B44</strong>, <strong>B44a</strong>, <strong>DWAA</strong>, <strong>DWAB</strong>.<li> Choose <strong>None</strong> to disable compression.</li></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compression Level</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Adjustable compression level for DWAA and DWAB compression types.<br>Higher values reduce the file size but introduce increasing color distortion.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="output-file">Output File</h2>
+<p>Use this section to specify the output <strong>Path</strong> and <strong>File Name</strong> pattern to save the recorded image files.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="https://docs.unity3d.com/Packages/com.unity.recorder@latest/index.html?subfolder=/manual/OutputFileProperties.html">Output File properties</a> work the same for all types of recorders.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/MurilloYonamine/Tycoon-Project/blob/main/Library/PackageCache/com.unity.recorder/Documentation~/aov-recorder-properties.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
